@@ -1,0 +1,10 @@
+{% extends "car_service/siteadmin/base_admin.html" %}
+          {%block content%}
+        <form>{% csrf_token %}
+            <table>
+           {{fm_service}}
+           {{fm_service_detail}}
+                </table>
+           <input type='submit' value="保存"/>
+       </form>
+        {%endblock%}

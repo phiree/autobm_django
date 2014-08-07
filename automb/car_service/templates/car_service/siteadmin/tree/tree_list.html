@@ -1,0 +1,8 @@
+{% extends "car_service/siteadmin/base_admin.html" %}
+          {%block content%}
+        {{request}}
+        {% for tree in object_list  %}
+           <a href="{%url 'car_service:tree_update' tree.tree_type tree.id  %}">{{tree.name}}</a>
+        {% endfor %}
+
+{%endblock%}
