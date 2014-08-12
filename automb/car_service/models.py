@@ -30,7 +30,7 @@ class Tree(Model):# 区域, 车型(品牌,系列,型号),字典, 服务 都是tr
 
     @property
     def child_types(self):
-        return Tree.objects.filter(parent=self)
+        return Tree.objects.filter(parent=self) 
 
 
 class Supplier(Model):
