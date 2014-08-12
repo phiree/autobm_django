@@ -1,9 +1,0 @@
-{% extends "car_service/siteadmin/base_admin.html" %}
-          {%block content%}
-        <table>
-        {% for service in object_list  %}
-            <tr><td>
-           <a href="{%url 'car_service:service_update' service.id %}">{{service}}</a></td></tr>
-        {% endfor %}
-            </table>
-        <a href="{%url 'car_service:service_create'%}">增加服务</a> {%endblock%}
