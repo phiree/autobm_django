@@ -5,22 +5,32 @@ from django.db.models import Model, CharField,ForeignKey,TimeField,DateTimeField
 from django.contrib.auth.models import User
 
 
+
 class Tree(Model):# 区域, 车型(品牌,系列,型号),字典, 服务 都是tree类型.
 
     tree_type_choice= (('area', '区域'),                 ('car', '车型'),                 ('service', '服务'),
                        ('brand', '品牌'),                ('wash_type', '洗车方式'),       ('sound_proofing_type', '隔音方式'),
                        ('foil_type', '贴膜类型'),        ('foil_model_front', '前挡型号'),('foil_model_sides_back', '侧后挡型号'),
                        ('glass_damage_size', '玻璃损坏尺寸'),('tire_repair_type', '补胎类型'),('body_damage_size', '车身损伤尺寸'),
-                       ('sound_suit', '音响套装'),       ('main_light_suit', '大灯套装')
+                       ('sound_suit', '音响套装'),       ('main_light_suit', '大灯套装'),('model','型号')
                     )
     tree_type=CharField(choices=tree_type_choice,max_length=100, blank=False)
     name=CharField(max_length=20)
     parent=ForeignKey("Tree", null=True,blank=True)
     supplier=ForeignKey('Supplier',null=True,blank=True)
     def __str__(self):
-        return self.name
+        s=self.name
+        if self.tree_type==self.tree_type_choice[3][0] and self.parent!=None:
+
+            s= self.parent.name+'_'+s
+        return s
     def get_type(self,index):
+
         return self.tree_type_choice[index][0]
+
+    @property
+    def child_types(self):
+        return Tree.objects.filter(parent=self)
 
 
 class Supplier(Model):

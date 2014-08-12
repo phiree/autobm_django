@@ -1,0 +1,6 @@
+{% extends "car_service/site_admin/base_admin.html" %}
+          {%block content%}
+        {% for supplier in object_list  %}
+           <a href="{%url 'car_service:supplier_update' supplier.id %}">{{supplier.name}}</a>
+        {% endfor %}
+        <a href="{%url 'car_service:supplier_create'%}">增加车店</a> {%endblock%}

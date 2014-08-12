@@ -9,5 +9,6 @@ class ServiceDetailForm(ModelForm):
         exclude=('service',)
 
 class ServiceForm(ModelForm):
+
     class Meta:
         model=Service
