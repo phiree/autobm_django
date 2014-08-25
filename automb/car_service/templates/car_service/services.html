@@ -1,0 +1,29 @@
+{% extends "car_service/base.html" %}
+        {%load get_service_type_for_supplier%}
+{% block content%}
+<div class="row">
+    <div class="col-md-3">
+        {%include 'car_service/share/left_menu_service_type.html'%}
+    </div>
+    <div class="col-md-9">
+        {%for supplier in supplier_list%}
+        <div>
+            <div>{{supplier}}</div>
+            <ul>
+                {% for s in supplier|get_service_type_for_supplier:service_type%}
+                <a href="{%url 'car_service:front_web:service_detail' s.id%}">查看</a>
+                <li>
+                    <ul>
+                        {%for sd in s.servicedetail_set.all%}
+                        <li> <a href="{%url 'car_service:front_web:service_detail' s.id sd.id%}">{{sd}}{{sd.price}}</a></li>
+                        {%endfor%}
+                    </ul>
+                </li>
+                {%endfor%}
+            </ul>
+        </div>
+        {%endfor%}
+
+    </div>
+</div>
+{%endblock%}

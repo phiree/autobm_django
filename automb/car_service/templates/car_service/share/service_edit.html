@@ -1,0 +1,8 @@
+
+         <form method="post">{% csrf_token %}
+             <table>
+                 {{fm_service.as_table}}
+                {{fm_service_detail.as_table}}
+                 </table>
+           <input type='submit' value="保存"/>
+       </form>

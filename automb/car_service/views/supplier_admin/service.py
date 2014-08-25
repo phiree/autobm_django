@@ -1,6 +1,8 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from ...models import Supplier,Service,ServiceDetail,Tree
 from django.views.generic import ListView,CreateView,UpdateView,View
+from ..share.service import *
 from django.core.urlresolvers import reverse
 from ...forms import service_detail
 from django.http import HttpResponseRedirect
@@ -19,8 +21,9 @@ from django.shortcuts import render_to_response
 def index(request):
     return render(request,'car_service/supplier_admin/index.html')
     pass
-def service_list(request):
 
+@login_required
+def service_list(request):
     supplier=Supplier.objects.get(owner=request.user)
     service_detail_list=ServiceDetail.objects.filter(service__supplier=supplier)
     service_child_list=Service.objects.filter(id__in=service_detail_list.values('service_id'))
@@ -32,17 +35,18 @@ def service_list(request):
     return render(request,'car_service/supplier_admin/service_list.html'
     ,{'top_service_types':service_type_top_list,'object_list':service_detail_list})
 
-class ServiceList(ListView):
-    model=ServiceDetail
-    template_name ='car_service/supplier_admin/service_list.html'
-    pass
 
-def create(request):
+def edit(request,id):
+    fm_service,fm_service_detail=service_edit(request,id)
+    if fm_service.is_valid() and fm_service_detail.is_valid():
+        return HttpResponseRedirect(reverse('car_service:supplier_admin_service_edit',args=(fm_service_detail.instance.id,)))
+    return render(request,'car_service/supplier_admin/service_edit.html',
+                    {
+                        'fm_service_detail':fm_service_detail,
+                        'fm_service':fm_service
+                    }
+                  )
 
-    pass
-def update(request,id):
-
-    pass
 
 
 

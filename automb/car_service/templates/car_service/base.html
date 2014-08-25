@@ -1,13 +1,102 @@
+{%load staticfiles%}
 <!DOCTYPE html>
 <html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;"/>
+    <title>{%block title%}{%endblock%}</title>
+    <meta name="Description" content="{%block meta%}{%endblock%}"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+    <link href="{%static 'car_service/bootstrap-3.1.1-dist/css/bootstrap.min.css'%}" rel="stylesheet" type="text/css"/>
+    <link href="{%static 'car_service/css/site.css'%}" rel="stylesheet" type="text/css"/>
+    {%block head%}
+    {%endblock%}
 </head>
 <body>
-<div>{%if user%} {{user}}<a href="/accounts/logout/">注销</a>
-    {%else%}<a href="/accounts/login/">登录</a>
-    {%endif%}</div>
+<!--头部-->
+<div class="page">
+<header class="container navbar-static-top">
+<div class="minitop">
+  <div class="mini_main">
+    <div class="mini_left">
+
+    </div>
+    <div class="mini_right">
+      <ul class="frs" style="display: block;">
+        <li class="moreli">
+          <div class="moreli_title">
+            <a target="_self" href="javascript:addFavorite(document.URL,'汽车之家·服务区');">
+              <i class="icon-saveweb"></i>
+              <span>收藏本站</span>
+            </a>
+          </div>
+        </li>
+      </ul>
+      <ul style="display: block;" class="frs">
+        <li>
+          <div class="moreli_title">
+            <a href="/admin/" target="_blank" rel="nofollow" id="adminUrl">
+              <span>商家入口</span>
+            </a>
+          </div>
+        </li>
+      </ul>
+      <ul class="frs frs-login">
+        <li>
+          <div class="moreli_title" id="miniLeft">
+              {%if user%} {{user}}<a href="/accounts/logout/" rel="nofollow">注销</a>
+                {%else%}<a href="/accounts/login/" rel="nofollow">登录</a>
+                {%endif%}>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="fwHead">
+		<h1 class="fwLogo" title="汽车之家服务区">
+             <a target="_self" href="http://www.autohome.com.cn/">
+                <img src="{%static 'car_service/img/logo.jpg'%}"/>
+             </a>
+		</h1>
+		<div class="fwArea">
+			<div class="fwArea_tt" id="chancity" onclick="ToggleCity()">广州站<em></em></div>
+			<div class="fwArea_li" id="switchbox" style="display:none;">
+				<div class="fwArea_inner">
+				    <a href="/beijing/">北京站</a>
+				</div>
+			</div>
+		</div>
+		<div class="fwTurn"><a href="/topic/open/" target="_blank"><img src="http://x.autoimg.cn/y/site/img/fwTurn.png?v0819"></a></div>
+</div>
+ <!--导航-->
+<div class="fwNav_wrap">
+		<div class="fwNav">
+			<ul class="fwNav_left">
+				<li class="n1"><a href="/guangzhou/" class="cur">首页</a><em></em></li>
+				<li class="n2"><a href="/guangzhou/search/">商家</a><em></em></li>
+				<li class="n4"><a href="/showpost/" target="_blank">服务</a><em></em></li>
+                <li class="n5_2" id="map_f_v"><a href="/map/" target="_blank">地图</a><em class="new"></em></li>
+			</ul>
+			<div class="fwNav_right">
+				<form action="javascript:GetSearch()">
+				<div class="fwSearch_intx"><input onkeydown="javascript:KeySearch(event)" id="vname" name="vname" maxlength="25" autocomplete="off" onfocus="if(value=='搜索商家') {value='';}" onblur="if(value=='') {value='搜索商家';}" value="搜索商家" type="text"></div>
+				<div class="fwSearch_sub"><input value="" type="submit"></div>
+				<ul class="fwSearch_tips" id="autocomplateTip" style="display:none">
+				</ul>
+				</form>
+			</div>
+		</div>
+	</div>
+
+</header>
+<center class="container">
+<!--顶部-->
+<!--end顶部-->
 {%block content%}{%endblock%}
+</center>
+<footer class="container">
+
+</footer>
+    </div>
 </body>
 </html>

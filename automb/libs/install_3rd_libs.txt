@@ -1,2 +1,4 @@
 #imageField need
 pip install Pillow
+#json serialize
+pip install jsonpickle

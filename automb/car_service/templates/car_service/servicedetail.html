@@ -1,7 +1,66 @@
 {% extends "car_service/base.html" %}
-        {%block content%}
-        <form>
+        {%load staticfiles%}
+        {%block head%}
+        <script src="{%static 'car_service/jquery/jquery-1.9.1.js' %}"> </script>
+         <script src="{%static 'car_service/jquery/plugin/service_layout.js' %}"> </script>
 
+        <script>
 
-        </form>
+$(function(){
+ var cc=$.parseJSON('{{json_detail_list|safe}}');
+            //alert(cc[0].fields.wash_type[1]);
+            //debugger;
+            $('#dv_lay').detail_layout({service_list:cc});
+});
+
+        </script>
         {%endblock%}
+{%block content%}
+
+<div>
+    商家:{{service.supplier.name}}
+</div>
+<div>
+    服务类型:{{service.service_type.name}}
+</div>
+
+<div>
+    服务描述:{{service.description}}
+</div>
+        <hr/>
+        <div id="dv_lay"></div>
+<hr/>
+<div>
+    <span>品牌:</span>
+    {%for brand in brand_list %}
+    <a style="{%ifequal brand.id detail.brand.id %}color:red{%endifequal%}" href="#">{{brand.name}}</a>
+    {%endfor%}
+
+</div>
+
+    {%ifnotequal wash_type_list.count 0%}
+    <div>
+        <span>洗车类型:</span>
+        {%for wash_type in wash_type_list %}
+        <a style="{%ifequal wash_type.id detail.wash_type.id %}color:red{%endifequal%}"
+           href="#">{{wash_type.name}}</a>
+        {%endfor%}
+
+    </div>
+    {%endifnotequal%}
+    {%ifnotequal foil_type_list.count 0%}
+    <div>
+        <span>贴膜类型:</span>
+        {%for foil_type in foil_type_list %}
+        <a style="{%ifequal foil_type.id detail.foil_type.id %}color:red{%endifequal%}"
+           href="#">{{foil_type.name}}</a>
+        {%endfor%}
+
+    </div>
+    {%endifnotequal%}
+    <div>
+        <span>价格:</span>
+    </div>
+
+
+    {%endblock%}
