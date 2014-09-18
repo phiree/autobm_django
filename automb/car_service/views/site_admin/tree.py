@@ -1,4 +1,6 @@
 from django.shortcuts import get_object_or_404
+import os
+from django.conf import settings
 from django.views.generic import ListView,CreateView,UpdateView
 from django.core.urlresolvers import reverse
 from ...forms.fm_tree import TreeForm
@@ -48,6 +50,34 @@ class TreeUpdate(UpdateView):
 def create_car_tree_js(request):
     '''生成车型js,供前台选择'''
     car_factories=Tree.objects.filter(tree_type=Tree.tree_type_choice[1][0],parent=None)
+
+
+
+def generate_area_js():
+    top_area_list=Tree.objects.filter(tree_type=Tree.tree_type_choice[0][0],parent=None)
+    js='var area_list=['
+    for i in top_area_list:
+        js+='{"name":"'+i.name+'","id":"'+i.pk+'"},'
+        pass
+    js+="];"
+    import random
+    fh=open(os.path.join(settings.STATIC_ROOT,'area_list.js?v='+str(random.random())),'w')
+    fh.write(js)
+    fh.close()
+
+def v_generate_area(request):
+    generate_area_js()
+
+
+
+
+
+
+
+
+
+
+
 
 
 

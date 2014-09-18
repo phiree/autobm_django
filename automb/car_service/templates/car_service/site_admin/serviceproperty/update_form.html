@@ -1,0 +1,9 @@
+{% extends "car_service/site_admin/base_admin.html" %}
+
+          {%block content%}
+         <form action="" method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="保存" />
+
+</form>
+        {%endblock%}

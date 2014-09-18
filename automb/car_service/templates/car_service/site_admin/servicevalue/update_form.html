@@ -1,0 +1,28 @@
+{% extends "car_service/site_admin/base_admin.html" %}
+
+{%block content%}
+ <div><span>车店:</span><span>{{service.supplier.name}}</span></div>
+<div><span>服务类型:</span><span>{{service.servicetype.name}}</span></div>
+<form action="" method="post">{% csrf_token %}
+    <table>
+        {%for p in service.servicetype.serviceproperty_set.all%}
+        <tr>
+            <td>{{p.name}}</td>
+            <td>
+                {%for v in p.servicepropertyvalue_set.all%}
+                    <div class="btn-group">
+                        <label class="btn btn-default">
+                         <input type="radio" name="option{{p.id}}" {%if v.id in values%}checked='true'{%endif%} value="{{v.id}}" id="option{{v.id}}" />{{v.value}}</label>
+                    </div>
+                {%endfor%}
+            </td>
+        </tr>
+        {%endfor%}
+        <tr><td>价格</td><td><input name="price" type="text" value="{{service.price}}" /></td></tr>
+        <tr><td></td><td></td></tr>
+
+    </table>
+    <input type="submit" value="保存"/>
+
+</form>
+{%endblock%}

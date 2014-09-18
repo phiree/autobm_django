@@ -1,0 +1,30 @@
+{% extends "car_service/site_admin/base_admin.html" %}
+        {%block content%}
+        <ul>
+ {% for o in object_list  %}
+           <li><a href="{%url 'car_service:servicetype_update' o.id  %}">{{o.name}}</a>
+           <ul>
+               {%for c in o.servicetype_set.all%}
+               <li>
+                   <a href="{%url 'car_service:servicetype_update' c.id  %}">{{c.name}}</a>
+                    <ul>
+                    {%for p in c.serviceproperty_set.all%}
+                    <li>
+                        <a href="{%url 'car_service:serviceproperty_update' p.id  %}">{{p.name}}</a>
+                                 <ul>
+                            {%for v in p.servicepropertyvalue_set.all%}
+                            <li>
+                                <a href="{%url 'car_service:servicepropertyvalue_update' v.id  %}">{{v.value}}</a>
+                            </li>
+                            {%endfor%}
+                            </ul>
+                    </li>
+                    {%endfor%}
+                    </ul>
+               </li>
+               {%endfor%}
+           </ul>
+           </li>
+        {% endfor %}
+            </ul>
+        {%endblock%}

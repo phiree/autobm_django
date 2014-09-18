@@ -110,17 +110,7 @@ center.container {
 
 /********公用样式结束******/
 /****头部****/
-.minitop {
-    height: 26px;
-    font-family: 宋体,Arial,Helvetica,sans-serif;
-    font-size: 12px;
-    line-height: 26px;
-    background-color: #F9F9F9;
-    border-bottom: 1px solid #EFEFEF;
-    border-top: 1px solid #F9F9F9;
-    position: relative;
-    z-index: 11000;
-}
+
 .mini_main {
     width: 1170px;
     height: 26px;
@@ -152,23 +142,14 @@ center.container {
     background-position: -40px 7px;
     font-family: Arial,Helvetica,sans-serif;
 }
-.minitop ul, .minitop li {
-    margin: 0px;
-    padding: 0px;
-    list-style: none outside none;
-}
+
 .mini_left ul li, .mini_right ul li {
     float: left;
     position: relative;
 }
-.moreli_title {
-    border-right: 1px solid #F9F9F9;
-    padding-left: 1px;
-}
-.moreli_title, .bbsli_title {
-    position: relative;
-    z-index: 20;
-    text-align: left;
+.mini_right
+{
+padding-right:5px;
 }
 .minitop a:link, .minitop a:visited {
     color: #3B5998;
@@ -436,7 +417,7 @@ center.container {
 
 /**********menu tree************/
 .menu {
-    width: 188px;
+    width: 100%;
     padding: 5px 0;
     background: #FFF5D6;
     border: solid #f60 1px;
@@ -470,4 +451,167 @@ center.container {
     height: 2px;
     overflow: hidden;
     background-position: -430px 0;
+}
+
+/***filter****/
+.filter_box {
+    zoom: 1;
+    padding: 1px 1px 0;
+    border: solid #CFCFCF 1px;
+    line-height: normal;
+}
+ .filter_box dl {
+    zoom: 1;
+    padding: 7px 0;
+    border-bottom: solid #F0F0F0 1px;
+}
+.filter_box dt {
+    float: left;
+    width: 96px;
+    line-height: 22px;
+    text-align: right;
+}
+.filter_box dd {
+    float: left;
+    width: 618px;
+}
+.filter_box .item_box {
+    width: 100%;
+    overflow: hidden;
+}
+.filter_box .item_name {
+    float: left;
+    padding: 0 2px;
+    line-height: 22px;
+}
+
+.filter_box .normal dd a, .filter_box .diy dd a {
+    display: inline-block;
+    padding: 0 2px;
+    margin-right: 12px;
+    line-height: 22px;
+}
+.filter_box .item_intr em {
+    display: inline-block;
+    float: left;
+    width: 14px;
+    height: 15px;
+    overflow: hidden;
+    margin: 3px 2px 0 0;
+    margin-top: 2px\9;
+    background-position: -281px 0;
+}
+
+.filter_box .normal dd a, .filter_box .diy dd a {
+    display: inline-block;
+    padding: 0 2px;
+    margin-right: 12px;
+    line-height: 22px;
+}
+.l_tag, .l_li a, .l_cont>li {
+    background: url('http://x.autoimg.cn/y/site/img/list_bgx.png') repeat-x scroll 0% 0% transparent;
+}
+
+.l_cont>li {
+    margin-top: 10px;
+    padding: 18px 20px 14px;
+    border-style: solid;
+    border-color: #FFA060;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    border-width: 4px 1px 1px;
+    background-position: 0px -58px;
+}
+
+.l_sjinfo {
+    width: 718px;
+    margin-bottom: 10px;
+    color: #575757;
+}
+.l_sjinfo .nl {
+    float: left;
+    width: 120px;
+    height: 90px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.l_sjinfo .nr {
+    float: left;
+    width: 578px;
+    padding: 3px 0 0 20px;
+}
+
+.l_sjinfo h3 {
+    clear: both;
+    height: 22px;
+    line-height: 22px;
+}
+
+.l_sjinfo .nr .n1 {
+    float: left;
+    width: 204px;
+    padding-right: 68px;
+}
+.l_sjinfo .nr .n2 {
+    float: left;
+    width: 188px;
+}
+.l_sjinfo .nr .n3 {
+    float: left;
+    width: 118px;
+}
+.l_addr {
+margin-top: 5px;
+}
+.l_loc {
+margin-top: 3px;
+}
+.l_sjinfo .chr {
+margin: 0 6px;
+color: #CCC;
+}
+.l_more {
+    zoom: 1;
+    height: 24px;
+    overflow: hidden;
+}
+
+/*-------------------------92auto-----------------------------*/
+.minitop {
+    font-family: 宋体,Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    line-height: 26px;
+    background-color: #F9F9F9;
+    border-bottom: 1px solid #EFEFEF;
+    border-top: 1px solid #F9F9F9;
+    position: relative;
+    z-index: 11000;
+}
+.navbar
+{
+ background-color:#393;
+}
+
+#ul_navbar li a
+{
+ font-size:1.2em;
+ margin:0 10px;
+ color:white;
+}
+#ul_navbar li.active a
+{
+ color:black;
+ background-color:#CCCC33
+}
+#ul_navbar li:not(.active) a:hover
+{
+ background-color:#CC9933
+}
+.left
+{
+ border:solid 1px #99CC99;
 }

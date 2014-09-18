@@ -1,0 +1,23 @@
+{% extends "car_service/base.html" %}
+{% block content%}
+<div class="row">
+    <div class="col-md-3">
+        <div class="left">
+        <!--左侧导航-->
+        <div class="left_nav">
+            <?xml version="1.0" encoding="gb2312"?>
+            <div id="leftinfo" class="menu">
+
+                <a href="#"><h2>我的订单</h2></a>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="col-md-9">
+
+       {%block main_content%}
+        {%endblock%}
+    </div>
+</div>
+{%endblock%}

@@ -1,6 +1,11 @@
+from django.contrib.auth.decorators import login_required
 from django.core import serializers
-from django.shortcuts import render
-from ..models import Tree, ServiceDetail, Supplier, Service
+from django.http import HttpResponse
+from django.core.urlresolvers import reverse
+from django.shortcuts import render,redirect
+import datetime
+
+from ..models import Tree, ServiceDetail, Supplier, Service,Bill
 import jsonpickle
 __author__ = 'Administrator'
 
@@ -22,13 +27,19 @@ def service_list(request, service_type):
     return render(request, 'car_service/services.html',
                   {'service_type': service_type, 'supplier_list': supplier_list, 'top_service_list': top_service_list})
 
-
+def supplier_list(request):
+    area_list=Tree.objects.filter(tree_type=Tree.tree_type_choice[0][0], parent=None)
+    supplier_list = Supplier.objects.all()
+    top_service_list = Tree.objects.filter(tree_type=Tree.tree_type_choice[2][0], parent=None)
+    return render(request, 'car_service/suppliers.html',
+                  {'supplier_list': supplier_list,'top_service_list': top_service_list})
 
 # 服务详情
 def service_detail(request, service_id, detail_id):
 
     service = Service.objects.get(pk=service_id)
-
+    only_one=True if service.servicedetail_set.all().count()==1 else False
+    detail=None;
     json_detail_list=serializers.serialize("json", service.servicedetail_set.all(),use_natural_keys=True)
     cc= jsonpickle.encode(service.servicedetail_set.all())
     #aa=serializers.serialize("json", list(service.servicedetail_set.all())[0])
@@ -71,7 +82,8 @@ def service_detail(request, service_id, detail_id):
     main_light_suit_ids = [a[12] for a in properties]
     main_light_suit_list = Tree.objects.filter(id__in=main_light_suit_ids)
     detail_json=serializers.serialize('json',service.servicedetail_set.all())
-    return render(request, 'car_service/servicedetail.html', {'service': service,'detail':detail,
+    return render(request, 'car_service/servicedetail2.html', {'service': service,'only_one':only_one,
+                                                               'detail':detail,
                                                               'brand_list': brand_list
 
         , 'wash_type_list': wash_type_list
@@ -87,3 +99,16 @@ def service_detail(request, service_id, detail_id):
 
         ,'json_detail_list':json_detail_list
     })
+
+def bill_create_success(request):
+    return render(request,'car_service/bill_create_success.html')
+@login_required
+def bill_create(request,service_id):
+    user=request.user
+    #service_id=request.POST.get('service_id')
+    service_detail=ServiceDetail.objects.get(pk=service_id)
+    bill=Bill.objects.create(servicedetail=service_detail,order_date=datetime.datetime.now(),user=request.user,final_price=service_detail.price
+    ,service_snapshot=str(service_detail)
+    )
+    bill.save()
+    return redirect(reverse('car_service:front_web:bill_create_success'))

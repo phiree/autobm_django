@@ -6,24 +6,138 @@
         {%include 'car_service/share/left_menu_service_type.html'%}
     </div>
     <div class="col-md-9">
-        {%for supplier in supplier_list%}
-        <div>
-            <div>{{supplier}}</div>
-            <ul>
-                {% for s in supplier|get_service_type_for_supplier:service_type%}
-                <a href="{%url 'car_service:front_web:service_detail' s.id%}">查看</a>
-                <li>
-                    <ul>
-                        {%for sd in s.servicedetail_set.all%}
-                        <li> <a href="{%url 'car_service:front_web:service_detail' s.id sd.id%}">{{sd}}{{sd.price}}</a></li>
-                        {%endfor%}
-                    </ul>
-                </li>
-                {%endfor%}
-            </ul>
-        </div>
-        {%endfor%}
+       <!--筛选 -->
+        <div class="filter_box">
+				<dl class="normal">
+					<dt>服务项目：</dt>
+					<dd>
+						<div class="item_box">
+							<span class="item_name">洗车</span>
 
+							<a rel="nofollow" class="item_intr" href="javascript:void(0)" onclick="Covert('洗车',702,452,'/service/flow.aspx?scid=41')"><em></em>什么是洗车？</a>
+
+						</div>
+
+    </dd><div class="clearfloat"></div>
+				</dl>
+				<dl class="hadsel">
+					<dt>已选条件：</dt>
+					<dd>
+
+					 <span name="showcar_type" class="car_null">车型：[<a href="javascript:void(0)" rel="nofollow" onclick="Covert('', 434, 200, 'div_SelectCar', false, false, false, true)">请选择车型</a>]</span>
+
+					</dd>
+				  <div class="clearfloat"></div>
+				</dl>
+			   <dl class="diy" id="filmInfos" style="display: none">
+				</dl>
+				<input id="lambrandid" value="" type="hidden">
+				<input id="beforemodel" name="beforemodel" value="" type="hidden">
+				<input id="aftermodel" name="aftermodel" value="" type="hidden">
+
+
+
+<!--品牌系列型号-->
+ <dl class="normal" id="dlbrandInfo"> <dt>洗车方式：</dt><dd><div class="levels1"><a href="/beijing/41/b435/">人工洗车</a><a href="/beijing/41/b436/">电脑洗车</a><a class="same" href="javascript:ShowPie()">查看同样车主的选择</a></div></dd><div class="clearfloat"></div></dl>
+
+ <!--价格区间-->
+ <dl class="normal"><dt>价格区间：</dt><dd><div id="dd_price" class="levels1">
+
+						<a href="/beijing/41/?rangeid=1">0-30</a>
+						<a href="/beijing/41/?rangeid=2">31-50</a>
+						<a href="/beijing/41/?rangeid=3">51-70</a>
+						<a href="/beijing/41/?rangeid=4">71以上</a></div>
+			</dd><div class="clearfloat"></div></dl>
+<!--所在区域-->
+			<dl class="normal last"><dt>所在区域：</dt><dd> <div id="dd_County" class="levels1">
+
+
+                    <a href="/beijing/41/c110101/">东城</a>
+
+                    </div></dd><div class="clearfloat"></div></dl>
+
+
+ <!--begin玻璃贴膜后挡的透光率深浅-->
+
+ <!--end玻璃贴膜后挡的透光率深浅-->
+ </div>
+<!--筛选--->
+
+ <ul class="l_cont">
+   {%for supplier in supplier_list%}
+		<li>
+            <div class="l_sjinfo">
+                <div class="nl">
+                    <a rel="nofollow" target="_blank" href="/s/7193/?pvareaid=101689">
+                        <img alt="北京黑白格"  src="{{supplier.photo}}" title=""></a>
+                </div>
+                <div class="nr">
+                    <h3>
+                        <a target="_blank" href="">
+                            {{supplier}}</a>
+
+                                        <em class="icon18 icon18-green" title="商家预交保证金 可先行赔付">保</em>
+
+                                         <em class="icon18 icon18-org" title="该服务参加买就赠活动">送</em>
+
+                    </h3>
+                    <div class="n1">
+                        <div class="l_addr">
+                            地址：{{service.supplier.address}}</div>
+                        <div class="l_loc">
+                            商圈：世纪城<span class="chr">|</span><a href="javascript:void(0)" rel="nofollow" onclick="javascript:Covert('查看地图', 700, 450, '/vendor/map.aspx?vid=118904');">地图</a></div>
+                    </div>
+                    <div class="n2">
+                        <div class="l_price">
+                            预订价：<dfn class="rmb">¥</dfn><span id="qishow118904"><b>98</b> </span></div>
+                        <div class="l_deal">
+                            历史成交：<a target="_blank" href="/s/7193/?pvareaid=101689#deal">640&nbsp;笔</a>
+                        </div>
+                    </div>
+                    <div class="n3">
+                        <div class="l_mark">
+                            <span class="state state10"></span><a target="_blank" rel="nofollow" href="/s/7193/?pvareaid=101689#comment">
+                                5.0</a>
+                        </div>
+                        <div class="l_comment">
+                            <a rel="nofollow" target="_blank" href="/s/7193/?pvareaid=101689#comment">
+                                251人评价</a></div>
+                    </div>
+                </div>
+                <div class="clearfloat">
+                </div>
+            </div>
+            <div class="">
+
+
+                {% for s in supplier|get_service_type_for_supplier:service_type%}
+                  <dl>
+                    <dt><li>{{service_type}}</li>
+                        <li>最近成交</li>
+                        <li>预订价</li>
+                        <li>门市价 <a href="{%url 'car_service:front_web:service_detail' s.id%}">查看</a></li>
+                    </dt>
+
+                        {%for sd in s.servicedetail_set.all%}
+                       <dd>
+                         <li><a href="{%url 'car_service:front_web:service_detail' s.id sd.id%}">{{sd}}</a></li>
+                          <li>用户选择100%</li>
+                          <li>{{price}}</li>
+                       </dd>
+                        {%endfor%}
+
+                 </dl>
+                 {%endfor%}
+
+             </div>
+
+            <div class="l_more" id="child118904" style="display: none">
+                <a rel="nofollow" href="javascript:void(0)" id="showinfo118904" onclick="javascript:showbrandInfos('showinfo118904','hide118904','showbrand118904')" class="unfoldall">展开全部(1)<em></em></a> <a rel="nofollow" style="display: none;" id="hide118904" href="javascript:void(0)" onclick="javascript:hidebrandInfos('showinfo118904','hide118904','showbrand118904')" class="foldall">收起<em></em></a>
+            </div>
+
+        </li>
+       {%endfor%}
+  </ul>
     </div>
 </div>
 {%endblock%}

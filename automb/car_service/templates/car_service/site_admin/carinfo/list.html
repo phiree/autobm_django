@@ -1,0 +1,6 @@
+{% extends "car_service/site_admin/base_admin.html" %}
+        {%block content%}
+ {% for car in object_list  %}
+           <a href="{%url 'car_service:car_update' car.id  %}">{{car.name}}</a>
+        {% endfor %}
+        {%endblock%}
