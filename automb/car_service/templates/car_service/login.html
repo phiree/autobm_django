@@ -1,0 +1,13 @@
+{% extends "car_service/base.html" %}
+{% block content%}
+      <form  method='post' class="form-signin" action="/accounts/login/" role="form">
+      	{%csrf_token%}
+        <h2 class="form-signin-heading">用户登录</h2>
+        <input name='username' type="username" class="form-control" placeholder="用户名" required autofocus>
+        <input name='password' type="password" class="form-control" placeholder="密码" required>
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+{%endblock%}
