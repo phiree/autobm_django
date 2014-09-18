@@ -7,8 +7,8 @@
                 {%for top_service in top_service_list%}
                 <h2>{{top_service.name}}</h2>
                 <ul class="cont">
-                    {%for child_service in top_service.child_types%}
-                    <li><a id="a41" href="{% url 'car_service:front_web:service_list' child_service.id%}"><em class="icoDot"></em>{{child_service.name}}</a></li>
+                    {%for child_service in top_service.servicetype_set.all%}
+                        <li><a id="a41" href="{% url 'car_service:front_web:service_list' child_service.id%}"><em class="icoDot"></em>{{child_service.name}}</a></li>
                     {%endfor%}
                 </ul>
                 {%endfor%}
