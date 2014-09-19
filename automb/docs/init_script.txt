@@ -24,3 +24,6 @@ insert into  car_service_servicepropertyvalue values(1,1,'人工洗车');
 insert into  car_service_servicepropertyvalue values(2,1,'电脑洗车');
 
 insert into  car_service_supplier values(1,'佛山美丽天使汽车养护店','1','门店地址门店地址门店地址门店地址',12,12,null,'1342333333','08:00:00','18:00:00','门店简介门店简介门店简介门店简介',1);
+
+
+

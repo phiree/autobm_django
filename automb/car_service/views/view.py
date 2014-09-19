@@ -12,10 +12,8 @@ __author__ = 'Administrator'
 
 def home(request):
     top_service_list = Tree.objects.filter(tree_type=Tree.tree_type_choice[2][0], parent=None)
-    top_service_list=ServiceType.objects.filter(parent=None)
+    #top_service_list=ServiceType.objects.filter(parent=None)
     return render(request, 'car_service/index.html', {'top_service_list': top_service_list})
-
-def service_list2(request,type_id):
 
 
 # 服务列表

@@ -79,7 +79,7 @@ class Tree(Model):# 区域, 车型(品牌,系列,型号),字典, 服务 都是tr
                     )
     car_type_choice=(('small','小型'),('midium','中型'),('large','大型'))
     tree_type=CharField(choices=tree_type_choice,max_length=100, blank=False)
-    car_type=CharField(choices=tree_type_choice,max_length=10, blank=False)
+    car_type=CharField(choices=car_type_choice,max_length=10, null=True, blank=True)
     name=CharField(max_length=20)
     parent=ForeignKey("Tree", null=True,blank=True)
     supplier=ForeignKey('Supplier',null=True,blank=True)

@@ -1,10 +1,15 @@
 {% extends "car_service/base.html" %}
         {%load get_service_type_for_supplier%}
 {% block content%}
-<div class="row">
-    <div class="col-md-3">
-        {%include 'car_service/share/left_menu_service_type.html'%}
-    </div>
+  <div class="index_c_l f-l">
+    	<div class="index_c_l_1">
+        	<div class="index_c_l_1_l f-l" style="position: relative; z-index:999;">
+            	<div class="goods">
+                 {%include 'car_service/share/left_menu_service_type.html'%}
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
     <div class="col-md-9">
        <!--筛选 -->
         <div class="filter_box">

@@ -7,13 +7,16 @@
     <meta name="Description" content="{%block meta%}{%endblock%}"/>
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="{%static 'car_service/bootstrap-3.1.1-dist/css/bootstrap.min.css'%}" rel="stylesheet" type="text/css"/>
-    <link href="{%static 'car_service/css/site.css'%}" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" src="{%static 'car_service/jquery/jquery-1.9.1.js'%}"></script>
-    <script type="text/javascript" src="{%static 'car_service/jquery/plugin/jquery.cookie.js'%}"></script>
-     <script type="text/javascript" src="{%static 'car_service/js/area2.js'%}"></script>
-     <script type="text/javascript" src="{%static 'car_service/js/area.js'%}"></script>
-      <script type="text/javascript" src="{%static 'car_service/bootstrap-3.1.1-dist/js/bootstrap.min.js'%}"></script>
+
+    <link rel="stylesheet" type="text/css" href="{%static 'car_service/css/style.css'%}"/>
+<script type="text/javascript" src="{%static 'car_service/js/base.js'%}"></script>
+<script type="text/javascript" src="{%static 'car_service/js/jquery-1.4.2.min.js'%}"></script>
+<script type="text/javascript" src="{%static 'car_service/js/ScrollPic.js'%}"></script>
+
+<script type="text/javascript" src="{%static 'car_service/js/jquery-1.8.0.min.js'%}"></script>
+<script type="text/javascript" src="{%static 'car_service/js/lanrenzhijia.js'%}"></script>
+
+<script type="text/javascript" src="{%static 'car_service/js/tjsj.js'%}"></script>
 
     <script>
             //增加书签
@@ -40,14 +43,10 @@
 </head>
 <body>
 <!--头部-->
-<div class="container">
-
-
-    <div class="row mini_main">
-        <div class="mini_left">
-
-        </div>
-        <div class="mini_right">
+<!--top-->
+<div class="top">
+	<div class="top_1">
+    	<div class="top_1_r f-r h">
             {%if user.is_anonymous %}
             <a href="{%url 'car_service:front_web:login'%}" rel="nofollow">登录</a>|
             {%else%}
@@ -57,64 +56,59 @@
             <a href="{%url 'car_service:supplier_admin_index'%}"> <span>商家入口</span></a>|
             <a href="#"><span id="bookmarkme">收藏</span></a>
 
-        </div>
+        <div class="clear"></div>
     </div>
 </div>
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-2"><a class="pull-left" target="_self" href="/">
-            <img alt="92auto logo" src="{%static 'car_service/img/logo.png'%}"/>
-        </a>
-        </div>
-        <div class="col-md-3">
-
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#" >
-           <span id="sp_sltid"></span><span class="caret"></span>
-        </a>
-        <ul id="ul_area" class="dropdown-menu" role="menu">
-          <li><a href="#">Action</a></li>
-          <li><a href="#">Another action</a></li>
-          <li><a href="#">Something else here</a></li>
-          <li class="divider"></li>
-          <li><a href="#">Separated link</a></li>
-        </ul>
-        </div>
-
-        <div class="pull-right"><img
-                src="http://x.autoimg.cn/y/site/img/fwTurn.png?v0819"></div>
     </div>
-
+<!--top/-->
+<!--head-->
+<div class="h_c">
+	<div class="h_c_1 f-l"><a href="#"><img src="{%static 'car_service/images/logo.jpg'%}" width="175" height="72" alt="" /></a></div>
+    <div class="h_c_2 f-l" style="position:relative;">
+    	<div class="h_c_2_1" onmouseover="ddd('aa', 'show');" onmouseout="ddd('aa', 'hide');"><span>广州站</span>&nbsp;[更换城市]</div>
+        <div class="h_c_2_2" id="aa" onmouseover="ddd('aa', 'show');" onmouseout="ddd('aa', 'hide');">
+            <a href="#">北京站</a>
+            <a href="#">上海站</a>
+            <a href="#">广州站</a>
+            <a href="#">成都站</a>
+            <a href="#">长沙站</a>
+            <a href="#">济南站</a>
+            <a href="#">天津站</a>
+            <a href="#">重庆站</a>
+        </div>
+    </div>
+    <div class="h_c_3 f-r"><a href="#" target="_blank"><img src="{%static 'car_service/images/img_01.jpg'%}" width="600" height="72" alt="" /></a></div>
+    <div class="clear"></div>
 </div>
+<!--head/-->
+<!--menu-->
+<div class="menu">
+	<div class="menu_1 f-l">服务分类</div>
+    <div class="menu_2 f-l">
+        <a href="#" class="menu_2_bg">首页</a>
+        <a href="#">商家</a>
 
- <!--导航-->
-<div class="container">
-    <div class="navbar navbar-default">
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-        <ul class="nav navbar-nav " id="ul_navbar">
-            <li class="active"><a href="/" class="cur">首页</a></li>
-            <li><a href="/supplier_list/">商家</a></li>
-            <li><a href="{%url 'car_service:front_web:service_list' 6%}">服务</a><em></em></li>
-            <li id="map_f_v"><a href="/">地图</a><em class="new"></em></li>
-        </ul>
-        <form class="navbar-form navbar-right" action="javascript:GetSearch()">
-            <div class="form-group">
-                <lable for="vname" class="sr-only">商家名称</lable>
-                <input class="form-control" id="vname" name="vname" maxlength="25" autocomplete="off"
-                       type="text">
+        <a href="#">地图找商家</a>
+    </div>
+    <div class="menu_3 f-r">
+    	<form action="" method="get" style="padding:0; margin:0;">
+        	<div class="menu_3_s1 f-l">
+            	<input type="text" name="keyword" id="txtKey" class="menu_3_s1_i" value="请输入要搜索的内容" onblur="this.style.color='#999';this.value=this.value==''?'请输入要搜索的内容':this.value;" onfocus="this.style.color='#333';this.value=this.value=='请输入要搜索的内容'?'':this.value;" />
             </div>
-            <button type="submit">搜索</button>
+            <div class="menu_3_s2 f-r">
+            	<input type=submit value="" name="" class="menu_3_s2_b" />
+            </div>
+            <div class="clear"></div>
         </form>
-</div>
     </div>
+    <div class="clear"></div>
 </div>
-
-<center class="container">
+<!--menu/-->
+<div class="w1000">
     <!--顶部-->
     <!--end顶部-->
     {%block content%}{%endblock%}
-</center>
+</div>
 <footer class="container">
 
 </footer>

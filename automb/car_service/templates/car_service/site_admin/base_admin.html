@@ -36,29 +36,12 @@
 			<!--Left Menu-->
 			<div class="row">
 				<div id="lm" class='col-sm-2 list-group'>
-<a class='list-group-item {%block nav_tree_list_area%}{%endblock%}'href='{%url "car_service:area_list"  %}'><span style='margin-right: 15px' class="glyphicon glyphicon-home"> </span>区域列表</a>
-<a class='list-group-item {%block nav_tree_create_area%}{%endblock%}'href='{%url "car_service:area_create"  %}'><span style='margin-right: 15px' class="glyphicon glyphicon-home"> </span>增加区域</a>
+<a class='list-group-item {%block nav_tree_list_area%}{%endblock%}'href='{%url "car_service:tree_list" "area" %}'><span style='margin-right: 15px' class="glyphicon glyphicon-home"> </span>区域列表</a>
+<a class='list-group-item {%block nav_tree_create_area%}{%endblock%}'href='{%url "car_service:tree_create" "area" %}'><span style='margin-right: 15px' class="glyphicon glyphicon-home"> </span>增加区域</a>
 <a class='list-group-item {%block nav_tree_list_service%}{%endblock%}'href='{%url "car_service:tree_list" "service" %}'><span style='margin-right: 15px' class="glyphicon glyphicon-home"> </span>服务列表</a>
 <a class='list-group-item {%block nav_tree_create_service%}{%endblock%}'href='{%url "car_service:tree_create" "service" %}'><span style='margin-right: 15px' class="glyphicon glyphicon-home"> </span>增加服务</a>
-<a class='list-group-item {%block nav_tree_list_car%}{%endblock%}'href='{%url "car_service:car_list"  %}'><span style='margin-right: 15px' class="glyphicon glyphicon-home"> </span>车型列表</a>
-<a class='list-group-item 'href='{%url "car_service:car_create"  %}'><span style='margin-right: 15px' class="glyphicon glyphicon-home"> </span>添加车型</a>
-
-                    <a class='list-group-item {%block nav_tree_create_car%}{%endblock%}'href='{%url "car_service:tree_create" "car" %}'><span style='margin-right: 15px' class="glyphicon glyphicon-home"> </span>增加车型</a>
-
-<a class='list-group-item ' href='{%url "car_service:servicetype_list"%}'><span style='margin-right: 15px' class="glyphicon glyphicon-home"> </span>服务类型</a>
-<a class='list-group-item ' href='{%url "car_service:servicetype_create"%}'><span style='margin-right: 15px' class="glyphicon glyphicon-home"> </span>增加服务类型</a>
-
-<a class='list-group-item ' href='{%url "car_service:serviceproperty_list"%}'><span style='margin-right: 15px' class="glyphicon glyphicon-home"> </span>服务属性</a>
-<a class='list-group-item ' href='{%url "car_service:serviceproperty_create"%}'><span style='margin-right: 15px' class="glyphicon glyphicon-home"> </span>增加服务属性</a>
-
-<a class='list-group-item ' href='{%url "car_service:servicepropertyvalue_list"%}'><span style='margin-right: 15px' class="glyphicon glyphicon-home"> </span>服务属性值</a>
-<a class='list-group-item ' href='{%url "car_service:servicepropertyvalue_create"%}'><span style='margin-right: 15px' class="glyphicon glyphicon-home"> </span>增加服务属性值</a>
-
-<a class='list-group-item ' href='{%url "car_service:site_admin_service2_list"%}'><span style='margin-right: 15px' class="glyphicon glyphicon-home"> </span>服务列表2</a>
-<a class='list-group-item ' href='{%url "car_service:site_admin_service2_create"%}'><span style='margin-right: 15px' class="glyphicon glyphicon-home"> </span>新建服务</a>
-
-
-
+<a class='list-group-item {%block nav_tree_list_car%}{%endblock%}'href='{%url "car_service:tree_list" "car" %}'><span style='margin-right: 15px' class="glyphicon glyphicon-home"> </span>车型列表</a>
+<a class='list-group-item {%block nav_tree_create_car%}{%endblock%}'href='{%url "car_service:tree_create" "car" %}'><span style='margin-right: 15px' class="glyphicon glyphicon-home"> </span>增加车型</a>
 <a class='list-group-item {%block nav_tree_list_dict%}{%endblock%}'href='{%url "car_service:tree_list" "dict" %}'><span style='margin-right: 15px' class="glyphicon glyphicon-home"> </span>属性列表</a>
 <a class='list-group-item {%block nav_tree_create_dict%}{%endblock%}'href='{%url "car_service:tree_create" "dict" %}'><span style='margin-right: 15px' class="glyphicon glyphicon-home"> </span>增加属性</a>
 <a class='list-group-item {%block nav_supplier_list%}{%endblock%}'href='{%url "car_service:supplier_list" %}'><span style='margin-right: 15px' class="glyphicon glyphicon-home"> </span>车店列表</a>

@@ -91,12 +91,17 @@
     商家:{{service.supplier.name}}
 </div>
 <div class="service_item">
-    服务类型:{{service.service_type.name}}
+    服务类型:{{service.servicetype.name}}
 </div>
 
 <div class="service_item">
     服务描述:{{service.description}}
 </div>
+ {%for p in service.servicetype.servicepropert_set.all%}
+   <div>
+       <span>{{p.name}}</span>
+   </div>
+        {%endfor%}
 {%ifnotequal foil_type_list.count 0%}
 <div>
     <span>贴膜类型:</span>
