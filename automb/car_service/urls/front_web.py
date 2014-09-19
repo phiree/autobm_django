@@ -10,7 +10,8 @@ urlpatterns=patterns(''
                      ,url(r'^accounts/logout.*','django.contrib.auth.views.logout',{'template_name':'car_service/accounts/logout.html'},name='logout')
                      #服务列表
                      ,url(r'^service_list/(?P<service_type>\d+)$', view.service_list,name='service_list')
-                     ,url(r'^service/(?P<service_id>\d+)/(?:(?P<detail_id>\d+))?$', view.service_detail,name='service_detail')
+                     ,url(r'^service/(?P<service_id>\d+)/$', view.service_detail2_with_id,name='service_detail_with_id')
+                     ,url(r'^service/(?P<servicetype_id>\d+)/(?P<supplier_id>\d+)/$', view.service_detail2_without_id,name='service_detail_without_id')
                      #商家列表
                      ,url(r'^supplier_list/$', view.supplier_list,name='supplier_list')
                      #订单

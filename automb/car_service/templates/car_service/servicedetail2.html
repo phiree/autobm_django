@@ -1,5 +1,6 @@
 {% extends "car_service/base.html" %}
 {%load staticfiles%}
+        {%load get_values_for_property%}
 {%block head%}
 <link href="{%static 'car_service/css/detail.css'%}" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="{%static 'car_service/jquery/plugin/jquery.cookie.js'%}"></script>
@@ -91,133 +92,26 @@
     商家:{{service.supplier.name}}
 </div>
 <div class="service_item">
-    服务类型:{{service.servicetype.name}}
+    服务类型:{{service.servicetype}}
 </div>
 
 <div class="service_item">
     服务描述:{{service.description}}
 </div>
- {%for p in service.servicetype.servicepropert_set.all%}
+ {%for p in service.servicetype.serviceproperty_set.all%}
    <div>
        <span>{{p.name}}</span>
+       {%for v in p|get_values_for_property:paras%}
+       <span>{{v.foiltype}}_{{v.brand}}_{{v.value}}</span>
+       {%endfor%}
    </div>
         {%endfor%}
-{%ifnotequal foil_type_list.count 0%}
-<div>
-    <span>贴膜类型:</span>
-    {%for foil_type in foil_type_list %}
-    <span t_id="foil_type__{{foil_type.id}}"
-          class="{%if foil_type.id == detail.foil_type.id or only_one%}selected{%else%}not_selected{%endif%}">{{foil_type.name}}</span>
-    {%endfor%}
 
-</div>
-{%endifnotequal%}
-{%ifnotequal brand_list.count 0%}
-<div class="service_item">
-
-    <span>品牌:</span>
-    {%for brand in brand_list %}
-    <span t_id="brand__{{brand.id}}"
-          class="{%if brand.id == detail.brand.id or only_one%}selected{%else%}not_selected{%endif%}">{{brand.name}}</span>
-    {%endfor%}
-
-</div>
-{%endifnotequal%}
-
-{%ifnotequal wash_type_list.count 0%}
-<div class="service_item">
-    <span>洗车类型:</span>
-    {%for wash_type in wash_type_list %}
-    <span t_id="wash_type__{{wash_type.id}}"
-          class="{%if wash_type.id == detail.brand.id or only_one%}selected{%else%}not_selected{%endif%}">{{wash_type.name}}</span>
-    {%endfor%}
-
-</div>
-{%endifnotequal%}
-
-
-{%ifnotequal foil_model_front_list.count 0%}
-<div class="service_item">
-    <span>前挡类型:</span>
-    {%for foil_model_front in foil_model_front_list %}
-    <span t_id="foil_model_front__{{foil_model_front.id}}"
-          class="{%if foil_model_front.id == detail.foil_model_front.id or only_one%}selected{%else%}not_selected{%endif%}">{{foil_model_front.name}}</span>
-    {%endfor%}
-
-</div>
-{%endifnotequal%}
-
-{%ifnotequal foil_model_sides_back_list.count 0%}
-<dl class="service_item">
-    <dt style="float:left">侧后挡类型:</dt>
-    <dd style="float:left">
-        {%for foil_model_sides_back in foil_model_sides_back_list %}
-        <span style="display:block;"
-              t_id="foil_model_sides_back__{{foil_model_sides_back.id}}"
-              class="{%if foil_model_sides_back.id == detail.foil_model_sides_back.id or only_one%}selected{%else%}not_selected{%endif%}">{{foil_model_sides_back.name}}</span>
-        {%endfor%}
-    </dd>
-
-</dl>
-{%endifnotequal%}
-<div style="clear:both;"></div>
-{%ifnotequal glass_damage_size_list.count 0%}
-<div class="service_item">
-    <span>玻璃修补尺寸:</span>
-    {%for glass_damage_size in glass_damage_size_list %}
-    <span t_id="glass_damage_size__{{glass_damage_size.id}}"
-          class="{%if glass_damage_size.id == detail.glass_damage_size.id or only_one%}selected{%else%}not_selected{%endif%}">{{glass_damage_size.name}}</span>
-    {%endfor%}
-
-</div>
-{%endifnotequal%}
-
-{%ifnotequal tire_repair_type_list.count 0%}
-<div class="service_item">
-    <span>轮胎修补类型:</span>
-    {%for tire_repair_type in tire_repair_type_list %}
-    <span t_id="tire_repair_type__{{tire_repair_type.id}}"
-          class="{%if tire_repair_type.id == detail.tire_repair_type.id or only_one%}selected{%else%}not_selected{%endif%}">{{tire_repair_type.name}}</span>
-    {%endfor%}
-
-</div>
-{%endifnotequal%}
-
-{%ifnotequal body_damage_size_list.count 0%}
-<div class="service_item">
-    <span>车身修补尺寸:</span>
-    {%for body_damage_size in body_damage_size_list %}
-    <span t_id="body_damage_size__{{body_damage_size.id}}"
-          class="{%if body_damage_size.id == detail.tire_repair_type.id or only_one%}selected{%else%}not_selected{%endif%}">{{body_damage_size.name}}</span>
-    {%endfor%}
-
-</div>
-{%endifnotequal%}
-{%ifnotequal sound_suit_list.count 0%}
-<div class="service_item">
-    <span>音响套装:</span>
-    {%for sound_suit in sound_suit_list %}
-    <span t_id="sound_suit__{{sound_suit.id}}"
-          class="{%if sound_suit.id == detail.sound_suit.id or only_one%}selected{%else%}not_selected{%endif%}">{{sound_suit.name}}</span>
-    {%endfor%}
-
-</div>
-{%endifnotequal%}
-{%ifnotequal main_light_suit_list.count 0%}
-<div class="service_item">
-    <span>大灯套装:</span>
-    {%for main_light_suit in main_light_suit_list %}
-    <span t_id="main_light_suit__{{main_light_suit.id}}"
-          class="{%if main_light_suit.id == detail.main_light_suit.id or only_one%}selected{%else%}not_selected{%endif%}">{{main_light_suit.name}}</span>
-    {%endfor%}
-
-</div>
-{%endifnotequal%}
 <div>
     <span>价格:</span><span class="" id="price">{{detail.price}}</span>
 </div>
             <div>
-                <form method="post" action="{%url 'car_service:front_web:bill_create' detail.pk %}">
+                <form method="post" action="{%url 'car_service:front_web:bill_create' service.pk %}">
                     {%csrf_token%}
             <input class="submit" type="submit" id="btn_submit">预订</input>
                 </form>

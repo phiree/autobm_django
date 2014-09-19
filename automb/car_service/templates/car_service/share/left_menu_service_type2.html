@@ -1,0 +1,16 @@
+<div class="all-goods">
+                    {%for top_service in top_service_list%}
+                         <div class="item index_c_l_1_l_b">
+                    <div class="product">
+                        <div class="index_c_l_1_l_list_title">{{top_service.name}}</div>
+                        <div class="index_c_l_1_l_list_a h">
+                            {%for child_service in top_service.servicetype_set.all%}
+                    <a  href="{% url 'car_service:front_web:service_list' child_service.id%}">{{child_service.name}}</a>
+                    {%endfor%}
+                        </div>
+                    </div>
+
+                </div>
+                    {%endfor%}
+
+                </div>

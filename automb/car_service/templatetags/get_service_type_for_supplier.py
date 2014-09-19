@@ -21,6 +21,6 @@ def get_service_type_for_supplier( value,service_type ):
 
     Instead of 3 one may use the variable set in the views
     """
-    results=value.service_set.filter(service_type=service_type)
+    results=value.service2_set.filter(servicetype_id=service_type)
     return results
 

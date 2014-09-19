@@ -5,7 +5,7 @@ from django.core.urlresolvers import reverse
 from django.shortcuts import render,redirect
 import datetime
 
-from ..models import Tree, ServiceDetail, Supplier, Service,Bill,ServiceType
+from ..models import Tree, ServiceDetail, Supplier, Service,Bill,ServiceType,Service2
 import jsonpickle
 __author__ = 'Administrator'
 
@@ -18,24 +18,39 @@ def home(request):
 
 # 服务列表
 def service_list(request, service_type):
-    top_service_list = Tree.objects.filter(tree_type=Tree.tree_type_choice[2][0], parent=None)
-    sl = Service.objects.all()
+
+    sl = Service2.objects.all()
     if service_type != None:
-        sl = sl.filter(service_type__id=service_type)
-    service_ids = sl.values('id').distinct()
-    supplier_list = Supplier.objects.filter(service__in=sl).distinct()
+        sl = sl.filter(servicetype__id=service_type)
+
+    supplier_list = Supplier.objects.filter(service2__in=sl).distinct()
 
     return render(request, 'car_service/services.html',
-                  {'service_type': service_type, 'supplier_list': supplier_list, 'top_service_list': top_service_list})
+                  {'service_type': service_type, 'supplier_list': supplier_list,})
 
 def supplier_list(request):
     area_list=Tree.objects.filter(tree_type=Tree.tree_type_choice[0][0], parent=None)
     supplier_list = Supplier.objects.all()
     top_service_list = Tree.objects.filter(tree_type=Tree.tree_type_choice[2][0], parent=None)
+
     return render(request, 'car_service/suppliers.html',
                   {'supplier_list': supplier_list,'top_service_list': top_service_list})
+def service_detail2_with_id(request,service_id):
+    return  service_detail2(request,service_id,None,None)
 
+def service_detail2_without_id(request,servicetype_id,supplier_id):
+    return  service_detail2(request,None,servicetype_id,supplier_id)
 # 服务详情
+def service_detail2(request,service_id,servicetype_id,supplier_id):
+    if service_id!=None:
+        service=Service2.objects.get(pk=service_id)
+        supplier_id=service.supplier.id
+        servicetype_id=service.servicetype.id
+    else:
+        service=Service2.objects.filter(supplier__id=supplier_id,servicetype__id=servicetype_id)[0]
+
+    return render(request, 'car_service/servicedetail2.html', {'service':service,'paras':str(servicetype_id)+'_'+str(supplier_id)})
+    pass
 def service_detail(request, service_id, detail_id):
 
     service = Service.objects.get(pk=service_id)

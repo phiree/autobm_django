@@ -1,4 +1,5 @@
 {% extends "car_service/base.html" %}
+        {%load servicetype_menu%}
 {% block content%}
 
 	<!--left-->
@@ -6,7 +7,8 @@
     	<div class="index_c_l_1">
         	<div class="index_c_l_1_l f-l" style="position: relative; z-index:999;">
             	<div class="goods">
-                 {%include 'car_service/share/left_menu_service_type.html'%}
+                    {%get_typelist%}
+                 {#include 'car_service/share/left_menu_service_type2.html'#}
                 </div>
             </div>
             <div class="index_c_l_1_r f-r">

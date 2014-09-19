@@ -1,10 +1,11 @@
 from django.db.models import Model, CharField,ForeignKey,TimeField,DateTimeField,\
                             FilePathField,DecimalField,FloatField,ImageField,ManyToManyField,\
-                    Manager
+                    BooleanField
 
 # Create your models here
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
+from model_utils.managers import InheritanceManager
 
 class  AreaInfo(Model):
     name=CharField(max_length=20)
@@ -24,15 +25,29 @@ class ServiceProperty(Model):
     name=CharField(max_length=20)
     servicetype=ForeignKey(ServiceType)
     def __str__(self):
-        return self.name
+        return self.servicetype.name +'_'+ self.name
+
 
 
 
 class ServicePropertyValue(Model):
-    serviceproperty=ForeignKey(ServiceProperty)
+    objects = InheritanceManager()
+    serviceproperty=ForeignKey(ServiceProperty,verbose_name='服务属性')
     value=CharField(max_length=200)
+    is_brand=BooleanField()
+    is_foil_type=BooleanField()
     def __str__(self):
         return self.value
+
+
+#和品牌有关联的值 需要选择品牌
+class ServicePropertyValue_Brand(ServicePropertyValue):
+    brand=ForeignKey(ServicePropertyValue, related_name='spv_brand', limit_choices_to={'is_brand':True})
+
+#和贴膜有关联的值  需要选择品牌 和 贴膜类型.
+class ServicePropertyValue_Brand_FoilType(ServicePropertyValue_Brand):
+    foiltype=ForeignKey(ServicePropertyValue,  related_name='spv_b_foil',limit_choices_to={'is_foil_type':True})
+
 
 
 class CarInfo(Model):

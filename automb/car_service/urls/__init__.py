@@ -28,10 +28,12 @@ urlpatterns=patterns(''
                      ,url(r'^site_admin/serviceproperty/list/$', serviceproperty.ServicePropertyList.as_view( ),name='serviceproperty_list' )
                     ,url(r'^site_admin/serviceproperty/create/$', serviceproperty.ServicePropertyCreate.as_view( ),name='serviceproperty_create' )
                      ,url(r'^site_admin/serviceproperty/update/(?P<id>\d+)/$', serviceproperty.ServicePropertyUpdate.as_view( ),name='serviceproperty_update' )
+
+
                    #服务属性值
                     ,url(r'^site_admin/servicepropertyvalue/list/$', servicepropertyvalue.ServicePropertyValueList.as_view( ),name='servicepropertyvalue_list' )
-                    ,url(r'^site_admin/servicepropertyvalue/create/$', servicepropertyvalue.ServicePropertyValueCreate.as_view( ),name='servicepropertyvalue_create' )
-                     ,url(r'^site_admin/servicepropertyvalue/update/(?P<id>\d+)/$', servicepropertyvalue.ServicePropertyValueUpdate.as_view( ),name='servicepropertyvalue_update' )
+                    ,url(r'^site_admin/servicepropertyvalue/create/$', servicepropertyvalue.servicepropertyvalue_create,name='servicepropertyvalue_create' )
+                     ,url(r'^site_admin/servicepropertyvalue/update/(?P<id>\d+)/$', servicepropertyvalue.servicepropertyvalue_update,name='servicepropertyvalue_update' )
 
                      #具体的服务定义
                      ,url(r'^site_admin/service2/list/$', service2.ServiceList.as_view(),name='site_admin_service2_list' )
