@@ -77,6 +77,8 @@ class ServiceValue(Model):
     service=ForeignKey(Service2)
     #todo 限制该值, limit_choices_to= servicepropert.servicetype=service.servicetype
     servicepropertyvalue=ForeignKey(ServicePropertyValue)
+    def __str__(self):
+        return str(self.servicepropertyvalue)
 
 
 
@@ -188,7 +190,7 @@ class ServiceDetail(Model):
 
 
 class Bill(Model):
-    servicedetail=ForeignKey(ServiceDetail)
+    service=ForeignKey(Service2)
     order_date=DateTimeField()
     user=ForeignKey(User)
     service_snapshot=CharField(max_length=2000)

@@ -7,8 +7,10 @@
 <script type="text/javascript" src="{%static 'car_service/js/detail.js'%}"></script>
 <script>
     $(function(){
-        $("#hi_service_id").val("{{detail.pk}}");
+        var price_list=[{%for s in services%}{'sid':'{{s.id}}','price':'{{s.price}}'},{%endfor%}]
         $(".selected,.not_selected").click(function(e){
+
+            //切换选中状态
             var siblings=$(this).siblings('.selected,.not_selected');
             if(siblings.length==0)
             {
@@ -20,69 +22,89 @@
                  $(this).attr('class','selected');
             }
             //if(foil_type)
-            if($(this).attr('t_id').indexOf('brand')==0)
-            {
 
-            }
             //get price
-            var service_list=$.parseJSON('{{json_detail_list|safe}}');
-            var selected_items=$('.selected');
-            var parameters={};
-            for(i=0;i< selected_items.length;i++)
-            {
-                var item=$(selected_items[i]);
-                parameters[item.attr('t_id').split('__')[0]]=item.attr('t_id').split('__')[1]
 
-            }
-            pushed_list=[];
-            search_service(service_list,parameters);
-            if(pushed_list.length==1)
-            {
 
-                $("#hi_service_id").val(pushed_list[0].pk);
-                $("#price").text(pushed_list[0].fields["price"]);
-                $("#btn_submit").attr('class','enabled');
-            }
-            else
+            var sid=get_selected_sid();
+            //sid=3
+
+            if(sid)
             {
-                $("#hi_service_id").val(null);
-                $("#price").text('-----------');
-                $("#btn_submit").attr('class','disabled');
+                for(i in price_list)
+                {
+                    p=price_list[i]
+                    if (p.sid==sid+'')
+                    {
+                        price=p.price
+                        var action_url="{%url 'car_service:front_web:bill_create' 0 %}";
+                        $('form').attr('action',action_url.slice(0,action_url.lastIndexOf('/')+1)+sid);
+                        $("#price").text(price);
+                    }
+                }
             }
         });
-
-        var pushed_list=[]
-        function search_service(service_list, parameters)
+        function get_selected_sid()//get selected service
         {
-            is_empty=true;
-            for (var prop in parameters)
-            {
-            if (parameters.hasOwnProperty(prop))
-            {is_empty=false;}
-            }
-            if(is_empty){return;}
-
-           for(k in service_list)
-            {
-                var is_match=true;
-                service=service_list[k];
-                for(key in parameters)
+            selected_sid=null
+            compared_arr=null
+            $('.dv_p').each(function(){
+                var selected_values=$(this).find('.selected');
+                if (selected_values.length!=1){selected_sid=null;return; };
+                sid=$(selected_values[0]).attr('sid');
+                arr_sid=sid.split(',').filter(function(n){ return n != '' });
+                if(compared_arr==null)
                 {
+                 compared_arr=arr_sid;
+                }
+                else
+                {
+                   compared_arr=intersection_destructive(compared_arr,arr_sid);
+                }
+            });
 
-                  if(service['fields'][key][0]+''!=parameters[key])
-                  {
-                    is_match=false;
-                  }
-                 }
-                 if(is_match)
-                 {
-                     pushed_list.push(service);
-                 }
-                  }
-            }
+            return  compared_arr[0];
+
+
+
+
+
+        }
+
+
 });
 
+/* destructively finds the intersection of
+ * two arrays in a simple fashion.
+ *
+ * PARAMS
+ *  a - first array, must already be sorted
+ *  b - second array, must already be sorted
+ *
+ * NOTES
+ *  State of input arrays is undefined when
+ *  the function returns.  They should be
+ *  (prolly) be dumped.
+ *
+ *  Should have O(n) operations, where n is
+ *    n = MIN(a.length, b.length)
+ */
+function intersection_destructive(a, b)
+{
+  var result = new Array();
+  while( a.length > 0 && b.length > 0 )
+  {
+     if      (a[0] < b[0] ){ a.shift(); }
+     else if (a[0] > b[0] ){ b.shift(); }
+     else /* they're equal */
+     {
+       result.push(a.shift());
+       b.shift();
+     }
+  }
 
+  return result;
+}
 
 </script>
 {%endblock%}
@@ -98,17 +120,20 @@
 <div class="service_item">
     服务描述:{{service.description}}
 </div>
- {%for p in service.servicetype.serviceproperty_set.all%}
-   <div>
-       <span>{{p.name}}</span>
-       {%for v in p|get_values_for_property:paras%}
-       <span>{{v.foiltype}}_{{v.brand}}_{{v.value}}</span>
-       {%endfor%}
-   </div>
-        {%endfor%}
 
 <div>
-    <span>价格:</span><span class="" id="price">{{detail.price}}</span>
+    {%for item in merged_service%}
+    <div class="dv_p">
+        <span>{{item.p.name}}</span>
+        {%for v in item.v_l %}
+        <span sid="{%for g in v.s%}{{g.id}},{%endfor%}"  class='{%if service in v.s%}selected{%else%}not_selected{%endif%}'>{{v.v.value}}</span>
+        {%endfor%}
+    </div>
+    {%endfor%}
+</div>
+<div>
+
+    <span>价格:</span><span class="" id="price">{{service.price}}</span>
 </div>
             <div>
                 <form method="post" action="{%url 'car_service:front_web:bill_create' service.pk %}">

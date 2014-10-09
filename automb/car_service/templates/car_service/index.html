@@ -1,7 +1,14 @@
 {% extends "car_service/base.html" %}
         {%load servicetype_menu%}
+        {%load staticfiles%}
 {% block content%}
 
+  {%block head%}
+<script type="text/javascript" src="{%static 'car_service/js/base.js'%}"></script>
+<script type="text/javascript" src="{%static 'car_service/js/ScrollPic.js'%}"></script>
+<script type="text/javascript" src="{%static 'car_service/js/lanrenzhijia.js'%}"></script>
+<script type="text/javascript" src="{%static 'car_service/js/tjsj.js'%}"></script>
+    {%endblock%}
 	<!--left-->
     <div class="index_c_l f-l">
     	<div class="index_c_l_1">

@@ -3,8 +3,8 @@ from django.core import serializers
 from django.http import HttpResponse
 from django.core.urlresolvers import reverse
 from django.shortcuts import render,redirect
-import datetime
 
+from django.utils import timezone as datetime
 from ..models import Tree, ServiceDetail, Supplier, Service,Bill,ServiceType,Service2
 import jsonpickle
 __author__ = 'Administrator'
@@ -42,15 +42,60 @@ def service_detail2_without_id(request,servicetype_id,supplier_id):
     return  service_detail2(request,None,servicetype_id,supplier_id)
 # 服务详情
 def service_detail2(request,service_id,servicetype_id,supplier_id):
+    services=[]
+    service=None
     if service_id!=None:
         service=Service2.objects.get(pk=service_id)
         supplier_id=service.supplier.id
         servicetype_id=service.servicetype.id
-    else:
+
+    services=Service2.objects.filter(supplier__id=supplier_id,servicetype__id=servicetype_id)
+    if service==None:
         service=Service2.objects.filter(supplier__id=supplier_id,servicetype__id=servicetype_id)[0]
 
-    return render(request, 'car_service/servicedetail2.html', {'service':service,'paras':str(servicetype_id)+'_'+str(supplier_id)})
+
+
+    return render(request, 'car_service/servicedetail2.html', {'merged_service':generat_service_detail(services), 'services':services,'service':service,'paras':str(servicetype_id)+'_'+str(supplier_id)})
     pass
+#生成前台需要的数据
+def generat_service_detail(services):
+
+    results=[]
+    '''
+    results=[
+        {'p':property,
+        'v':[
+             {'vname':value,'services':[service1,service2]},
+             {'vname':value2,'services':[service1,service3]}
+            ]
+    ]
+    '''
+    properties=services[0].servicetype.serviceproperty_set.all()
+    for p in properties:#every  properties
+        result={}
+        for s in services: #every services
+            index=[pv.servicepropertyvalue.serviceproperty for pv in s.servicevalue_set.all()].index(p)#
+            pv=s.servicevalue_set.all()[index].servicepropertyvalue#s 该属性的值
+            if not any(k2['p']==p for k2 in results):#如果结果中还未添加该属性
+                result['p']=p
+                result['v_l']=[{'v':pv,'s':[s]}]#[pv]
+                #result['s']=[s]
+                results.append(result)
+            else:
+
+                index2=[k['p'] for k in results].index(p)
+                result=results[index2]          #从结果列表中获取 该属性
+                if any(pv==v for v in  [item['v'] for item in  result['v_l']]): # 该属性的值是否已经添加
+                    index3=[item['v'] for item in  result['v_l']].index(pv)
+                    results[index2]['v_l'][index3]['s'].append(s)
+                else:
+                    results[index2]['v_l'].append({'v':pv,'s':[s]})
+    return results
+
+
+
+
+
 def service_detail(request, service_id, detail_id):
 
     service = Service.objects.get(pk=service_id)
@@ -122,8 +167,8 @@ def bill_create_success(request):
 def bill_create(request,service_id):
     user=request.user
     #service_id=request.POST.get('service_id')
-    service_detail=ServiceDetail.objects.get(pk=service_id)
-    bill=Bill.objects.create(servicedetail=service_detail,order_date=datetime.datetime.now(),user=request.user,final_price=service_detail.price
+    service_detail=Service2.objects.get(pk=service_id)
+    bill=Bill.objects.create(service=service_detail,order_date=datetime.now(),user=request.user,final_price=service_detail.price
     ,service_snapshot=str(service_detail)
     )
     bill.save()
