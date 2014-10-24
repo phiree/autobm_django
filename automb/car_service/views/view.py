@@ -6,13 +6,14 @@ from django.shortcuts import render,redirect
 
 from django.utils import timezone as datetime
 from ..models import Tree, ServiceDetail, Supplier, Service,Bill,ServiceType,Service2
+from ..decorators import group_required
 import jsonpickle
 __author__ = 'Administrator'
 
 
 def home(request):
-    top_service_list = Tree.objects.filter(tree_type=Tree.tree_type_choice[2][0], parent=None)
-    #top_service_list=ServiceType.objects.filter(parent=None)
+    #top_service_list = Tree.objects.filter(tree_type=Tree.tree_type_choice[2][0], parent=None)
+    top_service_list=ServiceType.objects.filter(parent=None)
     return render(request, 'car_service/index.html', {'top_service_list': top_service_list})
 
 
@@ -157,12 +158,12 @@ def service_detail(request, service_id, detail_id):
         , 'body_damage_size_list': body_damage_size_list
         , 'sound_suit_list': sound_suit_list
         , 'main_light_suit_list': main_light_suit_list
-
         ,'json_detail_list':json_detail_list
     })
 
 def bill_create_success(request):
     return render(request,'car_service/bill_create_success.html')
+
 @login_required
 def bill_create(request,service_id):
     user=request.user

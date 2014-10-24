@@ -10,7 +10,10 @@
 
     <link rel="stylesheet" type="text/css" href="{%static 'car_service/css/style.css'%}"/>
     <script type="text/javascript" src="{%static 'car_service/js/jquery-1.8.0.min.js'%}"></script>
-
+<script type="text/javascript" src="{%static 'car_service/js/base.js'%}"></script>
+<script type="text/javascript" src="{%static 'car_service/js/ScrollPic.js'%}"></script>
+<script type="text/javascript" src="{%static 'car_service/js/lanrenzhijia.js'%}"></script>
+<script type="text/javascript" src="{%static 'car_service/js/tjsj.js'%}"></script>
   {%block head%}
     {%endblock%}
     <script>
@@ -57,19 +60,10 @@
 <!--top/-->
 <!--head-->
 <div class="h_c">
-	<div class="h_c_1 f-l"><a href="#"><img src="{%static 'car_service/images/logo.jpg'%}" width="175" height="72" alt="" /></a></div>
+	<div class="h_c_1 f-l"><a href="/"><img src="{%static 'car_service/images/logo.jpg'%}" width="175" height="72" alt="" /></a></div>
     <div class="h_c_2 f-l" style="position:relative;">
-    	<div class="h_c_2_1" onmouseover="ddd('aa', 'show');" onmouseout="ddd('aa', 'hide');"><span>广州站</span>&nbsp;[更换城市]</div>
-        <div class="h_c_2_2" id="aa" onmouseover="ddd('aa', 'show');" onmouseout="ddd('aa', 'hide');">
-            <a href="#">北京站</a>
-            <a href="#">上海站</a>
-            <a href="#">广州站</a>
-            <a href="#">成都站</a>
-            <a href="#">长沙站</a>
-            <a href="#">济南站</a>
-            <a href="#">天津站</a>
-            <a href="#">重庆站</a>
-        </div>
+    	<div class="h_c_2_1" ><span>佛山站</span></div>
+
     </div>
     <div class="h_c_3 f-r"><a href="#" target="_blank"><img src="{%static 'car_service/images/img_01.jpg'%}" width="600" height="72" alt="" /></a></div>
     <div class="clear"></div>
@@ -80,7 +74,7 @@
 	<div class="menu_1 f-l">服务分类</div>
     <div class="menu_2 f-l">
         <a href="/" class="menu_2_bg">首页</a>
-        <a href="#">商家</a>
+        <a href="{%url 'car_service:front_web:supplier_list'%}">商家</a>
 
         <a href="#">地图找商家</a>
     </div>
@@ -103,9 +97,45 @@
     <!--end顶部-->
     {%block content%}{%endblock%}
 </div>
-<footer class="container">
-
-</footer>
+<div class="bottom">
+	<div class="bottom_c">
+    	<div class="bottom_c_1">
+        	<strong>服务预订指南</strong><br>
+            <a href="#" target="_blank">如何预订服务</a><br>
+            <a href="#" target="_blank">帮助中心</a><br>
+            <a href="#" target="_blank">汽车养护常见问题</a><br>
+        </div>
+        <div class="bottom_c_1">
+        	<strong>会员中心</strong><br>
+            <a href="#" target="_blank">会员注册</a><br>
+            <a href="#" target="_blank">注册协议</a><br>
+        </div>
+        <div class="bottom_c_1">
+        	<strong>会员中心</strong><br>
+            <a href="#" target="_blank">支付方式</a><br>
+            <a href="#" target="_blank">先服务后付款</a><br>
+        </div>
+        <div class="bottom_c_1">
+        	<strong>会员中心</strong><br>
+            <a href="#" target="_blank">消费者权益保障</a><br>
+            <a href="#" target="_blank">先行赔付政策</a><br>
+            <a href="#" target="_blank">价格保护</a><br>
+        </div>
+        <div class="bottom_c_1">
+        	<strong>平台商家</strong><br>
+            <a href="#" target="_blank">商家入口</a><br>
+            <a href="#" target="_blank">服务商介绍</a><br>
+            <a href="#" target="_blank">申请加入平台</a><br>
+        </div>
+        <div class="bottom_c_2">
+            <strong>客服咨询电话</strong><br>
+            <span>4008-108-876</span> 转 <span>0</span><br>
+            周一至周五：8:30-17:30<br>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="copyright">©2014-2015 www.92auto.net All Rights Reserved. 爱车网 版权所有</div>
+</div>
 
 </body>
 </html>

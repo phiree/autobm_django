@@ -18,6 +18,7 @@ from django.shortcuts import render_to_response
 资料管理
 
 '''
+@login_required
 def index(request):
     return render(request,'car_service/supplier_admin/index.html')
     pass
@@ -46,6 +47,12 @@ def edit(request,id):
                         'fm_service':fm_service
                     }
                   )
+def register(request):
+    username=request.GET.get('username')
+    password=request.GET.get('password')
+    phone=request.GET.get('phone')
+    email=request.GET.get('email')
+
 
 
 

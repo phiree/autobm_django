@@ -1,4 +1,7 @@
 {% extends "car_service/my/base_my.html" %}
-{% block content%}
+{% block main_content%}
 <p>订单列表</p>
+ {%for order in order_list%}
+        {{order.service}}
+        {%endfor%}
 {%endblock%}

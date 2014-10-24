@@ -4,10 +4,7 @@
 {% block content%}
 
   {%block head%}
-<script type="text/javascript" src="{%static 'car_service/js/base.js'%}"></script>
-<script type="text/javascript" src="{%static 'car_service/js/ScrollPic.js'%}"></script>
-<script type="text/javascript" src="{%static 'car_service/js/lanrenzhijia.js'%}"></script>
-<script type="text/javascript" src="{%static 'car_service/js/tjsj.js'%}"></script>
+
     {%endblock%}
 	<!--left-->
     <div class="index_c_l f-l">
@@ -30,8 +27,8 @@
                                 <li>2</li>
                             </ul>
                         <div id=banner_list>
-                            <a href="#" target=_blank><img src="images/p_01.jpg" width="565" height="168" alt="" /></a>
-                            <a href="#" target=_blank><img src="images/p_01.jpg" width="565" height="168" alt="" /></a>
+                            <a href="#" target=_blank><img src="{%static 'car_service/images/p_01.jpg'%}" width="565" height="168" alt="" /></a>
+                            <a href="#" target=_blank><img src="{%static 'car_service/images/p_01.jpg'%}" width="565" height="168" alt="" /></a>
                         </div>
                     </div>
                     <script type=text/javascript>
@@ -66,14 +63,14 @@
                 	<!---->
                     <div id="ISL_Cont_1" class="index_c_l_1_r_2_1">
                         <ul>
-                            <li><a href="#" target="_blank"><img src="images/z_01.jpg" width="120" height="90" alt="" /></a><p><a href="#" target="_blank">广州顺发一站式汽车服务（黄石店）</a></p></li>
-                            <li><a href="#" target="_blank"><img src="images/z_02.jpg" width="120" height="90" alt="" /></a><p><a href="#" target="_blank">广州安驰汽车美容养护中心</a></p></li>
-                            <li><a href="#" target="_blank"><img src="images/z_03.jpg" width="120" height="90" alt="" /></a><p><a href="#" target="_blank">广州唱起来汽车音响（道声总店）</a></p></li>
-                            <li><a href="#" target="_blank"><img src="images/z_04.jpg" width="120" height="90" alt="" /></a><p><a href="#" target="_blank">广州尊驾坊（黄村店）</a></p></li>
-                            <li><a href="#" target="_blank"><img src="images/z_01.jpg" width="120" height="90" alt="" /></a><p><a href="#" target="_blank">广州顺发一站式汽车服务（黄石店）</a></p></li>
-                            <li><a href="#" target="_blank"><img src="images/z_02.jpg" width="120" height="90" alt="" /></a><p><a href="#" target="_blank">广州安驰汽车美容养护中心</a></p></li>
-                            <li><a href="#" target="_blank"><img src="images/z_03.jpg" width="120" height="90" alt="" /></a><p><a href="#" target="_blank">广州唱起来汽车音响（道声总店）</a></p></li>
-                            <li><a href="#" target="_blank"><img src="images/z_04.jpg" width="120" height="90" alt="" /></a><p><a href="#" target="_blank">广州尊驾坊（黄村店）</a></p></li>
+                            <li><a href="#" target="_blank"><img src="{%static 'car_service/images/z_01.jpg'%}" width="120" height="90" alt="" /></a><p><a href="#" target="_blank">广州顺发一站式汽车服务（黄石店）</a></p></li>
+                            <li><a href="#" target="_blank"><img src="{%static 'car_service/images/z_02.jpg'%}" width="120" height="90" alt="" /></a><p><a href="#" target="_blank">广州安驰汽车美容养护中心</a></p></li>
+                            <li><a href="#" target="_blank"><img src="{%static 'car_service/images/z_03.jpg'%}" width="120" height="90" alt="" /></a><p><a href="#" target="_blank">广州唱起来汽车音响（道声总店）</a></p></li>
+                            <li><a href="#" target="_blank"><img src="{%static 'car_service/images/z_04.jpg'%}" width="120" height="90" alt="" /></a><p><a href="#" target="_blank">广州尊驾坊（黄村店）</a></p></li>
+                            <li><a href="#" target="_ blank"><img src="{%static 'car_service/images/z_01.jpg'%}" width="120" height="90" alt="" /></a><p><a href="#" target="_blank">广州顺发一站式汽车服务（黄石店）</a></p></li>
+                            <li><a href="#" target="_blank"><img src="{%static 'car_service/images/z_02.jpg'%}" width="120" height="90" alt="" /></a><p><a href="#" target="_blank">广州安驰汽车美容养护中心</a></p></li>
+                            <li><a href="#" target="_blank"><img src="{%static 'car_service/images/z_03.jpg'%}" width="120" height="90" alt="" /></a><p><a href="#" target="_blank">广州唱起来汽车音响（道声总店）</a></p></li>
+                            <li><a href="#" target="_blank"><img src="{%static 'car_service/images/z_04.jpg'%}" width="120" height="90" alt="" /></a><p><a href="#" target="_blank">广州尊驾坊（黄村店）</a></p></li>
                         </ul>
                     </div>
                     <div id="LeftArr" class="zk_pre"></div>
@@ -104,269 +101,41 @@
         </div>
         <div class="h-20">&nbsp;</div>
         <!--汽车美容-->
+        {%for top_service in top_service_list%}
         <div class="fl">
-        	<div class="fl_1"><span>汽车美容</span>+&nbsp;<a href="#" target="_blank" class="o">汽车美容知识</a>&nbsp;+</div>
+        	<div class="fl_1"><span>{{top_service.name}}</span>+&nbsp;<a href="#" target="_blank" class="o">汽车美容知识</a>&nbsp;+</div>
             <div class="h-15">&nbsp;</div>
             <div class="fl">
-            	<div class="fl_2_l f-l"><img src="images/img_08.jpg" width="215" height="315" alt="" /></div>
+            	<div class="fl_2_l f-l"><img src="{%static 'car_service/images/img_08.jpg'%}" width="215" height="315" alt="" /></div>
                 <div class="fl_2_r f-r">
                 	<!--list-->
+                     {%for child_service in top_service.servicetype_set.all%}
                     <div class="fl_2_r_list b">
                     	<ul>
-                        	<li class="a1"><a href="#" target="_blank">洗车</a></li>
-                            <li class="a2">55个商家</li>
-                            <li class="a3"><a href="#" target="_blank" class="r"><dfn class=rmb>&yen;</dfn>17起</a></li>
+                        	<li class="a1"><a href="{% url 'car_service:front_web:service_list' child_service.id%}" target="_blank">{{child_service.name}}</a></li>
+                            <li style="display:none" class="a2">{{child_service.get_supplier_list.0|length}}个商家</li>
+                            <li class="a3"><a href="#" target="_blank" class="r"><dfn class=rmb>&yen;</dfn>{{child_service.get_supplier_list.1.price__min}}起</a></li>
                             <li class="a4">分为人工洗车和电脑洗车，是车辆的日常养护项目之一</li>
                         </ul>
                         <ul class="clear"></ul>
                     </div>
-                    <div class="fl_2_r_list b">
-                    	<ul>
-                        	<li class="a1"><a href="#" target="_blank">打蜡</a></li>
-                            <li class="a2">46个商家</li>
-                            <li class="a3"><a href="#" target="_blank" class="r"><dfn class=rmb>&yen;</dfn>80起</a></li>
-                            <li class="a4">车漆增亮，效果可保持1个月</li>
-                        </ul>
-                        <ul class="clear"></ul>
-                    </div>
-                    <div class="fl_2_r_list b">
-                    	<ul>
-                        	<li class="a1"><a href="#" target="_blank">封釉</a></li>
-                            <li class="a2">19个商家</li>
-                            <li class="a3"><a href="#" target="_blank" class="r"><dfn class=rmb>&yen;</dfn>260起</a></li>
-                            <li class="a4">车漆增亮、增硬，效果可保持3个月至半年</li>
-                        </ul>
-                        <ul class="clear"></ul>
-                    </div>
-                    <div class="fl_2_r_list b">
-                    	<ul>
-                        	<li class="a1"><a href="#" target="_blank">镀膜</a></li>
-                            <li class="a2">25个商家</li>
-                            <li class="a3"><a href="#" target="_blank" class="r"><dfn class=rmb>&yen;</dfn>240起</a></li>
-                            <li class="a4">车漆增亮、增硬、防氧化、防划，效果可保持1年</li>
-                        </ul>
-                        <ul class="clear"></ul>
-                    </div>
-                    <div class="fl_2_r_list b">
-                    	<ul>
-                        	<li class="a1"><a href="#" target="_blank">内饰清洗</a></li>
-                            <li class="a2">55个商家</li>
-                            <li class="a3"><a href="#" target="_blank" class="r"><dfn class=rmb>&yen;</dfn>180起</a></li>
-                            <li class="a4">清洗仪表台、顶棚、地板、门板等，内饰焕然一新</li>
-                        </ul>
-                        <ul class="clear"></ul>
-                    </div>
-                    <div class="fl_2_r_list b">
-                    	<ul>
-                        	<li class="a1"><a href="#" target="_blank">空调清洗</a></li>
-                            <li class="a2">70个商家</li>
-                            <li class="a3"><a href="#" target="_blank" class="r"><dfn class=rmb>&yen;</dfn>80起</a></li>
-                            <li class="a4">除异味、除细菌，保护驾乘者健康，提升制冷效果</li>
-                        </ul>
-                        <ul class="clear"></ul>
-                    </div>
-                    <div class="fl_2_r_list b">
-                    	<ul>
-                        	<li class="a1"><a href="#" target="_blank">真皮座椅保养</a></li>
-                            <li class="a2">6个商家</li>
-                            <li class="a3"><a href="#" target="_blank" class="r"><dfn class=rmb>&yen;</dfn>455起</a></li>
-                            <li class="a4">对汽车皮质座椅进行清洁和养护，延长皮质座椅寿命</li>
-                        </ul>
-                        <ul class="clear"></ul>
-                    </div>
-                    <div class="fl_2_r_list b">
-                    	<ul>
-                        	<li class="a1"><a href="#" target="_blank">发动机舱清洗</a></li>
-                            <li class="a2">3个商家</li>
-                            <li class="a3"><a href="#" target="_blank" class="r"><dfn class=rmb>&yen;</dfn>160起</a></li>
-                            <li class="a4">延长发动机各部件的寿命，避免自燃，提高行车安全</li>
-                        </ul>
-                        <ul class="clear"></ul>
-                    </div>
-                    <div class="fl_2_r_list b">
-                    	<ul>
-                        	<li class="a1"><a href="#" target="_blank">前风挡镀膜</a></li>
-                            <li class="a2">4个商家</li>
-                            <li class="a3"><a href="#" target="_blank" class="r"><dfn class=rmb>&yen;</dfn>280起</a></li>
-                            <li class="a4">在玻璃表面形成膜层，降低雨雪附着，保持视野清晰</li>
-                        </ul>
-                        <ul class="clear"></ul>
-                    </div>
+                   {%endfor%}
                     <!--list/-->
                 </div>
                 <div class="clear"></div>
             </div>
         </div>
+        {%endfor%}
         <!--汽车美容/-->
         <div class="h-10">&nbsp;</div>
-        <!--汽车装饰-->
-        <div class="fl">
-        	<div class="fl_1"><span>汽车装饰</span>+&nbsp;<a href="#" target="_blank" class="o">汽车装饰知识</a>&nbsp;+</div>
-            <div class="h-15">&nbsp;</div>
-            <div class="fl">
-            	<div class="fl_2_l f-l"><img src="images/img_10.jpg" width="215" height="140" alt="" /></div>
-                <div class="fl_2_r f-r">
-                	<!--list-->
-                    <div class="fl_2_r_list b">
-                    	<ul>
-                        	<li class="a1"><a href="#" target="_blank">玻璃贴膜</a></li>
-                            <li class="a2">35个商家</li>
-                            <li class="a3"><a href="#" target="_blank" class="r"><dfn class=rmb>&yen;</dfn>1000起</a></li>
-                            <li class="a4">阻挡紫外线伤害皮肤，防玻璃炸裂伤人，增加私密性</li>
-                        </ul>
-                        <ul class="clear"></ul>
-                    </div>
-                    <div class="fl_2_r_list b">
-                    	<ul>
-                        	<li class="a1"><a href="#" target="_blank">底盘装甲</a></li>
-                            <li class="a2">46个商家</li>
-                            <li class="a3"><a href="#" target="_blank" class="r"><dfn class=rmb>&yen;</dfn>500起</a></li>
-                            <li class="a4">防止底盘生锈、腐蚀，防轻微托底，隔音隔热阻燃</li>
-                        </ul>
-                        <ul class="clear"></ul>
-                    </div>
-                    <div class="fl_2_r_list b">
-                    	<ul>
-                        	<li class="a1"><a href="#" target="_blank">座椅包真皮</a></li>
-                            <li class="a2">19个商家</li>
-                            <li class="a3"><a href="#" target="_blank" class="r"><dfn class=rmb>&yen;</dfn>260起</a></li>
-                            <li class="a4">将非皮质座椅改为皮质座椅，提升车辆档次</li>
-                        </ul>
-                        <ul class="clear"></ul>
-                    </div>
-                    <div class="fl_2_r_list b">
-                    	<ul>
-                        	<li class="a1"><a href="#" target="_blank">汽车隔音</a></li>
-                            <li class="a2">4个商家</li>
-                            <li class="a3"><a href="#" target="_blank" class="r"><dfn class=rmb>&yen;</dfn>280起</a></li>
-                            <li class="a4">在玻璃表面形成膜层，降低雨雪附着，保持视野清晰</li>
-                        </ul>
-                        <ul class="clear"></ul>
-                    </div>
-                    <!--list/-->
-                </div>
-                <div class="clear"></div>
-            </div>
-        </div>
-        <!--汽车装饰/-->
-        <div class="h-10">&nbsp;</div>
-        <!--汽车维修-->
-        <div class="fl">
-        	<div class="fl_1"><span>汽车维修</span>+&nbsp;<a href="#" target="_blank" class="o">汽车维修知识</a>&nbsp;+</div>
-            <div class="h-15">&nbsp;</div>
-            <div class="fl">
-            	<div class="fl_2_l f-l"><img src="images/img_11.jpg" width="215" height="175" alt="" /></div>
-                <div class="fl_2_r f-r">
-                	<!--list-->
-                    <div class="fl_2_r_list b">
-                    	<ul>
-                        	<li class="a1"><a href="#" target="_blank">四轮定位</a></li>
-                            <li class="a2">35个商家</li>
-                            <li class="a3"><a href="#" target="_blank" class="r"><dfn class=rmb>&yen;</dfn>100起</a></li>
-                            <li class="a4">解决跑偏、方向盘不正，提升驾驶操控性及舒适性</li>
-                        </ul>
-                        <ul class="clear"></ul>
-                    </div>
-                    <div class="fl_2_r_list b">
-                    	<ul>
-                        	<li class="a1"><a href="#" target="_blank">四轮动平衡</a></li>
-                            <li class="a2">46个商家</li>
-                            <li class="a3"><a href="#" target="_blank" class="r"><dfn class=rmb>&yen;</dfn>10起</a></li>
-                            <li class="a4">可解决中高速行车方向盘抖，车辆行驶不平稳等问题</li>
-                        </ul>
-                        <ul class="clear"></ul>
-                    </div>
-                    <div class="fl_2_r_list b">
-                    	<ul>
-                        	<li class="a1"><a href="#" target="_blank">油路清洗</a></li>
-                            <li class="a2">19个商家</li>
-                            <li class="a3"><a href="#" target="_blank" class="r"><dfn class=rmb>&yen;</dfn>150起</a></li>
-                            <li class="a4">解决因燃油不完全燃烧产生的油路积碳问题</li>
-                        </ul>
-                        <ul class="clear"></ul>
-                    </div>
-                    <div class="fl_2_r_list b">
-                    	<ul>
-                        	<li class="a1"><a href="#" target="_blank">节气门清洗</a></li>
-                            <li class="a2">25个商家</li>
-                            <li class="a3"><a href="#" target="_blank" class="r"><dfn class=rmb>&yen;</dfn>100起</a></li>
-                            <li class="a4">避免怠速抖动，降低油耗，保证节气门正常工作</li>
-                        </ul>
-                        <ul class="clear"></ul>
-                    </div>
-                    <div class="fl_2_r_list b">
-                    	<ul>
-                        	<li class="a1"><a href="#" target="_blank">补胎</a></li>
-                            <li class="a2">56个商家</li>
-                            <li class="a3"><a href="#" target="_blank" class="r"><dfn class=rmb>&yen;</dfn>40起</a></li>
-                            <li class="a4">通过对轮胎上破损部位的修补使车辆可以正常使用</li>
-                        </ul>
-                        <ul class="clear"></ul>
-                    </div>
-                    <!--list/-->
-                </div>
-                <div class="clear"></div>
-            </div>
-        </div>
-        <!--汽车维修/-->
-        <div class="h-10">&nbsp;</div>
-        <!--汽车改装-->
-        <div class="fl">
-        	<div class="fl_1"><span>汽车改装</span>+&nbsp;<a href="#" target="_blank" class="o">汽车改装知识</a>&nbsp;+</div>
-            <div class="h-15">&nbsp;</div>
-            <div class="fl">
-            	<div class="fl_2_l f-l"><img src="images/img_12.jpg" width="215" height="140" alt="" /></div>
-                <div class="fl_2_r f-r">
-                	<!--list-->
-                    <div class="fl_2_r_list b">
-                    	<ul>
-                        	<li class="a1"><a href="#" target="_blank">音响改装</a></li>
-                            <li class="a2">35个商家</li>
-                            <li class="a3"><a href="#" target="_blank" class="r"><dfn class=rmb>&yen;</dfn>100起</a></li>
-                            <li class="a4">通过更换机头、加装喇叭、功放等，提升音质音效</li>
-                        </ul>
-                        <ul class="clear"></ul>
-                    </div>
-                    <div class="fl_2_r_list b">
-                    	<ul>
-                        	<li class="a1"><a href="#" target="_blank">车身改色贴膜</a></li>
-                            <li class="a2">46个商家</li>
-                            <li class="a3"><a href="#" target="_blank" class="r"><dfn class=rmb>&yen;</dfn>600起</a></li>
-                            <li class="a4">保护原车漆、装饰车身，可随时轻易揭除，个性、美观</li>
-                        </ul>
-                        <ul class="clear"></ul>
-                    </div>
-                    <div class="fl_2_r_list b">
-                    	<ul>
-                        	<li class="a1"><a href="#" target="_blank">DVD导航一体机</a></li>
-                            <li class="a2">19个商家</li>
-                            <li class="a3"><a href="#" target="_blank" class="r"><dfn class=rmb>&yen;</dfn>1350起</a></li>
-                            <li class="a4">更换一体机，实现大屏幕可视导航，突显车辆豪华感</li>
-                        </ul>
-                        <ul class="clear"></ul>
-                    </div>
-                    <div class="fl_2_r_list b">
-                    	<ul>
-                        	<li class="a1"><a href="#" target="_blank">氙气大灯改装</a></li>
-                            <li class="a2">25个商家</li>
-                            <li class="a3"><a href="#" target="_blank" class="r"><dfn class=rmb>&yen;</dfn>100起</a></li>
-                            <li class="a4">通过拆解原车大灯后加装组件实现的灯光系统升级</li>
-                        </ul>
-                        <ul class="clear"></ul>
-                    </div>
-                    <!--list/-->
-                </div>
-                <div class="clear"></div>
-            </div>
-        </div>
-        <!--汽车改装/-->
+
     </div>
     <!--left/-->
     <!--right-->
     <div class="index_c_r f-r">
     	<div class="h-10">&nbsp;</div>
         <!--d-->
-        <div class="index_c_r_1"><a href="#" target="_blank"><img src="images/img_04.jpg" width="200" height="230" alt="" /></a></div>
+        <div class="index_c_r_1"><a href="#" target="_blank"><img src="{%static 'car_service/images/img_04.jpg'%}" width="200" height="230" alt="" /></a></div>
         <!--d/-->
         <div class="h-10">&nbsp;</div>
         <!--推荐-->
@@ -379,7 +148,7 @@
                         <div class="index_c_r_3_2"><span>[越秀]</span>洗新艳旧奥园店</div>
                     </div>
                     <div style="display:block" id=info1>
-                    	<div><a href="#" target="_blank"><img src="images/img_05.jpg" width="180" height="135" alt="" /></a></div>
+                    	<div><a href="#" target="_blank"><img src="{%static 'car_service/images/img_05.jpg'%}" width="180" height="135" alt="" /></a></div>
                         <div class="tj_1"><a href="#" target="_blank">好快省环市西路店</a>[荔湾]</div>
                         <div class="tj_2">特惠服务</div>
                         <div class="tj_3 b"><span><a href="#" target="_blank">四轮定位</a></span><a href="#" target="_blank" class="r"><dfn class=rmb>&yen;</dfn>110起</a></div>
@@ -392,7 +161,7 @@
                         <div class="index_c_r_3_2"><span>[越秀]</span>洗新艳旧奥园店</div>
                     </div>
                     <div style="display: none" id=info2>
-                    	<div><a href="#" target="_blank"><img src="images/img_07.jpg" width="180" height="135" alt="" /></a></div>
+                    	<div><a href="#" target="_blank"><img src="{%static 'car_service/images/img_07.jpg'%}" width="180" height="135" alt="" /></a></div>
                         <div class="tj_1"><a href="#" target="_blank">好快省环市西路店</a>[荔湾]</div>
                         <div class="tj_2">特惠服务</div>
                         <div class="tj_3 b"><span><a href="#" target="_blank">四轮定位</a></span><a href="#" target="_blank" class="r"><dfn class=rmb>&yen;</dfn>110起</a></div>
@@ -405,7 +174,7 @@
                         <div class="index_c_r_3_2"><span>[越秀]</span>洗新艳旧奥园店</div>
                     </div>
                     <div style="display: none" id=info3>
-                    	<div><a href="#" target="_blank"><img src="images/img_07.jpg" width="180" height="135" alt="" /></a></div>
+                    	<div><a href="#" target="_blank"><img src="{%static 'car_service/images/img_07.jpg'%}" width="180" height="135" alt="" /></a></div>
                         <div class="tj_1"><a href="#" target="_blank">好快省环市西路店</a>[荔湾]</div>
                         <div class="tj_2">特惠服务</div>
                         <div class="tj_3 b"><span><a href="#" target="_blank">四轮定位</a></span><a href="#" target="_blank" class="r"><dfn class=rmb>&yen;</dfn>110起</a></div>
@@ -418,7 +187,7 @@
                         <div class="index_c_r_3_2"><span>[越秀]</span>洗新艳旧奥园店</div>
                     </div>
                     <div style="display: none" id=info4>
-                    	<div><a href="#" target="_blank"><img src="images/img_07.jpg" width="180" height="135" alt="" /></a></div>
+                    	<div><a href="#" target="_blank"><img src="{%static 'car_service/images/img_07.jpg'%}" width="180" height="135" alt="" /></a></div>
                         <div class="tj_1"><a href="#" target="_blank">好快省环市西路店</a>[荔湾]</div>
                         <div class="tj_2">特惠服务</div>
                         <div class="tj_3 b"><span><a href="#" target="_blank">四轮定位</a></span><a href="#" target="_blank" class="r"><dfn class=rmb>&yen;</dfn>110起</a></div>
@@ -431,7 +200,7 @@
                         <div class="index_c_r_3_2"><span>[越秀]</span>洗新艳旧奥园店</div>
                     </div>
                     <div style="display: none" id=info5>
-                    	<div><a href="#" target="_blank"><img src="images/img_07.jpg" width="180" height="135" alt="" /></a></div>
+                    	<div><a href="#" target="_blank"><img src="{%static 'car_service/images/img_07.jpg'%}" width="180" height="135" alt="" /></a></div>
                         <div class="tj_1"><a href="#" target="_blank">好快省环市西路店</a>[荔湾]</div>
                         <div class="tj_2">特惠服务</div>
                         <div class="tj_3 b"><span><a href="#" target="_blank">四轮定位</a></span><a href="#" target="_blank" class="r"><dfn class=rmb>&yen;</dfn>110起</a></div>
@@ -449,27 +218,27 @@
             	<ul>
                 	<li>
                     	<p><a href="#" target="_blank">安驰汽车美容养护洗车</a></p>
-                        <p><img src="images/x_5.jpg" width="64" height="12" alt="" /></p>
+                        <p><img src="{%static 'car_service/images/x_5.jpg'%}" width="64" height="12" alt="" /></p>
                         <p>第一次去的，服务态度好，工作认真，价格实惠，值得...[<a href="#" target="_blank" class="o">全文</a>]</p>
                     </li>
                     <li>
                     	<p><a href="#" target="_blank">安驰汽车美容养护洗车</a></p>
-                        <p><img src="images/x_5.jpg" width="64" height="12" alt="" /></p>
+                        <p><img src="{%static 'car_service/images/x_5.jpg'%}" width="64" height="12" alt="" /></p>
                         <p>第一次去的，服务态度好，工作认真，价格实惠，值得...[<a href="#" target="_blank" class="o">全文</a>]</p>
                     </li>
                     <li>
                     	<p><a href="#" target="_blank">安驰汽车美容养护洗车</a></p>
-                        <p><img src="images/x_5.jpg" width="64" height="12" alt="" /></p>
+                        <p><img src="{%static 'car_service/images/x_5.jpg'%}" width="64" height="12" alt="" /></p>
                         <p>第一次去的，服务态度好，工作认真，价格实惠，值得...[<a href="#" target="_blank" class="o">全文</a>]</p>
                     </li>
                     <li>
                     	<p><a href="#" target="_blank">安驰汽车美容养护洗车</a></p>
-                        <p><img src="images/x_5.jpg" width="64" height="12" alt="" /></p>
+                        <p><img src="{%static 'car_service/images/x_5.jpg'%}" width="64" height="12" alt="" /></p>
                         <p>第一次去的，服务态度好，工作认真，价格实惠，值得...[<a href="#" target="_blank" class="o">全文</a>]</p>
                     </li>
                     <li>
                     	<p><a href="#" target="_blank">安驰汽车美容养护洗车</a></p>
-                        <p><img src="images/x_5.jpg" width="64" height="12" alt="" /></p>
+                        <p><img src="{%static 'car_service/images/x_5.jpg'%}" width="64" height="12" alt="" /></p>
                         <p>第一次去的，服务态度好，工作认真，价格实惠，值得...[<a href="#" target="_blank" class="o">全文</a>]</p>
                     </li>
                 </ul>

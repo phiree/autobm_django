@@ -1,0 +1,10 @@
+{%extends 'car_service/my/base_my.html'%}
+{%block main_content%}
+{%for field in form%}
+{{field.error}}
+{%endfor%}
+<form  method="post">{%csrf_token%}
+    {{form.as_ul}}
+    <input type="submit" value="Save"/>
+</form>
+{%endblock%}

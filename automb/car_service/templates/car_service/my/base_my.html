@@ -1,18 +1,19 @@
 {% extends "car_service/base.html" %}
+        {%load static%}
+        {%block head%}
+         <link rel="stylesheet" type="text/css" href="{%static 'car_service/bootstrap-3.1.1-dist/css/bootstrap.min.css'%}"/>
+        {%endblock%}
+
 {% block content%}
-<div class="row">
+<div class="row" style="min-height:500px;">
     <div class="col-md-3">
-        <div class="left">
-        <!--左侧导航-->
-        <div class="left_nav">
-            <?xml version="1.0" encoding="gb2312"?>
-            <div id="leftinfo" class="menu">
+<ul class="nav nav-stacked">
+  <li><a href="{%url 'car_service:front_web:my_orders' %}">我的订单</a></li>
+  <li><a href="{%url 'userprofile:user_profile' %}">我的资料</a></li>
+</ul>
 
-                <a href="#"><h2>我的订单</h2></a>
 
-            </div>
-        </div>
-    </div>
+
     </div>
     <div class="col-md-9">
 

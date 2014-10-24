@@ -1,6 +1,6 @@
 from django.db.models import Model, CharField,ForeignKey,TimeField,DateTimeField,\
                             FilePathField,DecimalField,FloatField,ImageField,ManyToManyField,\
-                    BooleanField
+                    BooleanField,OneToOneField, Max, Min
 
 # Create your models here
 from django.contrib.auth.models import User
@@ -8,7 +8,7 @@ from django.core.urlresolvers import reverse
 from model_utils.managers import InheritanceManager
 
 class  AreaInfo(Model):
-    name=CharField(max_length=20)
+    name=CharField(max_length=200)
     code=CharField(max_length=20)
     parent=ForeignKey("AreaInfo", null=True,blank=True)
     def __str__(self):
@@ -16,13 +16,18 @@ class  AreaInfo(Model):
     #depth=Inter
 
 class ServiceType(Model):#汽车美容, 洗车....
-    name=CharField(max_length=20)
+    name=CharField(max_length=200)
     parent=ForeignKey("ServiceType", null=True,blank=True)
+    description=CharField(max_length=2000)
     def __str__(self):
         return self.name
+    def get_supplier_list(self):
+        supplier_list=self.service2_set.all().values('supplier').distinct()
+        min_price=self.service2_set.all().aggregate(Min('price'))
+        return (supplier_list,min_price)
 
 class ServiceProperty(Model):
-    name=CharField(max_length=20)
+    name=CharField(max_length=200)
     servicetype=ForeignKey(ServiceType)
     def __str__(self):
         return self.servicetype.name +'_'+ self.name
@@ -51,7 +56,7 @@ class ServicePropertyValue_Brand_FoilType(ServicePropertyValue_Brand):
 
 
 class CarInfo(Model):
-    name=CharField(max_length=20)
+    name=CharField(max_length=100)
     car_type_choice=(('small','小型'),('midium','中型'),('large','大型'))
     info_type_choice=(('brand','品牌'),('series','车系'),('type','型号'))
     car_type=CharField(choices=car_type_choice,max_length=10, null=True,blank=True,)
@@ -72,6 +77,7 @@ class Service2(Model):
             s+=v.servicepropertyvalue.serviceproperty.name+':'+v.servicepropertyvalue.value+'|'
         s+=str(self.price)
         return s
+
 
 class ServiceValue(Model):
     service=ForeignKey(Service2)
@@ -97,7 +103,7 @@ class Tree(Model):# 区域, 车型(品牌,系列,型号),字典, 服务 都是tr
     car_type_choice=(('small','小型'),('midium','中型'),('large','大型'))
     tree_type=CharField(choices=tree_type_choice,max_length=100, blank=False)
     car_type=CharField(choices=car_type_choice,max_length=10, null=True, blank=True)
-    name=CharField(max_length=20)
+    name=CharField(max_length=200)
     parent=ForeignKey("Tree", null=True,blank=True)
     supplier=ForeignKey('Supplier',null=True,blank=True)
     class Meta:
@@ -135,6 +141,10 @@ class Supplier(Model):
 
     def __str__(self):
         return self.area.name+'-'+self.name
+    @property
+    def order_by_type(self):
+        l=self.service2_set.all().values('servicetype','servicetype__name').distinct()
+        return l
 
 #用户选择的
 class Service(Model):
@@ -200,5 +210,16 @@ class Bill(Model):
     def send_sms(self):
         pass
 
+
+#返利  和  推荐 优惠.
+class promote_register(Model):
+    pass
+
+class UserProfiler(Model):
+    user =OneToOneField(User, unique=True)
+    phone =CharField(max_length=140)
+    gender = CharField(max_length=140)
+    def __unicode__(self):
+        return u'Profile of user: %s' % self.user.username
 
 

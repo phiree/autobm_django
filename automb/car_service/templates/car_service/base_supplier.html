@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+{%load staticfiles%}
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;"/>
+    <title>{%block title%}{%endblock%}</title>
+    <meta name="Description" content="{%block meta%}{%endblock%}"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="{%static 'car_service/css/style.css'%}"/>
+    <script type="text/javascript" src="{%static 'car_service/js/jquery-1.8.0.min.js'%}"></script>
+<script type="text/javascript" src="{%static 'car_service/js/base.js'%}"></script>
+<script type="text/javascript" src="{%static 'car_service/js/ScrollPic.js'%}"></script>
+<script type="text/javascript" src="{%static 'car_service/js/lanrenzhijia.js'%}"></script>
+<script type="text/javascript" src="{%static 'car_service/js/tjsj.js'%}"></script>
+  {%block head%}
+    {%endblock%}
+    <script>
+            //增加书签
+            $(function() {
+                $('#bookmarkme').click(function() {
+                    if (window.sidebar && window.sidebar.addPanel) { // Mozilla Firefox Bookmark
+                        window.sidebar.addPanel(document.title,window.location.href,'');
+                    } else if(window.external && ('AddFavorite' in window.external)) { // IE Favorite
+                        window.external.AddFavorite(location.href,document.title);
+                    } else if(window.opera && window.print) { // Opera Hotlist
+                        this.title=document.title;
+                        return true;
+                    } else { // webkit - safari/chrome
+                        alert('Press ' + (navigator.userAgent.toLowerCase().indexOf('mac') != - 1 ? 'Command/Cmd' : 'CTRL') + ' + D to bookmark this page.');
+                    }
+                });
+
+                area_display(area);
+            });
+
+    </script>
+
+</head>
+<body>
+<!--头部-->
+<!--top-->
+<div class="top">
+	<div class="top_1">
+    	<div class="top_1_r f-r h">
+            {%if user.is_anonymous %}
+            <a href="{%url 'car_service:front_web:login'%}" rel="nofollow">登录</a>|
+            {%else%}
+            欢迎您,{{user}}|<a href="{%url 'car_service:front_web:my_home'%}">个人中心</a>|
+            <a href="{%url 'car_service:front_web:logout'%}" rel="nofollow">注销</a>|
+            {%endif%}
+            <a href="{%url 'car_service:supplier_admin_index'%}"> <span>商家入口</span></a>|
+            <a href="#"><span id="bookmarkme">收藏</span></a>
+
+        <div class="clear"></div>
+    </div>
+</div>
+    </div>
+<!--top/-->
+<!--head-->
+<div class="h_c">
+	<div class="h_c_1 f-l"><a href="#"><img src="{%static 'car_service/images/logo.jpg'%}" width="175" height="72" alt="" /></a></div>
+    <div class="h_c_2 f-l" style="position:relative;">
+    	<div class="h_c_2_1" onmouseover="ddd('aa', 'show');" onmouseout="ddd('aa', 'hide');"><span>广州站</span>&nbsp;[更换城市]</div>
+        <div class="h_c_2_2" id="aa" onmouseover="ddd('aa', 'show');" onmouseout="ddd('aa', 'hide');">
+            <a href="#">北京站</a>
+            <a href="#">上海站</a>
+            <a href="#">广州站</a>
+            <a href="#">成都站</a>
+            <a href="#">长沙站</a>
+            <a href="#">济南站</a>
+            <a href="#">天津站</a>
+            <a href="#">重庆站</a>
+        </div>
+    </div>
+    <div class="h_c_3 f-r"><a href="#" target="_blank"><img src="{%static 'car_service/images/img_01.jpg'%}" width="600" height="72" alt="" /></a></div>
+    <div class="clear"></div>
+</div>
+<!--head/-->
+<!--menu-->
+<div class="menu">
+	<div class="menu_1 f-l">服务分类</div>
+    <div class="menu_2 f-l">
+        <a href="/" class="menu_2_bg">首页</a>
+        <a href="{%url 'car_service:front_web:supplier_list'%}">商家</a>
+
+        <a href="#">地图找商家</a>
+    </div>
+    <div class="menu_3 f-r">
+    	<form action="" method="get" style="padding:0; margin:0;">
+        	<div class="menu_3_s1 f-l">
+            	<input type="text" name="keyword" id="txtKey" class="menu_3_s1_i" value="请输入要搜索的内容" onblur="this.style.color='#999';this.value=this.value==''?'请输入要搜索的内容':this.value;" onfocus="this.style.color='#333';this.value=this.value=='请输入要搜索的内容'?'':this.value;" />
+            </div>
+            <div class="menu_3_s2 f-r">
+            	<input type=submit value="" name="" class="menu_3_s2_b" />
+            </div>
+            <div class="clear"></div>
+        </form>
+    </div>
+    <div class="clear"></div>
+</div>
+<!--menu/-->
+<div class="w1000">
+    <!--顶部-->
+    <!--end顶部-->
+    {%block content%}{%endblock%}
+</div>
+<div class="bottom">
+	<div class="bottom_c">
+    	<div class="bottom_c_1">
+        	<strong>服务预订指南</strong><br>
+            <a href="#" target="_blank">如何预订服务</a><br>
+            <a href="#" target="_blank">帮助中心</a><br>
+            <a href="#" target="_blank">汽车养护常见问题</a><br>
+        </div>
+        <div class="bottom_c_1">
+        	<strong>会员中心</strong><br>
+            <a href="#" target="_blank">会员注册</a><br>
+            <a href="#" target="_blank">注册协议</a><br>
+        </div>
+        <div class="bottom_c_1">
+        	<strong>会员中心</strong><br>
+            <a href="#" target="_blank">支付方式</a><br>
+            <a href="#" target="_blank">先服务后付款</a><br>
+        </div>
+        <div class="bottom_c_1">
+        	<strong>会员中心</strong><br>
+            <a href="#" target="_blank">消费者权益保障</a><br>
+            <a href="#" target="_blank">先行赔付政策</a><br>
+            <a href="#" target="_blank">价格保护</a><br>
+        </div>
+        <div class="bottom_c_1">
+        	<strong>平台商家</strong><br>
+            <a href="#" target="_blank">商家入口</a><br>
+            <a href="#" target="_blank">服务商介绍</a><br>
+            <a href="#" target="_blank">申请加入平台</a><br>
+        </div>
+        <div class="bottom_c_2">
+            <strong>客服咨询电话</strong><br>
+            <span>4008-108-876</span> 转 <span>0</span><br>
+            周一至周五：8:30-17:30<br>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="copyright">©2014-2015 www.92auto.net All Rights Reserved. 爱车网 版权所有</div>
+</div>
+
+</body>
+</html>

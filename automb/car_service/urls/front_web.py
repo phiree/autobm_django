@@ -19,4 +19,5 @@ urlpatterns=patterns(''
                      ,url(r'^bill/success_created/$', view.bill_create_success,name='bill_create_success')
                      #个人中心
                      ,url(r'^my$', my.my_home,name='my_home')
+                     ,url(r'^my/orders$', my.order_list,name='my_orders')
                      )

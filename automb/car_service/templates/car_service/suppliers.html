@@ -1,108 +1,53 @@
 {% extends "car_service/base.html" %}
         {%load get_service_type_for_supplier%}
         {%load staticfiles%}
+          {%load servicetype_menu%}
 {% block content%}
-<div class="row">
-    <div class="col-md-3">
-        {%include 'car_service/share/left_menu_service_type.html'%}
+
+<div class="sj_l f-l">
+	<div class="index_c_l_1_l" style="position: relative; z-index:999;">
+        <div class="goods">
+         {%get_typelist%}
+        </div>
     </div>
-    <div class="col-md-9">
-       <!--筛选 -->
-        <div class="filter_box">
+    <div class="h-10">&nbsp;</div>
+    <div><a href="#" target="_blank"><img src="images/img_16.jpg" width="215" height="247" alt=""></a></div>
+</div>
+   <div class="sj f-r">
+	<div class="sj_wz">爱车网&nbsp;&gt;&nbsp;商家搜索</div>
+    <div class="sj_s">
+    	<div class="sj_s1">总共搜索到<span>129</span>个相关商家</div>
+        <div>
+        	<div class="sj_s2_l f-l">所在区域：</div>
+            <div class="sj_s2_r f-r b"><span><a href="#">所有</a></span><span><a href="#">白云</a></span><span>从化</span><span><a href="#">番禺</a></span><span><a href="#">海珠</a></span><span><a href="#">荔湾</a></span><span><a href="#">天河</a></span><span><a href="#">越秀</a></span><span><a href="#">增城</a></span></div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="h-15">&nbsp;</div>
+       {%for supplier in supplier_list %}
+    <div class="sj_list b">
 
-
-<!--所在区域-->
-			<dl class="normal last"><dt>所在区域：</dt><dd> <div id="dd_County" class="levels1">
-
-                    {%for area in selected_city%}
-
-                       {%endfor%}
-                    <a href="/beijing/41/c110101/">东城</a>
-
-                    </div></dd><div class="clearfloat"></div></dl>
-
-
- <!--begin玻璃贴膜后挡的透光率深浅-->
-
- <!--end玻璃贴膜后挡的透光率深浅-->
- </div>
-<!--筛选--->
-
- <ul class="l_cont">
-   {%for supplier in supplier_list%}
-		<li>
-            <div class="l_sjinfo">
-                <div class="nl">
-                    <a rel="nofollow" target="_blank" href="#">
-                        <img alt="北京黑白格"  src="{{MEDIA_URL}}/{{ supplier.photo}}" title=""></a>
-                </div>
-                <div class="nr">
-                    <h3>
-                        <a target="_blank" href="">
-                            {{supplier}}</a>
-
-                                        <em class="icon18 icon18-green" title="商家预交保证金 可先行赔付">保</em>
-
-                                         <em class="icon18 icon18-org" title="该服务参加买就赠活动">送</em>
-
-                    </h3>
-                    <div class="n1">
-                        <div class="l_addr">
-                            地址：{{service.supplier.address}}</div>
-                        <div class="l_loc">
-                            商圈：世纪城<span class="chr">|</span><a href="javascript:void(0)" rel="nofollow" onclick="javascript:Covert('查看地图', 700, 450, '/vendor/map.aspx?vid=118904');">地图</a></div>
-                    </div>
-                    <div class="n2">
-                        <div class="l_price">
-                            预订价：<dfn class="rmb">¥</dfn><span id="qishow118904"><b>98</b> </span></div>
-                        <div class="l_deal">
-                            历史成交：<a target="_blank" href="/s/7193/?pvareaid=101689#deal">640&nbsp;笔</a>
-                        </div>
-                    </div>
-                    <div class="n3">
-                        <div class="l_mark">
-                            <span class="state state10"></span><a target="_blank" rel="nofollow" href="/s/7193/?pvareaid=101689#comment">
-                                5.0</a>
-                        </div>
-                        <div class="l_comment">
-                            <a rel="nofollow" target="_blank" href="/s/7193/?pvareaid=101689#comment">
-                                251人评价</a></div>
-                    </div>
-                </div>
-                <div class="clearfloat">
-                </div>
-            </div>
-            <div class="">
-
-
-                {% for s in supplier.service_set.all%}
-                  <dl>
-                    <dt><li>{{s.service_type}}</li>
-                        <li>最近成交</li>
-                        <li>预订价</li>
-                        <li>门市价 <a href="{%url 'car_service:front_web:service_detail' s.id%}">查看</a></li>
-                    </dt>
-
-                        {%for sd in s.servicedetail_set.all%}
-                       <dd>
-                         <li><a href="{%url 'car_service:front_web:service_detail' s.id sd.id%}">{{sd}}</a></li>
-                          <li>用户选择100%</li>
-                          <li>{{price}}</li>
-                       </dd>
-                        {%endfor%}
-
-                 </dl>
-                 {%endfor%}
-
-             </div>
-
-            <div class="l_more" id="child118904" style="display: none">
-                <a rel="nofollow" href="javascript:void(0)" id="showinfo118904" onclick="javascript:showbrandInfos('showinfo118904','hide118904','showbrand118904')" class="unfoldall">展开全部(1)<em></em></a> <a rel="nofollow" style="display: none;" id="hide118904" href="javascript:void(0)" onclick="javascript:hidebrandInfos('showinfo118904','hide118904','showbrand118904')" class="foldall">收起<em></em></a>
-            </div>
-
-        </li>
+        <img src="images/img_15.jpg" width="180" height="135" alt="" align="left">
+        <p class="sj_list_1"><a href="#" target="_blank">{{supplier}}</a></p>
+        <p>地址：{{supplier.address}}</p>
+        <p class="sj_list_2">服务项目：
+            {% for s in supplier.order_by_type%}
+             <a href="{%url 'car_service:front_web:service_detail_without_id' s.servicetype supplier.id%}">{{s.servicetype__name}}</a>
+              {%endfor%}
+    </div>
+    <div class="h-10">&nbsp;</div>
        {%endfor%}
-  </ul>
+
+    <div class="sj_fy">
+        <span><a href="#">上一页</a></span>
+        <span><a href="#">1</a></span>
+        <span class="x1">2</span>
+        <span><a href="#">3</a></span>
+        <span>...</span>
+        <span><a href="#">16</a></span>
+        <span><a href="#">17</a></span>
+        <span><a href="#">下一页</a></span>
     </div>
 </div>
+        <div class="clear"></div>
 {%endblock%}

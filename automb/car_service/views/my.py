@@ -10,4 +10,8 @@ from ..models import Tree, ServiceDetail, Supplier, Service,Bill
 
 def my_home(request):
     return render(request, 'car_service/my/my_home.html')
+def order_list(request):
+    user=request.user
+    orders=Bill.objects.filter(user=user)
+    return render(request,'car_service/my/order_list.html',{'order_list':orders})
 
