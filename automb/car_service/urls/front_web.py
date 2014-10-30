@@ -1,7 +1,7 @@
 from django.conf.urls import patterns,url
 
-from car_service.views.site_admin import supplier,tree, home,service as admin_service
-from car_service.views.supplier_admin import service as supplier_service
+from car_service.views.site_admin import supplier, home
+
 from car_service.views import my, view
 
 urlpatterns=patterns(''
@@ -20,4 +20,7 @@ urlpatterns=patterns(''
                      #个人中心
                      ,url(r'^my$', my.my_home,name='my_home')
                      ,url(r'^my/orders$', my.order_list,name='my_orders')
+                     #权限错误
+                     ,url(r'^access_denied/.*$', view.access_denied,name='access_denied')
+                     ,
                      )

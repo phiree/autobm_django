@@ -16,6 +16,8 @@ def home(request):
     top_service_list=ServiceType.objects.filter(parent=None)
     return render(request, 'car_service/index.html', {'top_service_list': top_service_list})
 
+def access_denied(request):
+    return render(request,'car_service/access_denied.html')
 
 # 服务列表
 def service_list(request, service_type):

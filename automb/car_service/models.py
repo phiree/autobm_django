@@ -79,6 +79,7 @@ class Service2(Model):
         return s
 
 
+
 class ServiceValue(Model):
     service=ForeignKey(Service2)
     #todo 限制该值, limit_choices_to= servicepropert.servicetype=service.servicetype
@@ -217,8 +218,8 @@ class promote_register(Model):
 
 class UserProfiler(Model):
     user =OneToOneField(User, unique=True)
-    phone =CharField(max_length=140)
-    gender = CharField(max_length=140)
+    phone =CharField(max_length=140,verbose_name= '电话号码')
+    gender = CharField(max_length=140,verbose_name='性别')
     def __unicode__(self):
         return u'Profile of user: %s' % self.user.username
 

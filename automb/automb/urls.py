@@ -4,7 +4,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 
 admin.autodiscover()
-
+import permission; permission.autodiscover()
 urlpatterns = patterns(''
     # Examples:
     # url(r'^$', 'automb.views.home', name='home'),

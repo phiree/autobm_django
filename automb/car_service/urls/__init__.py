@@ -1,11 +1,10 @@
 from django.conf.urls import patterns,url,include
 
-from car_service.views.site_admin import supplier,tree, home,service as admin_service, \
-    carinfo, areainfo,servicetype,serviceproperty,service2\
-    ,servicepropertyvalue,servicevalue
-
-from car_service.views.supplier_admin import service as supplier_service
-from car_service.views import view
+from car_service.views.site_admin import supplier, home, \
+    carinfo, areainfo,servicetype,serviceproperty,\
+    servicepropertyvalue,\
+    service2 as site_admin_service2
+from car_service.views.supplier_admin import service2 as supplier_admin_service2
 
 urlpatterns=patterns(''
                     #前台路由
@@ -36,27 +35,22 @@ urlpatterns=patterns(''
                      ,url(r'^site_admin/servicepropertyvalue/update/(?P<id>\d+)/$', servicepropertyvalue.servicepropertyvalue_update,name='servicepropertyvalue_update' )
 
                      #具体的服务定义
-                     ,url(r'^site_admin/service2/list/$', service2.ServiceList.as_view(),name='site_admin_service2_list' )
-                    ,url(r'^site_admin/service2/create/$', service2.ServiceCreate.as_view(),name='site_admin_service2_create' )
-                     ,url(r'^site_admin/service2/update/(?P<id>\d+)/$', service2.ServiceUpdate.as_view(),name='site_admin_service2_update' )
-                     ,url(r'^site_admin/servicevalue/update/(?P<service_id>\d+)/$', servicevalue.update_value,name='site_admin_servicevalue_update' )
+                     ,url(r'^site_admin/service2/list/$', site_admin_service2.ServiceList.as_view(),name='site_admin_service2_list' )
+                    ,url(r'^site_admin/service2/create/$', site_admin_service2.ServiceCreate.as_view(),name='site_admin_service2_create' )
+                     ,url(r'^site_admin/service2/update/(?P<id>\d+)/$', site_admin_service2.ServiceUpdate.as_view(),name='site_admin_service2_update' )
+                     ,url(r'^site_admin/servicevalue/update/(?P<service_id>\d+)/$', site_admin_service2.update_value,name='site_admin_servicevalue_update' )
 
                     ,url(r'^site_admin/$', home.index,name='site_admin_index')
-                     ,url(r'^site_admin/tree/list/(?P<TreeType>.+)/$', tree.TreeList.as_view( ),name='tree_list' )
-                     ,url(r'^site_admin/tree/create/(?P<TreeType>.+)/$', tree.TreeCreate.as_view(),name='tree_create' )
-                     ,url(r'^site_admin/tree/update/(?P<TreeType>.+)/(?P<id>\d+)/$', tree.TreeUpdate.as_view( ),name='tree_update' )
-                    # ,url(r'^site_admin/area/generate/$', tree.generate_area_list,name='generate_area_list' )
 
                     ,url(r'^site_admin/supplier(?:/list)?/$', supplier.SupplierList.as_view( ),name='supplier_list' )
                      ,url(r'^site_admin/supplier/create/$', supplier.SupplierCreate.as_view( ),name='supplier_create' )
                      ,url(r'^site_admin/supplier/update/(?P<id>\d+)/$', supplier.SupplierUpdate.as_view( ),name='supplier_update' )
 
-                    ,url(r'^site_admin/service(?:/list)?/$', admin_service.ServiceList.as_view( ),name='site_admin_service_list' )
-                    ,url(r'^site_admin/service/edit(?:/(?P<id>\d+))?/$', admin_service.edit,name='site_admin_service_edit' )
 
-                     ,url(r'^supplier_admin/$', supplier_service.index,name='supplier_admin_index' )
-                     ,url(r'^supplier_admin/service(?:/list)?/$', supplier_service.service_list,name='supplier_admin_service_list' )
-                     ,url(r'^supplier_admin/service/edit(?:/(?P<id>\d+))?/$', supplier_service.edit,name='supplier_admin_service_edit' )
+                      ,url(r'^supplier_admin/service/list/$',supplier_admin_service2.ServiceList.as_view(),name='supplier_admin_service2_list' )
+                    ,url(r'^supplier_admin/service/create/$', supplier_admin_service2.ServiceCreate.as_view(),name='supplier_admin_service2_create' )
+                     ,url(r'^supplier_admin/service/update/(?P<id>\d+)/$', supplier_admin_service2.ServiceUpdate.as_view(),name='supplier_admin_service2_update' )
+                     ,url(r'^supplier_admin/servicevalue/update/(?P<service_id>\d+)/$', supplier_admin_service2.update_value,name='supplier_admin_servicevalue_update' )
 
                      )
 

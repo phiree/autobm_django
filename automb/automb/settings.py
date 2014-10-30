@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     #'django.contrib.gis',
     'car_service',
     'userprofile',
+    'permission',
 )
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -48,6 +49,10 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+)
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend', # default
+    'permission.backends.PermissionBackend',
 )
 TEMPLATE_CONTEXT_PROCESSORS = (
 "django.contrib.auth.context_processors.auth",
