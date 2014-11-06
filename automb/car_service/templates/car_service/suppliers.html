@@ -11,28 +11,21 @@
         </div>
     </div>
     <div class="h-10">&nbsp;</div>
-    <div><a href="#" target="_blank"><img src="images/img_16.jpg" width="215" height="247" alt=""></a></div>
+    <div><a href="#" target="_blank"><img src="{%static  'car_service/images/img_16.jpg'%}" width="215" height="247" alt=""></a></div>
 </div>
    <div class="sj f-r">
 	<div class="sj_wz">爱车网&nbsp;&gt;&nbsp;商家搜索</div>
-    <div class="sj_s">
-    	<div class="sj_s1">总共搜索到<span>129</span>个相关商家</div>
-        <div>
-        	<div class="sj_s2_l f-l">所在区域：</div>
-            <div class="sj_s2_r f-r b"><span><a href="#">所有</a></span><span><a href="#">白云</a></span><span>从化</span><span><a href="#">番禺</a></span><span><a href="#">海珠</a></span><span><a href="#">荔湾</a></span><span><a href="#">天河</a></span><span><a href="#">越秀</a></span><span><a href="#">增城</a></span></div>
-            <div class="clear"></div>
-        </div>
-    </div>
+
     <div class="h-15">&nbsp;</div>
        {%for supplier in supplier_list %}
     <div class="sj_list b">
 
-        <img src="images/img_15.jpg" width="180" height="135" alt="" align="left">
-        <p class="sj_list_1"><a href="#" target="_blank">{{supplier}}</a></p>
+        <img src="{%static  'car_service/images/img_15.jpg'%}" width="180" height="135" alt="" align="left">
+        <p class="sj_list_1"><a href="{%url 'car_service:front_web:supplier_detail' supplier.pk%}" target="_blank">{{supplier}}</a></p>
         <p>地址：{{supplier.address}}</p>
         <p class="sj_list_2">服务项目：
-            {% for s in supplier.order_by_type%}
-             <a href="{%url 'car_service:front_web:service_detail_without_id' s.servicetype supplier.id%}">{{s.servicetype__name}}</a>
+            {% for s in supplier.get_type_info%}
+             <a href="{%url 'car_service:front_web:service_detail_without_id' s.0 supplier.id%}">{{s.1}}</a>
               {%endfor%}
     </div>
     <div class="h-10">&nbsp;</div>

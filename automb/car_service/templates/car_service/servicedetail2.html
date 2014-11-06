@@ -1,6 +1,6 @@
 {% extends "car_service/base.html" %}
 {%load staticfiles%}
-        {%load get_values_for_property%}
+{%load get_values_for_property%}
 {%block head%}
 <link href="{%static 'car_service/css/detail.css'%}" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="{%static 'car_service/jquery/plugin/jquery.cookie.js'%}"></script>
@@ -8,6 +8,7 @@
 <script>
     $(function(){
         var price_list=[{%for s in services%}{'sid':'{{s.id}}','price':'{{s.price}}'},{%endfor%}]
+
         $(".selected,.not_selected").click(function(e){
 
             //切换选中状态
@@ -106,40 +107,403 @@ function intersection_destructive(a, b)
   return result;
 }
 
+
 </script>
 {%endblock%}
 {%block content%}
 
-<div class="service_item">
-    商家:{{service.supplier.name}}
-</div>
-<div class="service_item">
-    服务类型:{{service.servicetype}}
-</div>
 
-<div class="service_item">
-    服务描述:{{service.description}}
-</div>
+<div class="w1000">
+<div class="tejia_d_l f-l">
+<div class="tejia_d_l_1">
+    <div class="tejia_d_l_1_1">
+        <ul>
+            <li><p>【{{service.servicetype.name}}】{{service.supplier.name}}</p></li>
+            <li>预订价:&nbsp;<span style="font-size:2em;font-weight:800" id="price">{{service.price}}</span>&nbsp;&nbsp;门市价：￥<span>{{service.price_market}}</span>
+            </li>
 
-<div>
-    {%for item in merged_service%}
-    <div class="dv_p">
-        <span>{{item.p.name}}</span>
-        {%for v in item.v_l %}
-        <span sid="{%for g in v.s%}{{g.id}},{%endfor%}"  class='{%if service in v.s%}selected{%else%}not_selected{%endif%}'>{{v.v.value}}</span>
-        {%endfor%}
+        </ul>
     </div>
-    {%endfor%}
-</div>
-<div>
+    <div class="h-15">&nbsp;</div>
+    <!--服务预订下部-->
+    <div style=" width:708px;">
+        <table width="700" border="0" cellspacing="0" cellpadding="5">
+            <tbody>
+            <tr>
+                <td width="60" align="right" valign="middle" class="tejia_d_l_1_2_1">车　　型：</td>
+                <td width="620" align="left" valign="top" class="tejia_d_l_1_2_1 b tejia_d_l_1_2_4"><span>威航 2010款 16.4百年纪念版 8.0T[<a
+                        id="a_SelectCat" onclick="Covert('', 434, 200, 'div_SelectCar', false, false, false, true)"
+                        href="javascript:void(0);">更改</a>]</span>&nbsp;请确认锁选车型是否准确，不同车型服务价格可能存在差异。
+                </td>
+            </tr>
+            {%for item in merged_service%}
 
-    <span>价格:</span><span class="" id="price">{{service.price}}</span>
-</div>
-            <div>
-                <form method="post" action="{%url 'car_service:front_web:bill_create' service.pk %}">
-                    {%csrf_token%}
-            <input class="submit" type="submit" id="btn_submit">预订</input>
-                </form>
+            <tr>
+                <td align="right" valign="middle" class="tejia_d_l_1_2_1">{{item.p.name}}：</td>
+                <td align="left" valign="top" class="tejia_d_l_1_2_2 tejia_d_l_1_2_3">
+                    <div class="dv_p"> {%for v in item.v_l %}
+                        <span sid="{%for g in v.s%}{{g.id}},{%endfor%}"
+                              class='{%if service in v.s%}selected{%else%}not_selected{%endif%}'>{{v.v.value}}</span>
+                        {%endfor%}
+                    </div>
+                </td>
+            </tr>
 
+            {%endfor%}
+
+
+            <tr>
+                <td height="70" align="center" valign="middle">&nbsp;</td>
+                <td align="left" valign="middle" class="tejia_d_l_1_2_2">
+
+
+                    <form method="post" action="{%url 'car_service:front_web:bill_create' service.pk %}">
+                        {%csrf_token%}
+                        <input type="image" src="{%static 'car_service/images/img_54.jpg'%}" id="btn_submit" alt="预订"/>
+                    </form>
+
+
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table width="700" border="0" cellspacing="0" cellpadding="5">
+            <tbody>
+            <tr>
+                <td width="60" align="right" valign="middle" class="tejia_d_l_1_2_1">历史成交：</td>
+                <td width="270" align="left" valign="middle" class="tejia_d_l_1_2_2 b"><a href="#"
+                                                                                          target="_blank">3笔</a></td>
+                <td width="60" align="right" valign="middle" class="tejia_d_l_1_2_1">最近关注：</td>
+                <td width="270" align="left" valign="middle" class="tejia_d_l_1_2_2">1057人</td>
+            </tr>
+            <tr>
+                <td align="right" valign="middle" class="tejia_d_l_1_2_1">送 家 币：</td>
+                <td align="left" valign="middle" class="tejia_d_l_1_2_2">150个家币</td>
+                <td align="right" valign="middle" class="tejia_d_l_1_2_1">付款方式：</td>
+                <td align="left" valign="middle" class="tejia_d_l_1_2_2">在线付款&nbsp;到店服务</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <!--end服务预订下部-->
+</div>
+<div class="h-15">&nbsp;</div>
+<!--介绍-->
+<div class="tejia_d_l_d">
+    <div class="tejia_d_l_d_1">
+        <ul>
+            <li id="AreaB_1" class="on" onmouseover="tagOver(this)" onmouseout="tagOut(this)">服务介绍</li>
+            <li id="AreaB_2" onmouseover="tagOver(this)" onmouseout="tagOut(this)" class="">用户评价（215）</li>
+            <li id="AreaB_3" onmouseover="tagOver(this)" onmouseout="tagOut(this)" class="">成交记录（307）</li>
+            <li id="AreaB_4" onmouseover="tagOver(this)" onmouseout="tagOut(this)" class="">网友咨询</li>
+        </ul>
+        <ul class="clear"></ul>
+    </div>
+</div>
+<!---->
+<div class="h-20">&nbsp;</div>
+<div id="AreaB_1_Info" style="display: block;">
+    <!---->
+    <div class="tejia_d_l_d_2a_1">服务属性</div>
+    <div class="h-10">&nbsp;</div>
+    <div class="tejia_d_l_d_2a_2"><span>施工时间：</span>1天&nbsp;&nbsp;&nbsp;&nbsp;<span>预约时间：</span>随时到店即可</div>
+    <div class="h-20">&nbsp;</div>
+    <div class="tejia_d_l_d_2a_1">服务包含项目</div>
+    <div class="h-10">&nbsp;</div>
+    <div class="tejia_d_l_d_2a_2"><img src="{%static 'car_service/images/img_59.jpg'%}" width="740" height="166" alt=""></div>
+    <div class="h-20">&nbsp;</div>
+    <div class="tejia_d_l_d_2a_2"><img src="{%static 'car_service/images/img_60.jpg'%}" width="740" height="566" alt=""></div>
+    <div class="h-20">&nbsp;</div>
+    <div class="tejia_d_l_d_2a_1">施工前后对比</div>
+    <div class="h-10">&nbsp;</div>
+    <div class="tejia_d_l_d_2a_2"><img src="{%static 'car_service/images/img_61.jpg'%}" width="740" height="236" alt=""></div>
+    <div class="h-20">&nbsp;</div>
+    <div class="tejia_d_l_d_2a_2"><img src="{%static 'car_service/images/img_62.jpg'%}" width="740" height="236" alt=""></div>
+    <div class="h-20">&nbsp;</div>
+    <div class="tejia_d_l_d_2a_1">用户点评</div>
+    <div class="h-15">&nbsp;</div>
+    <div class="tejia_d_l_d_2a_3">
+        <div class="tejia_d_l_d_2a_3_1 f-l"><p>综合得分</p>
+
+            <p><span>5</span></p>
+
+            <p><img src="{%static 'car_service/images/x_5.jpg'%}" width="64" height="12" alt=""></p></div>
+        <div class="tejia_d_l_d_2a_3_2 f-l">
+            <ul>
+                <li>服务态度：&nbsp;<img src="{%static 'car_service/images/x_5.jpg'%}" width="64" height="12" align="absmiddle" alt="">&nbsp;满意（<span>5</span>分）
+                </li>
+                <li>施工效果：&nbsp;<img src="{%static 'car_service/images/x_5.jpg'%}" width="64" height="12" align="absmiddle" alt="">&nbsp;满意（<span>5</span>分）
+                </li>
+                <li>性&nbsp;价&nbsp;比：&nbsp;<img src="{%static 'car_service/images/x_5.jpg'%}" width="64" align="absmiddle" height="12" alt="">&nbsp;满意（<span>5</span>分）
+                </li>
+            </ul>
         </div>
+        <div class="tejia_d_l_d_2a_3_3 f-r"><p><img src="{%static 'car_service/images/img_63.jpg'%}" width="125" height="41" alt=""></p>
+
+            <p>您可以对已使用的做服务</p></div>
+        <div class="clear"></div>
+    </div>
+    <div class="h-15">&nbsp;</div>
+    <div class="tejia_d_l_d_2a_4_1 b"><span><a href="#" target="_blank">Ci98F</a>&nbsp;&nbsp;204-10-05</span><img
+            src="{%static 'car_service/images/q_5.jpg'%}" width="61" height="12" align="absmiddle" alt=""></div>
+    <div class="tejia_d_l_d_2a_4_2">师傅们很认真，也很专业，很满意，十分感谢。</div>
+    <div class="h-15">&nbsp;</div>
+    <div class="tejia_d_l_d_2a_4_1 b"><span><a href="#" target="_blank">Ci98F</a>&nbsp;&nbsp;204-10-05</span><img
+            src="{%static 'car_service/images/q_5.jpg'%}" width="61" height="12" align="absmiddle" alt=""></div>
+    <div class="tejia_d_l_d_2a_4_2">师傅们很认真，也很专业，很满意，十分感谢。</div>
+    <!--/-->
+</div>
+<div id="AreaB_2_Info" style="display: none;">
+    <form id="form1" name="form1" method="post" action="">
+        <div class="tejia_d_l_d_2a_3">
+            <div class="tejia_d_l_d_2a_3_1 f-l"><p>综合得分</p>
+
+                <p><span>5</span></p>
+
+                <p><img src="{%static 'car_service/images/x_5.jpg'%}" width="64" height="12" alt=""></p></div>
+            <div class="tejia_d_l_d_2a_3_2 f-l">
+                <ul>
+                    <li>服务态度：&nbsp;<img src="{%static 'car_service/images/x_5.jpg'%}" width="64" height="12" align="absmiddle"
+                                        alt="">&nbsp;满意（<span>5</span>分）
+                    </li>
+                    <li>施工效果：&nbsp;<img src="{%static 'car_service/images/x_5.jpg'%}" width="64" height="12" align="absmiddle"
+                                        alt="">&nbsp;满意（<span>5</span>分）
+                    </li>
+                    <li>性&nbsp;价&nbsp;比：&nbsp;<img src="{%static 'car_service/images/x_5.jpg'%}" width="64" align="absmiddle" height="12" alt="">&nbsp;满意（<span>5</span>分）
+                    </li>
+                </ul>
+            </div>
+            <div class="tejia_d_l_d_2a_3_3 f-r"><p><img src="{%static 'car_service/images/img_63.jpg'%}" width="125" height="41" alt=""></p>
+
+                <p>您可以对已使用的做服务</p></div>
+            <div class="clear"></div>
+        </div>
+        <div class="tejia_d_l_d_2a_5">
+            <span><input name="a1" type="radio" value="" checked="checked">全部<input name="a1" type="radio"
+                                                                                    value="">满意<input name="a1"
+                                                                                                      type="radio"
+                                                                                                      value="">一般<input
+                    name="a2" type="radio" value="">不满意</span><input name="" type="checkbox" value="">有内容的评价
+        </div>
+        <div class="h-15">&nbsp;</div>
+        <div class="tejia_d_l_d_2a_6">
+            <div class="tejia_d_l_d_2a_6_l f-l b"><img src="" width="50" height="50" alt="">
+
+                <p><a href="#" target="_blank">别克GL83</a></p></div>
+            <div class="tejia_d_l_d_2a_6_r f-r">
+                <div class="x1"><img src="{%static 'car_service/images/x_5.jpg'%}" alt="" align="absmiddle">&nbsp;<strong>5.0</strong>分&nbsp;&nbsp;服务态度：非常满意<span>(5分)</span>&nbsp;&nbsp;施工效果：非常满意<span>(5分)</span>&nbsp;&nbsp;性价比：非常满意<span>(5分)</span>
+                </div>
+                <div class="x2">
+                    我看了几家音响店，最后选择了双周音响，性价比高，专业，给赞！我看了几家音响店，最后选择了双周音响，性价比高，专业，给赞！我看了几家音响店，最后选择了双周音响，性价比高，专业，给赞！我看了几家音响店，最后选择了双周音响，性价比高，专业，给赞！
+                </div>
+                <div class="x3">套餐：宝马5系专用后声场升级套件4喇叭套装(不含隔音)&nbsp;&nbsp;车系：宝马 宝马5系</div>
+                <div class="x4"><strong>商家回复</strong><br>感谢您对我们双周的信任与支持</div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="tejia_d_l_d_2a_6">
+            <div class="tejia_d_l_d_2a_6_l f-l b"><img src="" width="50" height="50" alt="">
+
+                <p><a href="#" target="_blank">别克GL83</a></p></div>
+            <div class="tejia_d_l_d_2a_6_r f-r">
+                <div class="x1"><img src="{%static 'car_service/images/x_5.jpg'%}" alt="" align="absmiddle">&nbsp;<strong>5.0</strong>分&nbsp;&nbsp;服务态度：非常满意<span>(5分)</span>&nbsp;&nbsp;施工效果：非常满意<span>(5分)</span>&nbsp;&nbsp;性价比：非常满意<span>(5分)</span>
+                </div>
+                <div class="x2">我看了几家音响店，最后选择了双周音响，性价比高，专业，给赞！</div>
+                <div class="x3">套餐：宝马5系专用后声场升级套件4喇叭套装(不含隔音)&nbsp;&nbsp;车系：宝马 宝马5系</div>
+                <div class="x4"><strong>商家回复</strong><br>感谢您对我们双周的信任与支持</div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="tejia_d_l_d_2a_6">
+            <div class="tejia_d_l_d_2a_6_l f-l b"><img src="" width="50" height="50" alt="">
+
+                <p><a href="#" target="_blank">别克GL83</a></p></div>
+            <div class="tejia_d_l_d_2a_6_r f-r">
+                <div class="x1"><img src="{%static 'car_service/images/x_5.jpg'%}" alt="" align="absmiddle">&nbsp;<strong>5.0</strong>分&nbsp;&nbsp;服务态度：非常满意<span>(5分)</span>&nbsp;&nbsp;施工效果：非常满意<span>(5分)</span>&nbsp;&nbsp;性价比：非常满意<span>(5分)</span>
+                </div>
+                <div class="x2">我看了几家音响店，最后选择了双周音响，性价比高，专业，给赞！</div>
+                <div class="x3">套餐：宝马5系专用后声场升级套件4喇叭套装(不含隔音)&nbsp;&nbsp;车系：宝马 宝马5系</div>
+                <div class="x4"><strong>商家回复</strong><br>感谢您对我们双周的信任与支持</div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="tejia_d_l_d_2a_6_r_fy">
+            <span><a href="#">上一页</a></span>
+            <span><a href="#">1</a></span>
+            <span class="x1">2</span>
+            <span><a href="#">3</a></span>
+            <span>...</span>
+            <span><a href="#">16</a></span>
+            <span><a href="#">17</a></span>
+            <span><a href="#">下一页</a></span>
+        </div>
+    </form>
+</div>
+<div id="AreaB_3_Info" style="display: none;">
+    <!---->
+    <div class="tejia_d_l_d_2a_7">
+        <div class="x1">本服务累计成交<strong>95</strong>单</div>
+        <div class="tejia_d_l_d_2a_7_1">
+            <ul>
+                <li class="a1"><strong>用户</strong></li>
+                <li class="a2"><strong>车系</strong></li>
+                <li class="a3"><strong>用品</strong></li>
+                <li class="a4"><strong>价格</strong></li>
+                <li class="a5"><strong>下单时间</strong></li>
+            </ul>
+            <ul class="clear"></ul>
+        </div>
+        <div class="tejia_d_l_d_2a_7_1">
+            <ul>
+                <li class="a1">kjlwhh</li>
+                <li class="a2">奔驰-奔驰C级</li>
+                <li class="a3">车睿仕 铠甲镀晶</li>
+                <li class="a4">¥1500</li>
+                <li class="a5">2014-10-22 15:25</li>
+            </ul>
+            <ul class="clear"></ul>
+        </div>
+        <div class="tejia_d_l_d_2a_7_1">
+            <ul>
+                <li class="a1">kjlwhh</li>
+                <li class="a2">奔驰-奔驰C级</li>
+                <li class="a3">车睿仕 铠甲镀晶</li>
+                <li class="a4">¥1500</li>
+                <li class="a5">2014-10-22 15:25</li>
+            </ul>
+            <ul class="clear"></ul>
+        </div>
+        <div class="tejia_d_l_d_2a_7_1">
+            <ul>
+                <li class="a1">kjlwhh</li>
+                <li class="a2">奔驰-奔驰C级</li>
+                <li class="a3">车睿仕 铠甲镀晶</li>
+                <li class="a4">¥1500</li>
+                <li class="a5">2014-10-22 15:25</li>
+            </ul>
+            <ul class="clear"></ul>
+        </div>
+    </div>
+    <!--/-->
+</div>
+<div id="AreaB_4_Info" style="display: none;">
+    <!---->
+    <div class="tejia_d_l_d_2a_8">
+        <ul>
+            <li class="a1">打蜡、封釉、镀膜有什么区别，价格如何？</li>
+            <li class="a2">
+                打蜡、封釉、镀膜三种都是汽车漆面美容的项目，都是以增亮车漆、保护漆面为目的，但是施工工艺、保持的时间效果上都有很大差异。打蜡：保持的时间较短，一般为1-2个月，蜡面很薄，几乎没有硬度起不到保护漆面的作用，但是相对来说是三种服务中最便宜的，一般打一次蜡的价格为50-150元。封釉：保持时间大概3-6个月。釉面有一定厚度，具备一定的防轻微划伤的能力。但是价格相对打蜡较高，一般一次封釉的价格为300-500元。镀膜：保持时间大约1年左右，采用无机物为原料附着在漆面上，硬度高，防划伤能力强，同样价格偏贵，但是性价比较高，镀膜的常见价格为600-2000元不等。
+            </li>
+        </ul>
+    </div>
+    <div class="tejia_d_l_d_2a_8">
+        <ul>
+            <li class="a1">镀膜的后期养护是什么？</li>
+            <li class="a2">市面上很多品牌的漆面镀膜，在进行首次镀膜施工后，都会有1-2次的后续养护。保持车漆的光亮。当然这还要根据不同的品牌的镀膜具体情况而定。</li>
+        </ul>
+    </div>
+    <div class="tejia_d_l_d_2a_8">
+        <ul>
+            <li class="a1">镀膜前一定要抛光吗？</li>
+            <li class="a2">抛光是镀膜前的一道重要工序，目的是让车漆恢复亮泽，或者清除一些细小划伤。所以建议使用年限较高的车，或者光泽度较差的车最好在镀膜前进行抛光。</li>
+        </ul>
+    </div>
+    <div class="h-20">&nbsp;</div>
+    <div class="tejia_d_l_d_2a_9">
+        <div class="a1">我要提问</div>
+        <div class="a2">
+            <div class="x1 b">欢迎您，xxx&nbsp;|<a href="#" target="_blank">退出登录</a></div>
+            <div>
+                <form id="form2" name="form2" method="post" action="">
+                    <textarea name="" cols="" rows="" style="width:708px; height:90px;"></textarea>
+                </form>
+            </div>
+            <div class="h-10">&nbsp;</div>
+            <div class="x2"><span>还可以输入<strong>200</strong>字</span>提问商家回复后，会有站内短消息通知您。<a href=""><img
+                    src="{%static 'car_service/images/img_68.jpg'%}" align="absmiddle" alt=""></a></div>
+        </div>
+    </div>
+    <!--/-->
+</div>
+<!---->
+<!--介绍/-->
+</div>
+<div class="tejia_d_r f-r">
+    <!--商家信息-->
+    <div class="tejia_d_r_1">
+        <div class="tejia_d_r_1_1">{{service.supplier.name}}</div>
+        <div class="h-10">&nbsp;</div>
+        <div class="tejia_d_r_1_2"><img src="{{MEDIA_URL}}{{service.supplier.photo}}" width="228" height="171" alt=""></div>
+        <div class="h-10">&nbsp;</div>
+        <div class="tejia_d_r_1_3"><span>商家等级：<img src="{%static 'car_service/images/img_28.gif'%}" alt="" align="absmiddle"><img
+                src="{%static 'car_service/images/img_28.gif'%}" alt="" align="absmiddle"><img src="{%static 'car_service/images/img_50.gif'%}" alt="" align="absmiddle"></span><img
+                src="{%static 'car_service/images/img_51.jpg'%}" alt="" align="absmiddle"></div>
+        <div class="tejia_d_r_1_4">
+            <ul>
+                <li>网友评价</li>
+                <li>与同行比</li>
+                <li>服务态度：<strong>5.0</strong></li>
+                <li><span>高于</span><strong>100.00%</strong></li>
+                <li>施工质量：<strong>5.0</strong></li>
+                <li><span>高于</span><strong>100.00%</strong></li>
+                <li>性 价 比：<strong>5.0</strong></li>
+                <li><span>高于</span><strong>100.00%</strong></li>
+            </ul>
+            <ul class="clear"></ul>
+        </div>
+        <div class="tejia_d_r_1_5 b">
+            <ul>
+                <li><span>所在商圈：</span>朝阳 垡头 [<a href="#" target="_blank">地图</a>]</li>
+                <li><span>营业时间：</span>8:30-19:00</li>
+                <li><span>客服热线：</span>4008108876&nbsp;转&nbsp;2119</li>
+                <li><span>在线咨询：</span><a href="#" target="_blank"><img src="{%static 'car_service/images/img_52.jpg'%}" alt="" align="absmiddle"></a>
+                </li>
+            </ul>
+            <ul class="clear"></ul>
+        </div>
+        <div class="tejia_d_r_1_6"><a href="{%url 'car_service:front_web:supplier_detail' service.supplier.id%}" target="_blank"><img src="{%static 'car_service/images/img_53.jpg'%}" width="130" height="46"
+                                                                    alt=""></a></div>
+    </div>
+    <!--商家信息/-->
+    <div class=" h-10">&nbsp;</div>
+    <!--其他服务-->
+    <div class="tejia_d_r_1">
+        <div class="tejia_d_r_2_1 b"><span>本商家其他热销服务</span><a href="#" target="_blank">更多&gt;&gt;</a></div>
+        <div class="tejia_d_r_2_2 b">
+            <ul>
+                <li>
+                    <p><a href="#" target="_blank">镀膜</a></p>
+
+                    <p>预&nbsp;订&nbsp;价：￥<strong>780</strong>&nbsp;起</p>
+
+                    <p>历史成交：<span>25笔</span></p>
+                </li>
+                <li>
+                    <p><a href="#" target="_blank">底盘装甲</a></p>
+
+                    <p>预&nbsp;订&nbsp;价：￥<strong>780</strong>&nbsp;起</p>
+
+                    <p>历史成交：<span>25笔</span></p>
+                </li>
+                <li>
+                    <p><a href="#" target="_blank">内饰清洗</a></p>
+
+                    <p>预&nbsp;订&nbsp;价：￥<strong>780</strong>&nbsp;起</p>
+
+                    <p>历史成交：<span>25笔</span></p>
+                </li>
+                <li class="x1">
+                    <p><a href="#" target="_blank">打蜡</a></p>
+
+                    <p>预&nbsp;订&nbsp;价：￥<strong>780</strong>&nbsp;起</p>
+
+                    <p>历史成交：<span>25笔</span></p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--其他服务/-->
+</div>
+<div class="clear"></div>
+</div>
 {%endblock%}

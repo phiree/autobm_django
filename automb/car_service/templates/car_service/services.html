@@ -1,46 +1,63 @@
 {% extends "car_service/base.html" %}
-        {%load get_service_type_for_supplier%}
-        {%load servicetype_menu%}
+{%load get_service_type_for_supplier%}
+{%load servicetype_menu%}
+{%load staticfiles%}
 {% block content%}
-  <div class="index_c_l f-l">
-    	<div class="index_c_l_1">
-        	<div class="index_c_l_1_l f-l" style="position: relative; z-index:999;">
-            	<div class="goods">
-                 {%get_typelist%}
-                </div>
-            </div>
-            <div class="clear"></div>
+<div class="w1000 h-20">&nbsp;</div>
+<div class="tejia_1">
+    {%for service_type in top_service_type_list%}
+    <div>
+        <div class="tejia_1l f-l">
+            {%ifequal service_type.id|stringformat:'i'  service_type_id%}
+            {{service_type.name}}
+            {%else%}
+            <a href="{%url 'car_service:front_web:service_list' service_type.id %}">{{service_type.name}}</a>
+            {%endifequal%}
         </div>
-    <div class="index_c_l_1_r f-r">
+        <div class="tejia_1r f-r b">
+            {%for child_type in service_type.servicetype_set.all%}
+                {%ifequal child_type.id|stringformat:'i' service_type_id%}
+                {{child_type.name}}
+                {%else%}
+                <a href="{%url 'car_service:front_web:service_list' child_type.id %}">{{child_type.name}}</a>
+                {%endifequal%}
+            {%endfor%}
 
-
- <ul class="l_cont">
-   {%for supplier in supplier_list%}
-		<li><a target="_blank" href="">
-                            {{supplier}}</a>
-
-            <div class="">
-
-                <div><a href="{%url 'car_service:front_web:service_detail_without_id' service_type supplier.id%}">查看所有</a></div>
-                {% for s in supplier|get_service_type_for_supplier:service_type%}
-
-                  <dl>
-                    <dt>
-
-                        <li><a href="{%url 'car_service:front_web:service_detail_with_id' s.id%}">{{s}}</a></li>
-                    </dt>
-                 </dl>
-                 {%endfor%}
-
-             </div>
-
-            <div class="l_more" id="child118904" style="display: none">
-                <a rel="nofollow" href="javascript:void(0)" id="showinfo118904" onclick="javascript:showbrandInfos('showinfo118904','hide118904','showbrand118904')" class="unfoldall">展开全部(1)<em></em></a> <a rel="nofollow" style="display: none;" id="hide118904" href="javascript:void(0)" onclick="javascript:hidebrandInfos('showinfo118904','hide118904','showbrand118904')" class="foldall">收起<em></em></a>
-            </div>
-
-        </li>
-       {%endfor%}
-  </ul>
+        </div>
+        <div class="clear"></div>
     </div>
+    {%endfor%}
+
+</div>
+<div class="w1000 h-20">&nbsp;</div>
+<div class="tejia_list">
+    <ul>
+        {%for service in service_list%}
+        <li>
+            <img src="{{MEDIA_URL}}{{service.supplier.photo}}" width="318" height="212" alt="">
+
+            <p class="x1"><a href="{%url 'car_service:front_web:service_detail_with_id' service.pk%}" target="_blank">【{{service.servicetype}}】{{service.supplier}}</a>
+            </p>
+
+            <p>{%for sv in service.servicevalue_set.all%}<span>{{sv.servicepropertyvalue.serviceproperty.name}}:{{sv.servicepropertyvalue.value}}</span>{%endfor%}
+            </p>
+
+            <p>门市价：￥{{service.price_market}}元 (为您节省￥{{service.price_market|add:service.minus_price}})</p>
+            <!--
+             <p>还剩&nbsp;<span class="x2">2</span>天<span class="x2">8</span>小时<span class="x2">6</span>分&nbsp;结束</p>
+                 <p class="b">历史成交：<a href="#" target="_blank">3笔</a></p>
+           -->
+            <p class="b">商家地址：{{service.supplier.address}}&nbsp;[<a href="#">地图</a>]</p>
+
+            <p class="x3"><span>￥<strong>{{service.price}}</strong></span><a
+                    href="{%url 'car_service:front_web:service_detail_with_id' service.pk%}" target="_blank"><img
+                    src="{%static 'car_service/images/img_45.jpg' %}" width="93" height="28" alt=""></a></p>
+
+            <div class="tejia_list_1">{%widthratio service.price service.price_market 100 %}<br><span>%折</span></div>
+        </li>
+        {%endfor%}
+
+    </ul>
+    <ul class="clear"></ul>
 </div>
 {%endblock%}

@@ -1,0 +1,127 @@
+{% extends "car_service/base.html" %}
+        {%load get_service_type_for_supplier%}
+        {%load staticfiles%}
+          {%load servicetype_menu%}
+{% block content%}
+<div class="sj_d_wz">爱车网&nbsp;&gt;&nbsp;商家搜索&nbsp;&gt;&nbsp;商家概况</div>
+<div class="sj_d_top">
+	<div class="sj_d_top_1 f-l"><img src="{{MEDIA_URL}}{{supplier.photo}}" width="180" height="135" alt="" /></div>
+    <div class="sj_d_top_2 f-l">
+    	<h2>{{supplier.name}}</h2>
+        <span>营业时间：</span>{{supplier.time_open}}-{{supplier.time_close}}<br />
+        <span>联系电话：</span>{{supplier.phone}}<br />
+        <span>所在区域：</span>{{supplier.area}} <br />
+        <span>商家地址：</span>{{supplier.address}}  [<a href="#" class="o">地图</a>]
+    </div>
+    <div class="sj_d_top_3 f-r">
+    	<div class="sj_d_top_3_dj">商家等级：<img src="{%static 'car_service/images/img_28.gif'%}" width="16" height="16" alt="" /><img src="{%static 'car_service/images/img_28.gif'%}" width="16" height="16" alt="" /><img src="{%static 'car_service/images/img_28.gif'%}" width="16" height="16" alt="" /></div>
+        <div class="sj_d_top_db">
+        	<ul>
+            	<li><span>服务态度：<strong>4.73</strong>分</span>高96%</li>
+                <li><span>施工质量：<strong>4.85</strong>分</span>高96%</li>
+                <li><span>性 价 比：<strong>4.99</strong>分</span>高96%</li>
+            </ul>
+            <ul class="clear"></ul>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="w1000 h-10">&nbsp;</div>
+<div class="sj_d_p">
+    <!---->
+    <div id="ISL_Cont_1" class="sj_d_p_1">
+        <ul>
+            <li><img src="{%static 'car_service/images/t_1.jpg'%}" width="180" height="135" alt="" /></li>
+            <li><img src="{%static 'car_service/images/t_2.jpg'%}" width="180" height="135" alt="" /></li>
+            <li><img src="{%static 'car_service/images/t_3.jpg'%}" width="180" height="135" alt="" /></li>
+            <li><img src="{%static 'car_service/images/t_4.jpg'%}" width="180" height="135" alt="" /></li>
+            <li><img src="{%static 'car_service/images/t_5.jpg'%}" width="180" height="135" alt="" /></li>
+            <li><img src="{%static 'car_service/images/t_1.jpg'%}" width="180" height="135" alt="" /></li>
+            <li><img src="{%static 'car_service/images/t_2.jpg'%}" width="180" height="135" alt="" /></li>
+            <li><img src="{%static 'car_service/images/t_3.jpg'%}" width="180" height="135" alt="" /></li>
+            <li><img src="{%static 'car_service/images/t_4.jpg'%}" width="180" height="135" alt="" /></li>
+            <li><img src="{%static 'car_service/images/t_5.jpg'%}" width="180" height="135" alt="" /></li>
+        </ul>
+    </div>
+    <div id="LeftArr" class="sj_pre"></div>
+    <div id="RightArr" class="sj_next"></div>
+    <!---->
+    <script language=javascript type=text/javascript>
+        <!--//--><![CDATA[//><!--
+        var scrollPic_02 = new ScrollPic();
+        scrollPic_02.scrollContId   = "ISL_Cont_1"; //内容容器ID
+        scrollPic_02.arrLeftId      = "LeftArr";//左箭头ID
+        scrollPic_02.arrRightId     = "RightArr"; //右箭头ID
+
+        scrollPic_02.frameWidth     = 950;//显示框宽度
+        scrollPic_02.pageWidth      = 950; //翻页宽度
+
+        scrollPic_02.speed          = 30; //移动速度(单位毫秒，越小越快)
+        scrollPic_02.space          = 50; //每次移动像素(单位px，越大越快)
+        scrollPic_02.autoPlay       = true; //自动播放
+        scrollPic_02.autoPlayTime   = 3; //自动播放间隔时间(秒)
+
+        scrollPic_02.initialize(); //初始化
+
+        //--><!]]>
+    </script>
+</div>
+<div class="w1000 h-20">&nbsp;</div>
+<div class="w1000">
+	<div class="sj_d_2_l f-l">
+    	<!---->
+        <div class="sj_d_2_l_1">服务预订</div>
+        <div class="h-10">&nbsp;</div>
+        {% for s in supplier.get_type_info%}
+
+        <div class="sj_d_2_l_list b">
+        	<ul>
+            	<li class="x1"> <a href="{%url 'car_service:front_web:service_detail_without_id' s.0 supplier.id%}">{{s.1}}</a></li>
+                <li class="x2">预订价：￥<span>{{s.2}}</span>起</li>
+                <li class="x3">历史成交：<a href="#" target="_blank">381</a>笔</li>
+                <li class="x4"><img src="{%static 'car_service/images/x_4.jpg'%}" width="64" height="12" alt="" />&nbsp;<strong><a href="#" target="_blank">5.0</a></strong></li>
+                <li class="x5"><a href="#" target="_blank">共377人评价</a></li>
+            </ul>
+            <ul class="clear"></ul>
+        </div>
+          {%endfor%}
+        <!--/-->
+        <div class="h-20">&nbsp;</div>
+        <!---->
+        <div class="sj_d_2_l_1">服务设施</div>
+        <div class="h-20">&nbsp;</div>
+        <div class="sj_d_2_l_2">
+        	<ul>
+            	<li><img src="{%static 'car_service/images/img_36.jpg'%}" alt="" />无线上网</li>
+                <li><img src="{%static 'car_service/images/img_37.jpg'%}" alt="" />支持刷卡</li>
+                <li><img src="{%static 'car_service/images/img_38.jpg'%}" alt="" />免费茶水</li>
+                <li><img src="{%static 'car_service/images/img_39.jpg'%}" alt="" />休息区</li>
+            </ul>
+            <ul class="clear"></ul>
+        </div>
+        <!--/-->
+        <div class="h-20">&nbsp;</div>
+        <!---->
+        <div class="sj_d_2_l_1">商家介绍</div>
+        <div class="h-20">&nbsp;</div>
+        <div class="sj_d_2_l_3">
+        	<p>            {{supplier.description}}</p>
+        </div>
+        <!--/-->
+        <div class="h-20">&nbsp;</div>
+    </div>
+    <div class="sj_d_2_r f-r">
+    	<!--地图-->
+        <div class="sj_d_2_r_map">
+            <div id="map" style="height:250px;"></div>
+            <p class="n2"><a href="javascript:void(0)" onclick="javascript:Covert('查看地图', 700, 450, '/vendor/map.aspx?vid=74517');"><img src="{%static 'car_service/images/img_33.jpg'%}" width="238" height="28" alt="" /></a></p>
+        </div>
+        <!--end地图-->
+        <div class="h-10">&nbsp;</div>
+        <div><a href="#" target="_blank"><img src="{%static 'car_service/images/img_34.jpg'%}" width="240" height="275" alt="" /></a></div>
+    </div>
+    <div class="clear"></div>
+</div>
+<!--content/-->
+
+{%endblock%}

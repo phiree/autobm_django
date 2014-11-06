@@ -19,17 +19,25 @@ def home(request):
 def access_denied(request):
     return render(request,'car_service/access_denied.html')
 
+def service_list_all(request):
+    return service_list(request,None)
 # 服务列表
-def service_list(request, service_type):
+def service_list(request, service_type_id):
 
     sl = Service2.objects.all()
-    if service_type != None:
-        sl = sl.filter(servicetype__id=service_type)
 
-    supplier_list = Supplier.objects.filter(service2__in=sl).distinct()
+    if service_type_id != None:
+        service_type=ServiceType.objects.get(pk=service_type_id)
+        if service_type.parent!=None:
+            sl = sl.filter(servicetype__id=service_type_id)
+        else:
+            sl=sl.filter(servicetype__parent__id=service_type_id)
+
+    top_service_type_list=ServiceType.objects.filter(parent=None)
 
     return render(request, 'car_service/services.html',
-                  {'service_type': service_type, 'supplier_list': supplier_list,})
+                  { 'service_list': sl,'top_service_type_list':top_service_type_list,
+                    'service_type_id':service_type_id})
 
 def supplier_list(request):
     area_list=Tree.objects.filter(tree_type=Tree.tree_type_choice[0][0], parent=None)
@@ -38,6 +46,11 @@ def supplier_list(request):
 
     return render(request, 'car_service/suppliers.html',
                   {'supplier_list': supplier_list,'top_service_list': top_service_list})
+def supplier_detail(request,supplier_id):
+    supplier=Supplier.objects.get(pk=supplier_id)
+
+    return render(request,'car_service/supplier.html', {'supplier':supplier})
+
 def service_detail2_with_id(request,service_id):
     return  service_detail2(request,service_id,None,None)
 
@@ -73,6 +86,7 @@ def generat_service_detail(services):
             ]
     ]
     '''
+    min_price,max_price=99999,0
     properties=services[0].servicetype.serviceproperty_set.all()
     for p in properties:#every  properties
         result={}
@@ -85,7 +99,6 @@ def generat_service_detail(services):
                 #result['s']=[s]
                 results.append(result)
             else:
-
                 index2=[k['p'] for k in results].index(p)
                 result=results[index2]          #从结果列表中获取 该属性
                 if any(pv==v for v in  [item['v'] for item in  result['v_l']]): # 该属性的值是否已经添加
@@ -94,8 +107,6 @@ def generat_service_detail(services):
                 else:
                     results[index2]['v_l'].append({'v':pv,'s':[s]})
     return results
-
-
 
 
 

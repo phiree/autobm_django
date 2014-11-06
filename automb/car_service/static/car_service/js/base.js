@@ -14,7 +14,7 @@ function tagOut(a){clearTimeout(fodTime);fodTime=0;}
 
 var gp = [];
 gp["AreaA"] = ["2"];
-gp["AreaB"] = ["9"];
+gp["AreaB"] = ["4"];
 
 //end
 
@@ -52,3 +52,13 @@ if (sType == 'show') { oDiv.style.display = 'block';}
 if (sType == 'hide') { oDiv.style.display = 'none';} 
 
 } 
+//end
+
+//µ¯³ö·ÖÀà
+function aaa(obj, sType) { 
+var oDiv = document.getElementById(obj); 
+if (sType == 'show') { oDiv.style.display = 'block';} 
+if (sType == 'hide') { oDiv.style.display = 'none';} 
+
+} 
+//end

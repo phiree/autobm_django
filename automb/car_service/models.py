@@ -6,6 +6,7 @@ from django.db.models import Model, CharField,ForeignKey,TimeField,DateTimeField
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 from model_utils.managers import InheritanceManager
+from django.db import connection
 
 class  AreaInfo(Model):
     name=CharField(max_length=200)
@@ -70,13 +71,19 @@ class Service2(Model):
     supplier=ForeignKey('Supplier')
     servicetype=ForeignKey(ServiceType)
     price=DecimalField(decimal_places=0, max_digits=5)
-    price_preorder=DecimalField(decimal_places=0, max_digits=5)
+    price_market=DecimalField(decimal_places=0, max_digits=5)
+
+    @property
+    def minus_price(self):
+        return -1*self.price
+
     def __str__(self):
         s=self.servicetype.name+'_'
         for v in self.servicevalue_set.all():
             s+=v.servicepropertyvalue.serviceproperty.name+':'+v.servicepropertyvalue.value+'|'
         s+=str(self.price)
         return s
+
 
 
 
@@ -142,10 +149,23 @@ class Supplier(Model):
 
     def __str__(self):
         return self.area.name+'-'+self.name
-    @property
-    def order_by_type(self):
+    #商家提供的服务类型.和 每种类型的最低价格
+
+    #@property
+    def get_type_info(self):
         l=self.service2_set.all().values('servicetype','servicetype__name').distinct()
-        return l
+        min_price=self.service2_set.all().aggregate(Min('price'))
+        sql="select a.servicetype_id,b.name,min(a.price)  \
+            from car_service_service2 a inner join car_service_servicetype b on b.id=a.servicetype_id \
+            where a.supplier_id=%s \
+            group by a.servicetype_id,b.name"
+        cursor=connection.cursor()
+        cursor.execute(sql,[self.id])
+        rows=cursor.fetchall()
+        return rows
+    #def get_min_price
+
+
 
 #用户选择的
 class Service(Model):
