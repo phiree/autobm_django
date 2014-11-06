@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {%load staticfiles%}
+        {%load get_area_list%}
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html;"/>
@@ -9,11 +10,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" type="text/css" href="{%static 'car_service/css/style.css'%}"/>
-    <script type="text/javascript" src="{%static 'car_service/js/jquery-1.8.0.min.js'%}"></script>
-<script type="text/javascript" src="{%static 'car_service/js/base.js'%}"></script>
-<script type="text/javascript" src="{%static 'car_service/js/ScrollPic.js'%}"></script>
-<script type="text/javascript" src="{%static 'car_service/js/lanrenzhijia.js'%}"></script>
-<script type="text/javascript" src="{%static 'car_service/js/tjsj.js'%}"></script>
+    <script type="text/javascript" src="{%static 'car_service/js/jquery/jquery-1.8.0.min.js'%}"></script>
+    <script type="text/javascript" src="{%static 'car_service/js/jquery/plugin/jquery.cookie.js'%}"></script>
+    <script type="text/javascript" src="{%static 'car_service/js/base.js'%}"></script>
+    <script type="text/javascript" src="{%static 'car_service/js/ScrollPic.js'%}"></script>
+    <script type="text/javascript" src="{%static 'car_service/js/lanrenzhijia.js'%}"></script>
+    <script type="text/javascript" src="{%static 'car_service/js/tjsj.js'%}"></script>
   {%block head%}
     {%endblock%}
     <script>
@@ -32,10 +34,33 @@
                     }
                 });
 
-                area_display(area);
+
+
+
+
+                var current_area_name=$.cookie('area_name');
+                var current_area_id=$.cookie('area_id');
+                if (current_area_name==null){current_area_name='佛山';}
+                if (current_area_id==null){current_area_id='1';}
+                function set_area_cookie(area_id,area_name)
+                {
+                    $.cookie('area_id',area_id);
+                    $.cookie('area_name',area_name);
+                    $("#current_area_name").text(area_name);
+                }
+
+                set_area_cookie(current_area_id,current_area_name);
+                 $(".area_option").click(function(e){
+                        set_area_cookie($(this).attr('area_id'),$(this).text());
+                        location.reload();
+                 });
+
+
+                  area_display(area);
             });
 
     </script>
+
 
 </head>
 <body>
@@ -61,10 +86,13 @@
 <!--head-->
 <div class="h_c">
 	<div class="h_c_1 f-l"><a href="/"><img src="{%static 'car_service/images/logo.jpg'%}" width="175" height="72" alt="" /></a></div>
-    <div class="h_c_2 f-l" style="position:relative;">
-    	<div class="h_c_2_1" ><span>佛山站</span></div>
-
+     <div class="h_c_2 f-l" style="position:relative;">
+    	<div class="h_c_2_1" onmouseover="ddd('aa', 'show');" onmouseout="ddd('aa', 'hide');"><span id="current_area_name"></span>&nbsp;[更换城市]</div>
+        <div class="h_c_2_2" id="aa" onmouseover="ddd('aa', 'show');" onmouseout="ddd('aa', 'hide');">
+            {%get_area_list%}
+        </div>
     </div>
+
     <div class="h_c_3 f-r"><a href="#" target="_blank"><img src="{%static 'car_service/images/img_01.jpg'%}" width="600" height="72" alt="" /></a></div>
     <div class="clear"></div>
 </div>

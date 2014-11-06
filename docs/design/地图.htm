@@ -1,0 +1,509 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<title></title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<link rel="stylesheet" type="text/css" href="css/mapStyle.css"/>
+
+<script type="text/javascript" src="js/base.js"></script>
+<script type="text/javascript" src="js/ajaxrequest.js"></script>
+<script src="http://union.mapbar.com/apis/maps/free?f=mapi&v=31.4&k=aCW9cItqL7A8dB0tb78gLhNqbX4ebnT8MYV5NnTrEeJyNYAhZeJ8MegeEl==@htZ8Ztrlce0eLy==yTYZredcbYMrZd=CMby7ZZyd8b0Z48t4Ze8cbgNccYZAq8Y/1D=" type="text/javascript"></script>
+<script type="text/javascript" src="js/CityDataWithBus_14.js"></script>
+
+</head> 
+<body>
+<!--top-->
+<div class="top">
+	<div style=" width:100%; height:27px;">
+    	<div class="top_1_l f-l top_1_ml b"><a href="#" target="_blank">&lt;&lt;返回首页</a></div>
+        <div class="top_1_r f-r top_1_mr h">您好！请&nbsp;<a href="#" target="_blank" class="o">登录</a>&nbsp;或&nbsp;<a href="#" target="_blank" class="o">免费注册</a>&nbsp;|&nbsp;<a href="#" target="_blank">订单管理</a>&nbsp;|&nbsp;<a href="#" target="_blank">商家入口</a>&nbsp;|&nbsp;<a href="#" target="_blank">★收藏本站</a></div>
+        <div class="clear"></div>
+    </div>
+</div>
+<!--top/-->
+<!--head-->
+<div class="" style="width:100%; height:72px; border-bottom:solid 2px #f0442e;">
+	<div class="h_c_1 f-l" style="width:155px;"><a href="#"><img src="images/logo_m.jpg" width="155" height="72" alt="" /></a></div>
+    <div class="h_c_2 f-l" style="position:relative; z-index:100;">
+    	<div class="h_c_2_1" onmouseover="ddd('aa', 'show');" onmouseout="ddd('aa', 'hide');"><span>广州站</span>&nbsp;[更换城市]</div>
+        <div class="h_c_2_2" id="aa" onmouseover="ddd('aa', 'show');" onmouseout="ddd('aa', 'hide');">
+            <a href="#">北京站</a>
+            <a href="#">上海站</a>
+            <a href="#">广州站</a>
+            <a href="#">成都站</a>
+            <a href="#">长沙站</a>
+            <a href="#">济南站</a>
+            <a href="#">天津站</a>
+            <a href="#">重庆站</a>
+        </div>
+    </div>
+    <div class="h_c_3 top_1_mr f-r"><a href="#" target="_blank"><img src="images/img_01.jpg" width="600" height="72" alt="" /></a></div>
+    <div class="clear"></div>
+</div>
+<!--head/-->
+<!--地图-->
+    <div class="mapBox">
+        <div class="mapLeft" id="div_mapleft">
+<!--菜单-->
+<div class="mapMenu">
+    <div class="tt">
+        <h2>服务分类</h2>
+    </div>
+    <!---->
+    <div class="dt_l_list">
+        <div class="dt_l_l"><span class="cur">全部服务</span></div>
+        <div class="dt_l_title">汽车美容</div>
+        <div class="dt_l_l">
+            <a href="javascript:void(0);" onclick="javascript:setSCate(1,'洗车',this);return false;">洗车</a>
+            <a href="javascript:void(0);" onclick="javascript:setSCate(2,'打蜡',this);return false;">打蜡</a>
+            <a href="javascript:void(0);" onclick="javascript:setSCate(3,'封釉',this);return false;">封釉</a>
+            <a href="javascript:void(0);" onclick="javascript:setSCate(4,'镀膜',this);return false;">镀膜</a>
+            <a href="javascript:void(0);" onclick="javascript:setSCate(5,'内饰清洗',this);return false;">内饰清洗</a>
+            <a href="javascript:void(0);" onclick="javascript:setSCate(6,'空调清洗',this);return false;">空调清洗</a>
+            <a href="javascript:void(0);" onclick="javascript:setSCate(7,'真皮座椅保养',this);return false;">真皮座椅保养</a>
+            <a href="javascript:void(0);" onclick="javascript:setSCate(8,'发动机舱清洗',this);return false;">发动机舱清洗</a>
+            <a href="javascript:void(0);" onclick="javascript:setSCate(9,'前风挡镀膜',this);return false;">前风挡镀膜</a>
+        </div>
+        <div class="dt_l_title">汽车装饰</div>
+        <div class="dt_l_l">
+            <a href="javascript:void(0);" onclick="javascript:setSCate(10,'玻璃贴膜',this);return false;">玻璃贴膜</a>
+            <a href="javascript:void(0);" onclick="javascript:setSCate(11,'底盘装甲',this);return false;">底盘装甲</a>
+            <a href="javascript:void(0);" onclick="javascript:setSCate(12,'座椅包真皮',this);return false;">座椅包真皮</a>
+            <a href="javascript:void(0);" onclick="javascript:setSCate(13,'汽车隔音',this);return false;">汽车隔音</a>
+        </div>
+        <div class="dt_l_title">汽车维修</div>
+        <div class="dt_l_l">
+            <a href="javascript:void(0);" onclick="javascript:setSCate(14,'四轮定位',this);return false;">四轮定位</a>
+            <a href="javascript:void(0);" onclick="javascript:setSCate(15,'四轮动平衡',this);return false;">四轮动平衡</a>
+            <a href="javascript:void(0);" onclick="javascript:setSCate(16,'油路清洗',this);return false;">油路清洗</a>
+            <a href="javascript:void(0);" onclick="javascript:setSCate(17,'节气门清洗',this);return false;">节气门清洗</a>
+            <a href="javascript:void(0);" onclick="javascript:setSCate(18,'补胎',this);return false;">补胎</a>
+        </div>
+        <div class="dt_l_title">汽车改装</div>
+        <div class="dt_l_l">
+            <a href="javascript:void(0);" onclick="javascript:setSCate(19,'音响改装',this);return false;">音响改装</a>
+            <a href="javascript:void(0);" onclick="javascript:setSCate(20,'车身改色贴膜',this);return false;">车身改色贴膜</a>
+            <a href="javascript:void(0);" onclick="javascript:setSCate(21,'DVD导航一体机',this);return false;">DVD导航一体机</a>
+            <a href="javascript:void(0);" onclick="javascript:setSCate(22,'氙气大灯改装',this);return false;">氙气大灯改装</a>
+        </div>
+    </div>
+    <!--/-->
+</div>
+<!--end菜单-->
+ 
+        </div>
+        <div class="mapRight">
+    	    <em class="mapfold leftcolse" onclick="javascript:CollapseMenu(this);return false;">折叠</em>
+    	    <div class="mapshadow" style="height:835px"></div>            
+            <div class="mapSift">
+                <div class="select" id="div_brandname" onmouseover="javascript:showBrand(1,this);" onmouseout="javascript:showBrand(0,this);">
+                    <div class="item">用品品牌：<span id="span_curbname">不限</span><em></em></div>
+                    <div class="layer" id="div_brand">
+                    </div>
+                </div>
+                <div class="result">共搜到&nbsp;<b><span id="vcnt"></span></b>&nbsp;家签约商家&nbsp;&nbsp;&nbsp;&nbsp;网上免费预订 先行赔付 到店满意后付款</div>
+            </div>
+            <div class="mapWidget" id="div_mapbar">
+            </div>
+        </div>
+        <div class="clearfloat"></div>
+    </div>
+    <!--end地图-->
+</body>
+</html>
+<script type="text/javascript" language="javascript"> 
+    var scid = 0;
+    var bid = 0;
+    var cid = 110100;
+    var cname = "北京";
+    var ctid = 0;
+    var maplet = null, mpoint = null;
+    var cheight = 0, cwidth = 0, ctop = 0, cleft = 0, mwidth = 0;
+    var mapid = "div_mapbar";
+    var zlevel = 8;
+    var viewlevel = 0;
+    var tindex = 0;
+    var ids = new Array();
+    var ls = new Array();
+    var ws = new Array();
+    var ps = new Array();
+    var pps = new Array();
+    var url = "/Handler/Map.ashx";
+    var maxz = 4;
+    var uptimer;
+    var imgheight = 34;
+    var suffix = '.png';
+    var imgpath = 'http://img.autohome.com.cn/vendor/topic/map/';
+    function findDimensions() //函数：获取尺寸 
+    {
+        var type;
+        //获取窗口宽度 
+        if (window.innerWidth) {
+            cwidth = window.innerWidth;
+            btype = 'inner';
+        } else if ((document.body) && (document.body.clientWidth)) {
+            cwidth = document.body.clientWidth;
+            btype = 'client';
+        }
+        //获取窗口高度 
+        if (window.innerHeight)
+            cheight = window.innerHeight;
+        else if ((document.body) && (document.body.clientHeight))
+            cheight = document.body.clientHeight;
+        //通过深入Document内部对body进行检测，获取窗口大小 
+        if (document.documentElement && document.documentElement.clientHeight && document.documentElement.clientWidth) {
+            cheight = document.documentElement.clientHeight;
+            cwidth = document.documentElement.clientWidth;
+        }
+        otop = window.document.getElementById(mapid).offsetTop;
+        oleft = window.document.getElementById(mapid).offsetLeft;
+        if (window.document.getElementById("div_mapleft").style.display == "none")
+            mwidth = 0;
+        else
+            mwidth = window.document.getElementById("div_mapleft").clientWidth;
+        //alert('type:'+btype+',width:' + cwidth + ',height:' + cheight + ',left:' + oleft + ',top:' + otop+',mwidth:'+mwidth);
+    }
+ 
+    var t;
+    function initMap(refresh) {
+        findDimensions();
+        window.document.getElementById(mapid).style.width = (cwidth - mwidth-2) + "px";
+        window.document.getElementById(mapid).style.height = (cheight - otop-1) + "px";
+        if (!maplet) {
+            maplet = new Maplet(mapid);
+            maplet.addControl(new MStandardControl());
+            maplet.showOverview(false, false); 
+            mpoint = new MPoint(getCityLL(cname));
+            maplet.centerAndZoom(mpoint, zlevel);
+            maplet.clickToCenter = false;
+            MEvent.addListener(maplet,"zoom",function(zoomlevel) {
+                if (zoomlevel > 8) {
+                    //商家
+                    if (viewlevel != 1) {
+                        viewlevel = 1;
+                        initData(viewlevel);
+                    }
+                } else {
+                    //区域
+                    if (viewlevel != 0) {
+                        viewlevel = 0;
+                        initData(viewlevel);
+                    }
+                }
+            });
+            MEvent.addListener(maplet, "pan", function(point) {
+                mpoint = point;
+            });
+        } else {
+            maplet.setCenter(mpoint);
+        }
+        maplet.resize(cwidth - mwidth-2, cheight - otop-101);
+    }
+ 
+    function CollapseMenu(obj) {
+        if (obj.className == "mapfold leftcolse") {
+            window.document.getElementById("div_mapleft").style.display = "none";
+            obj.className = "mapfold leftopen";
+        } else {
+            window.document.getElementById("div_mapleft").style.display = "";
+            obj.className = "mapfold leftcolse";
+        }
+        initMap(true);
+    }
+    
+    function getCityLL(cityname) {
+        var cityll = "";
+        for (var i = 0; i < cityData.province.length; i++) {
+            for (var j = 0; j < cityData.province[i].city.length; j++) {
+                if (cityData.province[i].city[j].cityName.indexOf(cityname) > -1) {
+                    cityll = cityData.province[i].city[j].citylatlon;
+                    return cityll;
+                }
+            }
+        }
+        return cityll;
+    }
+ 
+    function initBrands() {
+        var hbrandname = window.document.getElementById("div_brandname");
+        if (scid) {
+            SendRequest(url, "POST", "type=getbrands&scid=" + scid + "&ctid=" + ctid, function(data) {
+                var result = '';
+                if (data && data.length > 0) {
+                    var d = (new Function("", "return " + data))();
+                    if (d.length > 0) {
+                        result += "<a href=\"javascript:setBrand(0,'不限');\" >不限</a>";
+                        for (var i = 0; i < d.length; i++) {
+                            result += "<a href=\"javascript:setBrand(" + d[i].id + ",'" + d[i].name + "');\" >" + d[i].name + "</a>";
+                        }
+                        window.document.getElementById("div_brand").innerHTML = result;
+                        hbrandname.style.display = "";
+                    } else {
+                        hbrandname.style.display = "none";
+                    }
+                }
+            }, false, false);
+        } else {
+            hbrandname.style.display = "none";
+        }
+    }
+    
+    function setBrand(id,name) {
+        bid = id;
+        window.document.getElementById("span_curbname").innerHTML = name;
+        showBrand(0,window.document.getElementById("div_brandname"));
+        initData(viewlevel);
+    }
+    
+    function setSCate(id,name,obj) {
+        //alert('id:' + id + ',name:' + name);
+        //alert(typeof (obj));
+        scid = id;
+        var ele;
+        var mapleft = window.document.getElementById("div_mapleft");
+        //处理之前已选
+        var spans = mapleft.getElementsByTagName("span");
+        for (var i = 0; i < spans.length; i++) {
+                ele = document.createElement("a");
+                ele.setAttribute("href", "javascript:void(0);");
+                var esid = spans[i].getAttribute("sid");
+                var ename = spans[i].childNodes[0].nodeValue;
+                ele.onclick = function() {
+                    setSCate(esid, ename, this);
+                };
+                ele.appendChild(document.createTextNode(spans[i].childNodes[0].nodeValue));
+                spans[i].parentNode.replaceChild(ele, spans[i]);
+                break;
+            //}
+        }        
+        //处理当前点击
+        ele = document.createElement("span");
+        //ele.setAttribute("class", "cur");
+        ele.className = "cur";
+        ele.setAttribute("sid", id);        
+        ele.appendChild(document.createTextNode(name));        
+        obj.parentNode.replaceChild(ele, obj);
+        
+        //viewlevel = 0;
+        bid = 0;
+        ctid = 0;
+        //mpoint = new MPoint(getCityLL(cname));        
+        //maplet.centerAndZoom(mpoint, zlevel);        
+        initData(viewlevel);
+        window.document.getElementById("span_curbname").innerHTML = "不限";        
+    }
+ 
+    function ShowCityView() {
+        var d;
+        SendRequest(url, "post", "type=getlist1&scid="+scid+"&bid="+bid, function(data) {
+            var result = '';
+            var cnt = 0;
+            var seq = 0;
+            ids = new Array();
+            ws = new Array();
+            ps = new Array();
+            pps = new Array();
+            if (data && data.length>0) {
+                d = (new Function("","return "+data))();
+                var mm,mp, mi, ml,w;
+                for (var i = 0; i < d.length; i++) {
+                    cnt += parseInt(d[i].cnt);
+                    if (d[i].lonlat != '') {
+                        var arr = d[i].lonlat.split(',');
+                        var xy = maplet.toScreenCoordinate(arr[0]+','+arr[1]);
+                        //cnt += parseInt(d[i].cnt);
+                        if(scid>0)
+                            result = "<span class=\"markbody\" id=\"span_c_p_"+d[i].countyid+"\" ><span class=\"shop\"><b>" + d[i].cnt + "</b>家</span><span class=\"mapprice\"><dfn>&yen;</dfn><b>" + Math.floor(d[i].price) + "</b></span><span class=\"up\">起</span></span>";                        
+                        else
+                            result = "<span class=\"markbody\" id=\"span_c_p_"+d[i].countyid+"\" ><span class=\"shop\"><b>" + d[i].cnt + "</b>个商家</span></span>";                        
+                        mp = new MPoint(arr[0], arr[1]);
+                        w = CalWidth(d[i].countyname.length);
+                        mi = new MIcon(imgpath + 'c_' + d[i].countyid + suffix, w, imgheight,0,0);
+                        ml = new MLabel(result, {xoffset:w,yoffset:0,enableStyle:false});
+                        mm = new MMarker(mp, mi, null, ml, null);
+                        mm.icon.div.style.zIndex = 1;
+                        mm.label.div.style.zIndex = 1;
+                        mm.cid = d[i].countyid;
+                        MEvent.addListener(mm, 'click', function(_mm) {
+                            _mm.icon.hilite();
+                            CheckCounty(_mm.cid);
+                        });
+                        MEvent.addListener(mm, 'mouseover', function(_mm) {
+                            _mm.icon.hilite();
+                        });
+                        MEvent.addBuiltInListener(mm.label.div, 'mouseover', function(e) {
+                            var evs = GetEventSource(e);
+                            var _id = evs.id;
+                            if (_id) {
+                                var _idx = _id.lastIndexOf('_');
+                                if (_idx > 0) {
+                                    _id = _id.substring(_idx + 1, _id.length);
+                                    if (window.document.getElementById("mk_label_" + _id) && window.document.getElementById("OverlayBg" + _id)) {
+                                        ++pF;                                        
+                                        window.document.getElementById("mk_label_" + _id).style.zIndex = pF;
+                                        window.document.getElementById("OverlayBg" + _id).style.zIndex = pF;
+                                    }
+                                }
+                            }
+                        });                                                                                                                                                                         
+                        maplet.addOverlay(mm);
+                    }
+                }
+            }
+            window.document.getElementById("vcnt").innerHTML = cnt;
+        }, false, false);
+    }
+    
+    function CalWidth(len) {
+        return 14 + 12 * len + ((len/1==1)?len:len-1);
+    }
+    
+    function CheckCounty(id) {
+        SendRequest(url, "POST", "type=getctinfo&ctid=" + id, function(data) {
+            if (data && data.length > 0) {
+                var d = (new Function("", "return " + data))();
+                var lonlat = d.lonlat;
+                var zoom = d.zoom<=zlevel ? zlevel + 1 : d.zoom;
+                if (lonlat.length > 0) {
+                    var arr = lonlat.split(',');
+                    mpoint = new MPoint(arr[0], arr[1]);
+                }
+                maplet.centerAndZoom(mpoint, zoom);
+            }
+            viewlevel = 1;
+        });
+    }
+    
+    function ShowCountyView() {
+        SendRequest(url, "POST", "type=getlist2&scid="+scid+"&bid="+bid+"&ctid="+ctid, function(data) {
+            var result = '';
+            var cnt = 0;
+            var seq = 0;
+            ids = new Array();
+            ws = new Array();
+            ps = new Array();
+            pps = new Array();            
+            if (data && data.length>0) {
+                var d = (new Function("","return "+data))();
+                var mm,mp, mi, ml,w;                
+                for (var i = 0; i < d.length; i++) {
+                    ++cnt;                    
+                    if (d[i].lon && d[i].lat) {
+                        var xy = maplet.toScreenCoordinate(d[i].lon + ',' + d[i].lat);
+                        if (scid>0) {
+                            if (d[i].t == "F") {
+                                result = "<span class=\"markbody\" id=\"span_ct_p_" + d[i].serviceid + "\" ><span class=\"shop\">" + d[i].name + "</span><span class=\"mapprice\"><dfn>&yen;</dfn><b>" + Math.floor(d[i].price) + "</b></span><span class=\"up\">起</span></span>";
+                            } else {
+                                result = "<span class=\"markbody\" id=\"span_ct_p_" + d[i].serviceid + "\" ><span class=\"shop\">" + d[i].name + "</span><span class=\"mapprice\"><dfn>&yen;</dfn><b>" + Math.floor(d[i].price) + "</b></span><span class=\"up\">起</span></span>";
+                            }
+                        } else {
+                            result = "<span class=\"markbody\" id=\"span_ct_p_" + d[i].serviceid + "\" ><span class=\"shop\">" + d[i].name + "</span></span>";
+                        }
+                        mp = new MPoint(d[i].lon, d[i].lat);
+                        w = CalWidth(d[i].zname.length);
+                        mi = new MIcon(imgpath + 'z_' + d[i].zoneid + suffix, w, imgheight,0,0);
+                        ml = new MLabel(result, {xoffset:w,yoffset:0,enableStyle:false});
+                        mm = new MMarker(mp, mi, null, ml, null);
+                        mm.icon.div.style.zIndex = 1;
+                        mm.label.div.style.zIndex = 1;
+                        mm.t = d[i].t;
+                        mm.cid = d[i].serviceid;
+                        mm.iid = d[i].id;
+                        mm.vid = d[i].vendorid;
+                        MEvent.addListener(mm, 'click', function(_mm) {
+                            _mm.icon.hilite();
+                            if (scid>0) {
+                                if (_mm.t == "F")
+                                    window.open('/s/' + _mm.cid + '/?pid=' + _mm.iid);
+                                else
+                                    window.open('/s/' + _mm.cid + '/?itemid=' + _mm.iid);
+                            } else {
+                                window.open('/'+_mm.vid+'/');
+                            }
+                        });
+                        MEvent.addListener(mm, 'mouseover', function(_mm) {
+                            _mm.icon.hilite();
+                        });                                                                                                                                                 
+                        MEvent.addBuiltInListener(mm.label.div, 'mouseover', function(e) {
+                            //var _id = e.target.parentNode.parentNode.id;
+                            var evs = GetEventSource(e);
+                            var _id = evs.id;
+                            if (_id) {
+                                var _idx = _id.lastIndexOf('_');
+                                if (_idx > 0) {
+                                    _id = _id.substring(_idx + 1, _id.length);
+                                    if (window.document.getElementById("mk_label_" + _id) && window.document.getElementById("OverlayBg" + _id)) {
+                                        ++pF;                                        
+                                        window.document.getElementById("mk_label_" + _id).style.zIndex = pF;
+                                        window.document.getElementById("OverlayBg" + _id).style.zIndex = pF;
+                                    }
+                                }
+                            }
+                        });                                                                                                                                                 
+                        maplet.addOverlay(mm);                        
+                    }
+                }
+            }
+            window.document.getElementById("vcnt").innerHTML = cnt;
+        }, false, false);            
+    }
+    
+    function GetEventSource(e) {
+        if (window.event) {
+            e.cancelBubble = true;
+            return window.event.srcElement.parentNode.parentNode.parentNode;
+        } else {
+            e.stopPropagation();
+            return e.currentTarget;
+        }
+    }
+    
+    function showBrand(val,obj) {
+        if (val == 0) {
+            obj.className = "select";
+        } else {
+            obj.className = "select select_active";
+        }
+    }
+    
+    function ShowUpper(_id) {
+        setTimeout("Upper(" + _id + ")", 500);
+    }
+ 
+    function Upper(_id){
+        if (uptimer)
+            clearTimeout(uptimer);
+        if (ids && ids.length > 0) {
+            var idx;
+            for (idx = 0; idx < ids.length; idx++) {
+                if(ids[idx]==_id)
+                    break;
+            }
+            if (idx) {
+                ps[idx].setZIndex(++maxz);
+                pps[idx].setZIndex(++maxz);
+            }
+        }        
+    }
+    
+    function initData(lev) {
+        maplet.clearOverlays(true);
+        if (lev == 0) {
+            //城市视角
+            ShowCityView();
+        } else {
+            //区域视角
+            ShowCountyView();
+        }
+        initBrands();
+    }
+ 
+    window.onresize = initMap;
+    initMap(true);
+    //initBrands();    
+    initData(0)
+</script>

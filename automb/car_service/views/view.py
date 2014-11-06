@@ -6,7 +6,7 @@ from django.shortcuts import render,redirect
 
 from django.utils import timezone as datetime
 from ..models import Tree, ServiceDetail, Supplier, Service,Bill,ServiceType,Service2
-from ..decorators import group_required
+from ..biz import get_cookie
 import jsonpickle
 __author__ = 'Administrator'
 
@@ -24,7 +24,8 @@ def service_list_all(request):
 # 服务列表
 def service_list(request, service_type_id):
 
-    sl = Service2.objects.all()
+    area_id=get_cookie.get_area(request)
+    sl = Service2.objects.filter(supplier__area__id=area_id)
 
     if service_type_id != None:
         service_type=ServiceType.objects.get(pk=service_type_id)
@@ -110,69 +111,6 @@ def generat_service_detail(services):
 
 
 
-def service_detail(request, service_id, detail_id):
-
-    service = Service.objects.get(pk=service_id)
-    only_one=True if service.servicedetail_set.all().count()==1 else False
-    detail=None;
-    json_detail_list=serializers.serialize("json", service.servicedetail_set.all(),use_natural_keys=True)
-    cc= jsonpickle.encode(service.servicedetail_set.all())
-    #aa=serializers.serialize("json", list(service.servicedetail_set.all())[0])
-    if detail_id != None:
-        detail = ServiceDetail.objects.get(pk=detail_id)
-
-
-    properties = service.servicedetail_set.values_list()
-
-    brand_ids = [a[2] for a in properties]
-    brand_list = Tree.objects.filter(id__in=brand_ids)
-
-    wash_type_ids = [a[3] for a in properties]
-    wash_type_list = Tree.objects.filter(id__in=wash_type_ids)
-
-    sound_proofing_type_ids = [a[4] for a in properties]
-    sound_proofing_type_list = Tree.objects.filter(id__in=sound_proofing_type_ids)
-
-    foil_type_ids = [a[5] for a in properties]
-    foil_type_list = Tree.objects.filter(id__in=foil_type_ids)
-
-    foil_model_front_ids = [a[6] for a in properties]
-    foil_model_front_list = Tree.objects.filter(id__in=foil_model_front_ids)
-
-    foil_model_sides_back_ids = [a[7] for a in properties]
-    foil_model_sides_back_list = Tree.objects.filter(id__in=foil_model_sides_back_ids)
-
-    glass_damage_size_ids = [a[8] for a in properties]
-    glass_damage_size_list = Tree.objects.filter(id__in=glass_damage_size_ids)
-
-    tire_repair_type_ids = [a[9] for a in properties]
-    tire_repair_type_list = Tree.objects.filter(id__in=tire_repair_type_ids)
-
-    body_damage_size_ids = [a[10] for a in properties]
-    body_damage_size_list = Tree.objects.filter(id__in=body_damage_size_ids)
-
-    sound_suit_ids = [a[11] for a in properties]
-    sound_suit_list = Tree.objects.filter(id__in=sound_suit_ids)
-
-    main_light_suit_ids = [a[12] for a in properties]
-    main_light_suit_list = Tree.objects.filter(id__in=main_light_suit_ids)
-    detail_json=serializers.serialize('json',service.servicedetail_set.all())
-    return render(request, 'car_service/servicedetail2.html', {'service': service,'only_one':only_one,
-                                                               'detail':detail,
-                                                              'brand_list': brand_list
-
-        , 'wash_type_list': wash_type_list
-        , 'selected_sound_proofing_type_list': sound_proofing_type_list
-        , 'foil_type_list': foil_type_list
-        , 'foil_model_front_list': foil_model_front_list
-        , 'foil_model_sides_back_list': foil_model_sides_back_list
-        , 'glass_damage_size_list': glass_damage_size_list
-        , 'tire_repair_type_list': tire_repair_type_list
-        , 'body_damage_size_list': body_damage_size_list
-        , 'sound_suit_list': sound_suit_list
-        , 'main_light_suit_list': main_light_suit_list
-        ,'json_detail_list':json_detail_list
-    })
 
 def bill_create_success(request):
     return render(request,'car_service/bill_create_success.html')

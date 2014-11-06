@@ -1,0 +1,769 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<title></title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<script type="text/javascript" src="js/base.js"></script>
+<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="js/lanrenzhijia.js"></script>
+
+<script src="js/ajaxrequest" type="text/javascript"></script>
+
+</head> 
+<body>
+<!--top-->
+<div class="top">
+	<div class="top_1">
+    	<div class="top_1_r f-r h">您好！请&nbsp;<a href="#" target="_blank" class="o">登录</a>&nbsp;或&nbsp;<a href="#" target="_blank" class="o">免费注册</a>&nbsp;|&nbsp;<a href="#" target="_blank">订单管理</a>&nbsp;|&nbsp;<a href="#" target="_blank">商家入口</a>&nbsp;|&nbsp;<a href="#" target="_blank">★收藏本站</a></div>
+        <div class="clear"></div>
+    </div>
+</div>
+<!--top/-->
+<!--head-->
+<div class="h_c">
+	<div class="h_c_1 f-l"><a href="#"><img src="images/logo.jpg" width="175" height="72" alt="" /></a></div>
+    <div class="h_c_2 f-l" style="position:relative; z-index:999;">
+    	<div class="h_c_2_1" onmouseover="ddd('aa', 'show');" onmouseout="ddd('aa', 'hide');"><span>广州站</span>&nbsp;[更换城市]</div>
+        <div class="h_c_2_2" id="aa" onmouseover="ddd('aa', 'show');" onmouseout="ddd('aa', 'hide');">
+            <a href="#">北京站</a>
+            <a href="#">上海站</a>
+            <a href="#">广州站</a>
+            <a href="#">成都站</a>
+            <a href="#">长沙站</a>
+            <a href="#">济南站</a>
+            <a href="#">天津站</a>
+            <a href="#">重庆站</a>
+        </div>
+    </div>
+    <div class="h_c_3 f-r"><a href="#" target="_blank"><img src="images/img_01.jpg" width="600" height="72" alt="" /></a></div>
+    <div class="clear"></div>
+</div>
+<!--head/-->
+<!--menu-->
+<div class="menu" style="position:relative;">
+    <div class="menu_1 f-l menu_1x" onmouseover="aaa('bb', 'show');" onmouseout="aaa('bb', 'hide');">服务分类</div>
+    <div class="menu_2 f-l">
+        <a href="#">首页</a>
+        <a href="#">商家</a>
+        <a href="#" class="menu_2_bg">限时特价</a>
+        <a href="#">地图找商家</a>
+    </div>
+    <div class="menu_3 f-r">
+    	<form action="" method="get" style="padding:0; margin:0;">
+        	<div class="menu_3_s1 f-l">
+            	<input type="text" name="keyword" id="txtKey" class="menu_3_s1_i" value="请输入要搜索的内容" onblur="this.style.color='#999';this.value=this.value==''?'请输入要搜索的内容':this.value;" onfocus="this.style.color='#333';this.value=this.value=='请输入要搜索的内容'?'':this.value;" />
+            </div>
+            <div class="menu_3_s2 f-r">
+            	<input type=submit value="" name="" class="menu_3_s2_b" />
+            </div>
+            <div class="clear"></div>
+        </form>
+    </div>
+    <div class="clear"></div>
+    <!---->
+	<div class="index_c_l_1_l index_c_l_1_l2" id="bb" onmouseover="aaa('bb', 'show');" onmouseout="aaa('bb', 'hide');">
+        <div class="goods">
+            <div class="all-goods">
+            <!--分类-->
+            <!--1-->
+            <div class="item index_c_l_1_l_b">
+            <div class="product">
+                <div class="index_c_l_1_l_list_title">汽车美容</div>
+                <div class="index_c_l_1_l_list_a h"><a href="#">洗车</a><a href="#">打蜡</a><a href="#">封釉</a><a href="#">镀膜</a><a href="#">内饰清洗</a><a href="#">空调清洗</a><a href="#">真皮座椅保养</a></div>
+            </div>
+            <div class="product-wrap posone1">
+                <div class="list_title">汽车美容</div>
+                <div class="list_a h"><a href="#">洗车</a><a href="#">打蜡</a><a href="#">封釉</a><a href="#">镀膜</a><a href="#">内饰清洗</a><a href="#">空调清洗</a><a href="#">真皮座椅保养</a><a href="#">发动机舱清洗</a><a href="#">前风挡镀膜</a></div>
+            </div>
+            </div>
+            <!--1/-->
+            <!--2-->
+            <div class="item index_c_l_1_l_b">
+            <div class="product">
+                <div class="index_c_l_1_l_list_title">汽车装饰</div>
+                <div class="index_c_l_1_l_list_a h"><a href="#">玻璃贴膜</a><a href="#">底盘装甲</a><a href="#">座椅包真皮</a><a href="#">汽车隔音</a></div>
+            </div>
+            <div class="product-wrap posone2">
+                <div class="list_title">汽车装饰</div>
+                <div class="list_a h"><a href="#">玻璃贴膜</a><a href="#">底盘装甲</a><a href="#">座椅包真皮</a><a href="#">汽车隔音</a></div>
+            </div>
+            </div>
+            <!--2/-->
+            <!--3-->
+            <div class="item index_c_l_1_l_b">
+            <div class="product">
+                <div class="index_c_l_1_l_list_title">汽车维修</div>
+                <div class="index_c_l_1_l_list_a h"><a href="#">四轮定位</a><a href="#">四轮动平衡</a><a href="#">油路清洗</a><a href="#">节气门清洗</a><a href="#">补胎</a></div>
+            </div>
+            <div class="product-wrap posone3">
+                <div class="list_title">汽车维修</div>
+                <div class="list_a h"><a href="#">四轮定位</a><a href="#">四轮动平衡</a><a href="#">油路清洗</a><a href="#">节气门清洗</a><a href="#">补胎</a></div>
+            </div>
+            </div>
+            <!--3/-->
+            <!--4-->
+            <div class="item">
+            <div class="product">
+                <div class="index_c_l_1_l_list_title">汽车改装</div>
+                <div class="index_c_l_1_l_list_a h"><a href="#">音响改装</a><a href="#">车身改色贴膜</a><a href="#">DVD导航一体机</a><a href="#">氙气大灯改装</a></div>
+            </div>
+            <div class="product-wrap posone4">
+                <div class="list_title">汽车改装</div>
+                <div class="list_a h"><a href="#">音响改装</a><a href="#">车身改色贴膜</a><a href="#">DVD导航一体机</a><a href="#">氙气大灯改装</a></div>
+            </div>
+            </div>
+            <!--4/-->
+            <!--分类/-->
+            </div>
+        </div>
+	</div>
+	<!--/-->
+</div>	
+<!--menu/-->
+<!--content-->
+<div class="w1000 h-20">&nbsp;</div>
+<div class="w1000">
+	<div class="tejia_d_l f-l">
+    	<div class="tejia_d_l_1">
+        	<div class="tejia_d_l_1_1">
+            	<ul>
+                	<li><p>【底盘装甲】北京亿盛宝隆商贸有限公司</p></li>
+                    <li>限时特价:￥<strong>150-2880</strong>&nbsp;&nbsp;预订价：￥<span>500</span>&nbsp;&nbsp;门市价：￥<span>600</span>(为您节省 ￥450)</li>
+                    <li>还剩&nbsp;<span id="divdown1"></span>&nbsp;结束</li>
+                </ul>
+            </div>
+            <div class="h-15">&nbsp;</div>
+            <!--服务预订下部-->
+            <div style=" width:708px;">
+   	    		<table width="700" border="0" cellspacing="0" cellpadding="5">
+                  <tr>
+                    <td width="60" align="right" valign="middle" class="tejia_d_l_1_2_1">车　　型：</td>
+                    <td width="620" align="left" valign="top" class="tejia_d_l_1_2_1 b tejia_d_l_1_2_4"><span>威航 2010款 16.4百年纪念版 8.0T[<a id=a_SelectCat onclick="Covert('', 434, 200, 'div_SelectCar', false, false, false, true)"  href="javascript:void(0);">更改</a>]</span>&nbsp;请确认锁选车型是否准确，不同车型服务价格可能存在差异。</td>
+                  </tr>
+                  <tr>
+                    <td align="right" valign="middle" class="tejia_d_l_1_2_1">贴膜类型：</td>
+                    <td align="left" valign="top" class="tejia_d_l_1_2_2 tejia_d_l_1_2_3"><a href="#" class="x1">整车套餐</a><a href="#">前挡</a><a href="#">侧后挡</a><a href="#">自选组合</a></td>
+                  </tr>
+                  <tr>
+                    <td align="right" valign="middle" class="tejia_d_l_1_2_1">品　　牌：</td>
+                    <td align="left" valign="top" class="tejia_d_l_1_2_2 tejia_d_l_1_2_3"><a href="#" class="x1">龙膜</a><a href="#">龙膜2</a><a href="#">龙膜3</a><a href="#">龙膜4</a></td>
+                  </tr>
+                  <tr>
+                    <td height="70" align="center" valign="middle">&nbsp;</td>
+                    <td align="left" valign="middle" class="tejia_d_l_1_2_2"><a  href="#"><img src="images/img_54.jpg" align="middle" width="158" height="53" /></a>&nbsp;预订后会将服务码发到您的手机上</td>
+                  </tr>
+                </table>
+   	    		<table width="700" border="0" cellspacing="0" cellpadding="5">
+   	    		  <tr>
+   	    		    <td width="60" align="right" valign="middle" class="tejia_d_l_1_2_1">历史成交：</td>
+   	    		    <td width="270" align="left" valign="middle" class="tejia_d_l_1_2_2 b"><a href="#" target="_blank">3笔</a></td>
+   	    		    <td width="60" align="right" valign="middle" class="tejia_d_l_1_2_1">最近关注：</td>
+   	    		    <td width="270" align="left" valign="middle" class="tejia_d_l_1_2_2">1057人</td>
+    		      </tr>
+   	    		  <tr>
+   	    		    <td align="right" valign="middle" class="tejia_d_l_1_2_1">送 家 币：</td>
+   	    		    <td align="left" valign="middle" class="tejia_d_l_1_2_2">150个家币</td>
+   	    		    <td align="right" valign="middle" class="tejia_d_l_1_2_1">付款方式：</td>
+   	    		    <td align="left" valign="middle" class="tejia_d_l_1_2_2">在线付款&nbsp;到店服务</td>
+    		      </tr>
+    		  </table>
+          </div>
+            <!--end服务预订下部-->           
+        </div>
+        <div class="h-15">&nbsp;</div>
+        <!--介绍-->
+        <div class="tejia_d_l_d">
+            <div class="tejia_d_l_d_1">
+                <ul>
+                    <li id=AreaB_1 class=on onmouseover=tagOver(this) onmouseout=tagOut(this)>服务介绍</li>
+                    <li id=AreaB_2 onmouseover=tagOver(this) onmouseout=tagOut(this)>用户评价（215）</li>
+                    <li id=AreaB_3 onmouseover=tagOver(this) onmouseout=tagOut(this)>成交记录（307）</li>
+                    <li id=AreaB_4 onmouseover=tagOver(this) onmouseout=tagOut(this)>网友咨询</li>
+                </ul>
+                <ul class="clear"></ul>
+            </div>
+        </div>
+        <!---->
+        <div class="h-20">&nbsp;</div>
+        <div id=AreaB_1_Info>
+        	<!---->
+            <div class="tejia_d_l_d_2a_1">服务属性</div>
+            <div class="h-10">&nbsp;</div>
+            <div class="tejia_d_l_d_2a_2"><span>施工时间：</span>1天&nbsp;&nbsp;&nbsp;&nbsp;<span>预约时间：</span>随时到店即可</div>
+            <div class="h-20">&nbsp;</div>
+            <div class="tejia_d_l_d_2a_1">服务包含项目</div>
+            <div class="h-10">&nbsp;</div>
+            <div class="tejia_d_l_d_2a_2"><img src="images/img_59.jpg" width="740" height="166" alt="" /></div>
+            <div class="h-20">&nbsp;</div>
+            <div class="tejia_d_l_d_2a_2"><img src="images/img_60.jpg" width="740" height="566" alt="" /></div>
+            <div class="h-20">&nbsp;</div>
+            <div class="tejia_d_l_d_2a_1">施工前后对比</div>
+            <div class="h-10">&nbsp;</div>
+            <div class="tejia_d_l_d_2a_2"><img src="images/img_61.jpg" width="740" height="236" alt="" /></div>
+            <div class="h-20">&nbsp;</div>
+            <div class="tejia_d_l_d_2a_2"><img src="images/img_62.jpg" width="740" height="236" alt="" /></div>
+            <div class="h-20">&nbsp;</div>
+            <div class="tejia_d_l_d_2a_1">用户点评</div>
+            <div class="h-15">&nbsp;</div>
+            <div class="tejia_d_l_d_2a_3">
+            	<div class="tejia_d_l_d_2a_3_1 f-l"><p>综合得分</p><p><span>5</span></p><p><img src="images/x_5.jpg" width="64" height="12" alt="" /></p></div>
+                <div class="tejia_d_l_d_2a_3_2 f-l">
+                	<ul>
+                    	<li>服务态度：&nbsp;<img src="images/x_5.jpg" width="64" height="12" align="absmiddle" alt="" />&nbsp;满意（<span>5</span>分）</li>
+                        <li>施工效果：&nbsp;<img src="images/x_5.jpg" width="64" height="12" align="absmiddle" alt="" />&nbsp;满意（<span>5</span>分）</li>
+                        <li>性&nbsp;价&nbsp;比：&nbsp;<img src="images/x_5.jpg" width="64" align="absmiddle" height="12" alt="" />&nbsp;满意（<span>5</span>分）</li>
+                    </ul>
+                </div>
+                <div class="tejia_d_l_d_2a_3_3 f-r"><p><img src="images/img_63.jpg" width="125" height="41" alt="" /></p><p>您可以对已使用的做服务</p></div>
+                <div class="clear"></div>
+            </div>
+            <div class="h-15">&nbsp;</div>
+            <div class="tejia_d_l_d_2a_4_1 b"><span><a href="#" target="_blank">Ci98F</a>&nbsp;&nbsp;204-10-05</span><img src="images/q_5.jpg" width="61" height="12" align="absmiddle" alt="" /></div>
+            <div class="tejia_d_l_d_2a_4_2">师傅们很认真，也很专业，很满意，十分感谢。</div>
+            <div class="h-15">&nbsp;</div>
+            <div class="tejia_d_l_d_2a_4_1 b"><span><a href="#" target="_blank">Ci98F</a>&nbsp;&nbsp;204-10-05</span><img src="images/q_5.jpg" width="61" height="12" align="absmiddle" alt="" /></div>
+            <div class="tejia_d_l_d_2a_4_2">师傅们很认真，也很专业，很满意，十分感谢。</div>
+            <!--/-->
+        </div>
+        <div id=AreaB_2_Info style="display:none;">
+        	<form id="form1" name="form1" method="post" action="">
+            <div class="tejia_d_l_d_2a_3">
+            	<div class="tejia_d_l_d_2a_3_1 f-l"><p>综合得分</p><p><span>5</span></p><p><img src="images/x_5.jpg" width="64" height="12" alt="" /></p></div>
+                <div class="tejia_d_l_d_2a_3_2 f-l">
+                	<ul>
+                    	<li>服务态度：&nbsp;<img src="images/x_5.jpg" width="64" height="12" align="absmiddle" alt="" />&nbsp;满意（<span>5</span>分）</li>
+                        <li>施工效果：&nbsp;<img src="images/x_5.jpg" width="64" height="12" align="absmiddle" alt="" />&nbsp;满意（<span>5</span>分）</li>
+                        <li>性&nbsp;价&nbsp;比：&nbsp;<img src="images/x_5.jpg" width="64" align="absmiddle" height="12" alt="" />&nbsp;满意（<span>5</span>分）</li>
+                    </ul>
+                </div>
+                <div class="tejia_d_l_d_2a_3_3 f-r"><p><img src="images/img_63.jpg" width="125" height="41" alt="" /></p><p>您可以对已使用的做服务</p></div>
+                <div class="clear"></div>
+            </div>
+            <div class="tejia_d_l_d_2a_5">
+            <span><input name="a1" type="radio" value="" checked="checked" />全部<input name="a1" type="radio" value="" />满意<input name="a1" type="radio" value="" />一般<input name="a2" type="radio" value="" />不满意</span><input name="" type="checkbox" value="" />有内容的评价
+            </div>
+            <div class="h-15">&nbsp;</div>
+            <div class="tejia_d_l_d_2a_6">
+            	<div class="tejia_d_l_d_2a_6_l f-l b"><img src="" width="50" height="50" alt="" /><p><a href="#" target="_blank">别克GL83</a></p></div>
+                <div class="tejia_d_l_d_2a_6_r f-r">
+                    <div class="x1"><img src="images/x_5.jpg" alt="" align="absmiddle" />&nbsp;<strong>5.0</strong>分&nbsp;&nbsp;服务态度：非常满意<span>(5分)</span>&nbsp;&nbsp;施工效果：非常满意<span>(5分)</span>&nbsp;&nbsp;性价比：非常满意<span>(5分)</span></div>
+                    <div class="x2">我看了几家音响店，最后选择了双周音响，性价比高，专业，给赞！我看了几家音响店，最后选择了双周音响，性价比高，专业，给赞！我看了几家音响店，最后选择了双周音响，性价比高，专业，给赞！我看了几家音响店，最后选择了双周音响，性价比高，专业，给赞！</div>
+                    <div class="x3">套餐：宝马5系专用后声场升级套件4喇叭套装(不含隔音)&nbsp;&nbsp;车系：宝马 宝马5系</div>
+                    <div class="x4"><strong>商家回复</strong><br />感谢您对我们双周的信任与支持</div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="tejia_d_l_d_2a_6">
+            	<div class="tejia_d_l_d_2a_6_l f-l b"><img src="" width="50" height="50" alt="" /><p><a href="#" target="_blank">别克GL83</a></p></div>
+                <div class="tejia_d_l_d_2a_6_r f-r">
+                    <div class="x1"><img src="images/x_5.jpg" alt="" align="absmiddle" />&nbsp;<strong>5.0</strong>分&nbsp;&nbsp;服务态度：非常满意<span>(5分)</span>&nbsp;&nbsp;施工效果：非常满意<span>(5分)</span>&nbsp;&nbsp;性价比：非常满意<span>(5分)</span></div>
+                    <div class="x2">我看了几家音响店，最后选择了双周音响，性价比高，专业，给赞！</div>
+                    <div class="x3">套餐：宝马5系专用后声场升级套件4喇叭套装(不含隔音)&nbsp;&nbsp;车系：宝马 宝马5系</div>
+                    <div class="x4"><strong>商家回复</strong><br />感谢您对我们双周的信任与支持</div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="tejia_d_l_d_2a_6">
+            	<div class="tejia_d_l_d_2a_6_l f-l b"><img src="" width="50" height="50" alt="" /><p><a href="#" target="_blank">别克GL83</a></p></div>
+                <div class="tejia_d_l_d_2a_6_r f-r">
+                    <div class="x1"><img src="images/x_5.jpg" alt="" align="absmiddle" />&nbsp;<strong>5.0</strong>分&nbsp;&nbsp;服务态度：非常满意<span>(5分)</span>&nbsp;&nbsp;施工效果：非常满意<span>(5分)</span>&nbsp;&nbsp;性价比：非常满意<span>(5分)</span></div>
+                    <div class="x2">我看了几家音响店，最后选择了双周音响，性价比高，专业，给赞！</div>
+                    <div class="x3">套餐：宝马5系专用后声场升级套件4喇叭套装(不含隔音)&nbsp;&nbsp;车系：宝马 宝马5系</div>
+                    <div class="x4"><strong>商家回复</strong><br />感谢您对我们双周的信任与支持</div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="tejia_d_l_d_2a_6_r_fy">
+                <span><a href="#">上一页</a></span>
+                <span><a href="#">1</a></span>
+                <span class="x1">2</span>
+                <span><a href="#">3</a></span>
+                <span>...</span>
+                <span><a href="#">16</a></span>
+                <span><a href="#">17</a></span>
+                <span><a href="#">下一页</a></span>
+            </div>
+            </form>
+        </div>
+        <div id=AreaB_3_Info style="display:none;">
+        	<!---->
+            <div class="tejia_d_l_d_2a_7">
+            	<div class="x1">本服务累计成交<strong>95</strong>单</div>
+                <div class="tejia_d_l_d_2a_7_1">
+                	<ul>
+                    	<li class="a1"><strong>用户</strong></li>
+                        <li class="a2"><strong>车系</strong></li>
+                        <li class="a3"><strong>用品</strong></li>
+                        <li class="a4"><strong>价格</strong></li>
+                        <li class="a5"><strong>下单时间</strong></li>
+                    </ul>
+                    <ul class="clear"></ul>
+                </div>
+                <div class="tejia_d_l_d_2a_7_1">
+                	<ul>
+                    	<li class="a1">kjlwhh</li>
+                        <li class="a2">奔驰-奔驰C级</li>
+                        <li class="a3">车睿仕 铠甲镀晶</li>
+                        <li class="a4">&yen;1500</li>
+                        <li class="a5">2014-10-22 15:25</li>
+                    </ul>
+                    <ul class="clear"></ul>
+                </div>
+                <div class="tejia_d_l_d_2a_7_1">
+                	<ul>
+                    	<li class="a1">kjlwhh</li>
+                        <li class="a2">奔驰-奔驰C级</li>
+                        <li class="a3">车睿仕 铠甲镀晶</li>
+                        <li class="a4">&yen;1500</li>
+                        <li class="a5">2014-10-22 15:25</li>
+                    </ul>
+                    <ul class="clear"></ul>
+                </div>
+                <div class="tejia_d_l_d_2a_7_1">
+                	<ul>
+                    	<li class="a1">kjlwhh</li>
+                        <li class="a2">奔驰-奔驰C级</li>
+                        <li class="a3">车睿仕 铠甲镀晶</li>
+                        <li class="a4">&yen;1500</li>
+                        <li class="a5">2014-10-22 15:25</li>
+                    </ul>
+                    <ul class="clear"></ul>
+                </div>
+            </div>
+            <!--/-->
+        </div>
+        <div id=AreaB_4_Info style="display:none;">
+        	<!---->
+            <div class="tejia_d_l_d_2a_8">
+            	<ul>
+                	<li class="a1">打蜡、封釉、镀膜有什么区别，价格如何？</li>
+                    <li class="a2">打蜡、封釉、镀膜三种都是汽车漆面美容的项目，都是以增亮车漆、保护漆面为目的，但是施工工艺、保持的时间效果上都有很大差异。打蜡：保持的时间较短，一般为1-2个月，蜡面很薄，几乎没有硬度起不到保护漆面的作用，但是相对来说是三种服务中最便宜的，一般打一次蜡的价格为50-150元。封釉：保持时间大概3-6个月。釉面有一定厚度，具备一定的防轻微划伤的能力。但是价格相对打蜡较高，一般一次封釉的价格为300-500元。镀膜：保持时间大约1年左右，采用无机物为原料附着在漆面上，硬度高，防划伤能力强，同样价格偏贵，但是性价比较高，镀膜的常见价格为600-2000元不等。
+                    </li>
+                </ul>
+            </div>
+            <div class="tejia_d_l_d_2a_8">
+            	<ul>
+                	<li class="a1">镀膜的后期养护是什么？</li>
+                    <li class="a2">市面上很多品牌的漆面镀膜，在进行首次镀膜施工后，都会有1-2次的后续养护。保持车漆的光亮。当然这还要根据不同的品牌的镀膜具体情况而定。</li>
+                </ul>
+            </div>
+            <div class="tejia_d_l_d_2a_8">
+            	<ul>
+                	<li class="a1">镀膜前一定要抛光吗？</li>
+                    <li class="a2">抛光是镀膜前的一道重要工序，目的是让车漆恢复亮泽，或者清除一些细小划伤。所以建议使用年限较高的车，或者光泽度较差的车最好在镀膜前进行抛光。</li>
+                </ul>
+            </div>
+            <div class="h-20">&nbsp;</div>
+            <div class="tejia_d_l_d_2a_9">
+            	<div class="a1">我要提问</div>
+                  <div class="a2">
+                      <div class="x1 b">欢迎您，xxx&nbsp;|<a href="#" target="_blank">退出登录</a></div>
+                      <div>
+                           <form id="form2" name="form2" method="post" action="">
+                              <textarea name="" cols="" rows="" style="width:708px; height:90px;"></textarea>
+                          </form>
+                      </div>
+                      <div class="h-10">&nbsp;</div>
+                      <div class="x2"><span>还可以输入<strong>200</strong>字</span>提问商家回复后，会有站内短消息通知您。<a href=""><img src="images/img_68.jpg" align="absmiddle" alt="" /></a></div>
+            	</div>
+            </div>
+            <!--/-->
+        </div>
+        <!---->
+        <!--介绍/-->
+    </div>
+    <div class="tejia_d_r f-r">
+    	<!--商家信息-->
+        <div class="tejia_d_r_1">
+        	<div class="tejia_d_r_1_1">北京亿盛宝隆商贸有限公司</div>
+            <div class="h-10">&nbsp;</div>
+            <div class="tejia_d_r_1_2"><img src="images/img_49.jpg" width="228" height="171" alt="" /></div>
+            <div class="h-10">&nbsp;</div>
+            <div class="tejia_d_r_1_3"><span>商家等级：<img src="images/img_28.gif"alt="" align="absmiddle" /><img src="images/img_28.gif"alt="" align="absmiddle" /><img src="images/img_50.gif"alt="" align="absmiddle" /></span><img src="images/img_51.jpg" alt="" align="absmiddle" /></div>
+            <div class="tejia_d_r_1_4">
+            	<ul>
+                	<li>网友评价</li>
+                    <li>与同行比</li>
+                    <li>服务态度：<strong>5.0</strong></li>
+                    <li><span>高于</span><strong>100.00%</strong></li>
+                    <li>施工质量：<strong>5.0</strong></li>
+                    <li><span>高于</span><strong>100.00%</strong></li>
+                    <li>性 价 比：<strong>5.0</strong></li>
+                    <li><span>高于</span><strong>100.00%</strong></li>
+                </ul>
+                <ul class="clear"></ul>
+            </div>
+            <div class="tejia_d_r_1_5 b">
+            	<ul>
+                	<li><span>所在商圈：</span>朝阳 垡头 [<a href="#" target="_blank">地图</a>]</li>
+                    <li><span>营业时间：</span>8:30-19:00</li>
+                    <li><span>客服热线：</span>4008108876&nbsp;转&nbsp;2119</li>
+                    <li><span>在线咨询：</span><a href="#" target="_blank"><img src="images/img_52.jpg" alt="" align="absmiddle" /></a></li>
+                </ul>
+                <ul class="clear"></ul>
+            </div>
+            <div class="tejia_d_r_1_6"><a href="#" target="_blank"><img src="images/img_53.jpg" width="130" height="46" alt="" /></a></div>
+        </div>
+        <!--商家信息/-->
+        <div class=" h-10">&nbsp;</div>
+        <!--其他服务-->
+        <div class="tejia_d_r_1">
+        	<div class="tejia_d_r_2_1 b"><span>本商家其他热销服务</span><a href="#" target="_blank">更多>></a></div>
+            <div class="tejia_d_r_2_2 b">
+            	<ul>
+                	<li>
+                    	<p><a href="#" target="_blank">镀膜</a></p>
+                        <p>预&nbsp;订&nbsp;价：￥<strong>780</strong>&nbsp;起</p>
+                        <p>历史成交：<span>25笔</span></p>
+                    </li>
+                    <li>
+                    	<p><a href="#" target="_blank">底盘装甲</a></p>
+                        <p>预&nbsp;订&nbsp;价：￥<strong>780</strong>&nbsp;起</p>
+                        <p>历史成交：<span>25笔</span></p>
+                    </li>
+                    <li>
+                    	<p><a href="#" target="_blank">内饰清洗</a></p>
+                        <p>预&nbsp;订&nbsp;价：￥<strong>780</strong>&nbsp;起</p>
+                        <p>历史成交：<span>25笔</span></p>
+                    </li>
+                    <li class="x1">
+                    	<p><a href="#" target="_blank">打蜡</a></p>
+                        <p>预&nbsp;订&nbsp;价：￥<strong>780</strong>&nbsp;起</p>
+                        <p>历史成交：<span>25笔</span></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--其他服务/-->
+    </div>
+    <div class="clear"></div>
+</div>
+<!--content/-->
+<div class="w1000 h-20">&nbsp;</div>
+<!--bottom-->
+<div class="bottom">
+	<div class="bottom_c">
+    	<div class="bottom_c_1">
+        	<strong>服务预订指南</strong><br /> 
+            <a href="#" target="_blank">如何预订服务</a><br />
+            <a href="#" target="_blank">帮助中心</a><br />
+            <a href="#" target="_blank">汽车养护常见问题</a><br />
+        </div>
+        <div class="bottom_c_1">
+        	<strong>会员中心</strong><br />
+            <a href="#" target="_blank">会员注册</a><br />
+            <a href="#" target="_blank">注册协议</a><br />
+        </div>
+        <div class="bottom_c_1">
+        	<strong>会员中心</strong><br />
+            <a href="#" target="_blank">支付方式</a><br />
+            <a href="#" target="_blank">先服务后付款</a><br />
+        </div>
+        <div class="bottom_c_1">
+        	<strong>会员中心</strong><br />
+            <a href="#" target="_blank">消费者权益保障</a><br />
+            <a href="#" target="_blank">先行赔付政策</a><br />
+            <a href="#" target="_blank">价格保护</a><br />
+        </div>
+        <div class="bottom_c_1">
+        	<strong>平台商家</strong><br />
+            <a href="#" target="_blank">商家入口</a><br />
+            <a href="#" target="_blank">服务商介绍</a><br />
+            <a href="#" target="_blank">申请加入平台</a><br />
+        </div>
+        <div class="bottom_c_2">
+            <strong>客服咨询电话</strong><br />
+            <span>4008-108-876</span> 转 <span>0</span><br />
+            周一至周五：8:30-17:30<br />
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="copyright">&copy;2014-2015 www.92auto.net All Rights Reserved. 爱车网 版权所有</div>
+</div>
+<!--bottom/-->
+</body>
+</html>
+<script language="javascript" type="text/javascript"> 
+	var interval = 1000; 
+	function ShowCountDown(year,month,day,divname) 
+	{ 
+	var now = new Date(); 
+	var endDate = new Date(year, month-1, day); 
+	var leftTime=endDate.getTime()-now.getTime(); 
+	var leftsecond = parseInt(leftTime/1000); 
+	//var day1=parseInt(leftsecond/(24*60*60*6)); 
+	var day1=Math.floor(leftsecond/(60*60*24)); 
+	var hour=Math.floor((leftsecond-day1*24*60*60)/3600); 
+	var minute=Math.floor((leftsecond-day1*24*60*60-hour*3600)/60); 
+	var second=Math.floor(leftsecond-day1*24*60*60-hour*3600-minute*60); 
+	var cc = document.getElementById(divname); 
+	cc.innerHTML = ""+day1+"天"+hour+"小时"+minute+"分"+second+"秒"; 
+	} 
+	window.setInterval(function(){ShowCountDown(2014,11,11,'divdown1');}, interval); 
+</script>
+<script type="text/javascript" language="javascript" src="js/car.js"></script>
+<script src="js/covert.js" type="text/javascript"></script>
+        
+<!--遮照层-->
+<!--选择车型DIV-->
+<div class="popCar" id="div_SelectCar" style="display: none;">
+    <div class="inner" id="div_shang">
+        <div class="close" id="div_CloseSelect" onclick="AutoBoxClose()">
+        </div>
+        <div class="tt" id="div_CloseFont_edit">
+            更改车型<em class="icoClose" onclick="AutoBoxClose();"></em></div>
+        <div class="tt" id="div_CloseFont_tishi">
+            温馨提示</div>
+        <div class="cont">
+            <h2 id="h_tishi" style="display: none;">
+                由于不同车型的服务价格不同，您需要先选择一款车型</h2>
+            <!--关注车型-->
+            <div id="div_IntentionCar" style="display: block;">
+            </div>
+            <!--end关注车型-->
+            <!--其他车型-->
+            <!--end其他车型-->
+            <!--选择车型-->
+            <dl class="otherCar selectCss" id="div_SearchCar" style="display: block;">
+                <!--当不显示时style="display:none"-->
+                <dt id="dt_selectcarTishi"><a id="showOtherCar" href="javascript:void(0)" onclick="IsShowOther();">选择其他车型<em class="icoAllow"></em></a></dt>
+                <dd id="car" style="display:block; padding:0; margin:0;">
+                    <select id="brandbox" name="brandbox" onchange="comp_brlist('brandbox', 'seriesbox','', 'modelbox'); if(this.value=='0'){document.getElementById('seriesbox').disabled = true;}document.getElementById('modelbox').disabled = true;">
+                        <option>请选择品牌</option>
+                    </select>
+                    <select id="seriesbox" name="seriesbox" onchange="comp_splist('brandbox', 'seriesbox','', 'modelbox');if(this.value=='0'){document.getElementById('modelbox').disabled = true;}"
+                        disabled="disabled">
+                        <option>请选择车系</option>
+                    </select>
+                    <select id="modelbox" name="modelbox" disabled="disabled">
+                        <option>请选择车型</option>
+                    </select>
+                </dd>
+            </dl>
+            <!--end选择车型-->
+            <!--确定-->
+            <div class="confirm">
+                <a href="javascript:SaveSelectCar()">确定</a><span id="warnInfo" name="warnInfo" style="display: none;">请选择您要服务的车型！</span>
+            </div>
+            <!--end确定-->
+        </div>
+    </div>
+</div>
+<script type="text/javascript" language="javascript"> 
+    //搜索使用车型
+    var _SearchCar = "37:布加迪|390:威航|6449:2010款 16.4百年纪念版 8.0T|cate:2|carnum:5|seat:4|volum:0|year:717";
+    //用户意向车型
+    var _IntentionCar = "";
+    var carMakeId = "37";
+    var carSeriesId = "390";
+    var carModelId = "6449";
+    InitCarInfo();
+    function InitCarInfo() {
+        //如果用户已登录则初始化他的意向车型
+        var isIntention = false;
+        if (_IntentionCar != null && _IntentionCar != "") {
+            var carInfos = _IntentionCar.split('#');
+            var rdoCarInfo = "<dl class='nowCar'><dt>以下是您在汽车之家的关注车型</dt><dd>";
+            for (var i = 0; i < carInfos.length; i++) {
+                var tempCar = carInfos[i].split('|');
+                rdoCarInfo += "<p>";
+                if (carModelId != "" && carModelId == tempCar[2].split(':')[0]) {
+ 
+                    rdoCarInfo += "<input type='radio' checked='true' name='cartype' id='cartype_" + tempCar[2].split(':')[0] + "' value='" + tempCar[0].split(':')[0] + "_" + tempCar[1].split(':')[0] + "_" + tempCar[2].split(':')[0] + "' onclick='ChooseIntenionRadio();AutoBoxResize();' />";
+                    ChooseIntenionRadio();
+                    isIntention = true;
+                    //AutoBoxResize();
+                } else {
+                    rdoCarInfo += "<input type='radio' name='cartype' id='cartype_" + tempCar[2].split(':')[0] + "' value='" + tempCar[0].split(':')[0] + "_" + tempCar[1].split(':')[0] + "_" + tempCar[2].split(':')[0] + "' onclick='ChooseIntenionRadio();AutoBoxResize();' />";
+                }
+                rdoCarInfo += "<label onclick='document.getElementById(\"cartype_" + tempCar[2].split(':')[0] + "\").click();'>";
+                rdoCarInfo += tempCar[0].split(':')[1] + " ";
+                rdoCarInfo += tempCar[1].split(':')[1] + " ";
+                rdoCarInfo += tempCar[2].split(':')[1];
+                rdoCarInfo += "</label></p>";
+            }
+            rdoCarInfo += "</dd></dl>";
+            document.getElementById("div_IntentionCar").innerHTML = "";
+            document.getElementById("div_IntentionCar").innerHTML = rdoCarInfo;
+            document.getElementById("dt_selectcarTishi").style.display = "block";
+            document.getElementById("div_SearchCar").setAttribute("class", "otherCar selectCss");
+        } else {
+            document.getElementById("dt_selectcarTishi").style.display = "";
+            document.getElementById("div_IntentionCar").style.display = "none";
+            document.getElementById("div_SearchCar").className = "selectCar selectCss";
+            document.getElementById("dt_selectcarTishi").innerHTML = "请选择您的车型";
+        }
+ 
+        //加载品牌
+        comp_fctlist("brandbox", "seriesbox", "", "modelbox");
+        //判断用户是否选择了搜索车型
+        var IsExistCar='True';
+        if (IsExistCar != 'True') {
+            document.getElementById("dt_selectcarTishi").style.display = "none";
+            ShowSelectCar("div_SelectCar", true);
+        } else {
+            document.getElementById("div_CloseFont_edit").style.display = "";
+            document.getElementById("div_CloseFont_tishi").style.display = "none";
+            if (!isIntention && carMakeId != "" && carMakeId != "0") {
+                document.getElementById("brandbox").value = carMakeId;
+                comp_brlist('brandbox', 'seriesbox', '', 'modelbox');
+                document.getElementById("seriesbox").value = carSeriesId;
+                comp_splist('brandbox', 'seriesbox', '', 'modelbox');
+                document.getElementById("modelbox").value = carModelId;
+            } 
+        }
+        AutoBoxResize();
+    }
+ 
+    //显示选择车型的DIV并初始化
+    function ShowSelectCar(dialogBoxId, isInit) {
+ 
+        //显示遮照层和选择车型的DIV
+        if ((_IntentionCar != null) && (_IntentionCar != "")) {
+            document.getElementById("car").style.display = "none";
+        }
+        else {
+            document.getElementById("div_IntentionCar").style.display = "none";
+        }
+ 
+        if (isInit) {
+            document.getElementById("h_tishi").style.display = "";
+            document.getElementById("div_CloseSelect").style.display = "none";
+            document.getElementById("div_CloseFont_edit").style.display = "none";
+            document.getElementById("div_CloseFont_tishi").style.display = "";
+        }
+        Covert("", 434, 200, 'div_SelectCar', false, false, false, true);
+ 
+    }
+ 
+    //选择意向车型
+    function ChooseIntenionRadio() {
+        document.getElementById("car").style.display = "none";
+    }
+ 
+    //单击"您还可以选择其他车型"链接
+    function IsShowOther() {
+        if (document.getElementById("car").style.display == "none") {
+            document.getElementById("car").style.display = "block";
+            var carType = document.getElementsByName("cartype");
+            for (var i = 0; i < carType.length; i++) {
+                carType[i].checked = false;
+            }
+        }
+        else {
+            document.getElementById("car").style.display = "none";
+        }
+ 
+        AutoBoxResize();
+    }
+ 
+    function Redirect(url) {
+        if (document.all) {
+            var link = document.createElement("a");
+            link.href = url;
+            document.body.appendChild(link);
+            link.click();
+        } else {
+            window.location.href = url;
+        }
+    }
+ 
+    //保存选择的新车型
+    function SaveSelectCar() {
+        var A = 0;
+        var B = 0;
+        var C = 0;
+        var carType = document.getElementsByName("cartype");
+        for (var i = 0; i < carType.length; i++) {
+            if (carType[i].checked) {
+                var tempCar = carType[i].value;
+                A = tempCar.split('_')[0];
+                B = tempCar.split('_')[1];
+                C = tempCar.split('_')[2];
+            }
+        }
+        if (document.getElementById("car").style.display == "block") {
+            A = document.getElementById("brandbox").value;
+            B = document.getElementById("seriesbox").value;
+            C = document.getElementById("modelbox").value;
+        }
+        if ((A == 0) || (B == 0) || (C == 0)) {
+            document.getElementById("warnInfo").style.display = "block";
+            AutoBoxResize();
+            return;
+        }
+        carMakeId = A;carSeriesId = B;carSeriesId = C;
+        var data = "brandId=" + A + "&seriesId=" + B + "&modelId=" + C + "&cateid=0&itemId=1005680,1167461";
+        SendRequest("/handler/servicecaroperate.ashx?type=orderSave", "POST", data, function (responseText) {
+            var msg = responseText.split("|");
+            if (msg[0] == "102") {
+                Redirect("/InputNewOrder/?itemId=" + msg[1]);
+                return;
+            }
+            if (msg[0] == "100" || msg[0] == "101") {
+                if (msg.length == 9) {
+                    _SearchCar = msg[1] + "|" + msg[2] + "|" + msg[3] + "|" + msg[4] + "|" + msg[5] + "|" + msg[6] + "|" + msg[7];
+                    document.getElementById("warnInfo").style.display = "none";
+                    document.getElementById("div_shang").style.display = "";
+                    AutoBoxResize();
+                    CarShowLoad(); //回调主页面方法
+                } else {
+                    document.getElementById("warnInfo").style.display = "block";
+                    document.getElementById("warnInfo").innerHTML = "服务器忙，请稍后再试！";
+                    document.getElementById("div_shang").style.display = "";
+                    AutoBoxResize();
+                }
+            }
+            else if (msg[0] == "000") {
+                document.getElementById("warnInfo").style.display = "block";
+                document.getElementById("warnInfo").innerHTML = "请选择您要服务的车型！";
+                document.getElementById("div_shang").style.display = "";
+                AutoBoxResize();
+            }
+            else if (msg[0] == "098") {
+                document.getElementById("warnInfo").style.display = "block";
+                document.getElementById("warnInfo").innerHTML = "无该车型数据，请重新选择！";
+                document.getElementById("div_shang").style.display = "";
+                AutoBoxResize();
+            }
+            else {
+                document.getElementById("warnInfo").style.display = "block";
+                document.getElementById("warnInfo").innerHTML = "服务器忙，请稍后再试！";
+                document.getElementById("div_shang").style.display = "";
+                AutoBoxResize();
+            }
+        }, false, "brandId=" + A + "&seriesId=" + B + "&modelId=" + C);
+        AutoBoxResize();
+    }
+ 
+    function delQueStr(url, ref) {
+        var str = "";
+        if (url.indexOf('#') > 0) {
+            url = url.split('#')[0];
+        }
+        if (url.indexOf('?') != -1) {
+            str = url.substr(url.indexOf('?') + 1).toLowerCase();
+        } else {
+            //return url;
+        }
+        var arr = "";
+        var returnurl = "";
+        var setparam = "";
+        if (str.indexOf('&') != -1) {
+            arr = str.split('&');
+            for (i in arr) {
+                if (arr[i].split('=')[0] != ref) { returnurl = returnurl + arr[i].split('=')[0] + "=" + arr[i].split('=')[1] + "&"; }
+            }
+            return url.substr(0, url.indexOf('?')) + "?" + returnurl.substr(0, returnurl.length - 1);
+        } else {
+            arr = str.split('=');
+            if (arr[0] == ref) {
+                return url.substr(0, url.indexOf('?'));
+            } else { return url; }
+        }
+    }
+</script>
