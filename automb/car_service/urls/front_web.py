@@ -8,6 +8,7 @@ urlpatterns=patterns(''
                      ,url(r'^$', view.home,name='site_home')
                      ,url(r'^accounts/login.*','django.contrib.auth.views.login',{'template_name':'car_service/accounts/login.html'},name='login')
                      ,url(r'^accounts/logout.*','django.contrib.auth.views.logout',{'template_name':'car_service/accounts/logout.html'},name='logout')
+                     ,url(r'^accounts/register.*',view.user_register,name='register')
                      #服务列表
                      ,url(r'^service_list/$', view.service_list_all,name='service_list')
                      ,url(r'^service_list/(?P<service_type_id>\d+)$', view.service_list,name='service_list')

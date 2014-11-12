@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 from django.core import serializers
-from django.http import HttpResponse
+from django.http import HttpResponse,HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.shortcuts import render,redirect
 
@@ -125,3 +126,15 @@ def bill_create(request,service_id):
     )
     bill.save()
     return redirect(reverse('car_service:front_web:bill_create_success'))
+
+from ..forms.fm_register import RegisterForm
+def user_register(request):
+    form=RegisterForm()
+    if request.method=='POST':
+        form=RegisterForm(request.POST)
+        if form.is_valid():
+            User.objects.create_user(username=form.cleaned_data['username'],
+                                     password= form.cleaned_data['password'],
+                                     email=form.cleaned_data['email'])
+            return HttpResponseRedirect(redirect_to='/accounts/login')
+    return render(request,'car_service/accounts/register.html',{'form':form})

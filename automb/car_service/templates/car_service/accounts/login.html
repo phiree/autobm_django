@@ -1,17 +1,55 @@
 {% extends "car_service/base.html" %}
+        {%load staticfiles%}
 {% block content%}
-
-
-
-      <form  method='post' class="form-signin" action="" role="form">
-      	{%csrf_token%}
-        <h2 class="form-signin-heading">用户登录</h2>
-        <input name='username' type="username" class="form-control" placeholder="用户名" required autofocus>
-        <input name='password' type="password" class="form-control" placeholder="密码" required>
-        <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign iss</button>
+        <div class="dl">
+	<div class="dl_l f-l">
+    	<ul>
+        	<li><a href="#" target="_blank"><img src="{%static    'car_service/images/img_17.jpg'  %}" width="149" height="350" alt=""></a></li>
+            <li><a href="#" target="_blank"><img src="{%static   'car_service/images/img_18.jpg' %}" width="149" height="350" alt=""></a></li>
+            <li><a href="#" target="_blank"><img src="{%static    'car_service/images/img_19.jpg' %}" width="149" height="350" alt=""></a></li>
+            <li><a href="#" target="_blank"><img src="{%static  'car_service/images/img_20.jpg' %}" width="149" height="350" alt=""></a></li>
+        </ul>
+        <ul class="clear"></ul>
+    </div>
+    <div class="dl_r f-r">
+      <form  method='post' class="form-signin" action="/accounts/login/" role="form">
+          {%csrf_token%}
+        <table width="305" border="0" cellspacing="0" cellpadding="4">
+          <tbody><tr>
+            <td align="right" valign="middle" class="dl_r_1">用户名：</td>
+            <td width="230" align="left" valign="middle" class="dl_r_2"><input name='username' type="username" class="form-control" placeholder="用户名" required autofocus></td>
+          </tr>
+          <tr>
+            <td align="right" valign="middle" class="dl_r_1">密　码：</td>
+            <td align="left" valign="middle" class="dl_r_2"><input name='password' type="password" class="form-control" placeholder="密码" required></td>
+          </tr>
+          <tr>
+            <td align="right" valign="middle">&nbsp;</td>
+            <td height="30" align="left" valign="middle" class="b"><input type="checkbox" value="remember-me">下次自动登录<a href="#" target="_blank">忘记密码？</a></td>
+          </tr>
+          <tr>
+            <td align="right" valign="middle">&nbsp;</td>
+            <td height="45" align="left" valign="top"><input type="submit" value="" name="input" class="dl_r_b"></td>
+          </tr>
+          <tr>
+            <td align="right" valign="middle">&nbsp;</td>
+            <td align="left" valign="middle" class="dl_r_3">其他账号登录</td>
+          </tr>
+          <tr>
+            <td align="right" valign="middle">&nbsp;</td>
+            <td align="left" valign="middle" height="30" class="dl_r_4 b"><a href="#" target="_blank"><img src="{%static  'car_service/images/img_23.jpg' %}" alt="">QQ登录</a>&nbsp;&nbsp;&nbsp;<a href="#" target="_blank"><img src="{%static  'car_service/images/img_22.jpg' %}" alt="">微博登录</a></td>
+          </tr>
+          <tr>
+            <td colspan="2" align="right" valign="middle">&nbsp;</td>
+          </tr>
+          <tr>
+            <td align="right" valign="middle">&nbsp;</td>
+            <td align="left" valign="middle" class="dl_r_3">没有爱车网账号？&nbsp;<a href="#" class="r">立即注册&gt;&gt;</a></td>
+          </tr>
+        </tbody></table>
       </form>
+    </div>
+    <div class="clear"></div>
+</div>
 
 {%endblock%}

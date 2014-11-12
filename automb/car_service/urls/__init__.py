@@ -52,6 +52,11 @@ urlpatterns=patterns(''
                      ,url(r'^supplier_admin/service/update/(?P<id>\d+)/$', supplier_admin_service2.ServiceUpdate.as_view(),name='supplier_admin_service2_update' )
                      ,url(r'^supplier_admin/servicevalue/update/(?P<service_id>\d+)/$', supplier_admin_service2.update_value,name='supplier_admin_servicevalue_update' )
 
+                     ,url(r'^supplier_admin/supplier/list/$',supplier_admin_service2.SupplierList.as_view(),name='supplier_admin_supplier_list' )
+                     ,url(r'^supplier_admin/supplier/create/$',supplier_admin_service2.SupplierCreate.as_view(),name='supplier_admin_supplier_create' )
+                     ,url(r'^supplier_admin/supplier/update/(?P<supplier_id>\d+)/$',supplier_admin_service2.SupplierUpdate.as_view(),name='supplier_admin_supplier_update' )
+                     ,url(r'^supplier_admin/supplier/create_success/(?P<supplier_id>\d+)/$', supplier_admin_service2.supplier_create_success, name='supplier_admin_supplier_create_success' )
+
                      )
 
                      

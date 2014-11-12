@@ -24,9 +24,11 @@ def update_service_value(request_method,request_post_data,service_id):
             if 'option' in v:
                 selected_value=request_post_data.get(v)
                 spv=ServicePropertyValue.objects.get(pk=int(selected_value))
+
                 sv=ServiceValue(service=service,servicepropertyvalue=spv)
                 sv.save()
         service.price=request_post_data.get('price')
+        service.price_market=request_post_data.get('price_market')
         service.save()
     return (service,values)
 

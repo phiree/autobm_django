@@ -20,7 +20,7 @@
        {%for supplier in supplier_list %}
     <div class="sj_list b">
 
-        <img src="{%static  'car_service/images/img_15.jpg'%}" width="180" height="135" alt="" align="left">
+        <img src="{{MEDIA_URL}}{{supplier.photo}}" width="180" height="135" alt="" align="left">
         <p class="sj_list_1"><a href="{%url 'car_service:front_web:supplier_detail' supplier.pk%}" target="_blank">{{supplier}}</a></p>
         <p>地址：{{supplier.address}}</p>
         <p class="sj_list_2">服务项目：

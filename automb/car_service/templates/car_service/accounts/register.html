@@ -1,0 +1,50 @@
+{% extends "car_service/base.html" %}
+{%load staticfiles%}
+{% block content%}
+<div class="w1000">
+    <!--1-->
+    <div class="zc">
+        <form  method="POST">{%csrf_token%}
+            {{form.errors}}
+            <div class="zc_l f-l">
+                <ul>
+                    <li class="o1">注册后可以享受爱车网的相关服务！</li>
+                    <li>用&nbsp;户&nbsp;名：
+                        {{form.username}}    <span><i class="i-name"></i>
+                <i id="intelligent-regName" style="display: none;"></i>
+                <label id="regName_succeed"></label>
+                <label id="regName_error" class="error">用户名只能由中文、英文、数字及"-"、"_"组成</label>
+                </span>
+                    </li>
+                    <li>创建密码：
+                        {{form.password}}
+
+                    </li>
+                    <li>确认密码：
+
+                    {{form.password2}}
+
+                    </li>
+                    <li>电子邮箱：
+
+                    {{form.email}}
+
+                    </li>
+                    <li class="l_1"><input type="submit" class="zc_l_b" id="registsubmit" value="" tabindex="8"
+                                           clstag="regist|keycount|personalreg|07"></li>
+                    <li class="l_2 b"><span>·<a href="#">爱车网用户服务协议</a></span></li>
+                </ul>
+                <ul class="clear"></ul>
+            </div>
+        </form>
+        <div class="zc_r f-r"><img src="images/img_24.jpg" alt="" width="275" height="318" border="0" usemap="#Map">
+            <map name="Map" id="Map">
+                <area shape="rect" coords="30,267,135,297" href="#">
+                <area shape="rect" coords="147,269,250,296" href="#">
+            </map>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <!--1/-->
+</div>
+{%endblock%}

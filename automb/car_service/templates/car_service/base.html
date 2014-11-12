@@ -70,7 +70,8 @@
 	<div class="top_1">
     	<div class="top_1_r f-r h">
             {%if user.is_anonymous %}
-            <a href="{%url 'car_service:front_web:login'%}" rel="nofollow">登录</a>|
+            <a href="{%url 'car_service:front_web:login'%}" rel="nofollow">登录</a>|<a
+                href="{%url 'car_service:front_web:register'%}" rel="nofollow">注册</a>|
             {%else%}
             欢迎您,{{user}}|<a href="{%url 'car_service:front_web:my_home'%}">个人中心</a>|
             <a href="{%url 'car_service:front_web:logout'%}" rel="nofollow">注销</a>|

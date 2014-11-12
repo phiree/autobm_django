@@ -70,8 +70,8 @@ class CarInfo(Model):
 class Service2(Model):
     supplier=ForeignKey('Supplier')
     servicetype=ForeignKey(ServiceType)
-    price=DecimalField(decimal_places=0, max_digits=5)
-    price_market=DecimalField(decimal_places=0, max_digits=5)
+    price=DecimalField(decimal_places=0, max_digits=5,null=True)
+    price_market=DecimalField(decimal_places=0, max_digits=5,null=True)
 
     @property
     def minus_price(self):
@@ -133,13 +133,13 @@ class Tree(Model):# 区域, 车型(品牌,系列,型号),字典, 服务 都是tr
         return Tree.objects.filter(tree_type=Tree.tree_type_choice[2][0] , parent__isnull=False).values('id')
     def natural_key(self):
         return [self.pk,self.tree_type, self.name,Tree.tree_type_choice[[a[0] for a in Tree.tree_type_choice].index(self.tree_type)]]
-
+#车店
 class Supplier(Model):
-    name=CharField(max_length=100)
-    area=ForeignKey(AreaInfo)
-    address=CharField(max_length=100)
-    coordinate_x=FloatField()
-    coordinate_y=FloatField()
+    name=CharField(max_length=100,verbose_name='名称')
+    area=ForeignKey(AreaInfo,verbose_name='区域')
+    address=CharField(max_length=100,verbose_name='地址')
+    coordinate_x=FloatField(verbose_name='经度')
+    coordinate_y=FloatField(verbose_name='维度')
     photo= ImageField(blank=True,null=True,upload_to='photos/suppliers')
     phone=CharField(max_length=100)
     time_open=TimeField()
@@ -148,7 +148,7 @@ class Supplier(Model):
     owner=ForeignKey(User)
 
     def __str__(self):
-        return self.area.name+'-'+self.name
+        return self.area.name+'-'+self.name+'-'+self.owner.username
     #商家提供的服务类型.和 每种类型的最低价格
 
     #@property
