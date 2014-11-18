@@ -11,7 +11,7 @@ from django.shortcuts import render_to_response
 #字典管理
 
 def index(request):
-    return  render(request,'car_service/supplier_admin/index.html')
+    return  render(request,'car_service/supplier_admin/home.html')
 
 class ServiceList(ListView):
     model=ServiceDetail

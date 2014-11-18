@@ -1,20 +1,17 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import  login_required
-from django.forms.models import inlineformset_factory
-from ...models import Supplier,Service,ServiceDetail,Tree,Service2,ServiceValue,ServicePropertyValue
-from django.views.generic import ListView,CreateView,UpdateView,View
-from django.core.urlresolvers import reverse
-from ...forms import service_detail,fm_supplier_admin_supplier_create
-from django.http import HttpResponseRedirect
-from django.contrib.auth.models import User
-from django.shortcuts import render_to_response
+
+from ...models import Supplier,Service,ServiceDetail,Tree,Service2,ServiceValue,ServicePropertyValue,ServiceType
+
+from ...forms import service_detail,fm_supplier_admin_supplier_create,fm_service2
+
 from django.utils.decorators import method_decorator
 # Create your views here.
 #字典管理
 from ..share.service import *
 from ...biz import service2 as biz_service2
 from ...decorators import group_required
-
+from django.forms.models import inlineformset_factory,ModelForm,modelform_factory
 class ServiceList(ListView):
     @method_decorator(login_required)
     @method_decorator(group_required('supplier'))
@@ -34,6 +31,9 @@ class ServiceUpdate(UpdateView):
         return obj
     def get_success_url(self):
          return reverse('car_service:supplier_admin_servicevalue_update',args=(self.object.id,))
+def create_select_type(request):
+    top_type_list=ServiceType.objects.filter(parent=None)
+    return render(request,'car_service/supplier_admin/service_create_select_type.html',{'top_type_list':top_type_list})
 
 class ServiceCreate(CreateView):
     model=Service2
@@ -47,17 +47,72 @@ class ServiceCreate(CreateView):
 
 
         return form
+#创建
+def create_service2(request,type_id):
+    return edit_service2(request,None,type_id)
+#修改
 def edit_service2(request,service_id):
+    return edit_service2(request,service_id,None)
 
-    instance=Service2()
+
+def edit_service2(request,service_id,type_id=None):
+
+    service2=Service2()
     if service_id:
-        instance=Service2.objects.get(pk=service_id)
-    form_service=service_detail.Service2Form(instance=instance)
-    form_value=service_detail.ServiceValueForm(instance=instance.service)
+        service2=Service2.objects.get(pk=service_id)
+        type_id=service2.servicetype.id
+    supplier_list=request.user.supplier_set.all()
+
+    service_type=ServiceType.objects.get(pk=type_id)
+    service_value_id_list=service2.servicevalue_set.values_list('id',flat=True)
+    errmsg=''
     if request.method=='POST':
+        selected_supplier=Supplier.objects.get(pk=int(request.POST.get('supplier')))
+        service_value_list_with_spv=[]
+        servicepropertyvalue_list=[]
+        for v in request.POST:
+            if 'sel_' in v:
+                selected_value=request.POST.get(v)
+                spv=ServicePropertyValue.objects.get(pk=int(selected_value))
+                servicepropertyvalue_list.append(spv)
+                service_value=service2.servicevalue_set.filter(service__supplier__id=selected_supplier.id, servicepropertyvalue__id=int(selected_value))
+                service_value_list_with_spv.append((service_value,spv))
+
+        is_exists=True
+        for sv in service_value_list_with_spv:
+            if sv[0].count()==0:
+                is_exists=False
+                break
+        if service_id ==None and is_exists:
+            #todo. 找出这个service,并直接更新
+            errmsg='exists'
+        else:
+            service2.price=request.POST.get('price')
+            service2.price_market=request.POST.get('price_market')
+            service2.disabled=bool( request.POST.get('disabled'))
+            service2.description=request.POST.get('description')
+            service2.title=request.POST.get('title')
+            service2.supplier=selected_supplier
+            service2.servicetype=service_type
+            service2.save()
+            for sv in service_value_list_with_spv:
+                if sv[0].count()==0:
+                    service_value=ServiceValue(service=service2,servicepropertyvalue=sv[1])
+                else:
+                    service_value=sv[0][0]
+                #service2.servicevalue_set.add(service_value)
+                service_value.save()
+            return HttpResponseRedirect(reverse('car_service:supplier_admin_service2_update',
+                                                args=(service2.id,)
+            ))
+
         pass
 
-
+    return render(request,'car_service/supplier_admin/service_edit.html',
+                  {'supplier_list':supplier_list,'service_type':service_type,
+                   'service2':service2,
+                   'service_value_id_list':service_value_id_list,
+                   'errmsg':errmsg})
 
 def update_value(request,service_id):
     service,values=biz_service2.update_service_value(request.method,request.POST,service_id)

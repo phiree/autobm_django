@@ -6,9 +6,9 @@
             <tr><td>
 
            <a href="{%url 'car_service:supplier_admin_service2_update' service.id %}">{{service}}</a>
-                <a href="{%url 'car_service:supplier_admin_servicevalue_update' service.id %}">服务详情</a>
+               {# <a href="{%url 'car_service:supplier_admin_service2_disable' service.id %}">停止服务</a>#}
 
             </td></tr>
         {% endfor %}
             </table>
-        <a href="{%url 'car_service:supplier_admin_service2_create'%}">增加服务</a> {%endblock%}
+        <a href="{%url 'car_service:supplier_admin_service2_create_select_type'%}">增加服务</a> {%endblock%}

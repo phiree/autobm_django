@@ -8,4 +8,4 @@ from ...decorators import group_required
 def index(request):
     #import pdb;pdb.set_trace()
 
-    return render(request,'car_service/site_admin/index.html')
+    return render(request,'car_service/site_admin/home.html')

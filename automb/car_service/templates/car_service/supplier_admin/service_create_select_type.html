@@ -1,0 +1,14 @@
+{% extends "car_service/supplier_admin/base_supplier_admin.html" %}
+
+         {%block content%}
+           {%for  top_type in top_type_list%}
+        <div>
+            <span style="font-weight:800;">{{top_type.name}}</span>
+            {%for child_type in top_type.servicetype_set.all%}
+            <a href="{%url 'car_service:supplier_admin_service2_create' child_type.id%}">
+                {{child_type.name}}
+            </a>
+            {%endfor%}
+        </div>
+        {%endfor%}
+        {%endblock%}

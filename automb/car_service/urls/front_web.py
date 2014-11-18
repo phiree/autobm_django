@@ -25,5 +25,7 @@ urlpatterns=patterns(''
                      ,url(r'^my/orders$', my.order_list,name='my_orders')
                      #权限错误
                      ,url(r'^access_denied/.*$', view.access_denied,name='access_denied')
+
+                     ,url(r'^search/$', view.search,name='search')
                      ,
                      )

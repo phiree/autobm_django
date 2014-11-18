@@ -7,7 +7,7 @@ from django.shortcuts import render,redirect
 
 from django.utils import timezone as datetime
 from ..models import Tree, ServiceDetail, Supplier, Service,Bill,ServiceType,Service2
-from ..biz import get_cookie
+from ..biz import get_cookie,biz_search
 import jsonpickle
 __author__ = 'Administrator'
 
@@ -15,7 +15,7 @@ __author__ = 'Administrator'
 def home(request):
     #top_service_list = Tree.objects.filter(tree_type=Tree.tree_type_choice[2][0], parent=None)
     top_service_list=ServiceType.objects.filter(parent=None)
-    return render(request, 'car_service/index.html', {'top_service_list': top_service_list})
+    return render(request, 'car_service/home.html', {'top_service_list': top_service_list})
 
 def access_denied(request):
     return render(request,'car_service/access_denied.html')
@@ -73,22 +73,22 @@ def service_detail2(request,service_id,servicetype_id,supplier_id):
 
 
 
-    return render(request, 'car_service/servicedetail2.html', {'merged_service':generat_service_detail(services), 'services':services,'service':service,'paras':str(servicetype_id)+'_'+str(supplier_id)})
+    return render(request, 'car_service/servicedetail2.html', {'merged_service':generate_service_detail(services), 'services':services,'service':service,'paras':str(servicetype_id)+'_'+str(supplier_id)})
     pass
 #生成前台需要的数据
-def generat_service_detail(services):
-
-    results=[]
+def generate_service_detail(services):
     '''
+    期望的格式:
     results=[
-        {'p':property,
-        'v':[
-             {'vname':value,'services':[service1,service2]},
+        {'p':property,   #属性
+        'v':[            #值
+             {'vname':value,'services':[service1,service2]}, 值的名称 和 包含该值的 服务(选中该服务则)
              {'vname':value2,'services':[service1,service3]}
             ]
     ]
     '''
-    min_price,max_price=99999,0
+    results=[]
+
     properties=services[0].servicetype.serviceproperty_set.all()
     for p in properties:#every  properties
         result={}
@@ -138,3 +138,10 @@ def user_register(request):
                                      email=form.cleaned_data['email'])
             return HttpResponseRedirect(redirect_to='/accounts/login')
     return render(request,'car_service/accounts/register.html',{'form':form})
+
+def search(request):
+
+    kw=request.GET.get('kw')
+    search_result=biz_search.search(kw)
+    return render(request,'car_service/search.html',{'kw':kw,'search_result':search_result})
+    pass

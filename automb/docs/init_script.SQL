@@ -18,6 +18,29 @@ INSERT INTO car_service_servicetype VALUES(7,'空调清洗',1,'');
 INSERT INTO car_service_servicetype VALUES(8,'真皮座椅保养',1,'');
 INSERT INTO car_service_servicetype VALUES(9,'发动机舱清洗',1,'');
 INSERT INTO car_service_servicetype VALUES(10,'前风挡镀膜',1,'');
+
+
+INSERT INTO car_service_servicetype VALUES(23,'汽车装饰',NUll,'');
+
+INSERT INTO car_service_servicetype VALUES(11,'玻璃贴膜',23,'');
+INSERT INTO car_service_servicetype VALUES(12,'底盘装甲',23,'');
+INSERT INTO car_service_servicetype VALUES(13,'座椅包真皮',23,'');
+INSERT INTO car_service_servicetype VALUES(14,'汽车隔音',23,'');
+
+
+INSERT INTO car_service_servicetype VALUES(15,'汽车维修',NULL,'');
+
+INSERT INTO car_service_servicetype VALUES(16,'四轮定位',15,'');
+INSERT INTO car_service_servicetype VALUES(17,'四轮动平衡',15,'');
+
+
+INSERT INTO car_service_servicetype VALUES(18,'汽车改装',NULL,'');
+INSERT INTO car_service_servicetype VALUES(19,'音响改装',18,'');
+INSERT INTO car_service_servicetype VALUES(20,'车身改色贴膜',18,'');
+INSERT INTO car_service_servicetype VALUES(21,'DVD导航一体机',18,'');
+INSERT INTO car_service_servicetype VALUES(22,'氙气大灯改装',18,'');
+
+
 -- serviceproperty
 
 INSERT INTO  car_service_serviceproperty VALUES(1,'洗车方式',2);

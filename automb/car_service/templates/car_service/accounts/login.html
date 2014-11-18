@@ -4,15 +4,20 @@
         <div class="dl">
 	<div class="dl_l f-l">
     	<ul>
-        	<li><a href="#" target="_blank"><img src="{%static    'car_service/images/img_17.jpg'  %}" width="149" height="350" alt=""></a></li>
-            <li><a href="#" target="_blank"><img src="{%static   'car_service/images/img_18.jpg' %}" width="149" height="350" alt=""></a></li>
-            <li><a href="#" target="_blank"><img src="{%static    'car_service/images/img_19.jpg' %}" width="149" height="350" alt=""></a></li>
-            <li><a href="#" target="_blank"><img src="{%static  'car_service/images/img_20.jpg' %}" width="149" height="350" alt=""></a></li>
+        	<li> <img src="{%static    'car_service/images/img_17.jpg'  %}" width="149" height="350" alt=""></li>
+            <li> <img src="{%static   'car_service/images/img_18.jpg' %}" width="149" height="350" alt=""></li>
+            <li> <img src="{%static    'car_service/images/img_19.jpg' %}" width="149" height="350" alt=""></li>
+            <li> <img src="{%static  'car_service/images/img_20.jpg' %}" width="149" height="350" alt=""></li>
         </ul>
         <ul class="clear"></ul>
     </div>
     <div class="dl_r f-r">
-      <form  method='post' class="form-signin" action="/accounts/login/" role="form">
+        {%if next%}
+      <form  method='post' class="form-signin" action="/accounts/login/?next={{next}}" role="form">
+          {%else%}
+          <form  method='post' class="form-signin" action="/accounts/login/" role="form">
+
+          {%endif%}
           {%csrf_token%}
         <table width="305" border="0" cellspacing="0" cellpadding="4">
           <tbody><tr>

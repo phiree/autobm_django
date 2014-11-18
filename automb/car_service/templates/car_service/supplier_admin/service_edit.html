@@ -1,13 +1,56 @@
 {% extends "car_service/supplier_admin/base_supplier_admin.html" %}
 
-         {%block content%}
-          <form method="post">{% csrf_token %}
-            <table>
-           {{form.as_table}}
-
-                {{form_pv.as_table}}
-
-                </table>
-           <input type='submit' value="保存"/>
-       </form>
-        {%endblock%}
+{%block content%}
+{{errmsg}}
+<form method="post">{% csrf_token %}
+    <table>
+        <tr>
+            <th>服务标题</th>
+            <td><input type="text" value="{{service2.title}}" name="title"/></td>
+        </tr>
+        <tr>
+            <th>车店</th>
+            <td><select name="supplier">{%for supplier in supplier_list%}
+                <option selected="{%if supplier.id in service2.supplier.id %}selected{%endif%}"
+                        value="{{supplier.id}}">{{supplier}}</option>
+                {%endfor%}</select></td>
+        </tr>
+        <tr>
+            <th>服务类型</th>
+            <td>{{service_type.name}}</td>
+        </tr>
+        {%for service_type_property in service_type.serviceproperty_set.all%}
+        <tr>
+            <th>{{service_type_property.name}}</th>
+            <td>
+                <select name="sel_{{service_type_property.id}}">
+                    {%for service_property_type_value in service_type_property.servicepropertyvalue_set.all%}
+                    <option name="option{{service_property_type_value.id}}"
+                            selected="{%if service_property_type_value in service_value_list %}selected{%endif%}"
+                            value="{{service_property_type_value.id}}">{{service_property_type_value.value}}
+                    </option>
+                    {%endfor%}
+                </select>
+            </td>
+        </tr>
+        {%endfor%}
+        <tr>
+            <th>市场价</th>
+            <td><input type="number" value="{{service2.price_market}}" name="price_market"/></td>
+        </tr>
+        <tr>
+            <th>爱车价:</th>
+            <td><input type="number" value="{{service2.price}}" name="price"/></td>
+        </tr>
+        <tr>
+            <th>停用:</th>
+            <td><input type="checkbox" {%if service2.disabled%}checked{%endif%}  name="disabled"/></td>
+        </tr>
+        <tr>
+            <th>详情</th>
+            <td><textarea name="description">"{{service2.description}}"</textarea></td>
+        </tr>
+    </table>
+    <input type='submit' value="保存"/>
+</form>
+{%endblock%}

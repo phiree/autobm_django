@@ -69,9 +69,13 @@ class CarInfo(Model):
 
 class Service2(Model):
     supplier=ForeignKey('Supplier')
+    title=CharField(max_length=100)#服务title,
+    description=CharField(max_length=8000) #服务详情
     servicetype=ForeignKey(ServiceType)
     price=DecimalField(decimal_places=0, max_digits=5,null=True)
     price_market=DecimalField(decimal_places=0, max_digits=5,null=True)
+    disabled=BooleanField(default=False)
+
 
     @property
     def minus_price(self):
@@ -93,12 +97,6 @@ class ServiceValue(Model):
     servicepropertyvalue=ForeignKey(ServicePropertyValue)
     def __str__(self):
         return str(self.servicepropertyvalue)
-
-
-
-
-
-
 
 class Tree(Model):# 区域, 车型(品牌,系列,型号),字典, 服务 都是tree类型.
 

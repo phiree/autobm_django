@@ -2,38 +2,31 @@
 {%load get_service_type_for_supplier%}
 {%load servicetype_menu%}
 {%load staticfiles%}
-         {%block bg_top_service%}menu_2_bg{%endblock%}
+{%block bg_top_service%}menu_2_bg{%endblock%}
+        {%block head%}
+          <script type="text/javascript" language="javascript" src="{%static 'car_service/js/jquery/plugin/jquery.search_highlight.js'%}"></script>
+          <script>
+               jQuery(function(){
+                    var options = {
+                        exact:"{{kw}}",
+                        engines:[/^http:\/\/(www\.)?phiree/i, /kw=([^&]+)/i],
+                    }
+                    debugger;
+                    {%if kw%}
+                        jQuery(document).SearchHighlight(options);
+                    {%endif%}
+               });
+           </script>
+        {%endblock%}
 {% block content%}
+
 <div class="w1000 h-20">&nbsp;</div>
-<div class="tejia_1">
-    {%for service_type in top_service_type_list%}
-    <div>
-        <div class="tejia_1l f-l">
-            {%ifequal service_type.id|stringformat:'i'  service_type_id%}
-            {{service_type.name}}
-            {%else%}
-            <a href="{%url 'car_service:front_web:service_list' service_type.id %}">{{service_type.name}}</a>
-            {%endifequal%}
-        </div>
-        <div class="tejia_1r f-r b">
-            {%for child_type in service_type.servicetype_set.all%}
-                {%ifequal child_type.id|stringformat:'i' service_type_id%}
-                {{child_type.name}}
-                {%else%}
-                <a href="{%url 'car_service:front_web:service_list' child_type.id %}">{{child_type.name}}</a>
-                {%endifequal%}
-            {%endfor%}
-
-        </div>
-        <div class="clear"></div>
-    </div>
-    {%endfor%}
-
+<div>
+    <span>关键字: "{{kw}}" 的搜索结果</span>
 </div>
-<div class="w1000 h-20">&nbsp;</div>
 <div class="tejia_list">
     <ul>
-        {%for service in service_list%}
+        {%for service in search_result.0%}
         <li>
             <img src="{{MEDIA_URL}}{{service.supplier.photo}}" width="318" height="212" alt="">
 
@@ -61,4 +54,5 @@
     </ul>
     <ul class="clear"></ul>
 </div>
+
 {%endblock%}

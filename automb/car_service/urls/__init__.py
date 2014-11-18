@@ -3,8 +3,9 @@ from django.conf.urls import patterns,url,include
 from car_service.views.site_admin import supplier, home, \
     carinfo, areainfo,servicetype,serviceproperty,\
     servicepropertyvalue,\
-    service2 as site_admin_service2
-from car_service.views.supplier_admin import service2 as supplier_admin_service2
+    service2 as site_admin_service2\
+
+from car_service.views.supplier_admin import service2 as supplier_admin_service2, home as supplier_admin_home
 
 urlpatterns=patterns(''
                     #前台路由
@@ -46,11 +47,14 @@ urlpatterns=patterns(''
                      ,url(r'^site_admin/supplier/create/$', supplier.SupplierCreate.as_view( ),name='supplier_create' )
                      ,url(r'^site_admin/supplier/update/(?P<id>\d+)/$', supplier.SupplierUpdate.as_view( ),name='supplier_update' )
 
+                    ,url(r'^supplier_admin/$',supplier_admin_home.home,name='supplier_admin_home' )
 
                       ,url(r'^supplier_admin/service/list/$',supplier_admin_service2.ServiceList.as_view(),name='supplier_admin_service2_list' )
-                    ,url(r'^supplier_admin/service/create/$', supplier_admin_service2.ServiceCreate.as_view(),name='supplier_admin_service2_create' )
-                     ,url(r'^supplier_admin/service/update/(?P<id>\d+)/$', supplier_admin_service2.ServiceUpdate.as_view(),name='supplier_admin_service2_update' )
-                     ,url(r'^supplier_admin/servicevalue/update/(?P<service_id>\d+)/$', supplier_admin_service2.update_value,name='supplier_admin_servicevalue_update' )
+                    ,url(r'^supplier_admin/service/create/(?P<type_id>\d+)/$', supplier_admin_service2.create_service2,name='supplier_admin_service2_create' )
+                     ,url(r'^supplier_admin/service/create/$', supplier_admin_service2.create_select_type,name='supplier_admin_service2_create_select_type' )
+                     ,url(r'^supplier_admin/service/update/(?P<service_id>\d+)/$', supplier_admin_service2.edit_service2,name='supplier_admin_service2_update' )
+                      #,url(r'^supplier_admin/service/disable/(?P<service_id>\d+)/$', supplier_admin_service2.disable_service2,name='supplier_admin_service2_disable' )
+
 
                      ,url(r'^supplier_admin/supplier/list/$',supplier_admin_service2.SupplierList.as_view(),name='supplier_admin_supplier_list' )
                      ,url(r'^supplier_admin/supplier/create/$',supplier_admin_service2.SupplierCreate.as_view(),name='supplier_admin_supplier_create' )

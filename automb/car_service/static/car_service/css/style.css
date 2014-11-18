@@ -623,3 +623,9 @@ img{ border:none;}
 .Scheduled_am span{
 	font:normal 18px/24px "微软雅黑";
 	}
+
+.hilite1{
+ background-color:yellow;
+ .hilite2{
+ background-color:green;
+}
