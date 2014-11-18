@@ -217,3 +217,4 @@ pip-log.txt
 media/
 *.sqlite3
 
+automb/.idea/workspace.xml
