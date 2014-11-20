@@ -1,24 +1,27 @@
 {% extends "car_service/base.html" %}
         {%load static%}
         {%block head%}
-         <link rel="stylesheet" type="text/css" href="{%static 'car_service/bootstrap-3.1.1-dist/css/bootstrap.min.css'%}"/>
+         <link rel="stylesheet" type="text/css" href="{%static 'car_service/css/style.css'%}"/>
         {%endblock%}
 
 {% block content%}
-<div class="row" style="min-height:500px;">
-    <div class="col-md-3">
-<ul class="nav nav-stacked">
-  <li><a href="{%url 'car_service:front_web:my_orders' %}">我的订单</a></li>
-  <li><a href="{%url 'userprofile:user_profile' %}">我的资料</a></li>
-</ul>
+ <div class="about_l f-l">
+    	<div class="about_l_1">个人中心</div>
+        <div class="about_l_2">
+        	<ul>
+            	<li class= "{%block nav_my_orders%}menu_selected{%endblock%}"><a   href="{%url 'car_service:front_web:my_orders' %}">我的订单</a></li>
+                <li class= "{%block nav_my_profile%}menu_selected{%endblock%}"><a  href="{%url 'userprofile:user_profile' %}">我的资料</a>
 
-
-
+                <li><a href="{%url 'car_service:front_web:logout'%}">退出登录</a></li>
+            </ul>
+            <ul class="clear"></ul>
+        </div>
+        <div class="h-20">&nbsp;</div>
     </div>
-    <div class="col-md-9">
-
-       {%block main_content%}
+<div class="my_r f-r">
+    	 {%block main_content%}
         {%endblock%}
+
     </div>
-</div>
+<div class="clear"></div>
 {%endblock%}

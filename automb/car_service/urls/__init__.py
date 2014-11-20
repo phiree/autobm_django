@@ -3,7 +3,8 @@ from django.conf.urls import patterns,url,include
 from car_service.views.site_admin import supplier, home, \
     carinfo, areainfo,servicetype,serviceproperty,\
     servicepropertyvalue,\
-    service2 as site_admin_service2\
+    service2 as site_admin_service2
+from ..views import admin_supplier
 
 from car_service.views.supplier_admin import service2 as supplier_admin_service2, home as supplier_admin_home
 
@@ -54,6 +55,9 @@ urlpatterns=patterns(''
                      ,url(r'^supplier_admin/service/create/$', supplier_admin_service2.create_select_type,name='supplier_admin_service2_create_select_type' )
                      ,url(r'^supplier_admin/service/update/(?P<service_id>\d+)/$', supplier_admin_service2.edit_service2,name='supplier_admin_service2_update' )
                       #,url(r'^supplier_admin/service/disable/(?P<service_id>\d+)/$', supplier_admin_service2.disable_service2,name='supplier_admin_service2_disable' )
+                     ,url(r'^supplier_admin/bill/list/$', admin_supplier.BillList.as_view(),name='supplier_admin_bill_list' )
+                      ,url(r'^supplier_admin/bill/(?P<bill_id>\d+)/$', admin_supplier.BillDetail.as_view(),name='supplier_admin_bill_detail' )
+                        ,url(r'^supplier_admin/bill/complete/(?P<bill_id>\d+)/$', admin_supplier.complete_bill,name='supplier_admin_complete_bill' )
 
 
                      ,url(r'^supplier_admin/supplier/list/$',supplier_admin_service2.SupplierList.as_view(),name='supplier_admin_supplier_list' )

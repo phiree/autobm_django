@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 from model_utils.managers import InheritanceManager
 from django.db import connection
-
+from django.utils import timezone as DateTime
 class  AreaInfo(Model):
     name=CharField(max_length=200)
     code=CharField(max_length=20)
@@ -52,7 +52,7 @@ class ServicePropertyValue_Brand(ServicePropertyValue):
 
 #和贴膜有关联的值  需要选择品牌 和 贴膜类型.
 class ServicePropertyValue_Brand_FoilType(ServicePropertyValue_Brand):
-    foiltype=ForeignKey(ServicePropertyValue,  related_name='spv_b_foil',limit_choices_to={'is_foil_type':True})
+    foiltype=ForeignKey(ServicePropertyValue,verbose_name='贴膜类型', related_name='spv_b_foil',limit_choices_to={'is_foil_type':True})
 
 
 
@@ -225,9 +225,16 @@ class Bill(Model):
     service_snapshot=CharField(max_length=2000)
     sms_content=CharField(max_length=1000)
     final_price=DecimalField(decimal_places=0, max_digits=5)
+    status_choice=(('ordered','已预订'),('paid','已付款'),('complete','已完成'),)
+    status=CharField(choices=status_choice,max_length=10)
+
+    created_time=DateTimeField(default=DateTime.now())
+    complete_time=DateTimeField(null=True)
     #给用户发送短信
     def send_sms(self):
         pass
+
+
 
 
 #返利  和  推荐 优惠.

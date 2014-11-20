@@ -69,21 +69,12 @@ AUTH_PROFILE_MODULE = 'userprofile.UserProfile'
 WSGI_APPLICATION = 'automb.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/1.6/ref/settings/#databases
-'''
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}'''
 DATABASES = {
     'default': {
         'ENGINE': 'mysql.connector.django',
         'NAME': '92auto',
-        'USER': 'root',
-        'PASSWORD': '',
+        'USER': '92auto',
+        'PASSWORD': 'twgdhbtzhy',
         'HOST': '127.0.0.1',
 
     }
@@ -92,7 +83,7 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-cn'
 
 TIME_ZONE = 'UTC'
 
@@ -112,3 +103,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL='/media/'
 
 LOGIN_REDIRECT_URL='/'
+WSGI_LOG=os.path.join(BASE_DIR,'wsgi_log.log')

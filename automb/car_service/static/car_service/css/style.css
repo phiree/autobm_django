@@ -447,7 +447,6 @@ img{ border:none;}
 
 .tejia_list{ width:1040px;}
 .tejia_list li{ width:318px; height:418px; overflow:hidden; border:solid 1px #ddd; float:left; margin-left:20px; _margin-left:10px; _margin-right:10px; margin-bottom:20px; position: relative; z-index:1;}
-.tejia_list li:first-child{margin-left:0;}
 .tejia_list li p{ text-align:left; color:#888; line-height:24px; padding:0 10px 0 10px;}
 .tejia_list_1{ position: absolute; z-index:9; top:153px; left:0; width:85px; height:58px; padding-top:6px; text-align:center; font-family:"΢���ź�"; color:#fff; line-height:33px; font-size:30px; background:url(../images/img_44.gif) top no-repeat;}
 .tejia_list li p.x1{ text-align:left; font-family:"΢���ź�"; font-size:16px; color:#333; line-height:26px; margin-top:10px; padding-left:2px;}
@@ -582,7 +581,7 @@ img{ border:none;}
 .popCar .selectCss select{width:210px;margin-bottom:12px}
 .popCar .otherCar{padding-top:6px;}
 .popCar .otherCar a{zoom:1;position:relative;padding-right:16px;display:inline-block}
-.popCar .otherCar a .icoAllow{position:absolute;right:0;top:4px;width:8px;height:5px;overflow:hidden;background-position:-88px 0}
+.popCar .otherCar a .icoAllow{position:absolute;right:0;top: 4px;width:8px;height:5px;overflow:hidden;background-position:-88px 0}
 .popCar .nowCar{padding:20px 0 0 5px;color:#5F5F5F}
 .popCar .nowCar dt{margin-bottom:12px}
 .popCar .nowCar p{padding:0 0 10px;padding-bottom:8px\9}
@@ -594,38 +593,19 @@ img{ border:none;}
 .popCar .confirm span{float:left;display:block;padding:8px 0 0 12px;color:#DB0000}
 /**/
 
-.Scheduled{
-	width:576px;
-	margin:0 auto;
-	}
-.Scheduled_lr{
-	float:left;
-	width:576px;
-	margin-top:10px;
-	background:url(../images/yd_t03.jpg) no-repeat center top;
-	height:419px;
-	}
-.Scheduled_lr img{
-	float:left;
-	padding:70px 12px 0px 22px;
-	}
-.Scheduled_am{
-	float:left;
-	margin-top:60px;
-	text-align:center;
-	color:#333;
-	}
-.Scheduled_am p{
-	font:normal 24px/26px "微软雅黑";
-	color:#333;
-	text-align:left;
-	}
-.Scheduled_am span{
-	font:normal 18px/24px "微软雅黑";
-	}
+/*��������*/
+.my_r{ width:770px;}
+.my_r_wz{ width:770px; height:35px; text-align:left; line-height:35px; color:#666; border-bottom:solid 1px #f0442e;}
+.my_r_list{ width:770px; border-bottom:dotted 1px #ddd;}
+.my_r_list li{ float:left; line-height:30px;}
+.my_r_list li.x1{ width:264px; text-align:left;}
+.my_r_list li.x2{ width:285px; text-align:left; color:#666;}
+.my_r_list li.x3{ width:80px; text-align:center; color:#666;}
+.my_r_list li.x4{ width:80px; text-align:center; color:#999;}
+.my_r_list li.x5{ width:60px; text-align:center; color:#999;}
+.my_r_list_fy{ width:770px; height:30px; text-align:center; line-height:30px; color:#999;}
+.my_r_about{ width:770px;}
+.my_r_about li{ height:33px; text-align:left; line-height:33px; color:#333; border-bottom:dotted 1px #ddd;}
+.my_r_about li span{ color:#888;}
 
-.hilite1{
- background-color:yellow;
- .hilite2{
- background-color:green;
 }

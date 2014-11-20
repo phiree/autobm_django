@@ -1,0 +1,176 @@
+@charset "gb2312";
+<!--
+body,td,th,div {
+	font-size: 12px; font-family:"����";
+}
+body {
+	font-family:"����";
+	background-color: #dae5e9;
+	margin: 0px;
+	background-image:url();
+	background-position:center top;
+	background-repeat:repeat;
+	width:100%;	
+	text-align:center;
+}
+html,body{ height:100%;}
+body{position:absolute; z-index:1;}
+
+a:link {
+	color: #353535;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #353535;
+}
+a:hover {
+	text-decoration: underline;
+	color: #f0442d;
+}
+a:active {
+	text-decoration: none;
+	color: #f0442d;
+}
+
+
+.w a:link {
+	color: #fff;
+	text-decoration: none;
+}
+.w a:visited {
+	text-decoration: none;
+	color: #fff;
+}
+.w a:hover {
+	text-decoration: none;
+	color: #fa0;
+}
+.w a:active {
+	text-decoration: none;
+	color: #fa0;
+}
+
+.h a:link {
+	color: #666;
+	text-decoration: none;
+}
+.h a:visited {
+	text-decoration: none;
+	color: #666;
+}
+.h a:hover {
+	text-decoration: none;
+	color: #f0442e;
+}
+.h a:active {
+	text-decoration: none;
+	color: #f0442e;
+}
+
+
+.b a:link {
+	color: #003cae;
+	text-decoration: none;
+}
+.b a:visited {
+	text-decoration: none;
+	color: #003cae;
+}
+.b a:hover {
+	text-decoration: none;
+	color: #333;
+}
+.b a:active {
+	text-decoration: none;
+	color: #333;
+}
+
+a.r:link {
+	color: #f00;
+	text-decoration: none;
+}
+a.r:visited {
+	text-decoration: none;
+	color: #f00;
+}
+a.r:hover {
+	text-decoration: none;
+	color: #333;
+}
+a.r:active {
+	text-decoration: none;
+	color: #333;
+}
+
+a.o:link {
+	color: #f80;
+	text-decoration: none;
+}
+a.o:visited {
+	text-decoration: none;
+	color: #f80;
+}
+a.o:hover {
+	text-decoration: none;
+	color: #333;
+}
+a.o:active {
+	text-decoration: none;
+	color: #333;
+}
+
+
+div{ margin:auto; padding:0;}
+ul{ padding:0; margin:0; list-style-type:none;}
+li{ padding:0; margin:0; list-style:none;}
+form { padding:0; margin:0;}
+p {padding:0; margin:0;}
+img{ border:none;}
+
+.clear{ clear:both;height:0;font-size:1px;line-height:0}
+
+.w1000{ width:1000px;}
+.h-20{ height:20px; line-height:20px; font-size:3px;}
+.h-15{ height:15px; line-height:15px; font-size:3px;}
+.h-10{ height:10px; line-height:10px; font-size:3px;}
+.h-5{ height:5px; line-height:5px; font-size:1px;}
+
+.f-l{ float:left;}
+.f-r{ float:right;}
+
+.rmb{ font-family:Arial; font-style:normal;}
+
+.p_top{width:100%; margin-bottom:8px; height:82px; min-width:1000px; _width:expression((documentElement.clientWidth <1000) ? "1000px" : "auto"); background:url(../../images/supplier_admin/top_bg.jpg) center top repeat-x;}
+.p_top_l{ width:400px; height:80px; overflow:hidden;}
+.p_top_r{ width:590px; height:80px; overflow:hidden;}
+
+.p_menu{float:left; margin-right:15px; width:25%; min-width:200px; max-width:200px; height:97%; border:solid 1px #b1ced4; background:#fff; }
+.p_menu_list{ width:168px; height:30px; padding-left:10px; text-align:left; line-height:30px; border:solid 1px #d8e6e9; background:url(../images/menu_01.jpg) top no-repeat;}
+.p_menu_list_on{background:url(../images/menu_02.jpg) top no-repeat;}
+.p_menu_1{ width:180px; text-align:right; line-height:30px; color:#999;}
+.p_menu_1 span{ float:left; color:#003caf;}
+.p_main{ float:left; width:75%; height:97%; border:solid 1px #b1ced4; background:#fff; }
+.p_main_1{ height:34px; padding-left:25px; border-bottom:solid 1px #b1ced4; text-align:left; line-height:34px; color:#333; font-weight:bold; background:url(../images/main_02.jpg) 5px 10px no-repeat;}
+.p_main_content{ padding:20px;}
+.p_main_list{ width:100%;}
+.p_main_list{ border-bottom:dotted 1px #ddd;}
+.p_main_list li{ float:left; font-size:14px;}
+.p_main_list li.x1{ width:40%; text-align:left; line-height:33px;}
+.p_main_list li.x2{ width:35%; text-align:left; line-height:33px; color:#666;}
+.p_main_list li.x3{ width:15%; text-align:center; line-height:33px; color:#666;}
+.p_main_list li.x3 span{ color:#f00;}
+.p_main_list li.x4{ width:10%; text-align:center; font-size:12px; line-height:33px;}
+.p_main_list_fy{ width:100%; text-align:center; font-size:12px; line-height:35px; color:#888;}
+.p_main_d{ width:100%;}
+.p_main_d li{ height:35px; text-align:left; font-size:14px; line-height:30px;}
+.p_main_d li span{ color:#999;}
+
+.menu_selected{
+background-color:#2384ed;!important
+
+}
+.menu_selected a
+{
+color:white;!important
+}

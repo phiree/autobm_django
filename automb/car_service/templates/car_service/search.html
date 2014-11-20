@@ -11,7 +11,7 @@
                         exact:"{{kw}}",
                         engines:[/^http:\/\/(www\.)?phiree/i, /kw=([^&]+)/i],
                     }
-                    debugger;
+
                     {%if kw%}
                         jQuery(document).SearchHighlight(options);
                     {%endif%}
