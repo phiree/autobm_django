@@ -1,7 +1,14 @@
+from django.shortcuts import redirect
+
 __author__ = 'Administrator'
-from django.http import  HttpResponse
+from django.http import  HttpResponse,HttpResponseRedirect
+from django.core.urlresolvers import reverse
 from django.views.generic import ListView,DetailView
 from ..models import Supplier,Bill,Service2
+
+def home(request):
+    return redirect(reverse('car_service:supplier_admin_service2_list'))
+
 class BillList(ListView):
     model = Bill
     template_name = 'car_service/supplier_admin/bill_list.html'

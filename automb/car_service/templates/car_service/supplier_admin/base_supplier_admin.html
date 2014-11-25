@@ -3,56 +3,85 @@
 <html>
 <head>
 
-    <link rel="stylesheet" type="text/css" media="all" href="{%static 'car_service/css/supplier_admin/style.css'%}"/>
+    <link rel="stylesheet" type="text/css" media="all"
+          href="{%static 'car_service/bootstrap-3.1.1-dist/css/bootstrap.min.css'%}"/>
+    <link rel="stylesheet" type="text/css" media="all" href="{%static 'car_service/css/supplier_admin/style2.css'%}"/>
 
+    <link rel="stylesheet" type="text/css" media="all"
+          href="http://cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css"/>
     <!--bootstrap-->
+    <script src="{%static 'car_service/js/jquery/jquery-1.9.1.js'%}"></script>
+    <script src="http://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
+
     <script src="{%static 'car_service/js/html5shiv.js'%}"></script>
     <script src="{%static 'car_service/js/respond.min.js'%}"></script>
     <![endif]-->
+    <script>
+        $(document).ready(function(){
+        {%block script_dom_loaded%}
+
+        {%endblock%}
+        });
+
+
+
+
+
+
+    </script>
     {%block header%}{%endblock%}
     <title>系统管理</title>
 
 </head>
 <body>
-<div class="p_top">
-    <div class="p_top_l f-l"><img src="{%static 'car_service/images/supplier_admin/top_01.jpg'%}" alt=""></div>
-    <div class="p_top_r f-r"></div>
-    <div class="clear"></div>
-</div>
-<div class="p_menu">
-    <div class="h-10">&nbsp;</div>
-    <div class="p_menu_1"><span>{{user}}</span>[<a href="{%url 'car_service:front_web:logout'%}" class="o">退出</a>]</div>
-    <div class="h-10">&nbsp;</div>
-    <div  class="p_menu_list p_menu_list_on {%block nav_service_list%}{%endblock%}"><a class='list-group-item '
-                                               href='{%url "car_service:supplier_admin_service2_list" %}'>服务列表</a></div>
-    <div class="h-10">&nbsp;</div>
-    <div class="p_menu_list {%block nav_service_create%}{%endblock%}"><a class='list-group-item '
-                                href='{%url "car_service:supplier_admin_service2_create_select_type" %}'>增加服务</a>
-    </div>
-        <div class="h-10">&nbsp;</div>
-        <div class="p_menu_list {%block nav_supplier_list%}{%endblock%}"><a class='list-group-item '
-                                    href='{%url "car_service:supplier_admin_supplier_list" %}'>车店列表</a>
-        </div>
-        <div class="h-10">&nbsp;</div>
-        <div class="p_menu_list {%block nav_supplier_create%}{%endblock%}"><a class='list-group-item '
-                                    href='{%url "car_service:supplier_admin_supplier_create" %}'>增加车店</a>
-        </div>
-
-          <div class="p_menu_list {%block nav_order_list%}{%endblock%}"><a class='list-group-item '
-                                    href='{%url "car_service:supplier_admin_bill_list" %}'>订单列表</a>
-        </div>
-
-    </div>
-
-<div class="p_main">
-	<div class="p_main_1">{%block content_title%}{%endblock%}</div>
-    <div class="p_main_content">
-{%block content%}{%endblock%}
-    </div>
+<div class="p_top row">
+ <img src="{%static 'car_service/images/supplier_admin/top_01.jpg'%}" alt="">
 </div>
 
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 ">
+            <div class="p_menu">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <span>{{user}}</span>[<a href="{%url 'car_service:front_web:logout'%}" class="o">退出</a>]
+                    </div>
+                </div>
+                <ul class="list-group">
+                    <li class="list-group-item {%block nav_service_list%}{%endblock%}">
+                        <a  href='{%url "car_service:supplier_admin_service2_list" %}'>服务列表</a>
+                    </li>
+                    <li class="list-group-item {%block nav_service_create%}{%endblock%}"><a
+                            href='{%url "car_service:supplier_admin_service2_create_select_type" %}'>增加服务</a>
+                    </li>
+
+                    <li class="list-group-item {%block nav_supplier_list%}{%endblock%}"><a
+                            href='{%url "car_service:supplier_admin_supplier_list" %}'>车店列表</a>
+                    </li>
+                    <li class="list-group-item {%block nav_supplier_create%}{%endblock%}"><a
+                            href='{%url "car_service:supplier_admin_supplier_create" %}'>增加车店</a>
+                    </li>
+                    <li class="list-group-item {%block nav_bill_list%}{%endblock%}"><a
+                            href='{%url "car_service:supplier_admin_bill_list" %}'>订单列表</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-md-10">
+            <div class="p_main ">
+                <h3>{%block content_title%}{%endblock%}</h3>
+                <hr/>
+                <div class="p_main_content">
+                    {%block content%}{%endblock%}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

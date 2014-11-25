@@ -581,7 +581,7 @@ img{ border:none;}
 .popCar .selectCss select{width:210px;margin-bottom:12px}
 .popCar .otherCar{padding-top:6px;}
 .popCar .otherCar a{zoom:1;position:relative;padding-right:16px;display:inline-block}
-.popCar .otherCar a .icoAllow{position:absolute;right:0;top:4px;width:8px;height:5px;overflow:hidden;background-position:-88px 0}
+.popCar .otherCar a .icoAllow{position:absolute;right:0;top: 4px;width:8px;height:5px;overflow:hidden;background-position:-88px 0}
 .popCar .nowCar{padding:20px 0 0 5px;color:#5F5F5F}
 .popCar .nowCar dt{margin-bottom:12px}
 .popCar .nowCar p{padding:0 0 10px;padding-bottom:8px\9}
@@ -592,3 +592,18 @@ img{ border:none;}
 .popCar .confirm a:hover{text-decoration:none;background:url(../images/img_58.jpg) no-repeat}
 .popCar .confirm span{float:left;display:block;padding:8px 0 0 12px;color:#DB0000}
 /**/
+
+/*个人中心*/
+.my_r{ width:770px;}
+.my_r_wz{ width:770px; height:35px; text-align:left; line-height:35px; color:#666; border-bottom:solid 1px #f0442e;}
+.my_r_list{ width:770px; border-bottom:dotted 1px #ddd;}
+.my_r_list li{ float:left; line-height:30px;}
+.my_r_list li.x1{ width:264px; text-align:left;}
+.my_r_list li.x2{ width:285px; text-align:left; color:#666;}
+.my_r_list li.x3{ width:80px; text-align:center; color:#666;}
+.my_r_list li.x4{ width:80px; text-align:center; color:#999;}
+.my_r_list li.x5{ width:60px; text-align:center; color:#999;}
+.my_r_list_fy{ width:770px; height:30px; text-align:center; line-height:30px; color:#999;}
+.my_r_about{ width:770px;}
+.my_r_about li{ height:33px; text-align:left; line-height:33px; color:#333; border-bottom:dotted 1px #ddd;}
+.my_r_about li span{ color:#888;}

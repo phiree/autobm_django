@@ -19,3 +19,8 @@ class ServiceValueForm(ModelForm):
 class Service2ValueForm(Form):
     pass
 
+class Service2HtmlForm(Form):
+    title=forms.CharField(max_length=100)
+    
+
+

@@ -1,17 +1,48 @@
 {% extends "car_service/supplier_admin/base_supplier_admin.html" %}
+        {%load staticfiles%}
+{%block content_title%}服务列表{%endblock%}
         {%block  nav_service_list%}
         menu_selected
         {%endblock%}
+        {%block script_dom_loaded%}
+        $('#tbl_service_list').DataTable
+        ({"language":
+           {
+                 url:'http://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Chinese.json'
+           }
+        });
+
+{%endblock%}
           {%block content%}
 
-        <table>
-        {% for service in object_list  %}
-            <tr><td>
 
-           <a href="{%url 'car_service:supplier_admin_service2_update' service.id %}">{{service}}</a>
+        <table class="table" id="tbl_service_list">
+            <thead><tr>
+            <td>类型</td>
+               <td>标题</td>
+                <td>我们的价格</td>
+                 <td>市场价</td>
+                <td>已经取消</td>
+            </tr></thead>
+        {% for service in object_list  %}
+            <tr><td  >{{service.servicetype.name}}</td>
+
+<td >
+           <a  href="{%url 'car_service:supplier_admin_service2_update' service.id %}">{{service}}</a>
                {# <a href="{%url 'car_service:supplier_admin_service2_disable' service.id %}">停止服务</a>#}
 
-            </td></tr>
+            </td>
+            <td>
+                {{service.price}}
+            </td>
+                  <td>
+                {{service.price_market}}
+            </td>
+                 <td>
+               <input type="checkbox" disabled  {%if service.disabled%}checked{%endif%}/>
+            </td>
+            </tr>
         {% endfor %}
-            </table>
-        <a href="{%url 'car_service:supplier_admin_service2_create_select_type'%}">增加服务</a> {%endblock%}
+
+            </table><a class="webfw" href="{%url 'car_service:supplier_admin_service2_create_select_type'%}">增加服务</a>
+        {%endblock%}

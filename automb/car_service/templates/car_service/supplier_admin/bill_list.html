@@ -1,24 +1,42 @@
 {% extends "car_service/supplier_admin/base_supplier_admin.html" %}
-          {%block nav_bill_list%}
-        menu_selected
-        {%endblock%}
-          {%block content%}
-        <table>
-            <thead>
-            <tr><td>购买者</td><td>服务内容</td><td>状态</td></tr>
-            </thead>
-        {% for bill in object_list%}
-            <tr>
-                <td>{{bill.user}}</td>
-                <td>
+{%block nav_bill_list%}menu_selected{%endblock%}
+{%block content_title%}订单列表{%endblock%}
+{%block script_dom_loaded%}
+$('#tbl_bill_list').DataTable
+        ({"language":
+           {
+                 url:'http://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Chinese.json'
+           }
+        });
+{%endblock%}
+{%block content%}
+<table id="tbl_bill_list">
+    <thead>
+    <tr>
+        <td>购买者</td>
+        <td>服务内容</td>
+        <td>服务验证码</td>
+        <td>状态</td>
+    </tr>
+    </thead>
+    <tbody>
+    {% for bill in object_list%}
+    <tr>
+        <td>{{bill.user}}</td>
+        <td>
 
-           <a href="{%url 'car_service:supplier_admin_bill_detail' bill.id %}">{{bill.service}}</a>
+            <a href="{%url 'car_service:supplier_admin_bill_detail' bill.id %}">{{bill.service}}</a>
 
-            </td>
-            <td>
-               {{bill.get_status_display}}
-            </td>
-            </tr>
-        {% endfor %}
-            </table>
-        {%endblock%}
+        </td>
+        <td>
+            {{bill.bill_code}}
+        </td>
+        <td>
+            {{bill.get_status_display}}
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+    <tfooter></tfooter>
+</table>
+{%endblock%}

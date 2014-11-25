@@ -145,3 +145,14 @@ def search(request):
     search_result=biz_search.search(kw)
     return render(request,'car_service/search.html',{'kw':kw,'search_result':search_result})
     pass
+
+import json
+from django.conf import settings
+from django.core.files.storage import default_storage
+from django.core.files.base import ContentFile
+def upload_file(request):
+    image=request.FILES.get('file')
+    saved_path =default_storage.save(image.name,ContentFile(image.read()))
+
+    data={'url':settings.MEDIA_URL+saved_path}
+    return HttpResponse(json.dumps(data),content_type='application/json')

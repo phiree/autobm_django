@@ -1,10 +1,9 @@
 {% extends "car_service/supplier_admin/base_supplier_admin.html" %}
 {%load staticfiles%}
 {%block header%}
-            <script type="text/javascript" src="{%static 'car_service/js/jquery/jquery-1.8.0.min.js'%}"></script>
-        <script type="text/javascript" src="{%static 'car_service/js/jquery/plugin/jquery.cookie.js'%}"></script>
-        <script type="text/javascript" src="{%static 'car_service/js/jquery/plugin/jquery.djangocsrf.js'%}"></script>
-        <script>
+<script type="text/javascript" src="{%static 'car_service/js/jquery/plugin/jquery.cookie.js'%}"></script>
+<script type="text/javascript" src="{%static 'car_service/js/jquery/plugin/jquery.djangocsrf.js'%}"></script>
+<script>
         $(function(){
         $.djangocsrf( "enable" );
         $('#btn_complete').click(function(){
@@ -26,24 +25,41 @@
 
 
         })
+
+
 </script>
 {%endblock%}
+{%block nav_bill_list%}menu_selected{%endblock%}
+{%block content_title%}订单详情{%endblock%}
 {%block content%}
-<ul>
-    <li>预订者:{{object.user}}</li>
-    <li>服务:{{object.service}}</li>
-    <li>
-        <div id="dv_status">
-            {%if  object.status = 'ordered' or object.status = 'paid'%}
-            已经为该客户提供了服务,<input type="button" id="btn_complete" value="点击,完成订单"/>
+<table class="table" style="width:60%">
+    <tr>
+        <td>预订者:</td>
+        <td>{{object.user}}</td>
+    </tr>
+    <tr>
+        <td>服务:</td>
+        <td>
+            <a href="{%url 'car_service:front_web:service_detail_with_id' object.service.id%}" target="_blank">
+                {{object.service}}
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>{%if object.status = 'ordered' or object.status = 'paid'%}
+            如果已经为该客户提供了该服务,请<input type="button" id="btn_complete" value="点击,完成订单"/>
             {%else%}
             订单已经完成
             {%endif%}
             <div id="dv_err_msg"></div>
-        </div>
-    </li>
-
-</ul>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
 
 
 {%endblock%}

@@ -1,7 +1,9 @@
 #################
 ## Eclipse
 #################
-
+docs/
+env/
+*.rar
 *.pydevproject
 .project
 .metadata

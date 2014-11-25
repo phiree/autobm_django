@@ -1,7 +1,10 @@
 {% extends "car_service/my/base_my.html" %}
 {% block main_content%}
 <p>订单列表</p>
+        <table>
+<tr><td>服务概况</td><td>服务码</td><td>订单状态</td></tr>
  {%for order in order_list%}
-        {{order.service}}
+      <tr><td> {{order.service}}</td><td> {{order.bill_code}}</td><td> {{order.get_status_display}}</td></tr>
         {%endfor%}
+            </table>
 {%endblock%}

@@ -2,10 +2,11 @@
         {%block nav_service_create%}
         menu_selected
         {%endblock%}
+
 {%block content_title%}选择需要创建的活动种类{%endblock%}
          {%block content%}
            {%for  top_type in top_type_list%}
-        <div>
+        <div style="margin-bottom:8px;">
             <span style="font-weight:800;">{{top_type.name}}</span>
             {%for child_type in top_type.servicetype_set.all%}
             <a href="{%url 'car_service:supplier_admin_service2_create' child_type.id%}">

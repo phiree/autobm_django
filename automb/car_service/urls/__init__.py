@@ -4,7 +4,7 @@ from car_service.views.site_admin import supplier, home, \
     carinfo, areainfo,servicetype,serviceproperty,\
     servicepropertyvalue,\
     service2 as site_admin_service2
-from ..views import admin_supplier
+from ..views import admin_supplier,view
 
 from car_service.views.supplier_admin import service2 as supplier_admin_service2, home as supplier_admin_home
 
@@ -48,7 +48,7 @@ urlpatterns=patterns(''
                      ,url(r'^site_admin/supplier/create/$', supplier.SupplierCreate.as_view( ),name='supplier_create' )
                      ,url(r'^site_admin/supplier/update/(?P<id>\d+)/$', supplier.SupplierUpdate.as_view( ),name='supplier_update' )
 
-                    ,url(r'^supplier_admin/$',supplier_admin_home.home,name='supplier_admin_home' )
+                    ,url(r'^supplier_admin/$',admin_supplier.home,name='supplier_admin_home' )
 
                       ,url(r'^supplier_admin/service/list/$',supplier_admin_service2.ServiceList.as_view(),name='supplier_admin_service2_list' )
                     ,url(r'^supplier_admin/service/create/(?P<type_id>\d+)/$', supplier_admin_service2.create_service2,name='supplier_admin_service2_create' )
@@ -64,6 +64,7 @@ urlpatterns=patterns(''
                      ,url(r'^supplier_admin/supplier/create/$',supplier_admin_service2.SupplierCreate.as_view(),name='supplier_admin_supplier_create' )
                      ,url(r'^supplier_admin/supplier/update/(?P<supplier_id>\d+)/$',supplier_admin_service2.SupplierUpdate.as_view(),name='supplier_admin_supplier_update' )
                      ,url(r'^supplier_admin/supplier/create_success/(?P<supplier_id>\d+)/$', supplier_admin_service2.supplier_create_success, name='supplier_admin_supplier_create_success' )
+                       ,url(r'^upload_file/$', view.upload_file, name='upload_file' )
 
                      )
 

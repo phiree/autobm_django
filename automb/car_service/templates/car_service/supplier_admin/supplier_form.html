@@ -1,12 +1,24 @@
 {% extends "car_service/supplier_admin/base_supplier_admin.html" %}
+        {%load add_attr_field%}
+        {%block content_title%}
+        车店详情
+        {%endblock%}
 {%block nav_supplier_create%}
 menu_selected
 {%endblock%}
 {%block content%}
-<form enctype="multipart/form-data" method="post">{% csrf_token %}
-    <table>
-        {{form.as_table}}
-    </table>
-    <input type='submit' value="保存"/>
+<form role="form" class="form-horizontal" enctype="multipart/form-data" method="post">{% csrf_token %}
+    {%for field in form%}
+    <div class="form-group">
+        <label class="col-sm-1 control-label" for="{{ field.id_for_label }}">{{field.label}}:</label>
+        <div class="col-sm-8">
+        {{field|add_attributes:'form-control'}}{{field.errors}}
+            </div>
+      </div>
+    {%endfor%}
+    <div class="col-sm-offset-1 ">
+      <input class="btn btn-primary btn-lg" type='submit' value="保存"/>
+    </div>
+
 </form>
 {%endblock%}

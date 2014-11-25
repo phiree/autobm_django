@@ -2,7 +2,7 @@
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$" />
-    <orderEntry type="jdk" jdkName="Python 3.4.1 virtualenv at F:\envs\django_oscar\env" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.4.1 virtualenv at F:\Code\autobm_django\env\env" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>

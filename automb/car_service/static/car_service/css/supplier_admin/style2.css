@@ -1,0 +1,38 @@
+body{
+background-color:#dae5e9;
+}
+.p_menu,.p_main
+{
+background-color:#fff;
+padding:15px;
+border:solid 1px #b1ced4;
+
+}
+.p_main
+{
+
+}
+.p_top{
+ padding-bottom:10px;
+
+ background:url(../../images/supplier_admin/top_bg.jpg) center top repeat-x;
+
+ }
+ .fm_create_supplier
+ {
+
+ }
+ .menu_selected
+ {
+ background-color:#78c;
+ }
+ .menu_selected a
+ {
+ color:white;
+ font-weight:700;
+ }
+
+ #summernote {overflow:scroll;
+  height:300px;
+  max-height:500px;
+  }

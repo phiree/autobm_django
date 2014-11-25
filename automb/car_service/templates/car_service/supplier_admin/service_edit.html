@@ -1,31 +1,97 @@
 {% extends "car_service/supplier_admin/base_supplier_admin.html" %}
+        {%load staticfiles%}
+        {%block content_title%}编辑服务{%endblock%}
  {%block nav_service_create%}
         menu_selected
         {%endblock%}
+        {%block header%}
+          <!-- add library -->
+<script type="text/javascript" src="{%static 'car_service/js/jquery/plugin/jquery.cookie.js'%}"></script>
+<script type="text/javascript" src="{%static 'car_service/js/jquery/plugin/jquery.djangocsrf.js'%}"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  <!-- include (codemirror.css, codemirror.js, xml.js, formatting.js) -->
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/codemirror.min.css" />
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/theme/monokai.min.css">
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/codemirror.min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/mode/xml/xml.min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/codemirror/2.36.0/formatting.min.js"></script>
+        <link rel="stylesheet" type="text/css" media="all" href="{%static 'car_service/js/jquery/plugin/summernote.css'%}"/>
+
+        <script src="{%static 'car_service/js/jquery/plugin/summernote.min.js'%}"></script>
+         {%endblock%}
+
+        {%block script_dom_loaded%}
+        $.djangocsrf( "enable" );
+
+        $('#summernote').summernote({
+                        height:300,
+                        onChange: function(contents, $editable)
+                            {
+                                $('#txt_description').val(contents);
+                            },
+                        onImageUpload: function(files, editor, welEditable)
+                            {
+                                sendFile(files[0], editor, welEditable);
+                            }
+
+        });
+        $('#txt_description').val($('#summernote').code());
+        function sendFile(file, editor, welEditable)
+        {
+            data = new FormData();
+            data.append("file", file);
+            data.append('description',$('#summernote').code())
+            $.ajax({
+                data: data,
+                type: 'POST',
+                xhr: function() {
+                    var myXhr = $.ajaxSettings.xhr();
+
+                    return myXhr;
+                },
+                url: '{%url 'car_service:upload_file'%}',
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function(data) {
+                    editor.insertImage(welEditable, data.url);
+                }
+            });
+        }
+
+
+{%endblock%}
 {%block content%}
 {{errmsg}}
-<form method="post">{% csrf_token %}
-    <table>
-        <tr>
-            <th>服务标题</th>
-            <td><input type="text" value="{{service2.title}}" name="title"/></td>
-        </tr>
-        <tr>
-            <th>车店</th>
-            <td><select name="supplier">{%for supplier in supplier_list%}
+<form role="form" class="form-horizontal" enctype="multipart/form-data"   method="post">{% csrf_token %}
+    <div class="form-group">
+        <label class="col-sm-1 control-label" for="id_title">标题:</label>
+        <div class="col-sm-8">
+            <input type="text" id="id_title" class="form-control" value="{{service2.title}}" name="title"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label  class="control-label col-sm-1" >所属车店:</label>
+        <div class="col-sm-8">
+        <select class="form-control" name="supplier">{%for supplier in supplier_list%}
                 <option selected="{%if supplier.id in service2.supplier.id %}selected{%endif%}"
                         value="{{supplier.id}}">{{supplier}}</option>
-                {%endfor%}</select></td>
-        </tr>
-        <tr>
-            <th>服务类型</th>
-            <td>{{service_type.name}}</td>
-        </tr>
+                {%endfor%}</select>
+            </div>
+    </div>
+
+     <div class="form-group">
+        <label class="col-sm-1 control-label" for="id_type">服务类型:</label>
+        <div class="col-sm-8">
+            <p class="form-control-static">{{service_type.name}}</p>
+        </div>
+    </div>
         {%for service_type_property in service_type.serviceproperty_set.all%}
-        <tr>
-            <th>{{service_type_property.name}}</th>
-            <td>
-                <select name="sel_{{service_type_property.id}}">
+       <div class="form-group">
+             <label class="col-sm-1 control-label">{{service_type_property.name}}</label>
+             <div class="col-sm-8">
+                <select class="form-control" name="sel_{{service_type_property.id}}">
                     {%for service_property_type_value in service_type_property.servicepropertyvalue_set.all%}
                     <option name="option{{service_property_type_value.id}}"
                             selected="{%if service_property_type_value in service_value_list %}selected{%endif%}"
@@ -33,26 +99,38 @@
                     </option>
                     {%endfor%}
                 </select>
-            </td>
-        </tr>
+            </div>
+
+           </div>
         {%endfor%}
-        <tr>
-            <th>市场价</th>
-            <td><input type="number" value="{{service2.price_market}}" name="price_market"/></td>
-        </tr>
-        <tr>
-            <th>爱车价:</th>
-            <td><input type="number" value="{{service2.price}}" name="price"/></td>
-        </tr>
-        <tr>
-            <th>停用:</th>
-            <td><input type="checkbox" {%if service2.disabled%}checked{%endif%}  name="disabled"/></td>
-        </tr>
-        <tr>
-            <th>详情</th>
-            <td><textarea name="description">"{{service2.description}}"</textarea></td>
-        </tr>
-    </table>
-    <input type='submit' value="保存"/>
+    <div class="form-group">
+        <label class="col-sm-1 control-label" for=" ">市场的价:</label>
+        <div class="col-sm-8">
+           <input type="text"   class="form-control" value="{{service2.price_market}}" name="price_market"/>
+        </div>
+    </div>
+         <div class="form-group">
+        <label class="col-sm-1 control-label" for=" ">我们的价:</label>
+        <div class="col-sm-8">
+           <input   class="form-control" type="number" value="{{service2.price}}" name="price"/>
+        </div>
+    </div>
+         <div class="form-group">
+        <label class="col-sm-1 control-label" for=" ">停用:</label>
+        <div class="col-sm-8">
+           <input   class="form-control" style="width:10%" {%if service2.disabled%}checked{%endif%} type="checkbox"   name="disabled"/>
+        </div>
+    </div>
+         <div   class="form-group">
+        <label class="col-sm-1 control-label" for=" ">详情:</label>
+        <div class="col-lg-10">
+
+           <div  id="summernote">{{service2.description|safe}}</div>
+            <input type="hidden" id="txt_description"   name="description"/>
+
+        </div>
+    </div>
+
+    <input type='submit' class="btn btn-primary btn-lg" value="保存"/>
 </form>
 {%endblock%}

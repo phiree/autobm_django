@@ -1,357 +1,440 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
+from south.utils import datetime_utils as datetime
+from south.db import db
+from south.v2 import SchemaMigration
+from django.db import models
 
-from django.db import models, migrations
-from django.conf import settings
+
+class Migration(SchemaMigration):
+
+    def forwards(self, orm):
+        # Adding model 'AreaInfo'
+        db.create_table('car_service_areainfo', (
+            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('name', self.gf('django.db.models.fields.CharField')(max_length=200)),
+            ('code', self.gf('django.db.models.fields.CharField')(max_length=20)),
+            ('parent', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['car_service.AreaInfo'], null=True, blank=True)),
+        ))
+        db.send_create_signal('car_service', ['AreaInfo'])
+
+        # Adding model 'ServiceType'
+        db.create_table('car_service_servicetype', (
+            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('name', self.gf('django.db.models.fields.CharField')(max_length=200)),
+            ('parent', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['car_service.ServiceType'], null=True, blank=True)),
+            ('description', self.gf('django.db.models.fields.CharField')(max_length=2000)),
+        ))
+        db.send_create_signal('car_service', ['ServiceType'])
+
+        # Adding model 'ServiceProperty'
+        db.create_table('car_service_serviceproperty', (
+            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('name', self.gf('django.db.models.fields.CharField')(max_length=200)),
+            ('servicetype', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['car_service.ServiceType'])),
+        ))
+        db.send_create_signal('car_service', ['ServiceProperty'])
+
+        # Adding model 'ServicePropertyValue'
+        db.create_table('car_service_servicepropertyvalue', (
+            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('serviceproperty', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['car_service.ServiceProperty'])),
+            ('value', self.gf('django.db.models.fields.CharField')(max_length=200)),
+            ('is_brand', self.gf('django.db.models.fields.BooleanField')()),
+            ('is_foil_type', self.gf('django.db.models.fields.BooleanField')()),
+        ))
+        db.send_create_signal('car_service', ['ServicePropertyValue'])
+
+        # Adding model 'ServicePropertyValue_Brand'
+        db.create_table('car_service_servicepropertyvalue_brand', (
+            ('servicepropertyvalue_ptr', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['car_service.ServicePropertyValue'], primary_key=True, unique=True)),
+            ('brand', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['car_service.ServicePropertyValue'], related_name='spv_brand')),
+        ))
+        db.send_create_signal('car_service', ['ServicePropertyValue_Brand'])
+
+        # Adding model 'ServicePropertyValue_Brand_FoilType'
+        db.create_table('car_service_servicepropertyvalue_brand_foiltype', (
+            ('servicepropertyvalue_brand_ptr', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['car_service.ServicePropertyValue_Brand'], primary_key=True, unique=True)),
+            ('foiltype', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['car_service.ServicePropertyValue'], related_name='spv_b_foil')),
+        ))
+        db.send_create_signal('car_service', ['ServicePropertyValue_Brand_FoilType'])
+
+        # Adding model 'CarInfo'
+        db.create_table('car_service_carinfo', (
+            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('name', self.gf('django.db.models.fields.CharField')(max_length=100)),
+            ('car_type', self.gf('django.db.models.fields.CharField')(null=True, max_length=10, blank=True)),
+            ('info_type', self.gf('django.db.models.fields.CharField')(null=True, max_length=10, blank=True)),
+            ('parent', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['car_service.CarInfo'], null=True, blank=True)),
+        ))
+        db.send_create_signal('car_service', ['CarInfo'])
+
+        # Adding model 'Service2'
+        db.create_table('car_service_service2', (
+            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('supplier', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['car_service.Supplier'])),
+            ('title', self.gf('django.db.models.fields.CharField')(max_length=100)),
+            ('description', self.gf('django.db.models.fields.CharField')(max_length=8000)),
+            ('servicetype', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['car_service.ServiceType'])),
+            ('price', self.gf('django.db.models.fields.DecimalField')(decimal_places=0, max_digits=5, null=True)),
+            ('price_market', self.gf('django.db.models.fields.DecimalField')(decimal_places=0, max_digits=5, null=True)),
+            ('disabled', self.gf('django.db.models.fields.BooleanField')(default=False)),
+        ))
+        db.send_create_signal('car_service', ['Service2'])
+
+        # Adding model 'ServiceValue'
+        db.create_table('car_service_servicevalue', (
+            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('service', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['car_service.Service2'])),
+            ('servicepropertyvalue', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['car_service.ServicePropertyValue'])),
+        ))
+        db.send_create_signal('car_service', ['ServiceValue'])
+
+        # Adding model 'Tree'
+        db.create_table('car_service_tree', (
+            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('tree_type', self.gf('django.db.models.fields.CharField')(max_length=100)),
+            ('car_type', self.gf('django.db.models.fields.CharField')(null=True, max_length=10, blank=True)),
+            ('name', self.gf('django.db.models.fields.CharField')(max_length=200)),
+            ('parent', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['car_service.Tree'], null=True, blank=True)),
+            ('supplier', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['car_service.Supplier'], null=True, blank=True)),
+        ))
+        db.send_create_signal('car_service', ['Tree'])
+
+        # Adding unique constraint on 'Tree', fields ['tree_type', 'name']
+        db.create_unique('car_service_tree', ['tree_type', 'name'])
+
+        # Adding model 'Supplier'
+        db.create_table('car_service_supplier', (
+            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('name', self.gf('django.db.models.fields.CharField')(max_length=100)),
+            ('area', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['car_service.AreaInfo'])),
+            ('address', self.gf('django.db.models.fields.CharField')(max_length=100)),
+            ('coordinate_x', self.gf('django.db.models.fields.FloatField')()),
+            ('coordinate_y', self.gf('django.db.models.fields.FloatField')()),
+            ('photo', self.gf('django.db.models.fields.files.ImageField')(null=True, max_length=100, blank=True)),
+            ('phone', self.gf('django.db.models.fields.CharField')(max_length=100)),
+            ('time_open', self.gf('django.db.models.fields.TimeField')()),
+            ('time_close', self.gf('django.db.models.fields.TimeField')()),
+            ('description', self.gf('django.db.models.fields.CharField')(max_length=1000)),
+            ('owner', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['auth.User'])),
+        ))
+        db.send_create_signal('car_service', ['Supplier'])
+
+        # Adding model 'Service'
+        db.create_table('car_service_service', (
+            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('supplier', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['car_service.Supplier'])),
+            ('service_type', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['car_service.Tree'], related_name='service_type')),
+            ('description', self.gf('django.db.models.fields.CharField')(max_length=4000)),
+        ))
+        db.send_create_signal('car_service', ['Service'])
+
+        # Adding model 'Car'
+        db.create_table('car_service_car', (
+            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+        ))
+        db.send_create_signal('car_service', ['Car'])
+
+        # Adding model 'ServiceDetail'
+        db.create_table('car_service_servicedetail', (
+            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('service', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['car_service.Service'])),
+            ('brand', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['car_service.Tree'], null=True, related_name='brand', blank=True)),
+            ('wash_type', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['car_service.Tree'], null=True, blank=True)),
+            ('sound_proofing_type', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['car_service.Tree'], null=True, related_name='sound_proofing_type', blank=True)),
+            ('foil_type', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['car_service.Tree'], null=True, related_name='foil_type', blank=True)),
+            ('foil_model_front', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['car_service.Tree'], null=True, related_name='foil_model_front', blank=True)),
+            ('foil_model_sides_back', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['car_service.Tree'], null=True, related_name='foil_model_sides_back', blank=True)),
+            ('glass_damage_size', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['car_service.Tree'], null=True, related_name='glass_damage_size', blank=True)),
+            ('tire_repair_type', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['car_service.Tree'], null=True, related_name='tire_repair_type', blank=True)),
+            ('body_damage_size', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['car_service.Tree'], null=True, related_name='body_damage_size', blank=True)),
+            ('sound_suit', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['car_service.Tree'], null=True, related_name='sound_suit', blank=True)),
+            ('main_light_suit', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['car_service.Tree'], null=True, related_name='main_light_suit', blank=True)),
+            ('model_common', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['car_service.Tree'], null=True, related_name='model_common', blank=True)),
+            ('price', self.gf('django.db.models.fields.DecimalField')(max_digits=5, decimal_places=0)),
+            ('price_preorder', self.gf('django.db.models.fields.DecimalField')(max_digits=5, decimal_places=0)),
+        ))
+        db.send_create_signal('car_service', ['ServiceDetail'])
+
+        # Adding M2M table for field car on 'ServiceDetail'
+        m2m_table_name = db.shorten_name('car_service_servicedetail_car')
+        db.create_table(m2m_table_name, (
+            ('id', models.AutoField(verbose_name='ID', primary_key=True, auto_created=True)),
+            ('servicedetail', models.ForeignKey(orm['car_service.servicedetail'], null=False)),
+            ('tree', models.ForeignKey(orm['car_service.tree'], null=False))
+        ))
+        db.create_unique(m2m_table_name, ['servicedetail_id', 'tree_id'])
+
+        # Adding model 'Bill'
+        db.create_table('car_service_bill', (
+            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('service', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['car_service.Service2'])),
+            ('order_date', self.gf('django.db.models.fields.DateTimeField')()),
+            ('user', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['auth.User'])),
+            ('service_snapshot', self.gf('django.db.models.fields.CharField')(max_length=2000)),
+            ('sms_content', self.gf('django.db.models.fields.CharField')(max_length=1000)),
+            ('final_price', self.gf('django.db.models.fields.DecimalField')(max_digits=5, decimal_places=0)),
+            ('status', self.gf('django.db.models.fields.CharField')(max_length=10)),
+            ('created_time', self.gf('django.db.models.fields.DateTimeField')(default=datetime.datetime(2014, 11, 21, 0, 0))),
+            ('complete_time', self.gf('django.db.models.fields.DateTimeField')(null=True)),
+        ))
+        db.send_create_signal('car_service', ['Bill'])
+
+        # Adding model 'promote_register'
+        db.create_table('car_service_promote_register', (
+            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+        ))
+        db.send_create_signal('car_service', ['promote_register'])
+
+        # Adding model 'UserProfiler'
+        db.create_table('car_service_userprofiler', (
+            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('user', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['auth.User'], unique=True)),
+            ('phone', self.gf('django.db.models.fields.CharField')(max_length=140)),
+            ('gender', self.gf('django.db.models.fields.CharField')(max_length=140)),
+        ))
+        db.send_create_signal('car_service', ['UserProfiler'])
 
 
-class Migration(migrations.Migration):
+    def backwards(self, orm):
+        # Removing unique constraint on 'Tree', fields ['tree_type', 'name']
+        db.delete_unique('car_service_tree', ['tree_type', 'name'])
 
-    dependencies = [
-        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-    ]
+        # Deleting model 'AreaInfo'
+        db.delete_table('car_service_areainfo')
 
-    operations = [
-        migrations.CreateModel(
-            name='AreaInfo',
-            fields=[
-                ('id', models.AutoField(primary_key=True, serialize=False, verbose_name='ID', auto_created=True)),
-                ('name', models.CharField(max_length=200)),
-                ('code', models.CharField(max_length=20)),
-                ('parent', models.ForeignKey(null=True, blank=True, to='car_service.AreaInfo')),
-            ],
-            options={
-            },
-            bases=(models.Model,),
-        ),
-        migrations.CreateModel(
-            name='Bill',
-            fields=[
-                ('id', models.AutoField(primary_key=True, serialize=False, verbose_name='ID', auto_created=True)),
-                ('order_date', models.DateTimeField()),
-                ('service_snapshot', models.CharField(max_length=2000)),
-                ('sms_content', models.CharField(max_length=1000)),
-                ('final_price', models.DecimalField(decimal_places=0, max_digits=5)),
-            ],
-            options={
-            },
-            bases=(models.Model,),
-        ),
-        migrations.CreateModel(
-            name='Car',
-            fields=[
-                ('id', models.AutoField(primary_key=True, serialize=False, verbose_name='ID', auto_created=True)),
-            ],
-            options={
-            },
-            bases=(models.Model,),
-        ),
-        migrations.CreateModel(
-            name='CarInfo',
-            fields=[
-                ('id', models.AutoField(primary_key=True, serialize=False, verbose_name='ID', auto_created=True)),
-                ('name', models.CharField(max_length=100)),
-                ('car_type', models.CharField(null=True, choices=[('small', '小型'), ('midium', '中型'), ('large', '大型')], blank=True, max_length=10)),
-                ('info_type', models.CharField(null=True, choices=[('brand', '品牌'), ('series', '车系'), ('type', '型号')], blank=True, max_length=10)),
-                ('parent', models.ForeignKey(null=True, blank=True, to='car_service.CarInfo')),
-            ],
-            options={
-            },
-            bases=(models.Model,),
-        ),
-        migrations.CreateModel(
-            name='promote_register',
-            fields=[
-                ('id', models.AutoField(primary_key=True, serialize=False, verbose_name='ID', auto_created=True)),
-            ],
-            options={
-            },
-            bases=(models.Model,),
-        ),
-        migrations.CreateModel(
-            name='Service',
-            fields=[
-                ('id', models.AutoField(primary_key=True, serialize=False, verbose_name='ID', auto_created=True)),
-                ('description', models.CharField(max_length=4000)),
-            ],
-            options={
-            },
-            bases=(models.Model,),
-        ),
-        migrations.CreateModel(
-            name='Service2',
-            fields=[
-                ('id', models.AutoField(primary_key=True, serialize=False, verbose_name='ID', auto_created=True)),
-                ('description', models.CharField(max_length=100)),
-                ('price', models.DecimalField(null=True, decimal_places=0, max_digits=5)),
-                ('price_market', models.DecimalField(null=True, decimal_places=0, max_digits=5)),
-                ('disabled', models.BooleanField(default=False)),
-            ],
-            options={
-            },
-            bases=(models.Model,),
-        ),
-        migrations.CreateModel(
-            name='ServiceDetail',
-            fields=[
-                ('id', models.AutoField(primary_key=True, serialize=False, verbose_name='ID', auto_created=True)),
-                ('price', models.DecimalField(decimal_places=0, max_digits=5)),
-                ('price_preorder', models.DecimalField(decimal_places=0, max_digits=5)),
-            ],
-            options={
-            },
-            bases=(models.Model,),
-        ),
-        migrations.CreateModel(
-            name='ServiceProperty',
-            fields=[
-                ('id', models.AutoField(primary_key=True, serialize=False, verbose_name='ID', auto_created=True)),
-                ('name', models.CharField(max_length=200)),
-            ],
-            options={
-            },
-            bases=(models.Model,),
-        ),
-        migrations.CreateModel(
-            name='ServicePropertyValue',
-            fields=[
-                ('id', models.AutoField(primary_key=True, serialize=False, verbose_name='ID', auto_created=True)),
-                ('value', models.CharField(max_length=200)),
-                ('is_brand', models.BooleanField()),
-                ('is_foil_type', models.BooleanField()),
-            ],
-            options={
-            },
-            bases=(models.Model,),
-        ),
-        migrations.CreateModel(
-            name='ServicePropertyValue_Brand',
-            fields=[
-                ('servicepropertyvalue_ptr', models.OneToOneField(serialize=False, primary_key=True, parent_link=True, to='car_service.ServicePropertyValue', auto_created=True)),
-            ],
-            options={
-            },
-            bases=('car_service.servicepropertyvalue',),
-        ),
-        migrations.CreateModel(
-            name='ServicePropertyValue_Brand_FoilType',
-            fields=[
-                ('servicepropertyvalue_brand_ptr', models.OneToOneField(serialize=False, primary_key=True, parent_link=True, to='car_service.ServicePropertyValue_Brand', auto_created=True)),
-                ('foiltype', models.ForeignKey(related_name='spv_b_foil', to='car_service.ServicePropertyValue')),
-            ],
-            options={
-            },
-            bases=('car_service.servicepropertyvalue_brand',),
-        ),
-        migrations.CreateModel(
-            name='ServiceType',
-            fields=[
-                ('id', models.AutoField(primary_key=True, serialize=False, verbose_name='ID', auto_created=True)),
-                ('name', models.CharField(max_length=200)),
-                ('description', models.CharField(max_length=2000)),
-                ('parent', models.ForeignKey(null=True, blank=True, to='car_service.ServiceType')),
-            ],
-            options={
-            },
-            bases=(models.Model,),
-        ),
-        migrations.CreateModel(
-            name='ServiceValue',
-            fields=[
-                ('id', models.AutoField(primary_key=True, serialize=False, verbose_name='ID', auto_created=True)),
-                ('service', models.ForeignKey(to='car_service.Service2')),
-                ('servicepropertyvalue', models.ForeignKey(to='car_service.ServicePropertyValue')),
-            ],
-            options={
-            },
-            bases=(models.Model,),
-        ),
-        migrations.CreateModel(
-            name='Supplier',
-            fields=[
-                ('id', models.AutoField(primary_key=True, serialize=False, verbose_name='ID', auto_created=True)),
-                ('name', models.CharField(verbose_name='名称', max_length=100)),
-                ('address', models.CharField(verbose_name='地址', max_length=100)),
-                ('coordinate_x', models.FloatField(verbose_name='经度')),
-                ('coordinate_y', models.FloatField(verbose_name='维度')),
-                ('photo', models.ImageField(null=True, upload_to='photos/suppliers', blank=True)),
-                ('phone', models.CharField(max_length=100)),
-                ('time_open', models.TimeField()),
-                ('time_close', models.TimeField()),
-                ('description', models.CharField(max_length=1000)),
-                ('area', models.ForeignKey(to='car_service.AreaInfo', verbose_name='区域')),
-                ('owner', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
-            ],
-            options={
-            },
-            bases=(models.Model,),
-        ),
-        migrations.CreateModel(
-            name='Tree',
-            fields=[
-                ('id', models.AutoField(primary_key=True, serialize=False, verbose_name='ID', auto_created=True)),
-                ('tree_type', models.CharField(choices=[('area', '区域'), ('car', '车型'), ('service', '服务'), ('brand', '品牌'), ('wash_type', '洗车方式'), ('sound_proofing_type', '隔音方式'), ('foil_type', '贴膜类型'), ('foil_model_front', '前挡型号'), ('foil_model_sides_back', '侧后挡型号'), ('glass_damage_size', '玻璃损坏尺寸'), ('tire_repair_type', '补胎类型'), ('body_damage_size', '车身损伤尺寸'), ('sound_suit', '音响套装'), ('main_light_suit', '大灯套装'), ('model_common', '型号')], max_length=100)),
-                ('car_type', models.CharField(null=True, choices=[('small', '小型'), ('midium', '中型'), ('large', '大型')], blank=True, max_length=10)),
-                ('name', models.CharField(max_length=200)),
-                ('parent', models.ForeignKey(null=True, blank=True, to='car_service.Tree')),
-                ('supplier', models.ForeignKey(null=True, blank=True, to='car_service.Supplier')),
-            ],
-            options={
-            },
-            bases=(models.Model,),
-        ),
-        migrations.CreateModel(
-            name='UserProfiler',
-            fields=[
-                ('id', models.AutoField(primary_key=True, serialize=False, verbose_name='ID', auto_created=True)),
-                ('phone', models.CharField(verbose_name='电话号码', max_length=140)),
-                ('gender', models.CharField(verbose_name='性别', max_length=140)),
-                ('user', models.OneToOneField(to=settings.AUTH_USER_MODEL)),
-            ],
-            options={
-            },
-            bases=(models.Model,),
-        ),
-        migrations.AlterUniqueTogether(
-            name='tree',
-            unique_together=set([('tree_type', 'name')]),
-        ),
-        migrations.AddField(
-            model_name='servicepropertyvalue_brand',
-            name='brand',
-            field=models.ForeignKey(related_name='spv_brand', to='car_service.ServicePropertyValue'),
-            preserve_default=True,
-        ),
-        migrations.AddField(
-            model_name='servicepropertyvalue',
-            name='serviceproperty',
-            field=models.ForeignKey(to='car_service.ServiceProperty', verbose_name='服务属性'),
-            preserve_default=True,
-        ),
-        migrations.AddField(
-            model_name='serviceproperty',
-            name='servicetype',
-            field=models.ForeignKey(to='car_service.ServiceType'),
-            preserve_default=True,
-        ),
-        migrations.AddField(
-            model_name='servicedetail',
-            name='body_damage_size',
-            field=models.ForeignKey(null=True, blank=True, related_name='body_damage_size', to='car_service.Tree'),
-            preserve_default=True,
-        ),
-        migrations.AddField(
-            model_name='servicedetail',
-            name='brand',
-            field=models.ForeignKey(null=True, blank=True, related_name='brand', to='car_service.Tree'),
-            preserve_default=True,
-        ),
-        migrations.AddField(
-            model_name='servicedetail',
-            name='car',
-            field=models.ManyToManyField(related_name='car', to='car_service.Tree'),
-            preserve_default=True,
-        ),
-        migrations.AddField(
-            model_name='servicedetail',
-            name='foil_model_front',
-            field=models.ForeignKey(null=True, blank=True, related_name='foil_model_front', to='car_service.Tree'),
-            preserve_default=True,
-        ),
-        migrations.AddField(
-            model_name='servicedetail',
-            name='foil_model_sides_back',
-            field=models.ForeignKey(null=True, blank=True, related_name='foil_model_sides_back', to='car_service.Tree'),
-            preserve_default=True,
-        ),
-        migrations.AddField(
-            model_name='servicedetail',
-            name='foil_type',
-            field=models.ForeignKey(null=True, blank=True, related_name='foil_type', to='car_service.Tree'),
-            preserve_default=True,
-        ),
-        migrations.AddField(
-            model_name='servicedetail',
-            name='glass_damage_size',
-            field=models.ForeignKey(null=True, blank=True, related_name='glass_damage_size', to='car_service.Tree'),
-            preserve_default=True,
-        ),
-        migrations.AddField(
-            model_name='servicedetail',
-            name='main_light_suit',
-            field=models.ForeignKey(null=True, blank=True, related_name='main_light_suit', to='car_service.Tree'),
-            preserve_default=True,
-        ),
-        migrations.AddField(
-            model_name='servicedetail',
-            name='model_common',
-            field=models.ForeignKey(null=True, blank=True, related_name='model_common', to='car_service.Tree'),
-            preserve_default=True,
-        ),
-        migrations.AddField(
-            model_name='servicedetail',
-            name='service',
-            field=models.ForeignKey(to='car_service.Service'),
-            preserve_default=True,
-        ),
-        migrations.AddField(
-            model_name='servicedetail',
-            name='sound_proofing_type',
-            field=models.ForeignKey(null=True, blank=True, related_name='sound_proofing_type', to='car_service.Tree'),
-            preserve_default=True,
-        ),
-        migrations.AddField(
-            model_name='servicedetail',
-            name='sound_suit',
-            field=models.ForeignKey(null=True, blank=True, related_name='sound_suit', to='car_service.Tree'),
-            preserve_default=True,
-        ),
-        migrations.AddField(
-            model_name='servicedetail',
-            name='tire_repair_type',
-            field=models.ForeignKey(null=True, blank=True, related_name='tire_repair_type', to='car_service.Tree'),
-            preserve_default=True,
-        ),
-        migrations.AddField(
-            model_name='servicedetail',
-            name='wash_type',
-            field=models.ForeignKey(null=True, blank=True, to='car_service.Tree'),
-            preserve_default=True,
-        ),
-        migrations.AddField(
-            model_name='service2',
-            name='servicetype',
-            field=models.ForeignKey(to='car_service.ServiceType'),
-            preserve_default=True,
-        ),
-        migrations.AddField(
-            model_name='service2',
-            name='supplier',
-            field=models.ForeignKey(to='car_service.Supplier'),
-            preserve_default=True,
-        ),
-        migrations.AddField(
-            model_name='service',
-            name='service_type',
-            field=models.ForeignKey(related_name='service_type', to='car_service.Tree'),
-            preserve_default=True,
-        ),
-        migrations.AddField(
-            model_name='service',
-            name='supplier',
-            field=models.ForeignKey(to='car_service.Supplier'),
-            preserve_default=True,
-        ),
-        migrations.AddField(
-            model_name='bill',
-            name='service',
-            field=models.ForeignKey(to='car_service.Service2'),
-            preserve_default=True,
-        ),
-        migrations.AddField(
-            model_name='bill',
-            name='user',
-            field=models.ForeignKey(to=settings.AUTH_USER_MODEL),
-            preserve_default=True,
-        ),
-    ]
+        # Deleting model 'ServiceType'
+        db.delete_table('car_service_servicetype')
+
+        # Deleting model 'ServiceProperty'
+        db.delete_table('car_service_serviceproperty')
+
+        # Deleting model 'ServicePropertyValue'
+        db.delete_table('car_service_servicepropertyvalue')
+
+        # Deleting model 'ServicePropertyValue_Brand'
+        db.delete_table('car_service_servicepropertyvalue_brand')
+
+        # Deleting model 'ServicePropertyValue_Brand_FoilType'
+        db.delete_table('car_service_servicepropertyvalue_brand_foiltype')
+
+        # Deleting model 'CarInfo'
+        db.delete_table('car_service_carinfo')
+
+        # Deleting model 'Service2'
+        db.delete_table('car_service_service2')
+
+        # Deleting model 'ServiceValue'
+        db.delete_table('car_service_servicevalue')
+
+        # Deleting model 'Tree'
+        db.delete_table('car_service_tree')
+
+        # Deleting model 'Supplier'
+        db.delete_table('car_service_supplier')
+
+        # Deleting model 'Service'
+        db.delete_table('car_service_service')
+
+        # Deleting model 'Car'
+        db.delete_table('car_service_car')
+
+        # Deleting model 'ServiceDetail'
+        db.delete_table('car_service_servicedetail')
+
+        # Removing M2M table for field car on 'ServiceDetail'
+        db.delete_table(db.shorten_name('car_service_servicedetail_car'))
+
+        # Deleting model 'Bill'
+        db.delete_table('car_service_bill')
+
+        # Deleting model 'promote_register'
+        db.delete_table('car_service_promote_register')
+
+        # Deleting model 'UserProfiler'
+        db.delete_table('car_service_userprofiler')
+
+
+    models = {
+        'auth.group': {
+            'Meta': {'object_name': 'Group'},
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'name': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '80'}),
+            'permissions': ('django.db.models.fields.related.ManyToManyField', [], {'symmetrical': 'False', 'to': "orm['auth.Permission']", 'blank': 'True'})
+        },
+        'auth.permission': {
+            'Meta': {'unique_together': "(('content_type', 'codename'),)", 'object_name': 'Permission', 'ordering': "('content_type__app_label', 'content_type__model', 'codename')"},
+            'codename': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
+            'content_type': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['contenttypes.ContentType']"}),
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'name': ('django.db.models.fields.CharField', [], {'max_length': '50'})
+        },
+        'auth.user': {
+            'Meta': {'object_name': 'User'},
+            'date_joined': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime.now'}),
+            'email': ('django.db.models.fields.EmailField', [], {'max_length': '75', 'blank': 'True'}),
+            'first_name': ('django.db.models.fields.CharField', [], {'max_length': '30', 'blank': 'True'}),
+            'groups': ('django.db.models.fields.related.ManyToManyField', [], {'symmetrical': 'False', 'to': "orm['auth.Group']", 'related_name': "'user_set'", 'blank': 'True'}),
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'is_active': ('django.db.models.fields.BooleanField', [], {'default': 'True'}),
+            'is_staff': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
+            'is_superuser': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
+            'last_login': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime.now'}),
+            'last_name': ('django.db.models.fields.CharField', [], {'max_length': '30', 'blank': 'True'}),
+            'password': ('django.db.models.fields.CharField', [], {'max_length': '128'}),
+            'user_permissions': ('django.db.models.fields.related.ManyToManyField', [], {'symmetrical': 'False', 'to': "orm['auth.Permission']", 'related_name': "'user_set'", 'blank': 'True'}),
+            'username': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '30'})
+        },
+        'car_service.areainfo': {
+            'Meta': {'object_name': 'AreaInfo'},
+            'code': ('django.db.models.fields.CharField', [], {'max_length': '20'}),
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'name': ('django.db.models.fields.CharField', [], {'max_length': '200'}),
+            'parent': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['car_service.AreaInfo']", 'null': 'True', 'blank': 'True'})
+        },
+        'car_service.bill': {
+            'Meta': {'object_name': 'Bill'},
+            'bill_code': ('django.db.models.fields.CharField', [], {'max_length': '20'}),
+            'complete_time': ('django.db.models.fields.DateTimeField', [], {'null': 'True'}),
+            'created_time': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime(2014, 11, 21, 0, 0)'}),
+            'final_price': ('django.db.models.fields.DecimalField', [], {'max_digits': '5', 'decimal_places': '0'}),
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'order_date': ('django.db.models.fields.DateTimeField', [], {}),
+            'service': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['car_service.Service2']"}),
+            'service_snapshot': ('django.db.models.fields.CharField', [], {'max_length': '2000'}),
+            'sms_content': ('django.db.models.fields.CharField', [], {'max_length': '1000'}),
+            'status': ('django.db.models.fields.CharField', [], {'max_length': '10'}),
+            'user': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['auth.User']"})
+        },
+        'car_service.car': {
+            'Meta': {'object_name': 'Car'},
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'})
+        },
+        'car_service.carinfo': {
+            'Meta': {'object_name': 'CarInfo'},
+            'car_type': ('django.db.models.fields.CharField', [], {'null': 'True', 'max_length': '10', 'blank': 'True'}),
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'info_type': ('django.db.models.fields.CharField', [], {'null': 'True', 'max_length': '10', 'blank': 'True'}),
+            'name': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
+            'parent': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['car_service.CarInfo']", 'null': 'True', 'blank': 'True'})
+        },
+        'car_service.promote_register': {
+            'Meta': {'object_name': 'promote_register'},
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'})
+        },
+        'car_service.service': {
+            'Meta': {'object_name': 'Service'},
+            'description': ('django.db.models.fields.CharField', [], {'max_length': '4000'}),
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'service_type': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['car_service.Tree']", 'related_name': "'service_type'"}),
+            'supplier': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['car_service.Supplier']"})
+        },
+        'car_service.service2': {
+            'Meta': {'object_name': 'Service2'},
+            'description': ('django.db.models.fields.CharField', [], {'max_length': '8000'}),
+            'disabled': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'price': ('django.db.models.fields.DecimalField', [], {'decimal_places': '0', 'max_digits': '5', 'null': 'True'}),
+            'price_market': ('django.db.models.fields.DecimalField', [], {'decimal_places': '0', 'max_digits': '5', 'null': 'True'}),
+            'servicetype': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['car_service.ServiceType']"}),
+            'supplier': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['car_service.Supplier']"}),
+            'title': ('django.db.models.fields.CharField', [], {'max_length': '100'})
+        },
+        'car_service.servicedetail': {
+            'Meta': {'object_name': 'ServiceDetail'},
+            'body_damage_size': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['car_service.Tree']", 'null': 'True', 'related_name': "'body_damage_size'", 'blank': 'True'}),
+            'brand': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['car_service.Tree']", 'null': 'True', 'related_name': "'brand'", 'blank': 'True'}),
+            'car': ('django.db.models.fields.related.ManyToManyField', [], {'symmetrical': 'False', 'to': "orm['car_service.Tree']", 'related_name': "'car'"}),
+            'foil_model_front': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['car_service.Tree']", 'null': 'True', 'related_name': "'foil_model_front'", 'blank': 'True'}),
+            'foil_model_sides_back': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['car_service.Tree']", 'null': 'True', 'related_name': "'foil_model_sides_back'", 'blank': 'True'}),
+            'foil_type': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['car_service.Tree']", 'null': 'True', 'related_name': "'foil_type'", 'blank': 'True'}),
+            'glass_damage_size': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['car_service.Tree']", 'null': 'True', 'related_name': "'glass_damage_size'", 'blank': 'True'}),
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'main_light_suit': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['car_service.Tree']", 'null': 'True', 'related_name': "'main_light_suit'", 'blank': 'True'}),
+            'model_common': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['car_service.Tree']", 'null': 'True', 'related_name': "'model_common'", 'blank': 'True'}),
+            'price': ('django.db.models.fields.DecimalField', [], {'max_digits': '5', 'decimal_places': '0'}),
+            'price_preorder': ('django.db.models.fields.DecimalField', [], {'max_digits': '5', 'decimal_places': '0'}),
+            'service': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['car_service.Service']"}),
+            'sound_proofing_type': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['car_service.Tree']", 'null': 'True', 'related_name': "'sound_proofing_type'", 'blank': 'True'}),
+            'sound_suit': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['car_service.Tree']", 'null': 'True', 'related_name': "'sound_suit'", 'blank': 'True'}),
+            'tire_repair_type': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['car_service.Tree']", 'null': 'True', 'related_name': "'tire_repair_type'", 'blank': 'True'}),
+            'wash_type': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['car_service.Tree']", 'null': 'True', 'blank': 'True'})
+        },
+        'car_service.serviceproperty': {
+            'Meta': {'object_name': 'ServiceProperty'},
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'name': ('django.db.models.fields.CharField', [], {'max_length': '200'}),
+            'servicetype': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['car_service.ServiceType']"})
+        },
+        'car_service.servicepropertyvalue': {
+            'Meta': {'object_name': 'ServicePropertyValue'},
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'is_brand': ('django.db.models.fields.BooleanField', [], {}),
+            'is_foil_type': ('django.db.models.fields.BooleanField', [], {}),
+            'serviceproperty': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['car_service.ServiceProperty']"}),
+            'value': ('django.db.models.fields.CharField', [], {'max_length': '200'})
+        },
+        'car_service.servicepropertyvalue_brand': {
+            'Meta': {'_ormbases': ['car_service.ServicePropertyValue'], 'object_name': 'ServicePropertyValue_Brand'},
+            'brand': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['car_service.ServicePropertyValue']", 'related_name': "'spv_brand'"}),
+            'servicepropertyvalue_ptr': ('django.db.models.fields.related.OneToOneField', [], {'to': "orm['car_service.ServicePropertyValue']", 'primary_key': 'True', 'unique': 'True'})
+        },
+        'car_service.servicepropertyvalue_brand_foiltype': {
+            'Meta': {'_ormbases': ['car_service.ServicePropertyValue_Brand'], 'object_name': 'ServicePropertyValue_Brand_FoilType'},
+            'foiltype': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['car_service.ServicePropertyValue']", 'related_name': "'spv_b_foil'"}),
+            'servicepropertyvalue_brand_ptr': ('django.db.models.fields.related.OneToOneField', [], {'to': "orm['car_service.ServicePropertyValue_Brand']", 'primary_key': 'True', 'unique': 'True'})
+        },
+        'car_service.servicetype': {
+            'Meta': {'object_name': 'ServiceType'},
+            'description': ('django.db.models.fields.CharField', [], {'max_length': '2000'}),
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'name': ('django.db.models.fields.CharField', [], {'max_length': '200'}),
+            'parent': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['car_service.ServiceType']", 'null': 'True', 'blank': 'True'})
+        },
+        'car_service.servicevalue': {
+            'Meta': {'object_name': 'ServiceValue'},
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'service': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['car_service.Service2']"}),
+            'servicepropertyvalue': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['car_service.ServicePropertyValue']"})
+        },
+        'car_service.supplier': {
+            'Meta': {'object_name': 'Supplier'},
+            'address': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
+            'area': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['car_service.AreaInfo']"}),
+            'coordinate_x': ('django.db.models.fields.FloatField', [], {}),
+            'coordinate_y': ('django.db.models.fields.FloatField', [], {}),
+            'description': ('django.db.models.fields.CharField', [], {'max_length': '1000'}),
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'name': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
+            'owner': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['auth.User']"}),
+            'phone': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
+            'photo': ('django.db.models.fields.files.ImageField', [], {'null': 'True', 'max_length': '100', 'blank': 'True'}),
+            'time_close': ('django.db.models.fields.TimeField', [], {}),
+            'time_open': ('django.db.models.fields.TimeField', [], {})
+        },
+        'car_service.tree': {
+            'Meta': {'unique_together': "(('tree_type', 'name'),)", 'object_name': 'Tree'},
+            'car_type': ('django.db.models.fields.CharField', [], {'null': 'True', 'max_length': '10', 'blank': 'True'}),
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'name': ('django.db.models.fields.CharField', [], {'max_length': '200'}),
+            'parent': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['car_service.Tree']", 'null': 'True', 'blank': 'True'}),
+            'supplier': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['car_service.Supplier']", 'null': 'True', 'blank': 'True'}),
+            'tree_type': ('django.db.models.fields.CharField', [], {'max_length': '100'})
+        },
+        'car_service.userprofiler': {
+            'Meta': {'object_name': 'UserProfiler'},
+            'gender': ('django.db.models.fields.CharField', [], {'max_length': '140'}),
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'phone': ('django.db.models.fields.CharField', [], {'max_length': '140'}),
+            'user': ('django.db.models.fields.related.OneToOneField', [], {'to': "orm['auth.User']", 'unique': 'True'})
+        },
+        'contenttypes.contenttype': {
+            'Meta': {'db_table': "'django_content_type'", 'unique_together': "(('app_label', 'model'),)", 'object_name': 'ContentType', 'ordering': "('name',)"},
+            'app_label': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'model': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
+            'name': ('django.db.models.fields.CharField', [], {'max_length': '100'})
+        }
+    }
+
+    complete_apps = ['car_service']

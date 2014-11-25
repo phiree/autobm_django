@@ -70,6 +70,7 @@ def edit_service2(request,service_id,type_id=None):
         selected_supplier=Supplier.objects.get(pk=int(request.POST.get('supplier')))
         service_value_list_with_spv=[]
         servicepropertyvalue_list=[]
+        exists_service_type=Service2.objects.filter(servicetype__id=type_id)
         for v in request.POST:
             if 'sel_' in v:
                 selected_value=request.POST.get(v)
@@ -79,10 +80,13 @@ def edit_service2(request,service_id,type_id=None):
                 service_value_list_with_spv.append((service_value,spv))
 
         is_exists=True
-        for sv in service_value_list_with_spv:
-            if sv[0].count()==0:
-                is_exists=False
-                break
+        if len(exists_service_type)==0:
+            is_exists=False
+        else:
+            for sv in service_value_list_with_spv:
+                if sv[0].count()==0:
+                    is_exists=False
+                    break
         if service_id ==None and is_exists:
             #todo. 找出这个service,并直接更新
             errmsg='exists'

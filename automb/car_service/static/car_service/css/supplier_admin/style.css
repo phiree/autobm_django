@@ -11,7 +11,7 @@ body {
 	background-position:center top;
 	background-repeat:repeat;
 	width:100%;	
-	text-align:center;
+	text-align:left;
 }
 html,body{ height:100%;}
 body{position:absolute; z-index:1;}
@@ -150,7 +150,7 @@ img{ border:none;}
 .p_menu_list_on{background:url(../images/menu_02.jpg) top no-repeat;}
 .p_menu_1{ width:180px; text-align:right; line-height:30px; color:#999;}
 .p_menu_1 span{ float:left; color:#003caf;}
-.p_main{ float:left; width:75%; height:97%; border:solid 1px #b1ced4; background:#fff; }
+.p_main{ float:left; width:75%;   border:solid 1px #b1ced4; background:#fff; }
 .p_main_1{ height:34px; padding-left:25px; border-bottom:solid 1px #b1ced4; text-align:left; line-height:34px; color:#333; font-weight:bold; background:url(../images/main_02.jpg) 5px 10px no-repeat;}
 .p_main_content{ padding:20px;}
 .p_main_list{ width:100%;}
@@ -174,3 +174,21 @@ background-color:#2384ed;!important
 {
 color:white;!important
 }
+
+
+/*服务列表*/
+.webfw{
+	margin-top:25px;
+	background:url(../../images/supplier_admin/web_t1.gif) no-repeat;
+	display:block;
+
+	width:86px;
+	height:29px;
+	font:normal 14px/29px "宋体";
+	text-align:center;
+	color:#fff;
+	}
+	a.webfw
+	{
+	color:white
+	}

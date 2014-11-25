@@ -2,40 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f88f8b9f-4096-4732-a471-d27ad2049ee1" name="Default" comment="some bindings">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/images/supplier_admin/main_01.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/images/supplier_admin/main_02.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/images/supplier_admin/menu_01.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/images/supplier_admin/menu_02.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/images/supplier_admin/top_01.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/images/supplier_admin/top_bg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/migrations/0003_bill_status.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/migrations/0004_auto_20141120_1441.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/migrations/0005_auto_20141120_1504.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/views/admin_supplier.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/bill_detail.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/bill_list.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/plugin/jquery.djangocsrf.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/setup.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/css/supplier_admin/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car_service/migrations/0002_auto_20141118_1733.py" afterPath="$PROJECT_DIR$/car_service/migrations/0002_auto_20141118_1733.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/images/supplier_admin/web_t1.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/images/supplier_admin/web_t2.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/images/supplier_admin/web_t3.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/images/supplier_admin/web_xtb.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/css/supplier_admin/style2.css" />
+      <change type="DELETED" beforePath="F:\Code\autobm_django\automb\car_service\migrations\0001_initial.py" afterPath="" />
+      <change type="DELETED" beforePath="F:\Code\autobm_django\automb\car_service\migrations\0002_auto_20141118_1733.py" afterPath="" />
+      <change type="DELETED" beforePath="F:\Code\autobm_django\automb\car_service\migrations\0003_bill_status.py" afterPath="" />
+      <change type="DELETED" beforePath="F:\Code\autobm_django\automb\car_service\migrations\0004_auto_20141120_1441.py" afterPath="" />
+      <change type="DELETED" beforePath="F:\Code\autobm_django\automb\car_service\migrations\0005_auto_20141120_1504.py" afterPath="" />
+      <change type="DELETED" beforePath="F:\Code\autobm_django\automb\car_service\migrations\__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="F:\Code\autobm_django\automb\web.config" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car_service/urls/__init__.py" afterPath="$PROJECT_DIR$/car_service/urls/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car_service/views/admin_supplier.py" afterPath="$PROJECT_DIR$/car_service/views/admin_supplier.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/automb.iml" afterPath="$PROJECT_DIR$/.idea/automb.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car_service/templates/car_service/base.html" afterPath="$PROJECT_DIR$/car_service/templates/car_service/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car_service/templates/car_service/my/base_my.html" afterPath="$PROJECT_DIR$/car_service/templates/car_service/my/base_my.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/base_supplier_admin.html" afterPath="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/base_supplier_admin.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/bill_detail.html" afterPath="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/bill_detail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/bill_list.html" afterPath="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/bill_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car_service/forms/fm_service2.py" afterPath="$PROJECT_DIR$/car_service/forms/fm_service2.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/home.html" afterPath="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car_service/models.py" afterPath="$PROJECT_DIR$/car_service/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car_service/templates/car_service/search.html" afterPath="$PROJECT_DIR$/car_service/templates/car_service/search.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car_service/templates/car_service/my/order_list.html" afterPath="$PROJECT_DIR$/car_service/templates/car_service/my/order_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car_service/views/supplier_admin/service2.py" afterPath="$PROJECT_DIR$/car_service/views/supplier_admin/service2.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/service_create_select_type.html" afterPath="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/service_create_select_type.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/service_edit.html" afterPath="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/service_edit.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/service_list.html" afterPath="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/service_list.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/automb/settings.py" afterPath="$PROJECT_DIR$/automb/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car_service/static/car_service/css/style.css" afterPath="$PROJECT_DIR$/car_service/static/car_service/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car_service/static/car_service/css/supplier_admin/style.css" afterPath="$PROJECT_DIR$/car_service/static/car_service/css/supplier_admin/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../docs/design/css/style.css" afterPath="$PROJECT_DIR$/../docs/design/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/supplier_form.html" afterPath="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/supplier_form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/supplier_form_success.html" afterPath="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/supplier_form_success.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/supplier_list.html" afterPath="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/supplier_list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.config" afterPath="$PROJECT_DIR$/web.config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car_service/views/view.py" afterPath="$PROJECT_DIR$/car_service/views/view.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="automb.iws" />
@@ -62,21 +61,43 @@
       <file leaf-file-name="admin_supplier.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/car_service/views/admin_supplier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="201" max-vertical-offset="703">
-              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="38" max-vertical-offset="836">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="service2.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/car_service/views/supplier_admin/service2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.211946" vertical-offset="853" max-vertical-offset="2888">
+              <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fm_service2.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/car_service/forms/fm_service2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="608">
+              <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
               <folding>
-                <element signature="e#29#66#0" expanded="true" />
+                <element signature="e#0#39#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://F:/Platform/Python34/Lib/site-packages/django/core/handlers/base.py">
+      <file leaf-file-name="view.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/car_service/views/view.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1794" max-vertical-offset="4636">
-              <caret line="120" column="0" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="-36.24138" vertical-offset="1875" max-vertical-offset="3116">
+              <caret line="154" column="0" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#57#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -84,18 +105,18 @@
       <file leaf-file-name="bill_list.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/bill_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.214286" vertical-offset="0" max-vertical-offset="551">
-              <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
+            <state vertical-scroll-proportion="-1.3571428" vertical-offset="0" max-vertical-offset="893">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bill_detail.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/bill_detail.html">
+      <file leaf-file-name="supplier_list.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/supplier_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5452539" vertical-offset="152" max-vertical-offset="1026">
-              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state vertical-scroll-proportion="-0.6785714" vertical-offset="0" max-vertical-offset="418">
+              <caret line="1" column="35" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -104,58 +125,40 @@
       <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/car_service/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4209" max-vertical-offset="4883">
-              <caret line="227" column="69" selection-start-line="227" selection-start-column="69" selection-end-line="227" selection-end-column="69" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1190" max-vertical-offset="5016">
+              <caret line="73" column="15" selection-start-line="73" selection-start-column="4" selection-end-line="73" selection-end-column="15" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/automb/settings.py">
+      <file leaf-file-name="service_edit.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/service_edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1491" max-vertical-offset="2128">
-              <caret line="97" column="23" selection-start-line="97" selection-start-column="23" selection-end-line="97" selection-end-column="23" />
+            <state vertical-scroll-proportion="-22.071428" vertical-offset="1054" max-vertical-offset="2698">
+              <caret line="88" column="10" selection-start-line="88" selection-start-column="10" selection-end-line="88" selection-end-column="10" />
+              <folding>
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#6;n#form#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="service_list.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/service_list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-18.464285" vertical-offset="262" max-vertical-offset="1007">
+              <caret line="41" column="70" selection-start-line="41" selection-start-column="70" selection-end-line="41" selection-end-column="70" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wsgi_log.log" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wsgi_log.log">
+      <file leaf-file-name="add_attr_field.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/car_service/templatetags/add_attr_field.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="114">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="wfastcgi.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wfastcgi.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1087" max-vertical-offset="14250">
-              <caret line="94" column="21" selection-start-line="94" selection-start-column="21" selection-end-line="94" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="service2.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/car_service/views/supplier_admin/service2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1463" max-vertical-offset="2812">
-              <caret line="93" column="50" selection-start-line="93" selection-start-column="50" selection-end-line="93" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="wsgi.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/automb/wsgi.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="380">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="437">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -174,9 +177,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/car_service/templatetags/area_list.py" />
-        <option value="$PROJECT_DIR$/car_service/templatetags/get_area_list.py" />
-        <option value="$PROJECT_DIR$/car_service/templates/car_service/login.html" />
         <option value="$PROJECT_DIR$/car_service/templates/car_service/accounts/login_qq.html" />
         <option value="$PROJECT_DIR$/car_service/templates/car_service/bill_create_success.html" />
         <option value="$PROJECT_DIR$/car_service/forms/fm_register.py" />
@@ -186,8 +186,6 @@
         <option value="$PROJECT_DIR$/car_service/biz/service2.py" />
         <option value="$PROJECT_DIR$/car_service/forms/fm_servicepropertyvalue.py" />
         <option value="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/update_form.html" />
-        <option value="$PROJECT_DIR$/car_service/views/supplier_admin/home.py" />
-        <option value="$PROJECT_DIR$/car_service/forms/fm_service2.py" />
         <option value="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/servicevalue_update_form.html" />
         <option value="$PROJECT_DIR$/docs/init_script.SQL" />
         <option value="$PROJECT_DIR$/car_service/templates/car_service/accounts/login.html" />
@@ -198,33 +196,38 @@
         <option value="$PROJECT_DIR$/car_service/biz/get_cookie.py" />
         <option value="$PROJECT_DIR$/car_service/biz/search.py" />
         <option value="$PROJECT_DIR$/car_service/urls/front_web.py" />
-        <option value="$PROJECT_DIR$/car_service/views/view.py" />
-        <option value="$PROJECT_DIR$/car_service/migrations/0001_initial.py" />
         <option value="$PROJECT_DIR$/car_service/biz/biz_search.py" />
-        <option value="$PROJECT_DIR$/car_service/views/supplier_admin/service2.py" />
         <option value="$PROJECT_DIR$/car_service/static/car_service/js/jquery/plugin/jquery.highlight.js" />
         <option value="$PROJECT_DIR$/car_service/static/car_service/js/jquery/plugin/jquery.search_highlight.js" />
         <option value="$PROJECT_DIR$/car_service/templates/car_service/search.html" />
         <option value="$PROJECT_DIR$/car_service/templates/car_service/base.html" />
         <option value="$PROJECT_DIR$/car_service/templates/car_service/my/base_my.html" />
-        <option value="$PROJECT_DIR$/car_service/static/car_service/css/style.css" />
-        <option value="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/service_list.html" />
-        <option value="$PROJECT_DIR$/car_service/static/car_service/css/supplier_admin/style.css" />
-        <option value="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/service_create_select_type.html" />
-        <option value="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/service_edit.html" />
         <option value="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/supplier_form_success.html" />
-        <option value="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/supplier_list.html" />
-        <option value="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/supplier_form.html" />
-        <option value="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/base_supplier_admin.html" />
         <option value="$PROJECT_DIR$/car_service/migrations/0002_auto_20141118_1733.py" />
         <option value="$PROJECT_DIR$/car_service/migrations/0004_auto_20141120_1441.py" />
         <option value="$PROJECT_DIR$/car_service/migrations/0005_auto_20141120_1504.py" />
-        <option value="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/bill_list.html" />
-        <option value="$PROJECT_DIR$/car_service/urls/__init__.py" />
-        <option value="$PROJECT_DIR$/car_service/models.py" />
+        <option value="$PROJECT_DIR$/car_service/migrations/0001_initial.py" />
         <option value="$PROJECT_DIR$/automb/settings.py" />
-        <option value="$PROJECT_DIR$/car_service/views/admin_supplier.py" />
+        <option value="$PROJECT_DIR$/car_service/templates/car_service/my/order_list.html" />
+        <option value="$PROJECT_DIR$/car_service/static/car_service/css/style.css" />
+        <option value="$PROJECT_DIR$/car_service/models.py" />
+        <option value="$PROJECT_DIR$/car_service/static/car_service/css/supplier_admin/style.css" />
+        <option value="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/service_create_select_type.html" />
         <option value="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/bill_detail.html" />
+        <option value="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/home.html" />
+        <option value="$PROJECT_DIR$/car_service/views/supplier_admin/home.py" />
+        <option value="$PROJECT_DIR$/car_service/views/admin_supplier.py" />
+        <option value="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/supplier_form.html" />
+        <option value="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/base_supplier_admin.html" />
+        <option value="$PROJECT_DIR$/car_service/static/car_service/css/supplier_admin/style2.css" />
+        <option value="$PROJECT_DIR$/car_service/urls/__init__.py" />
+        <option value="$PROJECT_DIR$/car_service/views/view.py" />
+        <option value="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/bill_list.html" />
+        <option value="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/supplier_list.html" />
+        <option value="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/service_list.html" />
+        <option value="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/service_edit.html" />
+        <option value="$PROJECT_DIR$/car_service/views/supplier_admin/service2.py" />
+        <option value="$PROJECT_DIR$/car_service/forms/fm_service2.py" />
       </list>
     </option>
   </component>
@@ -277,6 +280,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -367,6 +371,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="urls" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="automb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="automb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="car_service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -411,18 +433,35 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="car_service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="automb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="automb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="automb" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../YiQiWan/yiqiwan" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../env/env/Scripts/python.exe" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="full.screen.before.presentation.mode" value="false" />
@@ -434,7 +473,7 @@
     <property name="FullScreen" value="false" />
     <property name="LayoutCode.rearrangeEntriesPython" value="false" />
     <property name="LayoutCode.rearrangeEntriesPlain text" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="models&#9;FILE&#9;file://F:/Code/autobm_django/automb/car_service/models.py" />
+    <property name="SearchEverywhereHistoryKey" value="style2&#9;FILE&#9;file://F:/Code/autobm_django/automb/car_service/static/car_service/css/supplier_admin/style2.css&#10;models&#9;FILE&#9;file://F:/Code/autobm_django/automb/car_service/models.py" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -443,11 +482,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\Code\autobm_django\automb\car_service\templates\car_service\supplier_admin" />
+      <recent name="F:\Code\autobm_django\automb\car_service\static\car_service\css\supplier_admin" />
       <recent name="F:\Code\autobm_django\automb\car_service\static\car_service\images\supplier_admin" />
+      <recent name="F:\Code\autobm_django\automb\car_service\templates\car_service\supplier_admin" />
       <recent name="F:\Code\autobm_django\automb\car_service\static\car_service\css" />
       <recent name="F:\Code\autobm_django\automb\car_service\biz" />
-      <recent name="F:\Code\autobm_django\automb\car_service\templates\car_service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\Code\autobm_django\automb\car_service\static\car_service\css\supplier" />
@@ -457,7 +496,7 @@
       <recent name="F:\Code\autobm_django\automb\car_service\views\supplier_admin" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.92auto_remote">
+  <component name="RunManager" selected="Python.92auto_local">
     <configuration default="false" name="merge_objects" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -605,9 +644,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="F:\Platform\Python34\python.exe" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="automb" />
@@ -625,7 +664,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="F:\Platform\Python34\python.exe" />
+      <option name="SDK_HOME" value="F:\Code\autobm_django\env\env\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -676,7 +715,11 @@
       <created>1415268703023</created>
       <updated>1415268703023</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="ppas&#10;">
+      <created>1416494736448</created>
+      <updated>1416494736448</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -701,17 +744,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32841823" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2989276" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17924528" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24935733" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23510773" sideWeight="0.4993895" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2841823" sideWeight="0.72971547" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25792143" sideWeight="0.4993895" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21159029" sideWeight="0.72971547" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16754478" sideWeight="0.50061053" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22486487" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3914209" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35579515" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328125" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -738,9 +781,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24968314" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21208227" sideWeight="0.4993895" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34362417" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -760,7 +803,8 @@
     </option>
     <MESSAGE value="dd" />
     <MESSAGE value="some bindings" />
-    <option name="LAST_COMMIT_MESSAGE" value="some bindings" />
+    <MESSAGE value="ppas&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="ppas&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -775,324 +819,18 @@
           <line>748</line>
           <option name="timeStamp" value="161" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/car_service/views/admin_supplier.py</url>
-          <line>19</line>
-          <option name="timeStamp" value="201" />
-        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="202" />
+      <option name="time" value="207" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/car_service/views/site_admin/servicepropertyvalue.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5912863" vertical-offset="513" max-vertical-offset="1501">
-          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/forms/fm_service2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6023055" vertical-offset="0" max-vertical-offset="513">
-          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/views/share/service.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1140">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/init_script.SQL">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1140">
-          <caret line="41" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/account.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="532">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/templates/car_service/accounts/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.428571" vertical-offset="171" max-vertical-offset="1235">
-          <caret line="17" column="75" selection-start-line="17" selection-start-column="75" selection-end-line="17" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/templates/car_service/supplier.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.7142856" vertical-offset="0" max-vertical-offset="2546">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/templates/car_service/suppliers.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.7142856" vertical-offset="0" max-vertical-offset="1007">
-          <caret line="4" column="55" selection-start-line="4" selection-start-column="55" selection-end-line="4" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/static/car_service/js/lanrenzhijia.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="978" max-vertical-offset="1881">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/templates/car_service/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.142858" vertical-offset="57" max-vertical-offset="4902">
-          <caret line="15" column="73" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/biz/get_cookie.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="532">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/urls/front_web.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="608">
-          <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/templates/car_service/services.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.0357144" vertical-offset="570" max-vertical-offset="1330">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="62" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://F:/Platform/Python34/Lib/site-packages/django/utils/autoreload.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3453" max-vertical-offset="6042">
-          <caret line="201" column="0" selection-start-line="201" selection-start-column="0" selection-end-line="201" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/biz/biz_search.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37037036" vertical-offset="38" max-vertical-offset="551">
-          <caret line="12" column="45" selection-start-line="8" selection-start-column="4" selection-end-line="12" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/views/view.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.734" vertical-offset="2388" max-vertical-offset="2888">
-          <caret line="145" column="90" selection-start-line="145" selection-start-column="77" selection-end-line="145" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/static/car_service/css/mapStyle.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4789916" vertical-offset="57" max-vertical-offset="1501">
-          <caret line="15" column="2" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/static/car_service/js/jquery/plugin/jquery.search_highlight.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57259715" vertical-offset="632" max-vertical-offset="3705">
-          <caret line="48" column="4" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/templates/car_service/search.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28177965" vertical-offset="114" max-vertical-offset="1216">
-          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/templates/car_service/my/my_home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="739">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/static/car_service/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.88271606" vertical-offset="10999" max-vertical-offset="11704">
-          <caret line="609" column="0" selection-start-line="609" selection-start-column="0" selection-end-line="609" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/templates/car_service/my/base_my.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.464286" vertical-offset="0" max-vertical-offset="608">
-          <caret line="11" column="76" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/static/car_service/css/supplier_admin/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9153046" vertical-offset="2690" max-vertical-offset="3458">
-          <caret line="174" column="22" selection-start-line="174" selection-start-column="22" selection-end-line="174" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/templates/car_service/my/order_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="739">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/service_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3571428" vertical-offset="0" max-vertical-offset="418">
-          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/service_create_select_type.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.0357144" vertical-offset="0" max-vertical-offset="437">
-          <caret line="3" column="20" selection-start-line="1" selection-start-column="7" selection-end-line="3" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/service_edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6785714" vertical-offset="0" max-vertical-offset="1216">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="3" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/supplier_form_success.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="228">
-          <caret line="3" column="20" selection-start-line="1" selection-start-column="7" selection-end-line="3" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/supplier_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="380">
-          <caret line="3" column="20" selection-start-line="1" selection-start-column="9" selection-end-line="3" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/supplier_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="19" max-vertical-offset="323">
-          <caret line="1" column="27" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/servicevalue_update_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="399" max-vertical-offset="684">
-          <caret line="21" column="80" selection-start-line="21" selection-start-column="80" selection-end-line="21" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/migrations/0004_auto_20141120_1441.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.445629" vertical-offset="0" max-vertical-offset="475">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/migrations/0001_initial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25" vertical-offset="2413" max-vertical-offset="6840">
-          <caret line="136" column="18" selection-start-line="136" selection-start-column="18" selection-end-line="136" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/migrations/0003_bill_status.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="456">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/migrations/0005_auto_20141120_1504.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="589">
-          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/migrations/0002_auto_20141118_1733.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6" max-vertical-offset="475">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/static/car_service/js/jquery/plugin/jquery.cookie.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1938">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/templates/car_service/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.142858" vertical-offset="0" max-vertical-offset="4446">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="105" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/urls/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="503" max-vertical-offset="1273">
-          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/base_supplier_admin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="10.857142" vertical-offset="513" max-vertical-offset="1197">
-          <caret line="11" column="54" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4209" max-vertical-offset="4883">
-          <caret line="227" column="69" selection-start-line="227" selection-start-column="69" selection-end-line="227" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/automb/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1491" max-vertical-offset="2128">
-          <caret line="97" column="23" selection-start-line="97" selection-start-column="23" selection-end-line="97" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wsgi_log.log">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="618">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1100,7 +838,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="618">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1116,22 +853,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1087" max-vertical-offset="14250">
           <caret line="94" column="21" selection-start-line="94" selection-start-column="21" selection-end-line="94" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car_service/templates/car_service/servicedetail2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3306" max-vertical-offset="9766">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/views/supplier_admin/service2.py">
+    <entry file="file://$PROJECT_DIR$/car_service/migrations/0001_initial.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1463" max-vertical-offset="2812">
-          <caret line="93" column="50" selection-start-line="93" selection-start-column="50" selection-end-line="93" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/bill_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.214286" vertical-offset="0" max-vertical-offset="551">
-          <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="3287" max-vertical-offset="8455">
+          <caret line="178" column="91" selection-start-line="178" selection-start-column="91" selection-end-line="178" selection-end-column="91" />
           <folding />
         </state>
       </provider>
@@ -1144,20 +880,363 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/views/admin_supplier.py">
+    <entry file="file://$USER_HOME$/.PyCharm30/system/python_stubs/-1337331618/_random.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="201" max-vertical-offset="703">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="277" max-vertical-offset="2261">
+          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/envs/django_oscar/env/Lib/random.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="13349" max-vertical-offset="14041">
+          <caret line="716" column="18" selection-start-line="716" selection-start-column="18" selection-end-line="716" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car_service/migrations/0002_auto__del_field_bill_bill_code.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1254" max-vertical-offset="3895">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car_service/migrations/0003_auto__add_field_bill_bill_code.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3238" max-vertical-offset="3914">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../env/env/Lib/site-packages/django/db/models/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="9722" max-vertical-offset="19418">
+          <caret line="488" column="8" selection-start-line="488" selection-start-column="8" selection-end-line="488" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car_service/static/car_service/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.54653937" vertical-offset="11000" max-vertical-offset="11704">
+          <caret line="591" column="63" selection-start-line="591" selection-start-column="63" selection-end-line="591" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car_service/templates/car_service/my/order_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.6785714" vertical-offset="0" max-vertical-offset="285">
+          <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/service_create_select_type.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.821428" vertical-offset="0" max-vertical-offset="456">
+          <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car_service/static/car_service/images/supplier_admin/top_bg.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car_service/forms/fm_supplier_admin_supplier_create.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="418">
+          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
           <folding>
-            <element signature="e#29#66#0" expanded="true" />
+            <element signature="e#0#34#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car_service/static/car_service/css/supplier_admin/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2527" max-vertical-offset="3781">
+          <caret line="147" column="120" selection-start-line="147" selection-start-column="96" selection-end-line="147" selection-end-column="120" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3571428" vertical-offset="0" max-vertical-offset="190">
+          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car_service/views/supplier_admin/home.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="209">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automb/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="437">
+          <caret line="14" column="62" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="62" />
+          <folding>
+            <element signature="e#0#51#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car_service/views/supplier_admin/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="556">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/base_supplier_admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.75" vertical-offset="0" max-vertical-offset="1748">
+          <caret line="7" column="118" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="118" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car_service/static/car_service/css/supplier_admin/style2.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="242" max-vertical-offset="836">
+          <caret line="34" column="12" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car_service/views/my.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="437">
+          <caret line="3" column="44" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car_service/urls/front_web.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.59484345" vertical-offset="0" max-vertical-offset="608">
+          <caret line="21" column="104" selection-start-line="21" selection-start-column="85" selection-end-line="21" selection-end-column="104" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car_service/urls/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="836" max-vertical-offset="1444">
+          <caret line="66" column="63" selection-start-line="66" selection-start-column="52" selection-end-line="66" selection-end-column="63" />
+          <folding>
+            <element signature="e#0#49#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car_service/static/car_service/js/jquery/plugin/jquery.djangocsrf.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="451" max-vertical-offset="1007">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/bill_detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5452539" vertical-offset="152" max-vertical-offset="1026">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state vertical-scroll-proportion="11.535714" vertical-offset="456" max-vertical-offset="1330">
+          <caret line="7" column="33" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/supplier_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.107143" vertical-offset="0" max-vertical-offset="551">
+          <caret line="9" column="71" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/Platform/Python34/Lib/json/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4204" max-vertical-offset="6384">
+          <caret line="229" column="0" selection-start-line="229" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../env/env/Lib/site-packages/django/http/response.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="6066" max-vertical-offset="9918">
+          <caret line="331" column="0" selection-start-line="331" selection-start-column="0" selection-end-line="331" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../env/env/Lib/site-packages/django/core/handlers/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3548" max-vertical-offset="3933">
+          <caret line="214" column="0" selection-start-line="214" selection-start-column="0" selection-end-line="214" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../env/env/Lib/site-packages/django/contrib/staticfiles/handlers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="888" max-vertical-offset="1273">
+          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/Platform/Python34/Lib/wsgiref/handlers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2418" max-vertical-offset="10450">
+          <caret line="137" column="0" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/Platform/Python34/Lib/wsgiref/simple_server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2171" max-vertical-offset="3040">
+          <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/Platform/Python34/Lib/socketserver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="12431" max-vertical-offset="14193">
+          <caret line="664" column="0" selection-start-line="664" selection-start-column="0" selection-end-line="664" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automb/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1691" max-vertical-offset="2128">
+          <caret line="101" column="10" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../env/env/Lib/site-packages/django/core/handlers/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="7.629156" vertical-offset="0" max-vertical-offset="5339">
+          <caret line="172" column="0" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../env/env/Lib/site-packages/django/utils/encoding.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.5173267" vertical-offset="2000" max-vertical-offset="4731">
+          <caret line="83" column="4" selection-start-line="83" selection-start-column="4" selection-end-line="83" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../env/env/Lib/site-packages/django/core/files/storage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29439253" vertical-offset="254" max-vertical-offset="5320">
+          <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car_service/views/view.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-36.24138" vertical-offset="1875" max-vertical-offset="3116">
+          <caret line="154" column="0" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car_service/templatetags/add_attr_field.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="437">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/bill_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3571428" vertical-offset="0" max-vertical-offset="893">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/supplier_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.6785714" vertical-offset="0" max-vertical-offset="418">
+          <caret line="1" column="35" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car_service/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1190" max-vertical-offset="5016">
+          <caret line="73" column="15" selection-start-line="73" selection-start-column="4" selection-end-line="73" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/service_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.464285" vertical-offset="262" max-vertical-offset="1007">
+          <caret line="41" column="70" selection-start-line="41" selection-start-column="70" selection-end-line="41" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/service_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.071428" vertical-offset="1054" max-vertical-offset="2698">
+          <caret line="88" column="10" selection-start-line="88" selection-start-column="10" selection-end-line="88" selection-end-column="10" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#6;n#form#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car_service/views/admin_supplier.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="836">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car_service/forms/fm_service2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="608">
+          <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car_service/views/supplier_admin/service2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.211946" vertical-offset="853" max-vertical-offset="2888">
+          <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -138,12 +138,12 @@ class Supplier(Model):
     address=CharField(max_length=100,verbose_name='地址')
     coordinate_x=FloatField(verbose_name='经度')
     coordinate_y=FloatField(verbose_name='维度')
-    photo= ImageField(blank=True,null=True,upload_to='photos/suppliers')
-    phone=CharField(max_length=100)
-    time_open=TimeField()
-    time_close=TimeField()
-    description=CharField(max_length=1000)
-    owner=ForeignKey(User)
+    photo= ImageField(blank=True,null=True,upload_to='photos/suppliers',verbose_name='照片')
+    phone=CharField(max_length=100,verbose_name='电话')
+    time_open=TimeField(verbose_name='开门时间')
+    time_close=TimeField(verbose_name='打烊时间')
+    description=CharField(max_length=1000,verbose_name='描述')
+    owner=ForeignKey(User,verbose_name='店主账号')
 
     def __str__(self):
         return self.area.name+'-'+self.name+'-'+self.owner.username
@@ -226,17 +226,24 @@ class Bill(Model):
     sms_content=CharField(max_length=1000)
     final_price=DecimalField(decimal_places=0, max_digits=5)
     status_choice=(('ordered','已预订'),('paid','已付款'),('complete','已完成'),)
-    status=CharField(choices=status_choice,max_length=10)
+    status=CharField(choices=status_choice,max_length=10,default=status_choice[0][0])
 
     created_time=DateTimeField(default=DateTime.now())
     complete_time=DateTimeField(null=True)
+    #订单代码, 结帐时核对.
+    bill_code=CharField(max_length=20)
+
     #给用户发送短信
     def send_sms(self):
         pass
 
+    def save(self,*args,**kwargs):
+        self.bill_code=randrange(10000,99999)
+        super(Bill,self).save(*args,**kwargs)
 
 
 
+from random import randrange
 #返利  和  推荐 优惠.
 class promote_register(Model):
     pass

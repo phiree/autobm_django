@@ -2,6 +2,7 @@
   <dictionary name="Administrator">
     <words>
       <w>djangocsrf</w>
+      <w>endblock</w>
       <w>servicetype</w>
     </words>
   </dictionary>

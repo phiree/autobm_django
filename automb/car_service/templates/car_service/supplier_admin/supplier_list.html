@@ -1,9 +1,11 @@
 {% extends "car_service/supplier_admin/base_supplier_admin.html" %}
+        {%block content_title%}车店列表{%endblock%}
           {%block nav_supplier_list%}
+
         menu_selected
         {%endblock%}
           {%block content%}
-        <table>
+        <table class="table">
         {% for supplier in object_list  %}
             <tr><td>
 
