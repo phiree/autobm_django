@@ -2,16 +2,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-    <link rel="stylesheet" type="text/css" media="all"
-          href="{%static 'car_service/bootstrap-3.1.1-dist/css/bootstrap.min.css'%}"/>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="all" href="{%static 'car_service/bootstrap-3.1.1-dist/css/bootstrap.min.css'%}"/>
+    <link rel="stylesheet" type="text/css" media="all" href="http://cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" type="text/css" media="all" href="{%static 'car_service/css/bootstrap_less.css'%}"/>
     <link rel="stylesheet" type="text/css" media="all" href="{%static 'car_service/css/supplier_admin/style2.css'%}"/>
-
-    <link rel="stylesheet" type="text/css" media="all"
-          href="http://cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css"/>
     <!--bootstrap-->
-    <script src="{%static 'car_service/js/jquery/jquery-1.9.1.js'%}"></script>
-    <script src="http://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
+    <script src="{%static 'car_service/js/jquery/jquery-1.9.1.js'%}" type="text/javascript"></script>
+    <script src="{%static 'car_service/bootstrap-3.1.1-dist/js/bootstrap.min.js'%}" type="text/javascript"></script>
+    <script src="http://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js" type="text/javascript"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -21,38 +22,38 @@
     <![endif]-->
     <script>
         $(document).ready(function(){
-        {%block script_dom_loaded%}
-
-        {%endblock%}
+            {%block script_dom_loaded%}{%endblock%}
         });
-
-
-
-
-
-
     </script>
     {%block header%}{%endblock%}
     <title>系统管理</title>
 
 </head>
 <body>
-<div class="p_top row">
- <img src="{%static 'car_service/images/supplier_admin/top_01.jpg'%}" alt="">
-</div>
-
+<nav class="navbar navbar-fixed-top  p_top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <a href="#"><span style="background-color:#ddd" class="navbar-text"><strong>{{user}}</strong></span></a>
+          </button>
+          <img id="top_image" src="{%static 'car_service/images/supplier_admin/top_01.jpg'%}" alt="爱车网合作商管理平台" />
+        </div>
+        <div class="navbar-collapse collapse" aria-expanded="true">
+            <ul class="nav navbar-nav navbar-right nav-bar-login-status  ">
+                    <li><p class="navbar-text">欢迎,<strong>{{user}}</strong></p></li>
+                    <li><a href="{%url 'car_service:front_web:logout'%}" class="o">登出</a></li>
+                </ul>
+        </div>
+    </div>
+</nav>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-2 ">
-            <div class="p_menu">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <span>{{user}}</span>[<a href="{%url 'car_service:front_web:logout'%}" class="o">退出</a>]
-                    </div>
-                </div>
-                <ul class="list-group">
-                    <li class="list-group-item {%block nav_service_list%}{%endblock%}">
-                        <a  href='{%url "car_service:supplier_admin_service2_list" %}'>服务列表</a>
+        <div class="col-md-2 col-xs-12 side_menu">
+
+                <ul  id="navbar" class="navbar-collapse collapse list-group"  aria-expanded="true">
+                    <li class=" list-group-item {%block nav_service_list%}{%endblock%}">
+                        <a href='{%url "car_service:supplier_admin_service2_list" %}'>服务列表</a>
                     </li>
                     <li class="list-group-item {%block nav_service_create%}{%endblock%}"><a
                             href='{%url "car_service:supplier_admin_service2_create_select_type" %}'>增加服务</a>
@@ -69,10 +70,8 @@
                     </li>
 
                 </ul>
-            </div>
         </div>
-
-        <div class="col-md-10">
+        <div class="col-md-10 col-xs-12  main ">
             <div class="p_main ">
                 <h3>{%block content_title%}{%endblock%}</h3>
                 <hr/>

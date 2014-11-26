@@ -1,6 +1,21 @@
 body{
-background-color:#dae5e9;
+#background-color:#dae5e9;
+padding-top:85px;
 }
+
+/* xs */
+#top_image {
+    width: 60%;
+    height: auto;
+}
+/* sm */
+@media (min-width: 768px) {
+    #top_image {
+        width: 100%;
+    }
+}
+
+
 .p_menu,.p_main
 {
 background-color:#fff;
@@ -13,10 +28,10 @@ border:solid 1px #b1ced4;
 
 }
 .p_top{
- padding-bottom:10px;
-
- background:url(../../images/supplier_admin/top_bg.jpg) center top repeat-x;
-
+    background:url(../../images/supplier_admin/top_bg.jpg) center top repeat-x;
+    #background-color:#37a;
+    #color:white;
+    padding-bottom:10px
  }
  .fm_create_supplier
  {
@@ -36,3 +51,21 @@ border:solid 1px #b1ced4;
   height:300px;
   max-height:500px;
   }
+.side_menu
+{
+#position:fixed;
+#z-index:1000
+#top:95px;
+}
+.nav-bar-login-status
+{
+    padding:15px 30px 0 30px;
+
+}
+
+#navbar.in ,#navbar.collapsing
+{
+padding-top:-10;
+margin-top:0;
+ background:#eee;
+}
