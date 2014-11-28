@@ -1,0 +1,14 @@
+body {
+	padding-top:27px;
+
+}
+body,td,th,div {
+
+}
+.top{
+
+  border-bottom:solid 1px #ececec;
+   background:url(../images/top_bg.jpg) center top repeat-x;
+   padding:4px 30px 4px 0;
+   }
+
