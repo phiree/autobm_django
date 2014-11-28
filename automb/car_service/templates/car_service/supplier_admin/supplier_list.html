@@ -8,9 +8,7 @@
         <table class="table">
         {% for supplier in object_list  %}
             <tr><td>
-
-           <a href="{%url 'car_service:supplier_admin_supplier_update' supplier.id %}">{{supplier}}</a>
-
+                <a href="{%url 'car_service:supplier_admin_supplier_update' supplier.id %}">{{supplier}}</a>
             </td></tr>
         {% endfor %}
             </table>

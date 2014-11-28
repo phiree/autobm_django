@@ -1,22 +1,22 @@
 {% extends "car_service/supplier_admin/base_supplier_admin.html" %}
 {%block nav_bill_list%}menu_selected{%endblock%}
 {%block content_title%}订单列表{%endblock%}
-{%block script_dom_loaded%}
+{%block script_dom_loaded%}<!--
 $('#tbl_bill_list').DataTable
         ({"language":
            {
                  url:'http://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Chinese.json'
            }
-        });
+        });-->
 {%endblock%}
 {%block content%}
-<table id="tbl_bill_list">
+<table class="table" id="tbl_bill_list">
     <thead>
     <tr>
         <td>购买者</td>
         <td>服务内容</td>
-        <td>服务验证码</td>
-        <td>状态</td>
+        <td class="hidden-xs">服务验证码</td>
+        <td class="hidden-xs">状态</td>
     </tr>
     </thead>
     <tbody>
@@ -28,10 +28,10 @@ $('#tbl_bill_list').DataTable
             <a href="{%url 'car_service:supplier_admin_bill_detail' bill.id %}">{{bill.service}}</a>
 
         </td>
-        <td>
+        <td class="hidden-xs">
             {{bill.bill_code}}
         </td>
-        <td>
+        <td class="hidden-xs">
             {{bill.get_status_display}}
         </td>
     </tr>

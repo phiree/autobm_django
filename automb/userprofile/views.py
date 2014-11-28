@@ -22,4 +22,5 @@ def user_profile(request):
     return render(request,'profile.html',args)
 
 
+
 # Create your views here.
