@@ -12,12 +12,8 @@ urlpatterns = patterns(''
 
     ,url(r'^admin/', include(admin.site.urls))
     ,url(r'^profile/',include('userprofile.urls',namespace='userprofile'))
-    ,url(r'^profile/change_password/$',views.password_change,
-        {'template_name':'reset_password.html'},
-                         name='password_change'),
-                     url(r'^profile/change_password_done/$',views.password_change_done,
-                       {'template_name':'password_change_successfully.html'},
-                         name='password_change_done')
+    ,url(r'^profile/change_password/$',views.password_change,  {'template_name':'reset_password.html'}, name='password_change'),
+    url(r'^profile/change_password_done/$',views.password_change_done,  {'template_name':'password_change_successfully.html'},  name='password_change_done')
     ,url(r'',include('car_service.urls',namespace='car_service'))
     ,
 )+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

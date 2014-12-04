@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import  login_required
 
-from ...models import Supplier,Service,ServiceDetail,Tree,Service2,ServiceValue,ServicePropertyValue,ServiceType
+from ...models import Supplier, Service2,ServiceValue,ServicePropertyValue,ServiceType
 
 from ...forms import service_detail,fm_supplier_admin_supplier_create,fm_service2
 

@@ -15,7 +15,7 @@ urlpatterns=patterns(''
                      ,url(r'^service/(?P<service_id>\d+)/$', view.service_detail2_with_id,name='service_detail_with_id')
                      ,url(r'^service/(?P<servicetype_id>\d+)/(?P<supplier_id>\d+)/$', view.service_detail2_without_id,name='service_detail_without_id')
                      #商家列表
-                     ,url(r'^supplier_list/$', view.supplier_list,name='supplier_list')
+                      ,url(r'^supplier_list/$', view.supplier_list,name='supplier_list')
                      ,url(r'^supplier/(?P<supplier_id>\d+)$', view.supplier_detail,name='supplier_detail')
                      #订单
                      ,url(r'^bill/create/(?P<service_id>\d+)$', view.bill_create,name='bill_create')

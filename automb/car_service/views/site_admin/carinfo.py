@@ -3,7 +3,7 @@ import os
 from django.conf import settings
 from django.views.generic import ListView,CreateView,UpdateView
 from django.core.urlresolvers import reverse
-from ...forms.fm_tree import TreeForm
+
 from ...models import CarInfo
 import jsonpickle
 # Create your views here.

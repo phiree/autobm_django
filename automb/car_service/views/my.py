@@ -5,7 +5,7 @@ from django.core.urlresolvers import reverse
 from django.shortcuts import render,redirect
 import datetime
 
-from ..models import Tree, ServiceDetail, Supplier, Service,Bill
+from ..models import   Supplier,  Bill
 
 
 def my_home(request):

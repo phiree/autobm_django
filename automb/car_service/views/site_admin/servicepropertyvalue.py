@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from ...models import Supplier,Service,ServiceDetail,Tree,ServicePropertyValue,ServicePropertyValue_Brand,ServicePropertyValue_Brand_FoilType
+from ...models import Supplier ,ServicePropertyValue,ServicePropertyValue_Brand,ServicePropertyValue_Brand_FoilType
 from django.views.generic import ListView,CreateView,UpdateView,View
 
 from django.core.urlresolvers import reverse

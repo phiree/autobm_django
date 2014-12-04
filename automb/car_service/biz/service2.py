@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.forms.models import inlineformset_factory
-from ..models import Supplier,Service,ServiceDetail,Tree,Service2,ServiceValue,ServicePropertyValue
+from ..models import Supplier, Service2,ServiceValue,ServicePropertyValue
 from django.views.generic import ListView,CreateView,UpdateView,View
 from django.core.urlresolvers import reverse
 

@@ -6,7 +6,7 @@ from django.core.urlresolvers import reverse
 from django.shortcuts import render,redirect
 
 from django.utils import timezone as datetime
-from ..models import Tree, ServiceDetail, Supplier, Service,Bill,ServiceType,Service2
+from ..models import   Supplier,  Bill,ServiceType,Service2
 from ..biz import get_cookie,biz_search
 import jsonpickle
 __author__ = 'Administrator'
@@ -41,13 +41,7 @@ def service_list(request, service_type_id):
                   { 'service_list': sl,'top_service_type_list':top_service_type_list,
                     'service_type_id':service_type_id})
 
-def supplier_list(request):
-    area_list=Tree.objects.filter(tree_type=Tree.tree_type_choice[0][0], parent=None)
-    supplier_list = Supplier.objects.all()
-    top_service_list = Tree.objects.filter(tree_type=Tree.tree_type_choice[2][0], parent=None)
 
-    return render(request, 'car_service/suppliers.html',
-                  {'supplier_list': supplier_list,'top_service_list': top_service_list})
 def supplier_detail(request,supplier_id):
     supplier=Supplier.objects.get(pk=supplier_id)
 
@@ -75,6 +69,13 @@ def service_detail2(request,service_id,servicetype_id,supplier_id):
 
     return render(request, 'car_service/servicedetail2.html', {'merged_service':generate_service_detail(services), 'services':services,'service':service,'paras':str(servicetype_id)+'_'+str(supplier_id)})
     pass
+def supplier_list(request):
+
+    supplier_list = Supplier.objects.all()
+
+
+    return render(request, 'car_service/suppliers.html',
+                  {'supplier_list': supplier_list})
 #生成前台需要的数据
 def generate_service_detail(services):
     '''

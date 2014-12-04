@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from ..models import ServiceDetail,Service,Tree,Supplier
+from ..models import Supplier
 __author__ = 'Administrator'
 from django import forms
 

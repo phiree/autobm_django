@@ -1,5 +1,5 @@
 
-from ..models import Supplier,Service,ServiceDetail,Tree,Service2,ServiceValue,ServicePropertyValue
+from ..models import Supplier, Service2,ServiceValue,ServicePropertyValue
 from django.db.models import Q
 # Create your views here.
 #字典管理
