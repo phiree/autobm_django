@@ -42,7 +42,7 @@ def get_comment_status(request,service_id):
     status=None
     if comment_list.count()==0:
         bill_list=Bill.objects.filter(service__id=service_id, user__id=request.user.id)
-        if bill_list.count()==1:
+        if bill_list.count()>=1:
             result['status']=status_choice[1]
             result['bill']=bill_list[0]
         else:

@@ -80,8 +80,8 @@ def service_detail2(request,service_id,servicetype_id,supplier_id):
 #ajax 判断用户是否已经评论过.
 from django.template.loader import render_to_string
 def comment_status(request):
-    if request.method=='POST':
-        service_id=int(request.POST.get('service_id'))
+    if request.method=='GET':
+        service_id=int(request.GET.get('service_id'))
         result=service2.get_comment_status(request,service_id)
         fm=fm_comment.CommentForm()
         return TemplateResponse(request,'car_service/comment.html',
@@ -99,8 +99,9 @@ def comment_add(request,bill_id):
     instance.user=request.user
     if fm.is_valid():
         fm.save()
-    return render(request,'car_service/comment_successfully')
-
+    return HttpResponseRedirect(redirect_to=reverse('car_service:front_web:comment_success'))
+def comment_success(request):
+    return render(request,'car_service/comment_success.html')
 def supplier_list(request):
 
     supplier_list = Supplier.objects.all()

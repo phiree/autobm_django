@@ -14,7 +14,7 @@
 
         function bind_comment(service_id)
         {
-            $.post("{%url 'car_service:front_web:comment_status'%}",
+            $.get("{%url 'car_service:front_web:comment_status'%}",
                     {'service_id':service_id},
                     function(data){
                                 $('#dv_comment_status').html(data);
