@@ -4,7 +4,9 @@
     {%elif state.0 == 1%}
         <form method="POST" action="{%url 'car_service:front_web:comment_add' bill.id%}">
         {%csrf_token%}
+            <table>
         {{form.as_table}}
+                </table>
         <input type="submit" value="提交" />
         </form>
     {%elif state.0 == 2%}

@@ -184,15 +184,15 @@ class UserComment(Model):
     """
     用户评论
     """
-    bill=ForeignKey(Bill)
+    bill=OneToOneField(Bill)
     stars_choice=((1,'差'),(2,'一般'),(3,'好'),(4,'不错'),(5,'非常好'))
     #星级-服务态度
-    stars_service=IntegerField(choices=stars_choice)
+    stars_service=IntegerField(choices=stars_choice,verbose_name='服务质量')
     #星级 施工效果
-    stars_treatment=IntegerField(choices=stars_choice)
+    stars_treatment=IntegerField(choices=stars_choice,verbose_name='施工效果')
     #星级 性价比
-    stars_cost=IntegerField(choices=stars_choice)
-    comment_content=CharField(max_length=1000)
+    stars_cost=IntegerField(choices=stars_choice,verbose_name='性价比')
+    comment_content=CharField(max_length=1000,verbose_name='评价内容')
     comment_date=DateTimeField(default=DateTime.now())
     is_approved=BooleanField(default=False)
     pass

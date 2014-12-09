@@ -16,7 +16,10 @@
         <td><a href="{%url 'car_service:front_web:service_detail_with_id' order.service.id%}">{{order.service}}</a></td>
         <td> {{order.bill_code}}</td>
         <td> {{order.get_status_display}}</td>
-        <td></td>
+        <td>{%if not order.usercomment %}<a href="{%url 'car_service:front_web:service_detail_with_id' order.service.id%}">评价</a>
+            {%else%}{{order.usercomment.comment_content}}
+
+            {%endif%} </td>
     </tr>
     {%endfor%}
 </table>

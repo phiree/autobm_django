@@ -27,9 +27,11 @@ urlpatterns=patterns(''
                      #个人中心
                      ,url(r'^my$', my.my_home,name='my_home')
                      ,url(r'^my/orders$', my.order_list,name='my_orders')
+                     ,url(r'^my/comment_list', my.comment_list_of_my,name='my_comment')
+
                      #权限错误
                      ,url(r'^access_denied/.*$', view.access_denied,name='access_denied')
-
+                     #搜索
                      ,url(r'^search/$', view.search,name='search')
                      ,
                      )
