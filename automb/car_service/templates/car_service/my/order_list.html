@@ -9,12 +9,14 @@
         <th>服务概况</th>
         <th>服务码</th>
         <th>订单状态</th>
+        <th>评价</th>
     </tr>
     {%for order in order_list%}
     <tr>
-        <td><a href="{%url 'car_service:front_web:service_detail_with_id' order.service.id%}">{{order.service}}</a> </td>
+        <td><a href="{%url 'car_service:front_web:service_detail_with_id' order.service.id%}">{{order.service}}</a></td>
         <td> {{order.bill_code}}</td>
         <td> {{order.get_status_display}}</td>
+        <td></td>
     </tr>
     {%endfor%}
 </table>

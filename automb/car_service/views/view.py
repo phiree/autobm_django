@@ -4,10 +4,11 @@ from django.core import serializers
 from django.http import HttpResponse,HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.shortcuts import render,redirect
-
+from django.template.response import TemplateResponse
+from ..forms import fm_comment
 from django.utils import timezone as datetime
-from ..models import   Supplier,  Bill,ServiceType,Service2
-from ..biz import get_cookie,biz_search
+from ..models import   Supplier,  Bill,ServiceType,Service2,UserComment
+from ..biz import get_cookie,biz_search,service2
 import jsonpickle
 __author__ = 'Administrator'
 
@@ -54,7 +55,6 @@ def service_detail2_without_id(request,servicetype_id,supplier_id):
     return  service_detail2(request,None,servicetype_id,supplier_id)
 # 服务详情
 def service_detail2(request,service_id,servicetype_id,supplier_id):
-    services=[]
     service=None
     if service_id!=None:
         service=Service2.objects.get(pk=service_id)
@@ -62,13 +62,45 @@ def service_detail2(request,service_id,servicetype_id,supplier_id):
         servicetype_id=service.servicetype.id
 
     services=Service2.objects.filter(supplier__id=supplier_id,servicetype__id=servicetype_id)
+
     if service==None:
         service=Service2.objects.filter(supplier__id=supplier_id,servicetype__id=servicetype_id)[0]
-
-
-
-    return render(request, 'car_service/servicedetail2.html', {'merged_service':generate_service_detail(services), 'services':services,'service':service,'paras':str(servicetype_id)+'_'+str(supplier_id)})
+    comment_list=UserComment.objects.filter(bill__service__in=services)
+    #todo 是否已经评论,是否已经购买 传递给template
+    #有个问题 服务页面 servicedetail2.html 对应的是多个服务(不同条件组合对应不同服务, 需要使用ajax, 根据组合条件的变化判断用户是否已经评论过?)
+    has_comment=False
+    has_bought=False
+    return render(request, 'car_service/servicedetail2.html',
+                  {'merged_service':generate_service_detail(services),
+                   'services':services,'service':service,
+                   'paras':str(servicetype_id)+'_'+str(supplier_id),
+                  'comment_list':comment_list
+                  })
     pass
+#ajax 判断用户是否已经评论过.
+from django.template.loader import render_to_string
+def comment_status(request):
+    if request.method=='POST':
+        service_id=int(request.POST.get('service_id'))
+        result=service2.get_comment_status(request,service_id)
+        fm=fm_comment.CommentForm()
+        return TemplateResponse(request,'car_service/comment.html',
+                                {'state':result['status'],'comment':result['comment'],
+                                 'bill':result['bill'],
+                                 'form':fm})
+    elif request.is_ajax():
+        pass
+    else:
+        pass
+def comment_add(request,bill_id):
+    fm=fm_comment.CommentForm(request.POST)
+    instance=fm.instance
+    instance.bill=Bill.objects.get(pk=bill_id)
+    instance.user=request.user
+    if fm.is_valid():
+        fm.save()
+    return render(request,'car_service/comment_successfully')
+
 def supplier_list(request):
 
     supplier_list = Supplier.objects.all()

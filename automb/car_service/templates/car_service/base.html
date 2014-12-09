@@ -34,10 +34,6 @@
                     }
                 });
 
-
-
-
-
                 var current_area_name=$.cookie('area_name');
                 var current_area_id=$.cookie('area_id');
                 if (current_area_name==null){current_area_name='佛山';}
@@ -54,9 +50,7 @@
                         set_area_cookie($(this).attr('area_id'),$(this).text());
                         location.reload();
                  });
-
-
-                  area_display(area);
+                 // area_display(area);
             });
 
     </script>

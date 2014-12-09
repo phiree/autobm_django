@@ -14,6 +14,10 @@ urlpatterns=patterns(''
                      ,url(r'^service_list/(?P<service_type_id>\d+)$', view.service_list,name='service_list')
                      ,url(r'^service/(?P<service_id>\d+)/$', view.service_detail2_with_id,name='service_detail_with_id')
                      ,url(r'^service/(?P<servicetype_id>\d+)/(?P<supplier_id>\d+)/$', view.service_detail2_without_id,name='service_detail_without_id')
+                    #评论
+                     ,url(r'^service/comment/status/$', view.comment_status,name='comment_status')
+                     ,url(r'^service/comment/add/(?P<bill_id>\d+)$', view.comment_add,name='comment_add')
+
                      #商家列表
                       ,url(r'^supplier_list/$', view.supplier_list,name='supplier_list')
                      ,url(r'^supplier/(?P<supplier_id>\d+)$', view.supplier_detail,name='supplier_detail')

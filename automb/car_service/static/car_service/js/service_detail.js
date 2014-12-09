@@ -1,0 +1,1 @@
+$('#tab_content').tab_switch({'highlight_css':'on'})

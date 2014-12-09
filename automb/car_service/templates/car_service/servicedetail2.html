@@ -3,11 +3,28 @@
 {%load get_values_for_property%}
 {%block head%}
 <link href="{%static 'car_service/css/detail.css'%}" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="{%static 'car_service/jquery/plugin/jquery.cookie.js'%}"></script>
-<script type="text/javascript" src="{%static 'car_service/js/detail.js'%}"></script>
+<script type="text/javascript" src="{%static 'car_service/js/jquery/plugin/jquery.djangocsrf.js'%}"></script>
+<script type="text/javascript" src="{%static 'car_service/js/service_detail.js'%}"></script>
 <script>
     $(function(){
+        $.djangocsrf( "enable" );
+
         var price_list=[{%for s in services%}{'sid':'{{s.id}}','price':'{{s.price}}'},{%endfor%}]
+
+
+        function bind_comment(service_id)
+        {
+            $.post("{%url 'car_service:front_web:comment_status'%}",
+                    {'service_id':service_id},
+                    function(data){
+                                $('#dv_comment_status').html(data);
+                            }
+                    );
+        }
+
+        bind_comment({{service.id}});
+
+
 
         $(".selected,.not_selected").click(function(e){
 
@@ -44,7 +61,9 @@
                     }
                 }
             }
+            bind_comment(sid);
         });
+
         function get_selected_sid()//get selected service
         {
             selected_sid=null
@@ -65,10 +84,6 @@
             });
 
             return  compared_arr[0];
-
-
-
-
 
         }
 
@@ -103,7 +118,6 @@ function intersection_destructive(a, b)
        b.shift();
      }
   }
-
   return result;
 }
 
@@ -189,19 +203,19 @@ function intersection_destructive(a, b)
 </div>
 <div class="h-15">&nbsp;</div>
 <!--介绍-->
-<div class="tejia_d_l_d">
-    <div class="tejia_d_l_d_1">
-        <ul>
+<div id="tab_content" class="tejia_d_l_d">
+
+        <ul class="tejia_d_l_d_1">
             <li id="AreaB_1" class="on" onmouseover="tagOver(this)" onmouseout="tagOut(this)">服务介绍</li>
             <li id="AreaB_2" onmouseover="tagOver(this)" onmouseout="tagOut(this)" class="">用户评价（215）</li>
             <li id="AreaB_3" onmouseover="tagOver(this)" onmouseout="tagOut(this)" class="">成交记录（307）</li>
-            <li id="AreaB_4" onmouseover="tagOver(this)" onmouseout="tagOut(this)" class="">网友咨询</li>
+             <li id="AreaB_4" onmouseover="tagOver(this)" onmouseout="tagOut(this)" class="">网友咨询</li>
         </ul>
-        <ul class="clear"></ul>
-    </div>
-</div>
+
+
+
 <!---->
-<div class="h-20">&nbsp;</div>
+
 <div id="AreaB_1_Info" style="display: block;">
     <!---->
     <div class="tejia_d_l_d_2a_1">服务属性</div>
@@ -222,39 +236,10 @@ function intersection_destructive(a, b)
     <div class="h-20">&nbsp;</div>
     <div class="tejia_d_l_d_2a_1">用户点评</div>
     <div class="h-15">&nbsp;</div>
-    <div class="tejia_d_l_d_2a_3">
-        <div class="tejia_d_l_d_2a_3_1 f-l"><p>综合得分</p>
 
-            <p><span>5</span></p>
-
-            <p><img src="{%static 'car_service/images/x_5.jpg'%}" width="64" height="12" alt=""></p></div>
-        <div class="tejia_d_l_d_2a_3_2 f-l">
-            <ul>
-                <li>服务态度：&nbsp;<img src="{%static 'car_service/images/x_5.jpg'%}" width="64" height="12" align="absmiddle" alt="">&nbsp;满意（<span>5</span>分）
-                </li>
-                <li>施工效果：&nbsp;<img src="{%static 'car_service/images/x_5.jpg'%}" width="64" height="12" align="absmiddle" alt="">&nbsp;满意（<span>5</span>分）
-                </li>
-                <li>性&nbsp;价&nbsp;比：&nbsp;<img src="{%static 'car_service/images/x_5.jpg'%}" width="64" align="absmiddle" height="12" alt="">&nbsp;满意（<span>5</span>分）
-                </li>
-            </ul>
-        </div>
-        <div class="tejia_d_l_d_2a_3_3 f-r"><p><img src="{%static 'car_service/images/img_63.jpg'%}" width="125" height="41" alt=""></p>
-
-            <p>您可以对已使用的做服务</p></div>
-        <div class="clear"></div>
-    </div>
-    <div class="h-15">&nbsp;</div>
-    <div class="tejia_d_l_d_2a_4_1 b"><span><a href="#" target="_blank">Ci98F</a>&nbsp;&nbsp;204-10-05</span><img
-            src="{%static 'car_service/images/q_5.jpg'%}" width="61" height="12" align="absmiddle" alt=""></div>
-    <div class="tejia_d_l_d_2a_4_2">师傅们很认真，也很专业，很满意，十分感谢。</div>
-    <div class="h-15">&nbsp;</div>
-    <div class="tejia_d_l_d_2a_4_1 b"><span><a href="#" target="_blank">Ci98F</a>&nbsp;&nbsp;204-10-05</span><img
-            src="{%static 'car_service/images/q_5.jpg'%}" width="61" height="12" align="absmiddle" alt=""></div>
-    <div class="tejia_d_l_d_2a_4_2">师傅们很认真，也很专业，很满意，十分感谢。</div>
-    <!--/-->
 </div>
-<div id="AreaB_2_Info" style="display: none;">
-    <form id="form1" name="form1" method="post" action="">
+<div id="AreaB_2_Info"  >
+
         <div class="tejia_d_l_d_2a_3">
             <div class="tejia_d_l_d_2a_3_1 f-l"><p>综合得分</p>
 
@@ -273,7 +258,7 @@ function intersection_destructive(a, b)
                     </li>
                 </ul>
             </div>
-            <div class="tejia_d_l_d_2a_3_3 f-r"><p><img src="{%static 'car_service/images/img_63.jpg'%}" width="125" height="41" alt=""></p>
+            <div id="dv_comment_status" class="tejia_d_l_d_2a_3_3 f-r"><p><img src="{%static 'car_service/images/img_63.jpg'%}" width="125" height="41" alt=""></p>
 
                 <p>您可以对已使用的做服务</p></div>
             <div class="clear"></div>
@@ -327,19 +312,10 @@ function intersection_destructive(a, b)
             </div>
             <div class="clear"></div>
         </div>
-        <div class="tejia_d_l_d_2a_6_r_fy">
-            <span><a href="#">上一页</a></span>
-            <span><a href="#">1</a></span>
-            <span class="x1">2</span>
-            <span><a href="#">3</a></span>
-            <span>...</span>
-            <span><a href="#">16</a></span>
-            <span><a href="#">17</a></span>
-            <span><a href="#">下一页</a></span>
-        </div>
-    </form>
+
+
 </div>
-<div id="AreaB_3_Info" style="display: none;">
+<div id="AreaB_3_Info" style=" ">
     <!---->
     <div class="tejia_d_l_d_2a_7">
         <div class="x1">本服务累计成交<strong>95</strong>单</div>
@@ -386,7 +362,7 @@ function intersection_destructive(a, b)
     </div>
     <!--/-->
 </div>
-<div id="AreaB_4_Info" style="display: none;">
+<div id="AreaB_4_Info" style=" ">
     <!---->
     <div class="tejia_d_l_d_2a_8">
         <ul>
@@ -425,7 +401,7 @@ function intersection_destructive(a, b)
     </div>
     <!--/-->
 </div>
-<!---->
+</div>
 <!--介绍/-->
 </div>
 <div class="tejia_d_r f-r">

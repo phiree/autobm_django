@@ -1,0 +1,16 @@
+<div>
+    {%if state.0 == 0 %}
+   {{comment.comment_content}}--{{comment.comment_date}}
+    {%elif state.0 == 1%}
+        <form method="POST" action="{%url 'car_service:front_web:comment_add' bill.id%}">
+        {%csrf_token%}
+        {{form.as_table}}
+        <input type="submit" value="提交" />
+        </form>
+    {%elif state.0 == 2%}
+        <span>购买后才能评论</span>
+    {%elif state.0 == 3%}
+        <span><a href="{%url 'car_service:front_web:login'%}">登录后才能评价</a></span>
+    {%else%}
+    {%endif%}
+</div>

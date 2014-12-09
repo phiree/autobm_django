@@ -1,6 +1,6 @@
 from django.db.models import Model, CharField,ForeignKey,TimeField,DateTimeField,\
                             FilePathField,DecimalField,FloatField,ImageField,ManyToManyField,\
-                    BooleanField,OneToOneField, Max, Min
+                    BooleanField,OneToOneField, Max, Min,IntegerField
 
 # Create your models here
 from django.contrib.auth.models import User
@@ -8,7 +8,9 @@ from django.core.urlresolvers import reverse
 from model_utils.managers import InheritanceManager
 from django.db import connection
 from django.utils import timezone as DateTime
-class  AreaInfo(Model):
+
+
+class AreaInfo(Model):
     name=CharField(max_length=200)
     code=CharField(max_length=20)
     parent=ForeignKey("AreaInfo", null=True,blank=True)
@@ -17,6 +19,7 @@ class  AreaInfo(Model):
     #depth=Inter
     class Meta:
         verbose_name_plural=verbose_name='区域'
+
 
 class ServiceType(Model):#汽车美容, 洗车....
     name=CharField(max_length=200,verbose_name='名称')
@@ -39,9 +42,6 @@ class ServiceProperty(Model):
         return self.servicetype.name +'_'+ self.name
     class Meta:
         verbose_name_plural=verbose_name='服务属性'
-
-
-
 
 
 class ServicePropertyValue(Model):
@@ -82,6 +82,7 @@ class CarInfo(Model):
     class Meta:
         verbose_name_plural=verbose_name='车辆信息'
 
+
 class Service2(Model):
     supplier=ForeignKey('Supplier',verbose_name='服务提供商')
     title=CharField(max_length=100,verbose_name='标题')#服务title,
@@ -103,8 +104,6 @@ class Service2(Model):
             s+=v.servicepropertyvalue.serviceproperty.name+':'+v.servicepropertyvalue.value+'|'
         s+=str(self.price)
         return s
-
-
 
 
 class ServiceValue(Model):
@@ -150,9 +149,6 @@ class Supplier(Model):
     #def get_min_price
 
 
-
-
-
 class Bill(Model):
     service=ForeignKey(Service2)
     order_date=DateTimeField()
@@ -183,11 +179,22 @@ from random import randrange
 class promote_register(Model):
     pass
 
-class UserProfiler(Model):
-    user =OneToOneField(User, unique=True)
-    phone =CharField(max_length=140,verbose_name= '电话号码')
-    gender = CharField(max_length=140,verbose_name='性别')
-    def __unicode__(self):
-        return u'Profile of user: %s' % self.user.username
+
+class UserComment(Model):
+    """
+    用户评论
+    """
+    bill=ForeignKey(Bill)
+    stars_choice=((1,'差'),(2,'一般'),(3,'好'),(4,'不错'),(5,'非常好'))
+    #星级-服务态度
+    stars_service=IntegerField(choices=stars_choice)
+    #星级 施工效果
+    stars_treatment=IntegerField(choices=stars_choice)
+    #星级 性价比
+    stars_cost=IntegerField(choices=stars_choice)
+    comment_content=CharField(max_length=1000)
+    comment_date=DateTimeField(default=DateTime.now())
+    is_approved=BooleanField(default=False)
+    pass
 
 
