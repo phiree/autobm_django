@@ -6,10 +6,18 @@
         {%endblock%}
           {%block content%}
         <table class="table">
+            <thead>
+            <tr><th></th><th>推广链接</th>
+            </tr>
+            </thead>
         {% for supplier in object_list  %}
             <tr><td>
                 <a href="{%url 'car_service:supplier_admin_supplier_update' supplier.id %}">{{supplier}}</a>
-            </td></tr>
+            </td>
+            <td>
+                 <a href="{%url 'car_service:front_web:site_home'%}?pm={{supplier.promote_code}}">{{supplier.promote_code}}</a>
+            </td>
+            </tr>
         {% endfor %}
             </table>
         {%endblock%}

@@ -8,6 +8,7 @@ from django.core.urlresolvers import reverse
 from model_utils.managers import InheritanceManager
 from django.db import connection
 from django.utils import timezone as DateTime
+from unique_random.models import UniqueRandom
 
 
 class AreaInfo(Model):
@@ -128,6 +129,7 @@ class Supplier(Model):
     time_close=TimeField(verbose_name='打烊时间')
     description=CharField(max_length=1000,verbose_name='描述')
     owner=ForeignKey(User,verbose_name='店主账号')
+    promote_code=CharField(max_length=20)
     class Meta:
         verbose_name_plural=verbose_name='供应商'
     def __str__(self):
@@ -197,4 +199,18 @@ class UserComment(Model):
     is_approved=BooleanField(default=False)
     pass
 
+class User_Promotion(Model):
+    user=ForeignKey(User,related_name='promotion_user')
+    occur_time=DateTimeField(default=DateTime.now)
+    #推荐注册的用户.
+    promoted_user=ForeignKey(User,related_name='promotion_other_user')
+
+class Promotion_Income(Model):
+    """推广收入"""
+    bill=ForeignKey(Bill)
+    amount=DecimalField(decimal_places=1,max_digits=6)
+
+class  Promotion_Stratage(Model):
+    """推广收入策略"""
+    pass
 

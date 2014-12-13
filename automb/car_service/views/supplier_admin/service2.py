@@ -131,7 +131,7 @@ class SupplierUpdate(UpdateView):
     def get_success_url(self):
         return reverse('car_service:supplier_admin_supplier_create_success',args=(self.object.id,))
 
-
+from unique_random.models import UniqueRandom
 class SupplierCreate(CreateView):
     model=Supplier
     form_class = fm_supplier_admin_supplier_create.SupplierCreateForm
@@ -140,6 +140,10 @@ class SupplierCreate(CreateView):
         return reverse('car_service:supplier_admin_supplier_create_success',args=(self.object.id,))
     def form_valid(self, form):
         form.instance.owner=self.request.user
+        unique_random=UniqueRandom()
+        unique_random.save()
+
+        form.instance.promote_code=unique_random.code
         return super(SupplierCreate, self).form_valid(form)
 class SupplierList(ListView):
     model=Supplier
@@ -149,5 +153,4 @@ class SupplierList(ListView):
 
 def supplier_create_success(request,supplier_id):
     return render(request,'car_service/supplier_admin/supplier_form_success.html')
-
 

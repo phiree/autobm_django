@@ -7,7 +7,7 @@ from django.shortcuts import render,redirect
 from django.template.response import TemplateResponse
 from ..forms import fm_comment
 from django.utils import timezone as datetime
-from ..models import   Supplier,  Bill,ServiceType,Service2,UserComment
+from ..models import   Supplier,  Bill,ServiceType,Service2,UserComment,User_Promotion
 from ..biz import get_cookie,biz_search,service2
 import jsonpickle
 __author__ = 'Administrator'
@@ -167,10 +167,18 @@ def user_register(request):
     if request.method=='POST':
         form=RegisterForm(request.POST)
         if form.is_valid():
-            User.objects.create_user(username=form.cleaned_data['username'],
+            created_user=User.objects.create_user(username=form.cleaned_data['username'],
                                      password= form.cleaned_data['password'],
                                      email=form.cleaned_data['email'])
-            return HttpResponseRedirect(redirect_to='/accounts/login')
+            #promote
+            pm=request.COOKIES.get('pm')
+            if pm:
+                pm_user=User.objects.get(username=pm)
+                User_Promotion.objects.create(user=pm_user,promoted_user=created_user)
+
+            response= HttpResponseRedirect(redirect_to='/accounts/login')
+            response.delete_cookie('pm')
+            return response
     return render(request,'car_service/accounts/register.html',{'form':form})
 
 def search(request):
@@ -187,6 +195,14 @@ from django.core.files.base import ContentFile
 def upload_file(request):
     image=request.FILES.get('file')
     saved_path =default_storage.save(image.name,ContentFile(image.read()))
-
     data={'url':settings.MEDIA_URL+saved_path}
     return HttpResponse(json.dumps(data),content_type='application/json')
+
+def promote_redirect(request):
+    #处理推广链接
+    code=request.GET.get('pm')
+    response=HttpResponseRedirect(reverse('car_service:front_web:site_home'))
+    response.set_cookie('pm',value=code)
+    return response
+
+

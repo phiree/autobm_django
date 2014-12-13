@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'south',
+    'unique_random',
     #'django.contrib.gis',
     'car_service',
     'userprofile',
@@ -76,6 +77,7 @@ DATABASES = {
         'USER': '92auto',
         'PASSWORD': 'twgdhbtzhy',
         'HOST': '127.0.0.1',
+        'ATOMIC_REQUESTS':True,
 
     }
 }

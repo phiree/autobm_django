@@ -28,10 +28,14 @@ urlpatterns=patterns(''
                      ,url(r'^my$', my.my_home,name='my_home')
                      ,url(r'^my/orders$', my.order_list,name='my_orders')
                      ,url(r'^my/comment_list', my.comment_list_of_my,name='my_comment')
+                    ,url(r'^my/my_promote', my.my_promote,name='my_promote')
+
 
                      #权限错误
                      ,url(r'^access_denied/.*$', view.access_denied,name='access_denied')
                      #搜索
                      ,url(r'^search/$', view.search,name='search')
+                     #推广链接跳转.
+                     ,url(r'^pm_redt/', view.promote_redirect,name='promote_redirect')
                      ,
                      )
