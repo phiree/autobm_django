@@ -10,6 +10,8 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from os.path import join
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
@@ -50,6 +52,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'car_service.middleware.MobileMiddleware',
 )
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend', # default
@@ -106,3 +109,7 @@ MEDIA_URL='/media/'
 
 LOGIN_REDIRECT_URL='/'
 WSGI_LOG=os.path.join(BASE_DIR,'wsgi_log.log')
+# 模板文件夹名称不能是 templates , 否则会被 template_loader 优先取用,致使这里的设置失效
+TEMPLATE_DIRS_MOBILE=(join(BASE_DIR,'car_service/templates_mobile'),)
+TEMPLATE_DIRS_DESKTOP=(join(BASE_DIR,'car_service/templates_desktop'),)
+

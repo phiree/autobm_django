@@ -42,14 +42,17 @@ INSERT INTO car_service_servicetype VALUES(22,'氙气大灯改装',18,'');
 
 
 -- serviceproperty
-
+--洗车
 INSERT INTO  car_service_serviceproperty VALUES(1,'洗车方式',2);
-INSERT INTO  car_service_servicepropertyvalue VALUES(1,1,'人工洗车',0,0);
-INSERT INTO  car_service_servicepropertyvalue VALUES(2,1,'电脑洗车',0,0);
-
+INSERT INTO  car_service_servicepropertyvalue VALUES(1001,1,'人工洗车',0,0);
+INSERT INTO  car_service_servicepropertyvalue VALUES(1002,1,'电脑洗车',0,0);
+--打蜡
 INSERT INTO  car_service_serviceproperty VALUES(2,'品牌',3);
 INSERT INTO  car_service_servicepropertyvalue VALUES(3,2,'3M',0,0);
 INSERT INTO  car_service_servicepropertyvalue VALUES(4,2,'美光',0,0);
-
+--封釉
+INSERT INTO  car_service_serviceproperty VALUES(3,'品牌',4);
+INSERT INTO  car_service_servicepropertyvalue VALUES(4,3,'3M',0,0);
+INSERT INTO  car_service_servicepropertyvalue VALUES(5,3,'美光',0,0);
 -- 供应商
 INSERT INTO  car_service_supplier VALUES(1,'佛山美丽天使汽车养护店','1','门店地址门店地址门店地址门店地址',12,12,NULL,'1342333333','08:00:00','18:00:00','门店简介门店简介门店简介门店简介',1);

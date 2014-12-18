@@ -11,12 +11,15 @@ from ..models import   Supplier,  Bill
 
 def my_home(request):
     return render(request, 'car_service/my/my_home.html')
+
+
 def order_list(request):
     user=request.user
     orders=Bill.objects.filter(user=user)
     return render(request,'car_service/my/order_list.html',{'order_list':orders})
 
-def comment_list_of_my(request):
+
+def  comment_list_of_my(request):
     return comment_list(request,None,user_id=request.user.id,template='car_service/my/comment_list.html')
 
 
@@ -26,6 +29,7 @@ def comment_list(request,bill_id,user_id,template):
     elif user_id:
         comment_list=UserComment.objects.filter(bill__user__id=user_id)
     return render(request,template,{'comment_list':comment_list})
+
 
 def my_promote(request):
     """用户推广结果."""

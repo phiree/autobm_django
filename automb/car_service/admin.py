@@ -11,3 +11,4 @@ admin.site.register(Service2)
 #admin.site.register(ServiceValue)
 admin.site.register(Supplier)
 admin.site.register(AreaInfo)
+
