@@ -8,6 +8,7 @@ def login(request):
     password = request.POST['password']
     user = authenticate(username=username, password=password)
     if user is not None:
+        #test git
         if user.is_active:
             login(request, user)
             render(request,'car_service/')
