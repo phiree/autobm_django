@@ -2,85 +2,275 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f88f8b9f-4096-4732-a471-d27ad2049ee1" name="Default" comment="promote registeration">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/urls/front_mobile.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/templates_mobile/car_service/home.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/middleware.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car_service/admin.py" afterPath="$PROJECT_DIR$/car_service/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/init_script.SQL" afterPath="$PROJECT_DIR$/docs/init_script.SQL" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car_service/views/my.py" afterPath="$PROJECT_DIR$/car_service/views/my.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/action-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/action-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/ajax-loader.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/alert-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/alert-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/arrow-d-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/arrow-d-l-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/arrow-d-l-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/arrow-d-r-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/arrow-d-r-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/arrow-d-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/arrow-l-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/arrow-l-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/arrow-r-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/arrow-r-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/arrow-u-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/arrow-u-l-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/arrow-u-l-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/arrow-u-r-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/arrow-u-r-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/arrow-u-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/audio-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/audio-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/back-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/back-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/bars-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/bars-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/bullets-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/bullets-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/calendar-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/calendar-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/camera-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/camera-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/carat-d-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/carat-d-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/carat-l-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/carat-l-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/carat-r-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/carat-r-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/carat-u-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/carat-u-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/check-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/check-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/clock-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/clock-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/cloud-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/cloud-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/comment-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/comment-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/delete-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/delete-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/edit-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/edit-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/eye-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/eye-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/forbidden-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/forbidden-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/forward-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/forward-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/gear-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/gear-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/grid-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/grid-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/heart-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/heart-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/home-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/home-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/images.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/img_44.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/info-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/info-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/location-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/location-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/lock-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/lock-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/mail-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/mail-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/minus-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/minus-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/navigation-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/navigation-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/phone-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/phone-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/plus-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/plus-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/power-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/power-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/recycle-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/recycle-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/refresh-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/refresh-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/search-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/search-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/shop-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/shop-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/star-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/star-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/tag-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/tag-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/user-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/user-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/video-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-png/video-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_morebg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_n01.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_n02.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_n03.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_n04.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_n05.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_n06.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_n_anl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_n_anr.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_n_t1.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_n_t2.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_n_t3.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_n_t4.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_n_t5.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_nd.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_nlct.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_nw.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_nxtb.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_nxtb1.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_ny01.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_ny02.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_ny03.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_ny04.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_t003.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_t004.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_t005.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_t006.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_t01.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_t02.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_t03.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_t03bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_t04.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_t05.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_t06.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_tb01.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_tb02.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_tb03.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_tb04.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_tb1.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_tb2.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_tb3.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/web_tb4.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/action-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/action-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/alert-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/alert-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/arrow-d-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/arrow-d-l-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/arrow-d-l-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/arrow-d-r-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/arrow-d-r-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/arrow-d-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/arrow-l-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/arrow-l-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/arrow-r-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/arrow-r-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/arrow-u-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/arrow-u-l-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/arrow-u-l-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/arrow-u-r-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/arrow-u-r-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/arrow-u-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/audio-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/audio-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/back-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/back-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/bars-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/bars-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/bullets-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/bullets-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/calendar-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/calendar-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/camera-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/camera-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/carat-d-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/carat-d-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/carat-l-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/carat-l-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/carat-r-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/carat-r-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/carat-u-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/carat-u-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/check-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/check-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/clock-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/clock-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/cloud-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/cloud-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/comment-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/comment-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/delete-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/delete-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/edit-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/edit-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/eye-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/eye-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/forbidden-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/forbidden-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/forward-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/forward-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/gear-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/gear-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/grid-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/grid-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/heart-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/heart-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/home-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/home-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/info-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/info-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/jQuery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/jquery-1.11.1.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/jquery.mobile-1.4.5.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/jquery.mobile-1.4.5.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/jquery.mobile-1.4.5.min.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/location-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/location-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/lock-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/lock-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/mail-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/mail-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/minus-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/minus-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/navigation-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/navigation-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/phone-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/phone-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/plus-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/plus-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/power-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/power-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/recycle-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/recycle-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/refresh-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/refresh-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/reset.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/search-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/search-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/templates_mobile/car_service/server.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/shop-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/shop-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/star-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/star-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/swipe.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/tag-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/tag-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/user-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/user-white.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/video-black.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/images/icons-svg/video-white.svg" />
+      <change type="DELETED" beforePath="D:\work\auto\autobm_django\automb\car_service\static\car_service\js\jquery\jquery-1.8.0.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\auto\autobm_django\automb\car_service\urls\front_mobile.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/automb.iml" afterPath="$PROJECT_DIR$/.idea/automb.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car_service/templates_mobile/car_service/home.html" afterPath="$PROJECT_DIR$/car_service/templates_mobile/car_service/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/car_service/middleware.py" afterPath="$PROJECT_DIR$/car_service/middleware.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/automb/settings.py" afterPath="$PROJECT_DIR$/automb/settings.py" />
+    </list>
+    <list id="98030844-325a-4cab-8820-9912e2d2ef1a" name="New changelist" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\access_denied.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/access_denied.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\accounts\login.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/accounts/login.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\accounts\login_qq.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/accounts/login_qq.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\accounts\logout.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/accounts/logout.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\accounts\register.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/accounts/register.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\area\change_form.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/area/change_form.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\base.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/base.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\bill_create_success.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/bill_create_success.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\comment.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/comment.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\comment_form.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/comment_form.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\comment_success.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/comment_success.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\form_errors.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/form_errors.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\home.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/home.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\my\base_my.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/my/base_my.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\my\comment_list.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/my/comment_list.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\my\my_home.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/my/my_home.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\my\my_promote.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/my/my_promote.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\my\order_list.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/my/order_list.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\search.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/search.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\service.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/service.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\servicedetail2.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/servicedetail2.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\services.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/services.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\share\area_list.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/share/area_list.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\share\left_menu_service_type.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/share/left_menu_service_type.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\share\left_menu_service_type2.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/share/left_menu_service_type2.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\share\service_edit.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/share/service_edit.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\site_admin\areainfo\list.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/site_admin/areainfo/list.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\site_admin\areainfo\update_form.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/site_admin/areainfo/update_form.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\site_admin\base_admin.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/site_admin/base_admin.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\site_admin\carinfo\car_update_form.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/site_admin/carinfo/car_update_form.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\site_admin\carinfo\list.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/site_admin/carinfo/list.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\site_admin\index.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/site_admin/home.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\site_admin\service2\service_list.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/site_admin/service2/service_list.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\site_admin\service2\update_form.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/site_admin/service2/update_form.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\site_admin\service\service_create_step2.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/site_admin/service/service_create_step2.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\site_admin\service\service_edit.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/site_admin/service/service_edit.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\site_admin\service\service_list.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/site_admin/service/service_list.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\site_admin\service\service_update.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/site_admin/service/service_update.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\site_admin\serviceproperty\list.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/site_admin/serviceproperty/list.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\site_admin\serviceproperty\service_update.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/site_admin/serviceproperty/service_update.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\site_admin\serviceproperty\update_form.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/site_admin/serviceproperty/update_form.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\site_admin\servicepropertyvalue\list.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/site_admin/servicepropertyvalue/list.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\site_admin\servicepropertyvalue\update_form.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/site_admin/servicepropertyvalue/update_form.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\site_admin\servicetype\list.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/site_admin/servicetype/list.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\site_admin\servicetype\service_update.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/site_admin/servicetype/service_update.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\site_admin\servicetype\update_form.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/site_admin/servicetype/update_form.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\site_admin\servicevalue\update_form.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/site_admin/servicevalue/update_form.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\site_admin\supplier\supplier_create.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/site_admin/supplier/supplier_create.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\site_admin\supplier\supplier_list.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/site_admin/supplier/supplier_list.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\site_admin\supplier\supplier_update.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/site_admin/supplier/supplier_update.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\site_admin\tree\tree_create_form.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/site_admin/tree/tree_create_form.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\site_admin\tree\tree_list.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/site_admin/tree/tree_list.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\site_admin\tree\tree_update_form.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/site_admin/tree/tree_update_form.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\supplier.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/supplier.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\supplier_admin\base_supplier_admin.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/supplier_admin/base_supplier_admin.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\supplier_admin\bill_detail.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/supplier_admin/bill_detail.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\supplier_admin\bill_list.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/supplier_admin/bill_list.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\supplier_admin\home.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/supplier_admin/home.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\supplier_admin\login.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/supplier_admin/login.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\supplier_admin\service_create_select_type.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/supplier_admin/service_create_select_type.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\supplier_admin\service_edit.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/supplier_admin/service_edit.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\supplier_admin\service_list.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/supplier_admin/service_list.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\supplier_admin\servicevalue_update_form.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/supplier_admin/servicevalue_update_form.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\supplier_admin\supplier_form.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/supplier_admin/supplier_form.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\supplier_admin\supplier_form_success.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/supplier_admin/supplier_form_success.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\supplier_admin\supplier_list.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/supplier_admin/supplier_list.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\supplier_admin\update_form.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/supplier_admin/update_form.html" />
-      <change type="MOVED" beforePath="F:\Code\autobm_django\automb\car_service\templates\car_service\suppliers.html" afterPath="$PROJECT_DIR$/car_service/templates_desktop/car_service/suppliers.html" />
     </list>
     <ignored path="automb.iws" />
     <ignored path=".idea/workspace.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,96 +290,118 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="front_web.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/car_service/templates_mobile/car_service/home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.3448276" vertical-offset="2506" max-vertical-offset="4826">
+              <caret line="144" column="44" selection-start-line="144" selection-start-column="44" selection-end-line="144" selection-end-column="44" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#li#2;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#div#0;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#div#1;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#font#0;n#p#0;n#div#1;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#p#0;n#div#1;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#div#2;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#font#0;n#p#0;n#div#2;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#p#0;n#div#2;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#div#3;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#font#0;n#p#0;n#div#3;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#p#0;n#div#3;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#div#4;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#font#0;n#p#0;n#div#4;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#p#0;n#div#4;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#div#5;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#font#0;n#p#0;n#div#5;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#p#0;n#div#5;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#div#6;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#font#0;n#p#0;n#div#6;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#p#0;n#div#6;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#0;n#div#6;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="front_web.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/car_service/urls/front_web.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="798">
-              <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+              <caret line="12" column="42" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="front_mobile.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/car_service/urls/front_mobile.py">
+      <file leaf-file-name="services.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/car_service/templates_desktop/car_service/services.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="798">
-              <caret line="7" column="58" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="58" />
+            <state vertical-scroll-proportion="-36.642857" vertical-offset="57" max-vertical-offset="1330">
+              <caret line="57" column="8" selection-start-line="36" selection-start-column="12" selection-end-line="57" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="middleware.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/car_service/middleware.py">
+      <file leaf-file-name="reset.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/reset.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="266">
-              <caret line="6" column="34" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="4009" max-vertical-offset="4997">
+              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../env/env/Lib/site-packages/django/core/handlers/base.py">
+      <file leaf-file-name="wfastcgi.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wfastcgi.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1475" max-vertical-offset="5339">
-              <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="11571" max-vertical-offset="14250">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/automb/settings.py">
+      <file leaf-file-name="server.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/car_service/templates_mobile/car_service/server.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7715431" vertical-offset="1724" max-vertical-offset="2299">
-              <caret line="111" column="60" selection-start-line="111" selection-start-column="60" selection-end-line="111" selection-end-column="60" />
-              <folding>
-                <element signature="e#317#326#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/car_service/templates_mobile/car_service/home.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.75" vertical-offset="0" max-vertical-offset="285">
-              <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+            <state vertical-scroll-proportion="-13.571428" vertical-offset="0" max-vertical-offset="684">
+              <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="view.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/car_service/views/view.py">
+      <file leaf-file-name="jquery-1.11.1.min.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/jquery-1.11.1.min.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="368" max-vertical-offset="3857">
-              <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="171">
+              <caret line="3" column="31410" selection-start-line="3" selection-start-column="31410" selection-end-line="3" selection-end-column="31410" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="__init__.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../env/env/Lib/site-packages/django/shortcuts/__init__.py">
+      <file leaf-file-name="jquery.mobile-1.4.5.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/jquery.mobile-1.4.5.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="692" max-vertical-offset="3021">
-              <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+            <state vertical-scroll-proportion="-6.4" vertical-offset="27757" max-vertical-offset="89737">
+              <caret line="1471" column="10" selection-start-line="1471" selection-start-column="4" selection-end-line="1471" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="loader.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../env/env/Lib/site-packages/django/template/loader.py">
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/car_service/templates_desktop/car_service/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="49.827587" vertical-offset="1597" max-vertical-offset="3686">
-              <caret line="8" column="76" selection-start-line="8" selection-start-column="63" selection-end-line="8" selection-end-column="76" />
-              <folding>
-                <element signature="e#1246#1301#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="-3.8275862" vertical-offset="1678" max-vertical-offset="4332">
+              <caret line="100" column="107" selection-start-line="100" selection-start-column="63" selection-end-line="100" selection-end-column="107" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -205,66 +417,27 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
-    <option name="changedFiles">
+    <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/userprofile/models.py" />
-        <option value="$PROJECT_DIR$/userprofile/views.py" />
-        <option value="$PROJECT_DIR$/userprofile/urls.py" />
-        <option value="$PROJECT_DIR$/userprofile/templates/reset_password.html" />
-        <option value="$PROJECT_DIR$/userprofile/templates/password_change_successfully.html" />
-        <option value="$PROJECT_DIR$/car_service/static/car_service/css/style.css" />
-        <option value="$PROJECT_DIR$/car_service/forms/fm_register.py" />
-        <option value="$PROJECT_DIR$/car_service/tests.py" />
-        <option value="$PROJECT_DIR$/car_service/biz/biz_search.py" />
-        <option value="$PROJECT_DIR$/car_service/forms/fm_servicepropertyvalue.py" />
-        <option value="$PROJECT_DIR$/car_service/biz/get_cookie.py" />
-        <option value="$PROJECT_DIR$/car_service/views/share/service.py" />
-        <option value="$PROJECT_DIR$/car_service/views/share/tree.py" />
-        <option value="$PROJECT_DIR$/car_service/views/site_admin/serviceproperty.py" />
-        <option value="$PROJECT_DIR$/car_service/views/site_admin/servicepropertyvalue.py" />
-        <option value="$PROJECT_DIR$/car_service/views/site_admin/servicetype.py" />
-        <option value="$PROJECT_DIR$/automb/urls.py" />
-        <option value="$PROJECT_DIR$/car_service/views/site_admin/carinfo.py" />
-        <option value="$PROJECT_DIR$/car_service/views/site_admin/areainfo.py" />
-        <option value="$PROJECT_DIR$/car_service/views/site_admin/service2.py" />
-        <option value="$PROJECT_DIR$/car_service/forms/service_detail.py" />
-        <option value="$PROJECT_DIR$/car_service/forms/fm_service2.py" />
-        <option value="$PROJECT_DIR$/car_service/templates/car_service/comment_form.html" />
-        <option value="$PROJECT_DIR$/car_service/forms/fm_comment.py" />
-        <option value="$PROJECT_DIR$/car_service/templates/car_service/comment_success.html" />
-        <option value="$PROJECT_DIR$/car_service/static/car_service/js/jquery/plugin/jquery.tab_switch.js" />
-        <option value="$PROJECT_DIR$/car_service/templates/car_service/base.html" />
-        <option value="$PROJECT_DIR$/car_service/static/car_service/js/service_detail.js" />
-        <option value="$PROJECT_DIR$/car_service/templates/car_service/my/comment_list.html" />
-        <option value="$PROJECT_DIR$/car_service/templates/car_service/my/order_list.html" />
-        <option value="$PROJECT_DIR$/car_service/templates/car_service/comment.html" />
-        <option value="$PROJECT_DIR$/car_service/templates/car_service/servicedetail2.html" />
-        <option value="$PROJECT_DIR$/car_service/biz/service2.py" />
-        <option value="$PROJECT_DIR$/docs/upgrade_scripts" />
-        <option value="$PROJECT_DIR$/unique_random/models.py" />
-        <option value="$PROJECT_DIR$/car_service/views/supplier_admin/service2.py" />
-        <option value="$PROJECT_DIR$/car_service/forms/fm_supplier_admin_supplier_create.py" />
-        <option value="$PROJECT_DIR$/car_service/templates/car_service/supplier_admin/supplier_list.html" />
-        <option value="$PROJECT_DIR$/car_service/models.py" />
-        <option value="$PROJECT_DIR$/car_service/static/car_service/js/jquery/plugin/jquery.selectText.js" />
-        <option value="$PROJECT_DIR$/car_service/templates/car_service/my/base_my.html" />
-        <option value="$PROJECT_DIR$/car_service/urls/front_web.py" />
-        <option value="$PROJECT_DIR$/car_service/views/view.py" />
-        <option value="$PROJECT_DIR$/car_service/templates/car_service/my/my_promote.html" />
-        <option value="$PROJECT_DIR$/car_service/views/my.py" />
-        <option value="$PROJECT_DIR$/docs/needs/2014-12-16" />
-        <option value="$PROJECT_DIR$/docs/init_script.SQL" />
-        <option value="$PROJECT_DIR$/car_service/admin.py" />
-        <option value="$PROJECT_DIR$/car_service/templates_mobile/car_service/home.html" />
-        <option value="$PROJECT_DIR$/car_service/middleware.py" />
+        <option value="$PROJECT_DIR$/car_service/account.py" />
         <option value="$PROJECT_DIR$/automb/settings.py" />
+        <option value="$PROJECT_DIR$/docs/dependies" />
+        <option value="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/jquery.mobile-1.3.2.min.js" />
+        <option value="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/css/jquery.mobile-1.3.2.min.css" />
+        <option value="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/js/jquery-1.9.1.min.js" />
+        <option value="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/jquery.mobile-1.4.5.css" />
+        <option value="$PROJECT_DIR$/car_service/middleware.py" />
+        <option value="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/jquery-1.11.1.min.js" />
+        <option value="$PROJECT_DIR$/car_service/templates_mobile/car_service/server.html" />
+        <option value="$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/reset.css" />
+        <option value="$PROJECT_DIR$/car_service/templates_mobile/car_service/services.html" />
+        <option value="$PROJECT_DIR$/car_service/templates_mobile/car_service/home.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1616" />
+    <option name="x" value="3" />
+    <option name="width" value="1612" />
     <option name="height" value="876" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -328,6 +501,82 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="automb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="automb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="car_service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="automb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="automb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="car_service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="urls" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="automb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="automb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="car_service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates_mobile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="car_service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="automb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="automb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="car_service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates_desktop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="car_service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -335,11 +584,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="options.lastSelected" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="options.lastSelected" value="configurable.group.build" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
@@ -351,26 +600,29 @@
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
-      <console-settings />
+      <console-settings module-name="automb" is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="automb" />
+      </console-settings>
     </option>
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\work\auto\autobm_django\automb\car_service\static\car_service\js\jquery\jqm" />
+      <recent name="D:\work\auto\autobm_django\automb\car_service\static\car_service\js\jquery\jqm\css" />
+      <recent name="D:\work\auto\autobm_django\automb\car_service\static\car_service\js\jquery\jqm\images" />
+      <recent name="D:\work\auto\autobm_django\automb\car_service\static\car_service\js\jquery\jqm\js" />
       <recent name="F:\Code\autobm_django\automb\car_service\urls" />
-      <recent name="F:\Code\autobm_django\automb\car_service\static\car_service\js\jquery\plugin" />
-      <recent name="F:\Code\autobm_django\automb\car_service\templates\car_service\my" />
-      <recent name="F:\Code\autobm_django\automb\unique_random" />
-      <recent name="F:\Code\autobm_django\automb" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\Code\autobm_django\automb\car_service\static\car_service\css\supplier" />
-      <recent name="F:\Code\autobm_django\automb\car_service\templates\car_service\accounts" />
-      <recent name="F:\Code\autobm_django\automb\car_service\static\car_service\js\jquery" />
-      <recent name="F:\Code\autobm_django\automb\car_service\static\car_service\js" />
-      <recent name="F:\Code\autobm_django\automb\car_service\views\supplier_admin" />
+      <recent name="D:\work\auto\autobm_django\automb\car_service\static\car_service\js\jquery\jqm" />
+      <recent name="D:\work\auto\autobm_django\automb\car_service\static\car_service\js\jquery\jqm\images" />
+      <recent name="D:\work\auto\autobm_django\automb\car_service\static\car_service\js\jquery\jqm\images\icons-svg" />
+      <recent name="D:\work\auto\autobm_django\automb\car_service\static\car_service\js\jquery\jqm\images\icons-png" />
+      <recent name="D:\work\auto\autobm_django\automb\car_service\static\car_service\js\jquery\jqm\css" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.runserver_mobile">
+  <component name="RunManager" selected="Python.92auto_remote">
     <configuration default="false" name="merge_objects" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -385,10 +637,50 @@
       <module name="automb" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/snippets/merge_objects.py" />
       <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
       <RunnerSettings RunnerId="PyDebugRunner" />
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PyDebugRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="automb" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="automb" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="py.test">
@@ -415,7 +707,7 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="tests" factoryName="Nosetests">
+    <configuration default="true" type="tests" factoryName="Attests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -432,46 +724,6 @@
       <option name="TEST_TYPE" value="TEST_SCRIPT" />
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="automb" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Unittests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="automb" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -493,7 +745,7 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="tests" factoryName="Attests">
+    <configuration default="true" type="tests" factoryName="Nosetests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -510,6 +762,8 @@
       <option name="TEST_TYPE" value="TEST_SCRIPT" />
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
     <configuration default="false" name="92auto_remote" type="PythonConfigurationType" factoryName="Python" singleton="true">
@@ -526,26 +780,28 @@
       <module name="automb" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
       <option name="PARAMETERS" value="runserver 0.0.0.0:8000" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
       <RunnerSettings RunnerId="PyDebugRunner" />
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PyDebugRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
-    <configuration default="false" name="92auto_local" type="PythonConfigurationType" factoryName="Python" singleton="true">
+    <configuration default="false" name="92auto_desktop" type="PythonConfigurationType" factoryName="Python" singleton="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="F:\Code\autobm_django\env\env\Scripts\python.exe" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="automb" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
-      <option name="PARAMETERS" value="runserver" />
+      <option name="PARAMETERS" value="runserver 92auto.local:80" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
       <RunnerSettings RunnerId="PyDebugRunner" />
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PyDebugRunner" />
@@ -558,21 +814,24 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="F:\Code\autobm_django\env\env\Scripts\python.exe" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="automb" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
       <option name="PARAMETERS" value="runserver m.92auto.local:80" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
       <RunnerSettings RunnerId="PyDebugRunner" />
+      <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PyDebugRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
     <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Python.92auto_remote" />
-      <item index="1" class="java.lang.String" itemvalue="Python.92auto_local" />
+      <item index="1" class="java.lang.String" itemvalue="Python.92auto_desktop" />
       <item index="2" class="java.lang.String" itemvalue="Python.runserver_mobile" />
       <item index="3" class="java.lang.String" itemvalue="Python.merge_objects" />
     </list>
@@ -589,54 +848,84 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="f88f8b9f-4096-4732-a471-d27ad2049ee1" name="Default" comment="" />
+      <changelist id="98030844-325a-4cab-8820-9912e2d2ef1a" name="New changelist" comment="" />
       <created>1407184744967</created>
+      <option name="number" value="Default" />
       <updated>1407184744967</updated>
     </task>
     <task id="LOCAL-00001" summary="dd">
       <created>1407838560697</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
       <updated>1407838560697</updated>
     </task>
     <task id="LOCAL-00002" summary="dd">
       <created>1408998877975</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
       <updated>1408998877975</updated>
     </task>
     <task id="LOCAL-00003" summary="dd">
       <created>1408998884367</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
       <updated>1408998884367</updated>
     </task>
     <task id="LOCAL-00004" summary="some bindings">
       <created>1415268703023</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
       <updated>1415268703023</updated>
     </task>
     <task id="LOCAL-00005" summary="ppas&#10;">
       <created>1416494736448</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
       <updated>1416494736448</updated>
     </task>
     <task id="LOCAL-00006" summary="add verbose_name, delete old codes">
       <created>1417678900773</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
       <updated>1417678900773</updated>
     </task>
     <task id="LOCAL-00007" summary="comment.&#10;front_page, and model define.">
       <created>1418144101969</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
       <updated>1418144101969</updated>
     </task>
     <task id="LOCAL-00008" summary="comment.&#10;front_page, and model define.">
       <created>1418144225328</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
       <updated>1418144225328</updated>
     </task>
     <task id="LOCAL-00009" summary="comment  my">
       <created>1418147319659</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
       <updated>1418147319659</updated>
     </task>
     <task id="LOCAL-00010" summary="comment  my">
       <created>1418157610768</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
       <updated>1418157610768</updated>
     </task>
     <task id="LOCAL-00011" summary="promote registeration">
       <created>1418483303096</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
       <updated>1418483303096</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="promote registeration">
+      <created>1419169666493</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1419169666493</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -660,47 +949,49 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="false" />
+    <frame x="3" y="0" width="1612" height="876" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33296582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5625841" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27318296" sideWeight="0.4993895" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329718" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24935733" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21102661" sideWeight="0.4993895" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25706595" sideWeight="0.8789607" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16754478" sideWeight="0.50061053" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25706595" sideWeight="0.12103929" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20188425" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15514994" sideWeight="0.42125" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23752712" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15514994" sideWeight="0.57875" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24935733" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5625841" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16754478" sideWeight="0.50061053" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25684485" sideWeight="0.87875" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14420485" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14420485" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22486487" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34362417" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31275168" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21208227" sideWeight="0.4993895" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4235925" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24968314" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21073826" sideWeight="0.72971547" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16754478" sideWeight="0.50061053" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22486487" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24968314" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21208227" sideWeight="0.4993895" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34362417" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -751,50 +1042,9 @@
       </breakpoints-dialog>
       <option name="time" value="228" />
     </breakpoint-manager>
+    <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/car_service/views/supplier_admin/home.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="209">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/forms/fm_comment.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="304">
-          <caret line="9" column="64" selection-start-line="9" selection-start-column="64" selection-end-line="9" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/static/car_service/js/jquery/plugin/jquery.cookie.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1938">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/static/car_service/js/jquery/plugin/area_layout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="266">
-          <caret line="6" column="6" selection-start-line="1" selection-start-column="4" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/static/car_service/js/jquery/plugin/jquery.tab_switch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="171" max-vertical-offset="608">
-          <caret line="13" column="59" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/templates_desktop/car_service/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.821428" vertical-offset="741" max-vertical-offset="4332">
-          <caret line="52" column="19" selection-start-line="52" selection-start-column="19" selection-end-line="52" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/car_service/static/car_service/js/area2.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
@@ -855,27 +1105,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="409">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unique_random/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="409">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unique_random/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="409">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/upgrade_scripts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="190">
-          <caret line="2" column="31" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -942,20 +1171,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../env/env/Lib/site-packages/django/db/transaction.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6067" max-vertical-offset="9652">
-          <caret line="338" column="0" selection-start-line="338" selection-start-column="0" selection-end-line="338" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../env/env/Lib/site-packages/django/contrib/auth/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6466" max-vertical-offset="9747">
-          <caret line="382" column="15" selection-start-line="382" selection-start-column="4" selection-end-line="382" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/car_service/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="796" max-vertical-offset="1463">
@@ -974,7 +1189,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="912">
           <caret line="16" column="30" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -982,23 +1196,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="228" max-vertical-offset="836">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/92auto个人账号登陆后界面.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="10" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/needs/2014-12-16">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="209">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1006,7 +1203,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="570" max-vertical-offset="1292">
           <caret line="44" column="76" selection-start-line="44" selection-start-column="60" selection-end-line="44" selection-end-column="76" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1014,7 +1210,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
           <caret line="7" column="19" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1022,7 +1217,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="262">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1030,9 +1224,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="380">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#32#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1040,7 +1231,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="133" max-vertical-offset="1197">
           <caret line="45" column="2" selection-start-line="45" selection-start-column="2" selection-end-line="45" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1048,81 +1238,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="399">
           <caret line="12" column="43" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../env/env/Lib/site-packages/django/contrib/admin/sites.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3612" max-vertical-offset="8417">
-          <caret line="206" column="8" selection-start-line="206" selection-start-column="8" selection-end-line="206" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/urls/front_mobile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="798">
-          <caret line="7" column="58" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/templates_mobile/car_service/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.75" vertical-offset="0" max-vertical-offset="285">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/urls/front_web.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="798">
-          <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../env/env/Lib/site-packages/django/shortcuts/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="692" max-vertical-offset="3021">
-          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/car_service/middleware.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="266">
-          <caret line="6" column="34" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../env/env/Lib/site-packages/django/contrib/sessions/middleware.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3402985" vertical-offset="0" max-vertical-offset="874">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../env/env/Lib/site-packages/django/core/handlers/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1475" max-vertical-offset="5339">
-          <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../env/env/Lib/site-packages/django/template/loader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="49.827587" vertical-offset="1597" max-vertical-offset="3686">
-          <caret line="8" column="76" selection-start-line="8" selection-start-column="63" selection-end-line="8" selection-end-column="76" />
-          <folding>
-            <element signature="e#1246#1301#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1130,16 +1245,201 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="368" max-vertical-offset="3857">
           <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car_service/account.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="532">
+          <caret line="8" column="51" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/yinanzhazheng.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="438">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/dependies">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20169851" vertical-offset="0" max-vertical-offset="471">
+          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unique_random/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1330">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unique_random/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="114">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unique_random/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="285">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unique_random/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="438">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car_service/templates_desktop/car_service/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="38" max-vertical-offset="4902">
+          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car_service/middleware.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36305732" vertical-offset="0" max-vertical-offset="471">
+          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/jquery-1.11.1.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="171">
+          <caret line="3" column="31410" selection-start-line="3" selection-start-column="31410" selection-end-line="3" selection-end-column="31410" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/jquery.mobile-1.4.5.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.4" vertical-offset="27757" max-vertical-offset="89737">
+          <caret line="1471" column="10" selection-start-line="1471" selection-start-column="4" selection-end-line="1471" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wfastcgi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="14250">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24555735" vertical-offset="0" max-vertical-offset="619">
+          <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/robots.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="619">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/automb/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7715431" vertical-offset="1724" max-vertical-offset="2299">
-          <caret line="111" column="60" selection-start-line="111" selection-start-column="60" selection-end-line="111" selection-end-column="60" />
+        <state vertical-scroll-proportion="1.3505654" vertical-offset="0" max-vertical-offset="2299">
+          <caret line="44" column="18" selection-start-line="44" selection-start-column="18" selection-end-line="44" selection-end-column="18" />
           <folding>
-            <element signature="e#317#326#0" expanded="true" />
+            <element signature="e#317#326#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36833602" vertical-offset="0" max-vertical-offset="619">
+          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car_service/static/car_service/js/jquery/jqm/reset.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4009" max-vertical-offset="4997">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car_service/templates_desktop/car_service/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.8275862" vertical-offset="1678" max-vertical-offset="4332">
+          <caret line="100" column="107" selection-start-line="100" selection-start-column="63" selection-end-line="100" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car_service/urls/front_web.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="798">
+          <caret line="12" column="42" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car_service/templates_mobile/car_service/server.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.571428" vertical-offset="0" max-vertical-offset="684">
+          <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car_service/templates_desktop/car_service/services.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-36.642857" vertical-offset="57" max-vertical-offset="1330">
+          <caret line="57" column="8" selection-start-line="36" selection-start-column="12" selection-end-line="57" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/car_service/templates_mobile/car_service/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3448276" vertical-offset="2506" max-vertical-offset="4826">
+          <caret line="144" column="44" selection-start-line="144" selection-start-column="44" selection-end-line="144" selection-end-column="44" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#li#2;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#div#0;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#div#1;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#font#0;n#p#0;n#div#1;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#p#0;n#div#1;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#div#2;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#font#0;n#p#0;n#div#2;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#p#0;n#div#2;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#div#3;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#font#0;n#p#0;n#div#3;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#p#0;n#div#3;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#div#4;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#font#0;n#p#0;n#div#4;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#p#0;n#div#4;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#div#5;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#font#0;n#p#0;n#div#5;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#p#0;n#div#5;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#div#6;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#font#0;n#p#0;n#div#6;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#p#0;n#div#6;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#6;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1161,4 +1461,3 @@
     </states>
   </component>
 </project>
-

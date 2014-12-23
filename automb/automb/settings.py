@@ -38,12 +38,12 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'south',
+    #'south',
     'unique_random',
     #'django.contrib.gis',
     'car_service',
     'userprofile',
-    'permission',
+   'permission',
 )
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',

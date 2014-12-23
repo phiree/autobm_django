@@ -7,3 +7,4 @@ class MobileMiddleware(object):
             settings.TEMPLATE_DIRS = settings.TEMPLATE_DIRS_MOBILE
         else:
             settings.TEMPLATE_DIRS = settings.TEMPLATE_DIRS_DESKTOP
+        settings.TEMPLATE_DIRS = settings.TEMPLATE_DIRS_MOBILE
