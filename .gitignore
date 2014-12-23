@@ -3,6 +3,7 @@
 #################
 docs/
 env/
+env_auto/
 *.rar
 *.pydevproject
 .project

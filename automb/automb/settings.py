@@ -43,7 +43,11 @@ INSTALLED_APPS = (
     #'django.contrib.gis',
     'car_service',
     'userprofile',
+<<<<<<< HEAD
    'permission',
+=======
+
+>>>>>>> a24a035d2ad2313dd360231308b4768605ccf6cc
 )
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -75,7 +79,7 @@ WSGI_APPLICATION = 'automb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'mysql.connector.django',
+        'ENGINE':'mysql.connector.django',
         'NAME': '92auto',
         'USER': '92auto',
         'PASSWORD': 'twgdhbtzhy',
