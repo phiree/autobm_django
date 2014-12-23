@@ -18,7 +18,5 @@ def login(request):
     else:
         errmsg='登录信息错误,请检查用户名和密码是否正确'
 
-
-
 def logout(request):
     pass
