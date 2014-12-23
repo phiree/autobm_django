@@ -1,6 +1,7 @@
 #################
 ## Eclipse
 #################
+automb/.idea/
 .idea/
 docs/
 env/
