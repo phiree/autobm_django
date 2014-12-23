@@ -1,6 +1,7 @@
 #################
 ## Eclipse
 #################
+.idea/
 docs/
 env/
 env_auto/
