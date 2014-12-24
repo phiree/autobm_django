@@ -14,69 +14,38 @@
     <script src="{%static 'car_service/js/jquery/jqm/jquery.mobile-1.4.5.min.js'%}"></script>
     <style type="text/css">
 
-        div .ui-footer{ text-align:center;}
-        div .home-silder{
-            float:left;
-            height:20%;
-            width:100%;
-            text-align:center;
-        }
-        div .home-icon{
-            float:left;
-            text-align:center;
-            height:30%;
-            width:100%;
-            line-height:30%;
-		    overflow:hidden;
-
-
-        }
-
          /*头部图标无焦点*/
-          .ui-icon-web03:after {background-image: url("{%static 'car_service/js/jquery/jqm/images/web_t003.gif'%}");background-size:  28px 28px;}
+        .ui-icon-web03:after {background-image: url("{%static 'car_service/js/jquery/jqm/images/web_t003.gif'%}");background-size:  28px 28px;}
         .ui-icon-web04:after{background-image: url("{%static 'car_service/js/jquery/jqm/images/web_t004.gif'%}"); background-size: 28px 28px; }
         .ui-icon-web05:after{background-image: url("{%static 'car_service/js/jquery/jqm/images/web_t005.gif'%}");background-size:  28px 28px;}
         .ui-icon-web06:after {background-image: url("{%static 'car_service/js/jquery/jqm/images/web_t006.gif'%}");background-size: 28px 28px;}
-      /*   .ui-icon-web03:after {background:url('{%static 'car_service/js/jquery/jqm/images/web_t003.gif'%}') no-repeat center center; background-size: 28px 28px;}
+      /* .ui-icon-web03:after {background:url('{%static 'car_service/js/jquery/jqm/images/web_t003.gif'%}') no-repeat center center; background-size: 28px 28px;}
          .ui-icon-web04:after {background:url('{%static 'car_service/js/jquery/jqm/images/web_t004.gif'%}') no-repeat center center; background-size: 28px 28px;}
          .ui-icon-web05:after {background:url('{%static 'car_service/js/jquery/jqm/images/web_t005.gif'%}') no-repeat center center; background-size: 28px 28px;}
          .ui-icon-web06:after {background:url('{%static 'car_service/js/jquery/jqm/images/web_t006.gif'%}') no-repeat center center; background-size: 28px 28px;}*/
 
-
-        div .home-server{
-            float:left;
-            height:50%;
-            width:100%;
-        }
-        div .show_servertitle{
-            float:left;
-            width:100%;
-            height:30px;
-            background-color: #CC9;
-        }
-        div .show_serverimg{
-            float:left;
-            width:45%;
-            margin:1% 1% 1% 1%;
-            text-align:center;
-        }
-        div .show_lock{
-            float:left;
-            width:100%;
-            height:30px;
-            background-color: #666666;
-        }
+        div .ui-footer{ text-align:center;}
+        div .home-silder{float:left; height:20%; width:100%;text-align:center;}
+        div .home-icon{float:left;text-align:center; height:30%; width:100%; line-height:30%;overflow:hidden;margin:1% 0 2% 0; }
+        div .home-icon ul {width:100%;height:30%;line-height:30%;overflow:hidden;text-align:center;margin:1% 6% 1% 5%;}
+        div .home-icon ul li{float:left;width:20%;height:30%;line-height:30%;overflow:hidden;text-align:center;margin:0 1% 0 1%;}
+        div .home-icon ul li img{float:left; width:90%;height:90%; }
+        duv .icon-title{width:90%;height:10%;}
+        div .home-server{ float:left; height:50%; width:100%; }
+        div .show_servertitle{float:left; width:100%;height:30px; background-color: #FFFFCC; }
+        div .show_serverimg{float:left; width:45%; margin:1% 1% 1% 1%; text-align:center; }
+        div .show_lock{float:left;width:100%; height:30px; background-color: #FFFFCC; }
 
          /*底部图标无焦点*/
          .ui-icon-webtb1:after {background-image: url("{%static 'car_service/js/jquery/jqm/images/web_tb01.gif'%}"); background-size: 18px 18px;}
          .ui-icon-webtb2:after {background-image: url("{%static 'car_service/js/jquery/jqm/images/web_tb02.gif'%}"); background-size: 18px 18px;}
          .ui-icon-webtb3:after {background-image: url("{%static 'car_service/js/jquery/jqm/images/web_tb03.gif'%}"); background-size: 18px 18px;}
-        .ui-icon-webtb4:after { background-image: url("{%static 'car_service/js/jquery/jqm/images/web_tb04.gif'%}"); background-size: 18px 18px; }
-         div .home-icon ul li{float:left;margin:0 1% 0 1%;text-align:center; }
-         div .home-icon ul li img{float:left; width:100%; }
+         .ui-icon-webtb4:after { background-image: url("{%static 'car_service/js/jquery/jqm/images/web_tb04.gif'%}"); background-size: 18px 18px; }
          div ul{list-style-type:none;text-align:center;}
          a{ text-decoration:none; }
-         font{color:red;}
+         font {color:red;}
+         div .fonts{color:red; float:left; size:15px; width:20%;}
+         div .show_font1{font-size:8px;}
 
 
     </style>
@@ -141,11 +110,18 @@
       </div>
       <!--大图-->
       <div class="home-icon" >
-          <ul>
+         <!-- 图标的形式展示字体可见 <ul>
               <li><a href="#"  class="ui-btn ui-shadow  ui-btn-icon-top ui-icon-web03" >汽车美容</a></li>
               <li><a href="#"  class="ui-btn ui-shadow  ui-btn-icon-top ui-icon-web04"  >汽车维修</a></li>
               <li><a href="#"  class="ui-btn ui-shadow  ui-btn-icon-top ui-icon-web05" >汽车改装</a></li>
               <li><a href="#"  class="ui-btn ui-shadow  ui-btn-icon-top ui-icon-web06" >汽车装饰</a></li>
+
+          </ul>-->
+          <ul>
+              <li  data-icon="false"><img src="{%static 'car_service/js/jquery/jqm/images/web_t03.gif'%}"><p class="icon-title"><br>汽车美容</p></li>
+              <li  data-icon="false"><img src="{%static 'car_service/js/jquery/jqm/images/web_t004.gif'%}"><p class="icon-title">汽车维修</p></li>
+              <li  data-icon="false"><img src="{%static 'car_service/js/jquery/jqm/images/web_t05.gif'%}"><p class="icon-title">汽车改装</p></li>
+              <li  data-icon="false"><img src="{%static 'car_service/js/jquery/jqm/images/web_t06.gif'%}"><p class="icon-title">汽车装饰</p></li>
 
           </ul>
       </div>
@@ -158,90 +134,104 @@
 
              <div class="show_serverimg" >
                  <a href="#">
-                     <img style="width:100%;" src="{%static 'car_service/js/jquery/jqm./images/images.jpg'%}">
+                     <img style="width:100%;" src="{%static 'car_service/js/jquery/jqm./images/image.jpg'%}">
                      <br><font>[洗车]</font>佛山美丽天使洗车养护店
                  </a><br>
-                   <p style="">
+                   <p class="show_font1">
                      洗车方式:人工洗车<br>
                      门市价:￥20元(为您节省6￥)<br>
-                     <font style="float:left;" size="5px">￥14</font>
-                      <a href="#"><img style="float:right; width:50%;" src="{%static 'car_service/js/jquery/jqm./images/web_n02.gif'%}"></a>
+                 </p>
+                 <p>
+                     <font class="fonts">￥14</font>
+                    <a href="#"><img style="float:right; width:50%;" src="{%static 'car_service/js/jquery/jqm./images/web_n02.gif'%}"></a>
                  </p>
              </div>
+
              <div class="show_serverimg" >
                  <a href="#">
-                              <img style="width:100%;" src="{%static 'car_service/js/jquery/jqm./images/images.jpg'%}">
+                              <img style="width:100%;" src="{%static 'car_service/js/jquery/jqm./images/image.jpg'%}">
                      <br><font>[洗车]</font>佛山美丽天使洗车养护店
                  </a><br>
-                  <p>
+                  <p class="show_font1">
                      洗车方式:人工洗车<br>
                      门市价:￥20元(为您节省6￥)<br>
-                     <font style="float:left;" size="5px">￥14</font>
-                     <a href="#"><img style="float:right; width:50%;" src="{%static 'car_service/js/jquery/jqm./images/web_n02.gif'%}"></a>
                  </p>
-             </div>
-             <div class="show_serverimg">
-                 <a href="#">
-                     <img style="width:100%;" src="{%static 'car_service/js/jquery/jqm./images/images.jpg'%}">
-                     <br><font>[洗车]</font>佛山美丽天使洗车养护店
-                 </a><br>
-                   <p>
-                     洗车方式:人工洗车<br>
-                     门市价:￥20元(为您节省6￥)<br>
-                     <font style="float:left;" size="5px">￥14</font>
-                     <a href="#"><img style="float:right;width:50%;" src="{%static 'car_service/js/jquery/jqm./images/web_n02.gif'%}"></a>
-                 </p>
-
-             </div>
-             <div class="show_serverimg">
-                 <a href="#">
-                     <img style="width:100%;" src="{%static 'car_service/js/jquery/jqm./images/images.jpg'%}">
-                     <br><font>[洗车]</font>佛山美丽天使洗车养护店
-                 </a><br>
-                   <p>
-                     洗车方式:人工洗车<br>
-                     门市价:￥20元(为您节省6￥)<br>
-                     <font style="float:left;" size="5px">￥14</font>
-                     <a href="#"><img style="float:right; width:50%;" src="{%static 'car_service/js/jquery/jqm./images/web_n02.gif'%}"></a>
-
-                 </p>
-             </div>
-             <div class="show_serverimg"><a href="#">
-                     <img style="width:100%;" src="{%static 'car_service/js/jquery/jqm./images/images.jpg'%}">
-                     <br><font>[洗车]</font>佛山美丽天使洗车养护店
-                 </a><br>
-                   <p>
-                     洗车方式:人工洗车<br>
-                     门市价:￥20元(为您节省6￥)<br>
-                     <font style="float:left;" size="5px">￥14</font>
-                    <a href="#"><img style="float:right; width:50%;" src="{%static 'car_service/js/jquery/jqm./images/web_n02.gif'%}"></a>
-
-                 </p>
-             </div>
-             <div class="show_serverimg">
-                 <a href="#">
-                     <img style="width:100%;" src="{%static 'car_service/js/jquery/jqm./images/images.jpg'%}">
-                     <br><font>[洗车]</font>佛山美丽天使洗车养护店
-                 </a><br>
                  <p>
+                     <font class="fonts">￥14</font>
+                    <a href="#"><img style="float:right; width:50%;" src="{%static 'car_service/js/jquery/jqm./images/web_n02.gif'%}"></a>
+                 </p>
+             </div>
+
+             <div class="show_serverimg">
+                 <a href="#">
+                     <img style="width:100%;" src="{%static 'car_service/js/jquery/jqm./images/image.jpg'%}">
+                     <br><font>[洗车]</font>佛山美丽天使洗车养护店
+                 </a><br>
+                   <p class="show_font1">
                      洗车方式:人工洗车<br>
                      门市价:￥20元(为您节省6￥)<br>
-                     <font style="float:left;" size="5px">￥14</font>
-                     <a href="#"><img style="float:right; width:50%;" src="{%static 'car_service/js/jquery/jqm./images/web_n02.gif'%}"></a>
-
                  </p>
-             <div class="show_lock"><a  style=" width:100%;float:right; line-height:30px;overflow: hidden;" href="#">查看更多>></a></div>
+                 <p>
+                     <font class="fonts">￥14</font>
+                    <a href="#"><img style="float:right; width:50%;" src="{%static 'car_service/js/jquery/jqm./images/web_n02.gif'%}"></a>
+                 </p>
+
              </div>
+             <div class="show_serverimg">
+                 <a href="#">
+                     <img style="width:100%;" src="{%static 'car_service/js/jquery/jqm./images/image.jpg'%}">
+                     <br><font>[洗车]</font>佛山美丽天使洗车养护店
+                 </a><br>
+                   <p class="show_font1">
+                     洗车方式:人工洗车<br>
+                     门市价:￥20元(为您节省6￥)<br>
+                 </p>
+                 <p>
+                     <font class="fonts">￥14</font>
+                    <a href="#"><img style="float:right; width:50%;" src="{%static 'car_service/js/jquery/jqm./images/web_n02.gif'%}"></a>
+                 </p>
+             </div>
+
+             <div class="show_serverimg">
+                 <a href="#">
+                     <img style="width:100%;" src="{%static 'car_service/js/jquery/jqm./images/image.jpg'%}">
+                     <br><font>[洗车]</font>佛山美丽天使洗车养护店
+                 </a><br>
+                   <p class="show_font1">
+                     洗车方式:人工洗车<br>
+                     门市价:￥20元(为您节省6￥)<br>
+                 </p>
+                 <p>
+                     <font class="fonts">￥14</font>
+                    <a href="#"><img style="float:right; width:50%;" src="{%static 'car_service/js/jquery/jqm./images/web_n02.gif'%}"></a>
+                 </p>
+             </div>
+
+             <div class="show_serverimg">
+                 <a href="#">
+                     <img style="width:100%;" src="{%static 'car_service/js/jquery/jqm./images/image.jpg'%}">
+                     <br><font>[洗车]</font>佛山美丽天使洗车养护店
+                 </a><br>
+                 <p class="show_font1">
+                     洗车方式:人工洗车<br>
+                     门市价:￥20元(为您节省6￥)<br>
+                 </p>
+                 <p>
+                     <font class="fonts">￥14</font>
+                    <a href="#"><img style="float:right; width:50%;" src="{%static 'car_service/js/jquery/jqm./images/web_n02.gif'%}"></a>
+                 </p>
+             </div>
+          <div class="show_lock"><a  style=" width:30%;float:right; line-height:30px;overflow: hidden;" href="#">查看更多>></a></div>
+
 
       </div>
 
   </div>
   <div data-role="footer">
-            <a href="#" class="ui-btn ui-shadow  ui-btn-icon-top ui-icon-webtb1" data-icon="web_tb1" data-iconpos="top" data-role="button">首页</a>
-            <a href="{%url 'car_service:front_web:service_list'%}" class="ui-btn ui-shadow  ui-btn-icon-top ui-icon-webtb2" data-icon="web_tb2" data-iconpos="top" data-role="button">预订服务</a>
-            <a href="#" class="ui-btn ui-shadow  ui-btn-icon-top ui-icon-webtb3" data-icon="web_tb3" data-iconpos="top"  data-role="button">我的</a>
-            <a href="#" class="ui-btn ui-shadow  ui-btn-icon-top ui-icon-webtb4" data-icon="web_tb4"   data-iconpos="top" data-role="button">更多</a>
-
+            <a href="#"  class="ui-btn ui-shadow  ui-btn-icon-top ui-icon-webtb1" data-iconpos="notext">首页</a>
+            <a href="{%url 'car_service:front_web:service_list'%}" class="ui-btn ui-shadow  ui-btn-icon-top ui-icon-webtb2"data-iconpos="notext">预订服务</a>
+            <a href="#" class="ui-btn ui-shadow  ui-btn-icon-top ui-icon-webtb3" data-iconpos="notext">我的</a>
+            <a href="#" class="ui-btn ui-shadow  ui-btn-icon-top ui-icon-webtb4"data-iconpos="notext">更多</a>
   </div>
 
 </div>
