@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+  {%load staticfiles%}
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!--自适应屏幕宽度-->
+    <title>用户登录</title>
+    <link rel="stylesheet" href="{%static 'car_service/js/jquery/jqm/jquery.mobile-1.4.5.min.css'%}">
+     <link rel="stylesheet" href="{%static 'car_service/js/jquery/jqm/jquery.mobile.theme-1.4.5.css'%}">
+    <script src="{%static 'car_service/js/jquery/jqm/jquery-1.11.1.min.js'%}"></script>
+    <script src="{%static 'car_service/js/jquery/jqm/jquery.mobile-1.4.5.min.js'%}"></script>
+</head>
+<body>
+<div data-role="page" id="page">
+  <div data-role="header" data-theme="b">
+     <a href="#"  data-role="button" ><</a>
+      <h1>用户登录</h1>
+      <!--图标可更改--->
+      <a href="#" data-icon="grid" data-role="button" >更多</a>
+  </div>
+  <div data-role="content">
+      <div data-role="fieldcontain" style="text-align:center;">
+          <form method="post" action="#">
+            <p>
+                <label for="basic" >姓名:</label><input style="width:50%;" id="basic" name="name" class="name" type="text" data-inline="true" >
+            </p>
+            <p style="width:100%;">
+                <label >密码:</label><input type="password" style="width:50%;"  data-inline="true">
+            </p>
+          </form>
+      </div>
+       <a href="#" data-role="button"   data-theme="b">立即登录</a><br>
+       <a>免费注册</a>
+  </div>
+
+</div>
+</body>
+</html>
