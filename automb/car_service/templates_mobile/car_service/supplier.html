@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+  {%load staticfiles%}
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!--自适应屏幕宽度-->
+    <title>商家概况</title>
+    <link rel="stylesheet" href="{%static 'car_service/js/jquery/jqm/jquery.mobile-1.4.5.min.css'%}">
+    <link rel="stylesheet" href="{%static 'car_service/js/jquery/jqm/jquery.mobile.theme-1.4.5.css'%}">
+    <script src="{%static 'car_service/js/jquery/jqm/jquery-1.11.1.min.js'%}"></script>
+    <script src="{%static 'car_service/js/jquery/jqm/jquery.mobile-1.4.5.min.js'%}"></script>
+  <style type="text/css">
+    a { text-decoration:none;}
+    div .line{ margin:1% 0 1% 0;float:left; width:100%; height:1px; background-color:#A0A0A4;}
+
+    div .content1 { float:left; width:100%; margin:1% 0 1%; border-color:#A0A0A4; border:1px #A0A0A4;}
+    div .content1 table{ float:left; width:100%;line-height:50%; overflow:hidden; text-align:left; padding:0px; }
+    div .content1 table tr{width:100%; line-height:1em;}
+    div .content1 table tr .td1{width:40%; height:20%; padding:0;line-height:2em;}
+    div .content1 table tr .td1 img{ width:100%; height:60%;}
+    div .content1 table tr .td2{width:50%; padding:0;line-height:2em;}
+
+    div .content2{ float:left; width:100%;}
+    div .content2 table { float:left; width:100%;}
+    div .content2 .djimg img { float:left; width:100%;height:30%; margin:2% 1% 2% 1%; line-height:30%; overflow:hidden; }
+
+    div .content3{float:left; width:100%;  height:30%; padding:0px; margin:0 0 0 0;}
+    div .content3 .silder ul{ list-style-type:none; height:100%; width:90%;}
+    div .content3 .silder ul li{ float:left; width:30%; padding:0;}
+    div .content3 .silder ul li img{ float:left; width:100%; height:100%; line-height:100%; overflow:hidden; }
+
+
+    div .content4{float:left; width:100%;}
+    div .sjserver_title{float:left; width:100%;}
+    div .content4 .sjserver_type{float:left; width:100%;}
+    div .content4 .jsserver_type table{float:left; width:100%; }
+
+    div .content5{float:left; width:100%;}
+    div .content5 .jsserver_ss ul{ list-style-type:none; float:left; width:100%;}
+    div .content5 .jsserver_ss ul li{float:left; width:20%; height:100%; padding:0;}
+
+    div .content6{ float:left; width:100%; }
+    div .content6 sjjs{float:left; width:100%;}
+
+  </style>
+</head>
+<body>
+<div data-role="page" class="page">
+  <div data-role="header"  data-theme="a" class="header">
+      <a href="#"> <img src="images/webfj_03.png"></a>
+        <h1>
+        商家概况
+        </h1>
+      <a href="#"><img src="images/webfj_04.png"> </a>
+  </div><!--header end-->
+
+  <div data-role="content" class="content">
+       <div class="line"></div>
+       <div class="content1">
+           <table border="0">
+           <tr>
+           <td  class="td1"><a href="#"><img src="images/images.jpg"></a></td>
+           <td class="td2">
+               <p style="font-size:12px;">
+               <span style=" table-layout:fixed;">
+               [洗车]佛山-佛山美丽天使汽车养护店</span><br>
+               营业时间：8a.m-6p.m<br>
+               联系电话:13423333333<br>
+               所在地区:佛山<br>
+               商家地址:门店地址门店地址<a href="#">[地图]</a>
+               </p>
+           </table>
+       </div>
+       <div class="line"></div>
+        <div class="content2">
+          <table>
+          <tr>
+          	<td colspan="3">
+            <a href="#">商家等级:<img src="images/web_nxtb1.gif"><img src="images/web_nxtb1.gif"><img src="images/web_nxtb1.gif"></a>
+            </td>
+          </tr>
+          <tr>
+              <td>
+              <p style=" font-size:12px;">
+              服务态度:<font color="#FF0000">4073</font>分</p>
+              <p style=" font-size:12px;">
+              施工质量:<font color="#FF0000">4.85</font>分</p>
+               <p style=" font-size:12px;">
+               性价比:<font color="#FF0000">4.99</font>分</p>
+              </td>
+              <td class="djimg">
+              <p>
+              <img src="images/web_n_t1.gif"></p>
+              <p>
+              <img src="images/web_n_t1.gif"></p>
+              <p>
+              <img src="images/web_n_t1.gif">
+              </p>
+              </td>
+              <td>
+              <p >
+              <img style="width:100%; height:100%; margin:6% 2% 0 0;"  src="images/web_n_t2.gif">
+              </p>
+              </td>
+          </tr>
+          </table>
+       </div>
+       <div class="line"></div>
+        <div class="content3">
+           <!--silder start-->
+          <div class="silder">
+            <ul>
+             <li><a href="#"><img src="images/web_n_t3.gif"></a></li>
+             <li><a href="#"><img src="images/web_n_t4.gif"></a></li>
+             <li><a href="#"><img src="images/web_n_t5.gif"></a></li>
+            </ul>
+         </div>
+         <!--切换-->
+         <div class="silder_left"> </div>
+         <div class="silder_right"> </div>
+         <!--silder end-->
+       </div>
+       <div class="line"></div>
+        <div class="content4">
+          <div class="sjserver_title"><span>服务预订</span></div>
+          <div class="sjserver_type">
+          <table style="font-size:12px;">
+              <tr>
+                <td><a href="#">洗车</a></td>
+                <td>预订价:￥<font color="#FF0000">14</font>元起</td>
+                <td>历史成交:<a href="#">381</a>笔</td>
+                <td>
+                <img src="images/web_nxtb.gif"><img src="images/web_nxtb.gif"><img src="images/web_nxtb.gif"><img src="images/web_nxtb.gif"><img src="images/web_nxtb.gif">5.0
+                </td>
+                <td>
+                 <a href="#">共377人评价</a>
+                </td>
+              </tr>
+              <tr>
+                <td><a href="#">打蜡</a></td>
+                <td>预订价:￥<font color="#FF0000">14</font>元起</td>
+                <td>历史成交:<a href="#">381</a>笔</td>
+                <td>
+                <img src="images/web_nxtb.gif"><img src="images/web_nxtb.gif"><img src="images/web_nxtb.gif"><img src="images/web_nxtb.gif"><img src="images/web_nxtb.gif">5.0
+                </td>
+                <td>
+                 <a href="#">共377人评价</a>
+                </td>
+              </tr>
+
+          </table>
+          </div>
+
+       </div>
+       <div class="line"></div>
+        <div class="content5">
+           <div class="sjserver_title">服务设施</div>
+           <div class="jsserver_ss">
+               <ul>
+               <li><a href="#"><img  src="images/web_ny01.gif"></a></li>
+                <li><a href="#"><img src="images/web_ny02.gif"></a></li>
+               <li><a href="#"><img src="images/web_ny03.gif"></a></li>
+               <li><a href="#"><img src="images/web_ny04.gif"></a></li>
+               </ul>
+           </div>
+       </div>
+       <div class="line"></div>
+        <div class="content6">
+         <div class="sjserver_title">商家介绍</div>
+         <div class="sjjs"><p>门店门店</p></div>
+       </div>
+    <div class="line"></div>
+
+  </div><!--content end-->
+
+</div><!--page end-->
+
+</body>
+</html>
