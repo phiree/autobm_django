@@ -24,6 +24,7 @@ def access_denied(request):
 def service_list_all(request):
     return service_list(request,None)
 # 服务列表
+
 def service_list(request, service_type_id):
 
     area_id=get_cookie.get_area(request)

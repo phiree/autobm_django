@@ -69,19 +69,29 @@ class ServicePropertyValue_Brand_FoilType(ServicePropertyValue_Brand):
     class Meta:
        verbose_name_plural=verbose_name='贴膜类型值'
 
-
+class CarBrand(Model):
+    name=CharField(max_length=100,verbose_name='名称',unique=True)
+    pass
+class CarSeries(Model):
+    name=CharField(max_length=100,verbose_name='名称')
+    brand=ForeignKey(CarBrand,verbose_name='所属品牌')
+    parent=ForeignKey('CarSeries',null=True,blank=True,verbose_name='父级')
+    maintain_summary=CharField(max_length=200,verbose_name='保养概述')
+    class Meta:
+        unique_together =('name','brand','parent')
+    pass
 class CarInfo(Model):
-    name=CharField(max_length=100, verbose_name='名称')
+    name=CharField(max_length=100, verbose_name='名称')#型号
     car_type_choice=(('small','小型'),('midium','中型'),('large','大型'))
-    info_type_choice=(('brand','品牌'),('series','车系'),('type','型号'))
     car_type=CharField(choices=car_type_choice,max_length=10, null=True,blank=True,verbose_name='体积类型')
-    info_type=CharField(choices=info_type_choice,max_length=10, null=True,blank=True,verbose_name='')
     #todo add limit_choice_to
-    parent=ForeignKey('CarInfo',null=True,blank=True,verbose_name='父类型')
+    series=ForeignKey(CarSeries,verbose_name='所属系列',null=True)
+    transmission=ForeignKey('Maintain_Transmission',null=True, verbose_name='档位类型')
     def __str__(self):
         return self.name
     class Meta:
         verbose_name_plural=verbose_name='车辆信息'
+        unique_together =('name','series','transmission')
 
 
 class Service2(Model):
@@ -212,5 +222,43 @@ class Promotion_Income(Model):
 
 class  Promotion_Stratage(Model):
     """推广收入策略"""
+    pass
+
+"""
+保养心得相关
+车型, 里程,保养项目 是否需要保养
+里程数 和 保养项目是系统字典表
+
+"""
+class Maintain_Item(Model):
+    name=CharField(max_length=50,verbose_name='名称')
+    pass
+class Maintain_Mileage(Model):
+    mile=IntegerField(verbose_name='里程')#里程
+    period=IntegerField(verbose_name='参考用时')#参考时长
+    pass
+
+class Maintain_Transmission(Model):
+    """档位类型"""
+    name=CharField(max_length=10,verbose_name='名称')# 手动,自动,无极
+    pass
+class Maintain_Tip(Model):
+    car_info=ForeignKey(CarInfo,verbose_name='车型')
+    item=ForeignKey(Maintain_Item,verbose_name='保养项目')
+    mileage=ForeignKey(Maintain_Mileage,verbose_name='里程参考')
+    #3transmission=ForeignKey(Maintain_Transmission,verbose_name='变速类型')
+    price=DecimalField(max_digits=6,decimal_places=1,null=True)
+    tip_choice=(('check','检查'), ('change','更换'),('depends','视检查结果而定'))
+    tip=CharField(max_length=10,choices=tip_choice,null=True)
+
+    def get_tip(self,car):
+        pass
+
+class UserMaintain(Model):
+    user=ForeignKey(User)
+    car=ForeignKey(CarInfo)
+    current_mileage=DecimalField(max_digits=8,decimal_places=1)
+    last_update_time=DateTimeField()
+
     pass
 
