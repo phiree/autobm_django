@@ -38,10 +38,10 @@
         div .show_lock{float:left;width:100%; height:30px; background-color: #FFFFCC; }
 
          /*底部图标无焦点*/
-         .ui-icon-webtb1:after {background-image: url("{%static 'car_service/m/images/web_tb01.gif'%}"); background-size: 18px 18px;}
-         .ui-icon-webtb2:after {background-image: url("{%static 'car_service/m/images/web_tb02.gif'%}"); background-size: 18px 18px;}
-         .ui-icon-webtb3:after {background-image: url("{%static 'car_service/m/images/web_tb03.gif'%}"); background-size: 18px 18px;}
-         .ui-icon-webtb4:after { background-image: url("{%static 'car_service/m/images/web_tb04.gif'%}"); background-size: 18px 18px; }
+         .ui-icon-webtb1:after {background-image: url("{%static 'car_service/m/images/web_tb01.gif'%}"); background-size: 21px 21px;}
+         .ui-icon-webtb2:after {background-image: url("{%static 'car_service/m/images/web_tb02.gif'%}"); background-size: 21px 21px;}
+         .ui-icon-webtb3:after {background-image: url("{%static 'car_service/m/images/web_tb03.gif'%}"); background-size: 21px 21px;}
+         .ui-icon-webtb4:after { background-image: url("{%static 'car_service/m/images/web_tb04.gif'%}"); background-size: 21px 21px; }
 
 
 
@@ -75,10 +75,10 @@
 <body>
 <div data-role="page" >
   <div data-role="header" class="header"  data-theme="b"  >
-      <a href="#" data-role="button" data-icon="search">搜索</a>
-      <h1>汽车美容养护网</h1>
+     <a>111</a>
+     <h1><img src=""></h1>
       <!--图标可更改--->
-      <a href="#" data-role="button" >更多</a>
+      <a data-role="button" data-icon="grid" data-iconpos="left" >更多</a>
 
   </div>
   <div data-role="content">
@@ -257,11 +257,19 @@
 
   </div>
 
-  <div data-role="footer" data-theme="b" class="footer" >
-            <a href="#"  class="ui-btn ui-shadow  ui-btn-icon-top ui-icon-webtb1" data-iconpos="notext">首页</a>
-            <a href="{%url 'car_service:front_web:service_list'%}" class="ui-btn ui-shadow  ui-btn-icon-top ui-icon-webtb2" data-iconpos="notext"><span style="color:#000000;">预订服务</span></a>
-            <a href="{%url 'car_service:front_web:login'%}" class="ui-btn ui-shadow  ui-btn-icon-top ui-icon-webtb3" data-iconpos="notext"><span style="color:#000000;">我的</span></a>
-            <a href="#" class="ui-btn ui-shadow  ui-btn-icon-top ui-icon-webtb4" data-iconpos="notext"><span style="color:#000000;">更多</span></a>
+  <div data-role="footer" data-theme="a" class="footer" >
+      <div data-role="navbar">
+      <ul>
+        <li><a href="#"  class="ui-btn ui-shadow  ui-btn-icon-top ui-icon-webtb1" data-iconpos="notext">首页</a></li>
+        <li> <a href="{%url 'car_service:front_web:service_list'%}" class="ui-btn ui-shadow  ui-btn-icon-top ui-icon-webtb2" data-iconpos="notext"><span style="color:#000000;">预订服务</span></a></li>
+        <li><a href="{%url 'car_service:front_web:login'%}" class="ui-btn ui-shadow  ui-btn-icon-top ui-icon-webtb3" data-iconpos="notext"><span style="color:#000000;">我的</span></a></li>
+        <li>  <a href="#" class="ui-btn ui-shadow  ui-btn-icon-top ui-icon-webtb4" data-iconpos="notext"><span style="color:#000000;">更多</span></a></li>
+
+      </ul>
+
+
+
+
   </div>
 
 </div>
