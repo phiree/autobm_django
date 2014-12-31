@@ -38,7 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #'south',
+    'south',
     'unique_random',
     #'django.contrib.gis',
     'car_service',
@@ -81,7 +81,11 @@ DATABASES = {
         'PASSWORD': 'twgdhbtzhy',
         'HOST': '127.0.0.1',
         'ATOMIC_REQUESTS':True,
-
+    'sqlite':
+            {
+               'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': os.path.join(BASE_DIR, '92auto.sqlite3'),
+            }
     }
 }
 
@@ -112,4 +116,4 @@ WSGI_LOG=os.path.join(BASE_DIR,'wsgi_log.log')
 # 模板文件夹名称不能是 templates , 否则会被 template_loader 优先取用,致使这里的设置失效
 TEMPLATE_DIRS_MOBILE=(join(BASE_DIR,'car_service/templates_mobile'),)
 TEMPLATE_DIRS_DESKTOP=(join(BASE_DIR,'car_service/templates_desktop'),)
-
+SOUTH_TESTS_MIGRATE = False
