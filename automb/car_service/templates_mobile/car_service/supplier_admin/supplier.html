@@ -7,42 +7,43 @@
     <title>商家概况</title>
     <link rel="stylesheet" href="{%static 'car_service/js/jquery/jqm/jquery.mobile-1.4.5.min.css'%}">
     <link rel="stylesheet" href="{%static 'car_service/js/jquery/jqm/jquery.mobile.theme-1.4.5.css'%}">
+    <link rel="stylesheet" href="{%static 'car_service/m/css/merchantSurvey.css'%}">
+    <script src="{%static 'car_service/m/js/merchantSuvery.js'%}"></script>
     <script src="{%static 'car_service/js/jquery/jqm/jquery-1.11.1.min.js'%}"></script>
     <script src="{%static 'car_service/js/jquery/jqm/jquery.mobile-1.4.5.min.js'%}"></script>
-  <style type="text/css">
-    a { text-decoration:none;}
-    div .line{ margin:1% 0 1% 0;float:left; width:100%; height:1px; background-color:#A0A0A4;}
+    <style type="text/css">
 
-    div .content1 { float:left; width:100%; margin:1% 0 1%; border-color:#A0A0A4; border:1px #A0A0A4;}
-    div .content1 table{ float:left; width:100%;line-height:50%; overflow:hidden; text-align:left; padding:0px; }
-    div .content1 table tr{width:100%; line-height:1em;}
-    div .content1 table tr .td1{width:40%; height:20%; padding:0;line-height:2em;}
-    div .content1 table tr .td1 img{ width:100%; height:60%;}
-    div .content1 table tr .td2{width:50%; padding:0;line-height:2em;}
+    .rollBox img{border:none;}
+    .rollBox{width:100%;overflow:hidden;margin:0 auto;}
+    .rollBox .Cont{width:80%;overflow:hidden;margin:0 auto;padding-top:20px;}
+    .rollBox .ScrCont{width:10000000px;}
+    .rollBox .Cont .pic{width:130px;float:left;text-align:center;}
+    *+html .rollBox .Cont .pic{width:20%;float:left;text-align:center;}
+    .rollBox .Cont .pic img{padding:4px;background:#fff;border:1px solid #ccc;display:block;margin:0 auto;}
+    .rollBox .Cont .pic p{line-height:26px;color:#505050;}
+    .rollBox .Cont a:link,.rollBox .Cont a:visited{color:#626466;text-decoration:none;}
+    .rollBox .Cont a:hover{color:#f00;text-decoration:underline;}
+    .rollBox #List1,.rollBox #List2{float:left;}
+    .img1,.img2,.Cont{
+    float:left;}
+    .img1,.img2{
+    width:25px;
+    height:105px;
+    display:block;
+    cursor:pointer;
+    margin-top:20px;
+    }
+    .img1{
+        background-image:url(images/web_n_anl.gif);
+        background-repeat: no-repeat;
+        background-position: center center;}
+    .img2{
+        background-image:url( images/web_n_anr.gif);
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
 
-    div .content2{ float:left; width:100%;}
-    div .content2 table { float:left; width:100%;}
-    div .content2 .djimg img { float:left; width:100%;height:30%; margin:2% 1% 2% 1%; line-height:30%; overflow:hidden; }
-
-    div .content3{float:left; width:100%;  height:30%; padding:0px; margin:0 0 0 0;}
-    div .content3 .silder ul{ list-style-type:none; height:100%; width:90%;}
-    div .content3 .silder ul li{ float:left; width:30%; padding:0;}
-    div .content3 .silder ul li img{ float:left; width:100%; height:100%; line-height:100%; overflow:hidden; }
-
-
-    div .content4{float:left; width:100%;}
-    div .sjserver_title{float:left; width:100%;}
-    div .content4 .sjserver_type{float:left; width:100%;}
-    div .content4 .jsserver_type table{float:left; width:100%; }
-
-    div .content5{float:left; width:100%;}
-    div .content5 .jsserver_ss ul{ list-style-type:none; float:left; width:100%;}
-    div .content5 .jsserver_ss ul li{float:left; width:20%; height:100%; padding:0;}
-
-    div .content6{ float:left; width:100%; }
-    div .content6 sjjs{float:left; width:100%;}
-
-  </style>
+    </style>
 </head>
 <body>
 <div data-role="page" class="page">
@@ -108,16 +109,33 @@
        <div class="line"></div>
         <div class="content3">
            <!--silder start-->
-          <div class="silder">
-            <ul>
-             <li><a href="#"><img src="images/web_n_t3.gif"></a></li>
-             <li><a href="#"><img src="images/web_n_t4.gif"></a></li>
-             <li><a href="#"><img src="images/web_n_t5.gif"></a></li>
-            </ul>
-         </div>
-         <!--切换-->
-         <div class="silder_left"> </div>
-         <div class="silder_right"> </div>
+          <div class="rollBox">
+            <a href="javascript:;" onmousedown="ISL_GoDown()" onmouseup="ISL_StopDown()" onmouseout="ISL_StopDown()" class="img1" hidefocus="true"></a>
+                 <div class="Cont" id="ISL_Cont">
+                  <div class="ScrCont">
+                   <div id="List1">
+                     <!-- 图片列表 begin -->
+                     <div class="pic">
+                      <a href="#" target="_blank"><img src="images/web_n_t3.gif" width="130" height="95" /></a>
+                      <a href="#" target="_blank">相关产品图片浏览001</a>
+                     </div>
+                     <div class="pic">
+                      <a href="#" target="_blank"><img src="images/web_n_t4.gif" width="130" height="95" /></a>
+                      <a href="#" target="_blank">相关产品图片浏览002</a>
+                     </div>
+                     <div class="pic">
+                      <a href="#" target="_blank"><img src="images/web_n_t5.gif" width="130" height="95" /></a>
+                      <a href="#" target="_blank">相关产品图片浏览003</a>
+                     </div>
+
+                    <!-- 图片列表 end -->
+                   </div>
+                   <div id="List2"></div>
+                  </div>
+                 </div>
+            <a href="javascript:;"  onmousedown="ISL_GoUp()" onmouseup="ISL_StopUp()" onmouseout="ISL_StopUp()" class="img2" hidefocus="true"></a>
+          </div>
+
          <!--silder end-->
        </div>
        <div class="line"></div>

@@ -6,32 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"><!--自适应屏幕宽度-->
     <title>服务详情2</title>
     <link rel="stylesheet" href="{%static 'car_service/js/jquery/jqm/jquery.mobile-1.4.5.min.css'%}">
-    <link rel="stylesheet" href="{%static 'car_service/js/jquery/jqm/jquery.mobile.theme-1.4.5.css'%}">
+    <link rel="stylesheet" href="{%static 'car_service/js/jquery/jqm/jquery.mobile.theme-1.4.5.css'%}"><!--jquery mobile 整体样式-->
     <link rel="stylesheet" href="{%static 'car_service/m/css/serverinfo.css'%}"> <!-- 服务页样式-->
+    <link rel="stylesheet" href="{%static 'car_service/m/css/lanrenzhijia.css'%}"><!--选项卡样式--->
     <script src="{%static 'car_service/js/jquery/jqm/jquery-1.11.1.min.js'%}"></script>
     <script src="{%static 'car_service/js/jquery/jqm/jquery.mobile-1.4.5.min.js'%}"></script>
 
-<script type="text/javascript">
-$(document).ready(function() {
-    jQuery.jqtab = function(tabtit,tabcon) {
-        $(tabcon).hide();
-        $(tabtit+" li:first").addClass("thistab").show();
-        $(tabcon+":first").show();
-        $(tabtit+" li").click(function() {
-            $(tabtit+" li").removeClass("thistab");
-            $(this).addClass("thistab");
-            $(tabcon).hide();
-            var activeTab = $(this).find("a").attr("tab");
-            $("#"+activeTab).fadeIn();
-            return false;
-        });
+<script type="text/jscript">
+window.onload = function ()
+{
+	var oLi = document.getElementById("tab").getElementsByTagName("li");/*拿到选项节点*/
+	var oUl = document.getElementById("content").getElementsByTagName("ul");/*拿到内容节点*/
 
-    };
-    /*调用方法如下：*/
-    $.jqtab("#tabs",".tab_con");
-
-});
+	for(var i = 0; i < oLi.length; i++)
+	{
+		oLi[i].index = i;
+		oLi[i].onmouseover = function ()
+		{
+			for(var n = 0; n < oLi.length; n++) oLi[n].className="";
+			this.className = "current";
+			for(var n = 0; n < oUl.length; n++) oUl[n].style.display = "none";
+			oUl[this.index].style.display = "block"
+		}
+	}
+}
 </script>
+
+
+
+
 </head>
 <body>
 <!--page start-->
@@ -42,14 +45,14 @@ $(document).ready(function() {
       <h1>服务详情</h1>
       <!--图标可更改--->
       <a href="#">
-      <img src="{%static 'car_service/m/images/webfj_04.png'%}" width="17" height="8%" class="right_icon" style=" float:right; height:10%; line-height:10%; overflow:hidden;" >
+      <img src="../../../../../图片/UI/images/webfj_04.png" width="17" height="8%" class="right_icon" style=" float:right; height:10%; line-height:10%; overflow:hidden;" >
       </a>
   </div>
   <!--header end-->
   <!--content start-->
   <div data-role="content" class="content">
            <div class="pro_info">
-              <div class="pro_img"><img src="{%static 'car_service/m/images/web_fjt3.jpg'%}"></div>
+              <div class="pro_img"><img src="../../../../../图片/UI/images/web_fjt3.jpg"></div>
               <div class="pro_info1">
 
                     <font color="#FF0000">[洗车]</font><font style="font-weight:bold;">佛山-佛山美丽天使汽车养护店</font><br>
@@ -57,7 +60,7 @@ $(document).ready(function() {
                     <span >威航 2010款 16.4百年纪念版 8.0T[<a href="#">更改</a>]</span><br>
                     <font  color="#A0A0A4">洗车方式:</font>
                     <span>人工洗车</span><span>电脑洗车</span><br>
-                    <img style="width:30%;height:auto;" src="{%static 'car_service/m/images/web_n02.gif'%}"><br>
+                    <img style="width:30%;height:auto;" src="../../../../../图片/UI/images/web_n02.gif"><br>
               </div>
               <div class="pro_info2">
                     <br>
@@ -67,171 +70,290 @@ $(document).ready(function() {
           </div>
            <div class="line"></div><!--分隔线-->
          <!--tab start-->
-          <div id="tabbox">
-            <ul class="tabs" id="tabs">
-               <li><a href="#" tab="tab1">服务介绍</a></li>
-               <li><a href="#" tab="tab2">用户评论</a></li>
-               <li><a href="#" tab="tab3">成交记录</a></li>
-               <li><a href="#" tab="tab4">网友咨询</a></li>
+          <div id="outer">
+            <ul id="tab">
+                <li class="current">服务介绍</li>
+                <li>用户评论</li>
+                <li>成交记录</li>
+                <li>网友咨询</li>
             </ul>
-            <ul class="tab_conbox">
-                 <!--服务介绍start-->
-                <li id="tab1" class="tab_con">
+            <div id="content">
+                <ul style="display:block;">
+                    <li>
+                         <span style="float:left; margin:1% 0 1% 0;">施工时间:<font>1</font>天 &nbsp;预约时间:<font>随时到店即可</font></span>
+                         <!--服务包含项目-->
+                         <div class="server_project">
+                              <p><img src="images/web_n03.gif"></p>
+                              <table>
+                                  <tr>
+                                       <td>项目性质</td><td>服务项目</td><td>是否包含</td><td>备注</td>
+                                  </tr>
+                                  <tr class="tb_tr">
+                                      <td rowspan="5">标题项目</td><td>整车清理吸尘</td><td><input type="checkbox"  checked="true"/></td><td></td>
+                                  </tr>
+                                  <tr class="tb_tr">
+                                      <td>拆卸车身附件</td><td><input type="checkbox"  checked="true"/></td><td></td>
+                                  </tr>
+                                  <tr class="tb_tr">
+                                      <td>清洁工作面</td><td><input type="checkbox"  checked="true"/></td><td></td>
+                                  </tr>
+                                  <tr class="tb_tr">
+                                      <td>隔音施工</td><td><input type="checkbox"  checked="true"/></td><td></td>
+                                  </tr >
+                                  <tr class="tb_tr">
+                                       <td>恢复车身部件</td><td><input type="checkbox"  checked="true"/></td><td></td>
+                                  </tr>
+                              </table>
 
-                     <span style="float:left; margin:1% 0 1% 0;">施工时间:<font>1</font>天 &nbsp;预约时间:<font>随时到店即可</font></span>
-                     <!--服务包含项目-->
-                     <div class="server_project">
-                          <p><img src="{%static 'car_service/m/images/web_n03.gif'%}"></p>
+                         </div>
+                         <!--服务流程-->
+                         <div class="server_process">
+                            <p><img src="images/web_n03.gif"></p>
+                            <div class="server_process_img"><img src="images/web_nlct.jpg"></div>
+                         </div>
+                         <!--服务前后对比-->
+                         <div class="server_front_back" >
+                            <p><img src="images/web_n03.gif"></p>
+
+                            <p>
+                                <img width="45%;" src="images/web_n04.gif" >
+
+                                <img  width="45%;" src="images/web_n05.gif">
+                               <br>
+                                <span style=" float:left;width:80%;"> <font style="float:left">施工前</font> <font style="float:right;">施工后</font></span>
+                            </p>
+
+                         </div>
+
+                    <!--服务介绍end-->
+
+
+
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+
+                     <!--用户评论start-->
+
+                          <div class="server_comment_title">
+                            <table>
+                            <tr>
+                                <td>
+                                    <p>
+                                    综合得分<br>
+                                    <font color="#D41F00"><h2>5</h2></font><br>
+                                    <img src="images/web_nxtb.gif"><img src="images/web_nxtb.gif"><img src="images/web_nxtb.gif"><img src="images/web_nxtb.gif"><img src="images/web_nxtb.gif">
+                                    </p>
+                                </td>
+                                <td>
+                                    <p>服务态度:<img src="images/web_nxtb.gif"><img src="images/web_nxtb.gif"><img src="images/web_nxtb.gif"><img src="images/web_nxtb.gif"><img src="images/web_nxtb.gif">满意（5分）<br><br>
+                                    施工效果:<img src="images/web_nxtb.gif"><img src="images/web_nxtb.gif"><img src="images/web_nxtb.gif"><img src="images/web_nxtb.gif"><img src="images/web_nxtb.gif">满意（5分）<br><br>
+                                    性价比:<img src="images/web_nxtb.gif"><img src="images/web_nxtb.gif"><img src="images/web_nxtb.gif"><img src="images/web_nxtb.gif"><img src="images/web_nxtb.gif">满意（5分）
+                                    </p>
+                                </td>
+                                <td align="left"><h3>登录后才能评价</h3></td>
+                            </tr>
+                        </table>
+                        <div class="rediolist">
+                       <fieldset data-role="controlgroup" data-type="horizontal">
+                          <input type="radio" name="radio1" id="radio1" value="any" checked="checked" />
+                          <label for="radio1">全部</label>
+                          <input type="radio" name="radio1" id="radio2" value="16-22" />
+                          <label for="radio2">满意</label>
+                          <input type="radio" name="radio1" id="radio3" value="23-30" />
+                          <label for="radio3"> 一般</label>
+                          <input type="radio" name="radio1" id="radio4" value="31-40" />
+                          <label for="radio4">不满意</label>
+                     </fieldset>
+                          <label for="blue">有内容的评价</label>
+                          <input style="float:right;"  type="checkbox" name="favcolor" id="blue" value="blue" checked>
+
+                           </div>
+                       </div>
+
+
+
+                         <div class="server_comment_list" >
+                              <table>
+                                <tr>
+                                    <td rowspan="6"><h3>别史GL83</h3></td>
+                                    <td><img src="images/web_nxtb.gif"><img src="images/web_nxtb.gif"><img src="images/web_nxtb.gif"><img src="images/web_nxtb.gif"><img src="images/web_nxtb.gif">服务态度:非常满意（5分）施工效果::非常满意（5分）性价比::非常满意（5分）</td>
+                                </tr>
+                                <tr>
+                                    <td>我看了几家音响店最后选择了双周音响，性价比高、专业给赞！我看了几家音响店最后选择了双周音响，性价比高、专业给赞！</td>
+                                </tr>
+                                <tr>
+                                    <td><font color="#A0A0A4">套餐:宝马5系专用后声场升级套件4喇叭套装（不含隔音）</font></td>
+                                </tr>
+                                <tr>
+                                    <td><font color="#A0A0A4">车系：宝马&nbsp;宝马X5系</font></td>
+                                </tr>
+                                <tr>
+                                    <td><font color="#FF5F00">商家回复:感谢您对双周的支持与信任!</font></td>
+                                </tr>
+
+                           </table>
+                        </div>
+                      <div class="server_comment_list" >
+                              <table>
+                                <tr>
+                                    <td rowspan="6"><h3>别史GL83</h3></td>
+                                    <td><img src="images/web_nxtb.gif"><img src="images/web_nxtb.gif"><img src="images/web_nxtb.gif"><img src="images/web_nxtb.gif"><img src="images/web_nxtb.gif">服务态度:非常满意（5分）施工效果::非常满意（5分）性价比::非常满意（5分）</td>
+                                </tr>
+                                <tr>
+                                    <td>我看了几家音响店最后选择了双周音响，性价比高、专业给赞！我看了几家音响店最后选择了双周音响，性价比高、专业给赞！</td>
+                                </tr>
+                                <tr>
+                                    <td><font color="#A0A0A4">套餐:宝马5系专用后声场升级套件4喇叭套装（不含隔音）</font></td>
+                                </tr>
+                                <tr>
+                                    <td><font color="#A0A0A4">车系：宝马&nbsp;宝马X5系</font></td>
+                                </tr>
+                                <tr>
+                                    <td><font color="#FF5F00">商家回复:感谢您对双周的支持与信任!</font></td>
+                                </tr>
+
+                           </table>
+                        </div>
+                        <div class="server_comment_list" >
+                              <table>
+                                <tr>
+                                    <td rowspan="6"><h3>别史GL83</h3></td>
+                                    <td><img src="images/web_nxtb.gif"><img src="images/web_nxtb.gif"><img src="images/web_nxtb.gif"><img src="images/web_nxtb.gif"><img src="images/web_nxtb.gif">服务态度:非常满意（5分）施工效果::非常满意（5分）性价比::非常满意（5分）</td>
+                                </tr>
+                                <tr>
+                                    <td>我看了几家音响店最后选择了双周音响，性价比高、专业给赞！我看了几家音响店最后选择了双周音响，性价比高、专业给赞！</td>
+                                </tr>
+                                <tr>
+                                    <td><font color="#A0A0A4">套餐:宝马5系专用后声场升级套件4喇叭套装（不含隔音）</font></td>
+                                </tr>
+                                <tr>
+                                    <td><font color="#A0A0A4">车系：宝马&nbsp;宝马X5系</font></td>
+                                </tr>
+                                <tr>
+                                    <td><font color="#FF5F00">商家回复:感谢您对双周的支持与信任!</font></td>
+                                </tr>
+
+                           </table>
+                        </div>
+
+                    <!--用户评论end-->
+                    </li>
+
+                </ul>
+                <ul>
+                    <li>
+
+                    <!--成交记录atart-->
+                     <div class="order_record_list">
+                         <table>
+                            <tr>
+                                <td colspan="5">本服务累计成交<font color="#FF0000">95</font>单</td>
+                            </tr>
+                            <tr style="text-align:center;">
+                                <td>用户</td>
+                                <td>车系</td>
+                                <td>用品</td>
+                                 <td>价格</td>
+                                <td>下单时间</td>
+                            </tr>
+                            <tr class="tb_tr">
+                                <td>admin</td>
+                                <td>奔驰-奔驰C级</td>
+                                <td>车睿士&nbsp;铠甲镀晶</td>
+                                 <td>￥1500</td>
+                                <td>2014-12-22</td>
+                            </tr>
+                            <tr class="tb_tr">
+                                  <td>admin</td>
+                                <td>奔驰-奔驰C级</td>
+                                <td>车睿士&nbsp;铠甲镀晶</td>
+                                 <td>￥1500</td>
+                                <td>2014-12-22</td>
+                            </tr>
+                            <tr class="tb_tr">
+                                  <td>admin</td>
+                                <td>奔驰-奔驰C级</td>
+                                <td>车睿士&nbsp;铠甲镀晶</td>
+                                 <td>￥1500</td>
+                                <td>2014-12-22</td>
+                            </tr>
+                        </table>
+                      </div>
+
+                <!--成交记录 end-->
+
+                    </li>
+
+                </ul>
+                <ul>
+                    <li>
+                     <!--网友咨询start-->
+
+                      <div class="line"></div>
+                      <div class="comment_info">
                           <table>
-                              <tr>
-                                   <td>项目性质</td><td>服务项目</td><td>是否包含</td><td>备注</td>
-                              </tr>
-                              <tr class="tb_tr">
-                                  <td rowspan="5">标题项目</td><td>整车清理吸尘</td><td><input type="checkbox"  checked="true"/></td><td></td>
-                              </tr>
-                              <tr class="tb_tr">
-                                  <td>拆卸车身附件</td><td><input type="checkbox"  checked="true"/></td><td></td>
-                              </tr>
-                              <tr class="tb_tr">
-                                  <td>清洁工作面</td><td><input type="checkbox"  checked="true"/></td><td></td>
-                              </tr>
-                              <tr class="tb_tr">
-                                  <td>隔音施工</td><td><input type="checkbox"  checked="true"/></td><td></td>
-                              </tr >
-                              <tr class="tb_tr">
-                                   <td>恢复车身部件</td><td><input type="checkbox"  checked="true"/></td><td></td>
-                              </tr>
+                             <tr>
+                                <td><img src="images/web_nw.gif"></td><td> 打蜡、封釉、镀膜有什么区别，价格如何？</td>
+                             </tr>
+                             <tr>
+                                <td><img src="images/web_nd.gif"></td><td style="color: #FF5;">打蜡是通过研磨的方式将漆面细小划痕磨光来达到漆面光亮的美容方式。</td>
+                             </tr>
                           </table>
 
-                     </div>
-                     <!--服务流程-->
-                     <div class="server_process">
-                        <p><img src="{%static 'car_service/m/images/web_n03.gif'%}"></p>
-                        <div class="server_process_img"><img src="{%static 'car_service/m/images/web_nlct.jpg'%}"></div>
-                     </div>
-                     <!--服务前后对比-->
-                     <div class="server_front_back" >
-                        <p><img src="{%static 'car_service/m/images/web_n03.gif'%}"></p>
-
-                        <p>
-                            <img width="45%;" src="{%static 'car_service/m/images/web_n04.gif'%}" >
-
-                            <img  width="45%;" src="{%static 'car_service/m/images/web_n05.gif'%}">
-                           <br>
-                        	<span style=" float:left;width:80%;"> <font style="float:left">施工前</font> <font style="float:right;">施工后</font></span>
-                        </p>
-
-                     </div>
-
-                </li>
-                <!--服务介绍end-->
-                <!--用户评论start-->
-                <li id="tab2" class="tab_con">
-                      <div class="server_comment_title">
-                        <table>
-                        <tr>
-                            <td>
-                                <p>
-                                综合得分<br>
-                                <font color="#D41F00"><h2>5</h2></font><br>
-                                <img src="{%static 'car_service/m/images/web_nxtb.gif'%}"><img src="{%static 'car_service/m/images/web_nxtb.gif'%}"><img src="{%static 'car_service/m/images/web_nxtb.gif'%}"><img src="{%static 'car_service/m/images/web_nxtb.gif'%}"><img src="{%static 'car_service/m/images/web_nxtb.gif'%}">
-                                </p>
-                            </td>
-                            <td>
-                                <p>服务态度:<img src="{%static 'car_service/m/images/web_nxtb.gif'%}"><img src="{%static 'car_service/m/images/web_nxtb.gif'%}"><img src="{%static 'car_service/m/images/web_nxtb.gif'%}"><img src="{%static 'car_service/m/images/web_nxtb.gif'%}"><img src="{%static 'car_service/m/images/web_nxtb.gif'%}">满意（5分）<br><br>
-                                施工效果:<img src="{%static 'car_service/m/images/web_nxtb.gif'%}"><img src="{%static 'car_service/m/images/web_nxtb.gif'%}"><img src="{%static 'car_service/m/images/web_nxtb.gif'%}"><img src="{%static 'car_service/m/images/web_nxtb.gif'%}"><img src="{%static 'car_service/m/images/web_nxtb.gif'%}">满意（5分）<br><br>
-                                性价比:<img src="{%static 'car_service/m/images/web_nxtb.gif'%}"><img src="{%static 'car_service/m/images/web_nxtb.gif'%}"><img src="{%static 'car_service/m/images/web_nxtb.gif'%}"><img src="{%static 'car_service/m/images/web_nxtb.gif'%}"><img src="{%static 'car_service/m/images/web_nxtb.gif'%}">满意（5分）
-                                </p>
-                            </td>
-                            <td align="left"><h3>登录后才能评价</h3></td>
-                        </tr>
-                    </table>
-                    <div class="rediolist">
-                   <fieldset data-role="controlgroup" data-type="horizontal">
-                      <input type="radio" name="radio1" id="radio1" value="any" checked="checked" />
-                      <label for="radio1">全部</label>
-                      <input type="radio" name="radio1" id="radio2" value="16-22" />
-                      <label for="radio2">满意</label>
-                      <input type="radio" name="radio1" id="radio3" value="23-30" />
-                      <label for="radio3"> 一般</label>
-                      <input type="radio" name="radio1" id="radio4" value="31-40" />
-                      <label for="radio4">不满意</label>
-                 </fieldset>
-                      <label for="blue">有内容的评价</label>
-                      <input style="float:right;"  type="checkbox" name="favcolor" id="blue" value="blue" checked>
-                       </div>
-                   </div>
-
-
-
-                	 <div class="server_comment_list" >
+                      </div>
+                      <div class="line"></div>
+                      <div class="comment_info">
                           <table>
-                            <tr>
-                                <td rowspan="6"><h3>别史GL83</h3></td>
-                                <td><img src="{%static 'car_service/m/images/web_nxtb.gif'%}"><img src="{%static 'car_service/m/images/web_nxtb.gif'%}"><img src="{%static 'car_service/m/images/web_nxtb.gif'%}"><img src="{%static 'car_service/m/images/web_nxtb.gif'%}"><img src="{%static 'car_service/m/images/web_nxtb.gif'%}">服务态度:非常满意（5分）施工效果::非常满意（5分）性价比::非常满意（5分）</td>
-                            </tr>
-                            <tr>
-                                <td>我看了几家音响店最后选择了双周音响，性价比高、专业给赞！我看了几家音响店最后选择了双周音响，性价比高、专业给赞！</td>
-                            </tr>
-                            <tr>
-                                <td><font color="#A0A0A4">套餐:宝马5系专用后声场升级套件4喇叭套装（不含隔音）</font></td>
-                            </tr>
-                            <tr>
-                                <td><font color="#A0A0A4">车系：宝马&nbsp;宝马X5系</font></td>
-                            </tr>
-                            <tr>
-                                <td><font color="#FF5F00">商家回复:感谢您对双周的支持与信任!</font></td>
-                            </tr>
+                             <tr>
+                                <td><img src="images/web_nw.gif"></td><td> 打蜡、封釉、镀膜有什么区别，价格如何？</td>
+                             </tr>
+                             <tr>
+                                <td><img src="images/web_nd.gif"></td><td style="color: #FF5;">打蜡是通过研磨的方式将漆面细小划痕磨光来达到漆面光亮的美容方式。</td>
+                             </tr>
+                          </table>
 
-                       </table>
-                    </div>
-                  <div class="server_comment_list" >
+                      </div>
+                      <div class="line"></div>
+                      <div class="comment_info">
                           <table>
-                            <tr>
-                                <td rowspan="6"><h3>别史GL83</h3></td>
-                                <td><img src="{%static 'car_service/m/images/web_nxtb.gif'%}"><img src="{%static 'car_service/m/images/web_nxtb.gif'%}"><img src="{%static 'car_service/m/images/web_nxtb.gif'%}"><img src="{%static 'car_service/m/images/web_nxtb.gif'%}"><img src="{%static 'car_service/m/images/web_nxtb.gif'%}">服务态度:非常满意（5分）施工效果::非常满意（5分）性价比::非常满意（5分）</td>
-                            </tr>
-                            <tr>
-                                <td>我看了几家音响店最后选择了双周音响，性价比高、专业给赞！我看了几家音响店最后选择了双周音响，性价比高、专业给赞！</td>
-                            </tr>
-                            <tr>
-                                <td><font color="#A0A0A4">套餐:宝马5系专用后声场升级套件4喇叭套装（不含隔音）</font></td>
-                            </tr>
-                            <tr>
-                                <td><font color="#A0A0A4">车系：宝马&nbsp;宝马X5系</font></td>
-                            </tr>
-                            <tr>
-                                <td><font color="#FF5F00">商家回复:感谢您对双周的支持与信任!</font></td>
-                            </tr>
+                             <tr>
+                                <td><img src="images/web_nw.gif"></td><td> 打蜡、封釉、镀膜有什么区别，价格如何？</td>
+                             </tr>
+                             <tr>
+                                <td><img src="images/web_nd.gif"></td><td style="color: #FF5;">打蜡是通过研磨的方式将漆面细小划痕磨光来达到漆面光亮的美容方式。</td>
+                             </tr>
+                          </table>
 
-                       </table>
-                    </div>
-                    <div class="server_comment_list" >
-                          <table>
-                            <tr>
-                                <td rowspan="6"><h3>别史GL83</h3></td>
-                                <td><img src="{%static 'car_service/m/images/web_nxtb.gif'%}"><img src="{%static 'car_service/m/images/web_nxtb.gif'%}"><img src="{%static 'car_service/m/images/web_nxtb.gif'%}"><img src="{%static 'car_service/m/images/web_nxtb.gif'%}"><img src="{%static 'car_service/m/images/web_nxtb.gif'%}">服务态度:非常满意（5分）施工效果::非常满意（5分）性价比::非常满意（5分）</td>
-                            </tr>
-                            <tr>
-                                <td>我看了几家音响店最后选择了双周音响，性价比高、专业给赞！我看了几家音响店最后选择了双周音响，性价比高、专业给赞！</td>
-                            </tr>
-                            <tr>
-                                <td><font color="#A0A0A4">套餐:宝马5系专用后声场升级套件4喇叭套装（不含隔音）</font></td>
-                            </tr>
-                            <tr>
-                                <td><font color="#A0A0A4">车系：宝马&nbsp;宝马X5系</font></td>
-                            </tr>
-                            <tr>
-                                <td><font color="#FF5F00">商家回复:感谢您对双周的支持与信任!</font></td>
-                            </tr>
+                      </div>
+                      <div class="line"></div>
+                       <div class="up_comment_info">
+                           我要提问:
+                           <div class="line1"></div>
+                           <textarea class="text_content" rows="3">
 
-                       </table>
-                    </div>
-                </li>
-                <!--用户评论end-->
-                <!--成交记录atart-->
-                <li id="tab3" class="tab_con">
+                          </textarea>
+                          <div class="post_comment" style="text-align:center;">
+                          还可输入<font color="#FF0000;">200</font> &nbsp;&nbsp;提问商家回复后，会有站内短信通知您。
+                         <a href="#"> <img src="images/web_n06.gif"></a>
+                          </div>
+                      </div>
 
+            <!--网友咨询end-->
+
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <!--tab end-->
+           <div class="model1">
+
+
+                <!--成交记录atart
+
+                   <div class="model3" style="display:none;">
                      <div class="order_record_list">
                          <table>
                             <tr>
@@ -269,18 +391,18 @@ $(document).ready(function() {
                         </table>
                       </div>
 
-                </li>
-                <!--成交记录-->
+
+             成交记录 end-->
                 <!--网友咨询start-->
-                <li id="tab4" class="tab_con">
+                   <div class="model4" style="display:none;">
                       <div class="line"></div>
                       <div class="comment_info">
                           <table>
                              <tr>
-                                <td><img src="{%static 'car_service/m/images/web_nw.gif'%}"></td><td> 打蜡、封釉、镀膜有什么区别，价格如何？</td>
+                                <td><img src="images/web_nw.gif"></td><td> 打蜡、封釉、镀膜有什么区别，价格如何？</td>
                              </tr>
                              <tr>
-                                <td><img src="{%static 'car_service/m/images/web_nd.gif'%}"></td><td style="color: #FF5;">打蜡是通过研磨的方式将漆面细小划痕磨光来达到漆面光亮的美容方式。</td>
+                                <td><img src="images/web_nd.gif"></td><td style="color: #FF5;">打蜡是通过研磨的方式将漆面细小划痕磨光来达到漆面光亮的美容方式。</td>
                              </tr>
                           </table>
 
@@ -289,10 +411,10 @@ $(document).ready(function() {
                       <div class="comment_info">
                           <table>
                              <tr>
-                                <td><img src="{%static 'car_service/m/images/web_nw.gif'%}"></td><td> 打蜡、封釉、镀膜有什么区别，价格如何？</td>
+                                <td><img src="images/web_nw.gif"></td><td> 打蜡、封釉、镀膜有什么区别，价格如何？</td>
                              </tr>
                              <tr>
-                                <td><img src="{%static 'car_service/m/images/web_nd.gif'%}"></td><td style="color: #FF5;">打蜡是通过研磨的方式将漆面细小划痕磨光来达到漆面光亮的美容方式。</td>
+                                <td><img src="images/web_nd.gif"></td><td style="color: #FF5;">打蜡是通过研磨的方式将漆面细小划痕磨光来达到漆面光亮的美容方式。</td>
                              </tr>
                           </table>
 
@@ -301,10 +423,10 @@ $(document).ready(function() {
                       <div class="comment_info">
                           <table>
                              <tr>
-                                <td><img src="{%static 'car_service/m/images/web_nw.gif'%}"></td><td> 打蜡、封釉、镀膜有什么区别，价格如何？</td>
+                                <td><img src="images/web_nw.gif"></td><td> 打蜡、封釉、镀膜有什么区别，价格如何？</td>
                              </tr>
                              <tr>
-                                <td><img src="{%static 'car_service/m/images/web_nd.gif'%}"></td><td style="color: #FF5;">打蜡是通过研磨的方式将漆面细小划痕磨光来达到漆面光亮的美容方式。</td>
+                                <td><img src="images/web_nd.gif"></td><td style="color: #FF5;">打蜡是通过研磨的方式将漆面细小划痕磨光来达到漆面光亮的美容方式。</td>
                              </tr>
                           </table>
 
@@ -318,13 +440,12 @@ $(document).ready(function() {
                           </textarea>
                           <div class="post_comment" style="text-align:center;">
                           还可输入<font color="#FF0000;">200</font> &nbsp;&nbsp;提问商家回复后，会有站内短信通知您。
-                         <a href="#"> <img src="{%static 'car_service/m/images/web_n06.gif'%}"></a>
+                         <a href="#"> <img src="images/web_n06.gif"></a>
                           </div>
                       </div>
-
-            </li>
+                  </div>
             <!--网友咨询end-->
-            </ul>
+
          </div>
         <!--tab end-->
   </div>

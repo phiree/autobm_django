@@ -25,7 +25,7 @@ a{text-decoration: none;color: #000;font-size: 14px;}
   div .pro_info {float:left; width:100%; height:30%;font-size:15px;}
   div .pro_img{float:left;width:28%;height:inherit;margin:0 1% 0 1%;}
   div .pro_img img{ float:left;width:100%;height:100%; }
-  div .pro_info1{ float:left;width:48%; height:inherit;margin:0 1% 0 1%; }
+  div .pro_info1{ float:left;width:48%; height:inherit;margin:0 1% 0 1%;font-size:12px; }
   div .pro_info2{ float:left;width:18%; height:inherit;margin:0 1% 0 1%;}
 
    /*服务包含项目*/
