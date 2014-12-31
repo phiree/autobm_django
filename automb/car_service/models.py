@@ -261,4 +261,13 @@ class UserMaintain(Model):
     last_update_time=DateTimeField()
 
     pass
+class UserCar(Model):
+    user=ForeignKey(User)
+    car=ForeignKey(CarInfo)
+    time_onroad=DateTimeField(verbose_name='上路日期')
+    total_mileage=IntegerField(verbose_name='总里程')
+    last_update_time=DateTimeField(verbose_name='最后更新时间')
+    memo=CharField(max_length=200,verbose_name='备注')
+    is_default=BooleanField(default=False)
+
 

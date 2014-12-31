@@ -1,4 +1,4 @@
-import sys,os
+import sys,os,shutil
 from django.conf import settings
 from decimal import  Decimal, InvalidOperation
 
@@ -8,16 +8,19 @@ from car_service.biz.parse_maintain_data import ParseHtmlFile
 from car_service.models import CarBrand,CarSeries,CarInfo,Maintain_Transmission,Maintain_Tip,Maintain_Item,Maintain_Mileage
 import re
 from os.path import  join
+import datetime
+import glob
 #import regex as re
 class Import_Maintain():
-    def __init__(self,html_file_folder):
+    def __init__(self,html_file_folder,html_file_folder_completed):
         self.html_file_folder=html_file_folder
+        self.html_file_folder_completed=html_file_folder_completed
+
 
     def import_from_file(self):
-        for file in  os.listdir(self.html_file_folder):
-            if not re.search('detail[_\d+]+\.html',file):
-                print('Skip file:'+file)
-                continue
+        listing =glob.glob(self.html_file_folder+'/detail*.html')
+        total_files=len(listing)
+        for file_index,file in enumerate(listing):#os.listdir(self.html_file_folder):
             parser=ParseHtmlFile(join(self.html_file_folder,file))
             #开始解析汽车数据
             parser.parse_carinfo()
@@ -25,7 +28,8 @@ class Import_Maintain():
                 print('no match:'+file)
                 continue
             #brand
-            print('开始解析:'+file)
+            time_begin=datetime.datetime.now()
+            print(''.join(['开始解析:',file,'--total:',str(total_files),'--current:',str(file_index+1)]))
             brand_name=self._strip(parser.brand)
             brand,created= CarBrand.objects.get_or_create(name=self._strip(brand_name))
             arr_series_parents=[]
@@ -74,6 +78,8 @@ class Import_Maintain():
                         tip=None
                     else:
                         tip=Maintain_Tip.tip_choice[2][0]
+                    if tip==None:
+                        continue
                     maitain_tip,created=Maintain_Tip.objects.get_or_create(car_info=carinfo
                                                                             ,item=maintain_item
                                                                            ,mileage=mileage_obj
@@ -83,12 +89,15 @@ class Import_Maintain():
 
 
 
-
-            print('解析完成:'+file)
+            time_end=datetime.datetime.now()
+            timespan=(time_end-time_begin).seconds
+            print('解析完成:'+file+'-Elapsed time:'+str(timespan))
+            shutil.move(file,self.html_file_folder_completed)
 
 
     def _strip(self,str):
         return str.strip(' \t\n\r')
 if __name__=='__main__':
-    importer=Import_Maintain(r'F:\Code\autobm_django\docs\保养手册_Teleport_From_Autohome\autohome')
+    importer=Import_Maintain(r'F:\Code\autobm_django\docs\保养手册_Teleport_From_Autohome\autohome',
+                             r'F:\Code\autobm_django\docs\保养手册_Teleport_From_Autohome\completed')
     importer.import_from_file()
