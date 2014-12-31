@@ -29,7 +29,8 @@ urlpatterns=patterns(''
                      ,url(r'^my/orders$', my.order_list,name='my_orders')
                      ,url(r'^my/comment_list', my.comment_list_of_my,name='my_comment')
                     ,url(r'^my/my_promote', my.my_promote,name='my_promote')
-
+                     ,url(r'^my/cars', my.cars,name='my_cars')
+                    #保养提醒
 
                      #权限错误
                      ,url(r'^access_denied/.*$', view.access_denied,name='access_denied')
