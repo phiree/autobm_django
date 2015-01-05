@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+  {%load staticfiles%}
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!--自适应屏幕宽度-->
+    <title>预约成功</title>
+    <link rel="stylesheet" href="{%static 'car_service/js/jquery/jqm/jquery.mobile-1.4.5.min.css'%}">
+    <link rel="stylesheet" href="{%static 'car_service/js/jquery/jqm/jquery.mobile.theme-1.4.5.css'%}">
+    <script src="{%static 'car_service/js/jquery/jqm/jquery-1.11.1.min.js'%}"></script>
+    <script src="{%static 'car_service/js/jquery/jqm/jquery.mobile-1.4.5.min.js'%}"></script>
+
+</head>
+<body>
+<div data-role="page" id="pageone">
+  <div data-role="header" data-theme="b">
+     <!--主题按钮-->
+ 	<a href="#" data-role="button" data-icon="arrow-l" data-iconpos="notext" data-theme="b" data-inline="true"></a>
+    <h1>预约成功</h1>
+  <a href="#" data-role="button" data-icon="grid" data-iconpos="notext" data-theme="b" data-inline="true"></a>
+
+  </div>
+
+  <div data-role="content">
+      <div class="subscribe" style="width:100%; height:100%; float:left;"  align="center">
+          <h1><img style="width:10%; height:10%;" src="{%static 'car_service/m/images/webn_t1.gif'%}">恭喜您预约成功!</h1>
+          <p align="center">
+            <font color="#808080">感谢您的深切期待！祝您生活愉快！</font><br>
+            您的验证码是:123456
+          </p>
+          <p align="center">
+            <img style="width:30%; height:20%;" src="{%static 'car_service/m/images/webn_t2.gif'%}">
+          </p>
+
+      </div>
+  </div>
+
+</div>
+</body>
+</html>

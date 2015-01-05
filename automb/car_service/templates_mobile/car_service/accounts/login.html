@@ -9,28 +9,36 @@
      <link rel="stylesheet" href="{%static 'car_service/js/jquery/jqm/jquery.mobile.theme-1.4.5.css'%}">
     <script src="{%static 'car_service/js/jquery/jqm/jquery-1.11.1.min.js'%}"></script>
     <script src="{%static 'car_service/js/jquery/jqm/jquery.mobile-1.4.5.min.js'%}"></script>
+<style type="text/css">
+ a { text-decoration:none;}
+</style>
 </head>
 <body>
 <div data-role="page" id="page">
   <div data-role="header" data-theme="b">
-     <a href="#"  data-role="button" ><</a>
-      <h1>用户登录</h1>
-      <!--图标可更改--->
-      <a href="#" data-icon="grid" data-role="button" >更多</a>
+        <!--主题按钮-->
+ 	<a href="#" data-role="button" data-icon="arrow-l" data-iconpos="notext" data-theme="b" data-inline="true"></a>
+    <h1>用户登录</h1>
+  <a href="#"  data-role="button" data-icon="grid" data-iconpos="notext" data-theme="b" data-inline="true"></a>
   </div>
   <div data-role="content">
-      <div data-role="fieldcontain" style="text-align:center;">
+     <div data-role="fieldcontain" style="text-align:center;">
           <form method="post" action="#">
-            <p>
-                <label for="basic" >姓名:</label><input style="width:50%;" id="basic" name="name" class="name" type="text" data-inline="true" >
+            <p >
+            <label for="name">用户名:</label>
+            <input type="text" name="name" id="name" value=""  />
             </p>
-            <p style="width:100%;">
-                <label >密码:</label><input type="password" style="width:50%;"  data-inline="true">
+            <p>
+            <label for="password">密&nbsp;&nbsp;码:</label>
+            <input type="password" name="password" id="password" value="" >
             </p>
           </form>
       </div>
        <a href="#" data-role="button"   data-theme="b">立即登录</a><br>
-       <a>免费注册</a>
+       <a href="#">免费注册</a>
+  </div>
+
+
   </div>
 
 </div>
