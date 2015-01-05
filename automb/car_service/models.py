@@ -253,7 +253,7 @@ class Maintain_Tip(Model):
 
     def get_tip(self,car):
         pass
-
+#用户车辆维护信息
 class UserMaintain(Model):
     user=ForeignKey(User)
     car=ForeignKey(CarInfo)
