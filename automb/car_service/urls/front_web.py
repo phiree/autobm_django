@@ -19,7 +19,7 @@ urlpatterns=patterns(''
                      ,url(r'^service/comment/add/(?P<bill_id>\d+)$', view.comment_add,name='comment_add')
                      ,url(r'^service/comment/success$', view.comment_success,name='comment_success')
                      #商家列表
-                      ,url(r'^supplier_list/$', view.supplier_list,name='supplier_list')
+                     ,url(r'^supplier_list/$', view.supplier_list,name='supplier_list')
                      ,url(r'^supplier/(?P<supplier_id>\d+)$', view.supplier_detail,name='supplier_detail')
                      #订单
                      ,url(r'^bill/create/(?P<service_id>\d+)$', view.bill_create,name='bill_create')

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+  {%load staticfiles%}
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!--自适应屏幕宽度-->
+    <title>用户注册</title>
+    <link rel="stylesheet" href="{%static 'car_service/js/jquery/jqm/jquery.mobile-1.4.5.min.css'%}">
+     <link rel="stylesheet" href="{%static 'car_service/js/jquery/jqm/jquery.mobile.theme-1.4.5.css'%}">
+    <script src="{%static 'car_service/js/jquery/jqm/jquery-1.11.1.min.js'%}"></script>
+    <script src="{%static 'car_service/js/jquery/jqm/jquery.mobile-1.4.5.min.js'%}"></script>
+
+    <style type="text/css">
+     a { text-decoration:none;}
+    </style>
+</head>
+<body>
+    <div data-role="page" id="page">
+          <div data-role="header" data-theme="b">
+              <!--主题按钮-->
+              <a href="#" data-theme="b" data-role="button" data-icon="arrow-l" data-iconpos="notext" data-inline="true"></a>
+              <h1>用户注册</h1>
+              <a href="#" data-theme="b" data-role="button" data-icon="grid" data-iconpos="notext" data-inline="true"></a>
+          </div><!--header end-->
+
+          <div data-role="content">
+              <form method="post" action="#">
+                 <div data-role="fieldcontain" style="text-align:left;">
+                     <p>
+                        <label for="name">用户名称:</label>
+                        <input type="text" name="name" id="name" value=""  />
+                     </p>
+                     <p>
+                         <label for="password1">创建密码:</label>
+                         <input type="password" name="password1" id="password1" value="" />
+                     </p>
+                     <p>
+                         <label for="password2">确认密码:</label>
+                         <input type="password" name="password2" id="password2" value="" />
+                     </p><p>
+                         <label for="email">电子邮箱:</label>
+                         <input type="email" name="email" id="email" value="" />
+                     </p><p>
+                         <label for="selectCarType">选择车型</label>
+                         <select name="selectCarType" id="selectCarType">
+                           <option value="ad">奥迪</option>
+                           <option value="bm">宝马</option>
+                           <option value="bc">奔驰</option>
+                         </select>
+                     </p><p>
+                        <label for="glnumber">公里数:</label>
+                        <input type="text" name="glnumber" id="glnumber" value=""  />
+                     </p>
+                 </div>
+              </form>
+
+              <a href="#" data-role="button"   data-theme="b">立即注册</a><br>
+              <p>
+                  <label><input type="checkbox" name="checkbox-0"  data-theme="b" />  我已阅读并接受<a href="#">汽车美容养护网协议</a> </label>
+              </p>
+          </div><!--content end-->
+    </div><!--page end-->
+</body>
+</html>

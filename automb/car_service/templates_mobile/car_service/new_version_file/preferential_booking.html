@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+  {%load staticfiles%}
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!--自适应屏幕宽度-->
+    <title>优惠预约</title>
+    <link rel="stylesheet" href="{%static 'car_service/js/jquery/jqm/jquery.mobile-1.4.5.min.css'%}">
+    <link rel="stylesheet" href="{%static 'car_service/js/jquery/jqm/jquery.mobile.theme-1.4.5.css'%}">
+    <script src="{%static 'car_service/js/jquery/jqm/jquery-1.11.1.min.js'%}"></script>
+    <script src="{%static 'car_service/js/jquery/jqm/jquery.mobile-1.4.5.min.js'%}"></script>
+</head>
+<body>
+    <div data-role="page" id="pageone">
+      <div data-role="header" data-theme="b">
+         <!--主题按钮-->
+         <a href="#" data-role="button" data-icon="arrow-l" data-iconpos="notext" data-theme="b" data-inline="true"></a>
+         <h1>优惠预约</h1>
+         <a href="#" data-role="button" data-icon="grid" data-iconpos="notext" data-theme="b" data-inline="true"></a>
+      </div>
+
+      <div data-role="content">
+         <ul data-role="listview" data-inset="true"   style="list-style-type:none;">
+             <li data-icon="false">
+                 <a href="#">
+                      <img src="{%static 'car_service/m/images/webn_tp7.gif'%}" class="ui-li-thumb">
+                      <h3 class="ui-li-heading">[洗车]佛山-佛山美丽天使汽车养护店</h3>
+                      <p class="ui-li-desc">原价：30￥<br>优惠价￥
+                      <font color="#FF0000">25</font>
+                      <img style="margin-left:40%; margin-right:10%; width:20%; height:5%;" src="images2/webn_an6.gif"></p>
+                  </a>
+             </li>
+             <li data-icon="false">
+                 <a href="#">
+                      <img src="{%static 'car_service/m/images/webn_tp7.gif'%}" class="ui-li-thumb">
+                      <h3 class="ui-li-heading">[洗车]佛山-佛山美丽天使汽车养护店</h3>
+                      <p class="ui-li-desc">原价：30￥<br>优惠价￥
+                      <font color="#FF0000">25</font> <img style="margin-left:40%; margin-right:10%; width:20%; height:5%;" src="{%static 'car_service/m/images/webn_an6.gif'%}"></p>
+                 </a>
+             </li>
+             <li data-icon="false">
+                 <a href="#">
+                      <img src="{%static 'car_service/m/images/webn_tp7.gif'%}" class="ui-li-thumb">
+                      <h3 class="ui-li-heading">[洗车]佛山-佛山美丽天使汽车养护店</h3>
+                      <p class="ui-li-desc">原价：30￥<br>优惠价￥
+                      <font color="#FF0000">25</font> <img style="margin-left:40%; margin-right:10%; width:20%; height:5%;" src="{%static 'car_service/m/images/webn_an6.gif'%}"></p>
+                 </a>
+             </li>
+         </ul>
+
+      </div>
+
+      <div data-role="footer" data-theme="b" class="footer" >
+          <div data-role="navbar">
+              <ul>
+                 <li><a href="#"  class="ui-btn ui-shadow  ui-btn-icon-top ui-icon-webtb1" data-theme="b" data-iconpos="notext">首页</a></li>
+                 <li><a href="{%url 'car_service:front_web:service_list'%}" class="ui-btn ui-shadow  ui-btn-icon-top ui-icon-webtb2" data-theme="b" data-iconpos="notext"><span style="color:#000000;">预订服务</span></a></li>
+                 <li><a href="{%url 'car_service:front_web:login'%}" class="ui-btn ui-shadow  ui-btn-icon-top ui-icon-webtb3" data-theme="b" data-iconpos="notext"><span style="color:#000000;">我的</span></a></li>
+                 <li><a href="#" class="ui-btn ui-shadow  ui-btn-icon-top ui-icon-webtb4" data-theme="b" data-iconpos="notext"><span style="color:#000000;">更多</span></a></li>
+              </ul>
+          </div>
+      </div>
+    </div>
+
+</body>
+</html>
