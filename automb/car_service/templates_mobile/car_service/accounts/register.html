@@ -18,7 +18,7 @@
     <div data-role="page" id="page">
           <div data-role="header" data-theme="b">
               <!--主题按钮-->
-              <a href="#" data-theme="b" data-role="button" data-icon="arrow-l" data-iconpos="notext" data-inline="true"></a>
+              <a href="{%url 'car_service:front_web:login'%}" data-theme="b" data-role="button" data-icon="arrow-l" data-iconpos="notext" data-inline="true"></a>
               <h1>用户注册</h1>
               <a href="#" data-theme="b" data-role="button" data-icon="grid" data-iconpos="notext" data-inline="true"></a>
           </div><!--header end-->
@@ -27,8 +27,8 @@
               <form method="post" action="#">
                  <div data-role="fieldcontain" style="text-align:left;">
                      <p>
-                        <label for="name">用户名称:</label>
-                        <input type="text" name="name" id="name" value=""  />
+                        <label for="phone">用户名称:</label>
+                        <input type="text" name="phone" id="phone" value=""  />
                      </p>
                      <p>
                          <label for="password1">创建密码:</label>
@@ -46,6 +46,10 @@
                            <option value="ad">奥迪</option>
                            <option value="bm">宝马</option>
                            <option value="bc">奔驰</option>
+                           <option value="lkss">雷克萨斯</option>
+                           <option value="lh">路虎</option>
+                            <option value="jp">吉普</option>
+                           <option value="lhua">莲花</option>
                          </select>
                      </p><p>
                         <label for="glnumber">公里数:</label>
@@ -54,9 +58,9 @@
                  </div>
               </form>
 
-              <a href="#" data-role="button"   data-theme="b">立即注册</a><br>
+              <a href="#" data-role="button"   data-theme="a">立即注册</a><br>
               <p>
-                  <label><input type="checkbox" name="checkbox-0"  data-theme="b" />  我已阅读并接受<a href="#">汽车美容养护网协议</a> </label>
+                  <label><input type="checkbox" name="checkbox-0"  data-theme="a" />  我已阅读并接受<a href="#">APP用户使用协议</a> </label>
               </p>
           </div><!--content end-->
     </div><!--page end-->

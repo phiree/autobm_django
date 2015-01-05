@@ -28,9 +28,8 @@ urlpatterns=patterns(''
                      ,url(r'^my$', my.my_home,name='my_home')
                      ,url(r'^my/orders$', my.order_list,name='my_orders')
                      ,url(r'^my/comment_list', my.comment_list_of_my,name='my_comment')
-                    ,url(r'^my/my_promote', my.my_promote,name='my_promote')
+                     ,url(r'^my/my_promote', my.my_promote,name='my_promote')
                      ,url(r'^my/cars', my.cars,name='my_cars')
-                    #保养提醒
 
                      #权限错误
                      ,url(r'^access_denied/.*$', view.access_denied,name='access_denied')
@@ -38,5 +37,22 @@ urlpatterns=patterns(''
                      ,url(r'^search/$', view.search,name='search')
                      #推广链接跳转.
                      ,url(r'^pm_redt/', view.promote_redirect,name='promote_redirect')
+
+                     #选择车类型
+                     ,url(r'^car_typelist/', view.select_cartype,name='select_cartype')
+                     #确认支付
+                     ,url(r'^affirm_pay/', view.affirm_pay,name='affirm_pay')
+                     #保养提醒
+                     ,url(r'^upkeep_time/', view.upkeep_time,name='upkeep_time')
+                     #商家详情
+                     ,url(r'^shop_info/', view.shop_info,name='shop_info')
+
+                     #优惠预约
+                     ,url(r'^preferential_booking/', view.preferential_booking,name='preferential_booking')
+                     #预约详情
+                     ,url(r'^subscribe_info/', view.subscribe_info,name='subscribe_info')
+                     #预约成功
+                     ,url(r'^subscribe_success/', view.subscribe_success,name='subscribe_success')
+
                      ,
                      )

@@ -207,3 +207,33 @@ def promote_redirect(request):
     return response
 
 
+
+
+#选择车类型
+def select_cartype(request):
+    return render(request, 'car_service/select_car_type.html')
+
+
+#保养提醒
+def upkeep_time(request):
+    return render(request, 'car_service/upkeep_time.html')
+
+#确认支付
+def affirm_pay(request):
+    return render(request, 'car_service/new_version_file/affirm_pay.html')
+
+#优惠预约
+def preferential_booking(request):
+    return render(request, 'car_service/new_version_file/preferential_booking.html')
+
+#商家详情
+def shop_info(request):
+    return render(request, 'car_service/new_version_file/shop_info.html')
+
+#预约详情
+def subscribe_info(request):
+    return render(request, 'car_service/new_version_file/subscribe_info.html')
+
+#预约成功
+def subscribe_success(request):
+    return render(request, 'car_service/new_version_file/subscribe_success.html')
