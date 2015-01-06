@@ -1,0 +1,49 @@
+{% extends "car_service/my/base_my.html" %}
+{%block content_title%}
+我的推广
+{%endblock%}
+{% block main_content%}
+
+
+<form class="form-horizontal" role="form">
+
+    <div class="form-group">
+
+        <label class="control-label col-md-2" for="pm_link">我的推广链接:</label>
+
+        <div class="col-md-7">
+            <input id="pm_link" name="pm_link" class="form-control"
+                   value="http://{{request.get_host}}{%url 'car_service:front_web:promote_redirect'%}?pm={{request.user.username}}"
+                   readonly="true" class="text"/>
+
+        </div>
+        <div class="col-md-3">
+            <button class="btn" type="button" onclick="javascript:$('#pm_link').select()">选择链接</button>
+        </div>
+
+    </div>
+</form>
+
+<fieldset>
+    <legend>通过我的推广链接注册的用户</legend>
+    <table class="table">
+        <tr>
+            <th>注册用户</th>
+            <th>注册时间</th>
+
+        </tr>
+        {%for promote in promote_register%}
+        <tr>
+            <td> {{promote.promoted_user.username}}</td>
+            <td> {{promote.promoted_user.date_joined}}</td>
+
+        </tr>
+        {%endfor%}
+    </table>
+</fieldset>
+<fieldset>
+    <legend>我的推广收入</legend>
+    <table></table>
+</fieldset>
+
+{%endblock%}

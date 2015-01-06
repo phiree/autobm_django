@@ -17,7 +17,7 @@ __author__ = 'Administrator'
 def home(request):
     #top_service_list = Tree.objects.filter(tree_type=Tree.tree_type_choice[2][0], parent=None)
     top_service_list=ServiceType.objects.filter(parent=None)
-    supplier_id=request.GET.get('sid')
+    """supplier_id=request.GET.get('sid')
     if not supplier_id:
         return HttpResponseRedirect(reverse('car_service:front_web:no_such_supplier'))
     try:
@@ -29,6 +29,8 @@ def home(request):
                                                      'supplier':supplier})
     response.set_cookie('sid',value=supplier_id)
     return response
+    """
+    return render(request, 'car_service/home.html', {'top_service_list': top_service_list})
 def no_such_supplier(request):
     return render(request,'car_service/no_such_supplier.html')
 def access_denied(request):
@@ -59,8 +61,11 @@ def service_list(request, service_type_id):
 
 def supplier_detail(request,supplier_id):
     supplier=Supplier.objects.get(pk=supplier_id)
+    if request.path==reverse('car_service:front_web:supplier_detail',kwargs={'supplier_id':supplier_id}):
+        return render(request,'car_service/supplier.html', {'supplier':supplier})
+    if request.path==reverse('car_service:front_web:supplier_services',kwargs={'supplier_id':supplier_id}):
+        return render(request,'car_service/supplier_services.html',{'supplier':supplier})
 
-    return render(request,'car_service/supplier.html', {'supplier':supplier})
 
 def service_detail2_with_id(request,service_id):
     return  service_detail2(request,service_id,None,None)
@@ -87,6 +92,7 @@ def service_detail2(request,service_id,servicetype_id,supplier_id):
     return render(request, 'car_service/servicedetail2.html',
                   {'merged_service':generate_service_detail(services),
                    'services':services,'service':service,
+                   'supplier':service.supplier,
                    'paras':str(servicetype_id)+'_'+str(supplier_id),
                   'comment_list':comment_list
                   })

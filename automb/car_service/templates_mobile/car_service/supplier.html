@@ -3,15 +3,20 @@
 {%block nav_active_home%}ui-icon-ph-home-active{%endblock%}
 {%block head%}
  <link rel="stylesheet" type="text/css" href="{%static 'car_service/m/css/home.css'%}">
-
     {%endblock%}
+{%block jq_load_script%}
+        //get supplier info from cookies  avoiding passing supplier instance to every template
+        $.cookie('supplier_id','{{supplier.id}}');
+        $.cookie('supplier_name','{{supplier.name}}');
+   {%endblock%}
+{%block top_return_btn%}
+
+{%endblock%}
 {%block content%}
  <img src="{%static 'car_service/m/images/web_t02.jpg'%}" alt="1" style="width:100%;" />
 <div class="ui-grid-a">
     <div class="ui-block-a">
-
-
-            <a href="{%url 'car_service:front_web:service_list'%}">
+            <a href="{%url 'car_service:front_web:supplier_services' supplier.id %}">
                 <img class="block-img" src="{%static 'car_service/m/images/web_tp1.gif'%}"></a>
             <a href="#"><img class="block-img" src="{%static 'car_service/m/images/web_tp4.gif'%}"></a>
 

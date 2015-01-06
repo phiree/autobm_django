@@ -1,0 +1,22 @@
+{% extends "car_service/my/base_my.html" %}
+         {%block content_title%}
+        评价列表
+        {%endblock%}
+{% block main_content%}
+
+<table class="table">
+    <tr>
+        <th>订单</th>
+        <th>评价时间</th>
+        <th>内容</th>
+    </tr>
+    {%for comment in comment_list%}
+    <tr>
+        <td><a href="{%url 'car_service:front_web:service_detail_with_id' comment.bill.service.id%}">{{comment.bill.service}}</a></td>
+        <td> {{comment.comment_date}}</td>
+        <td> {{comment.comment_content}}</td>
+
+    </tr>
+    {%endfor%}
+</table>
+{%endblock%}

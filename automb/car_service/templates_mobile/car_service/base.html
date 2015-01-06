@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {%load staticfiles%}
+{%load get_supplier_from_cookies%}
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html;"/>
@@ -9,40 +10,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" type="text/css" href="{%static 'car_service/js/jquery/jqm/jquery.mobile-1.4.5.min.css'%}">
-    <link rel="stylesheet" type="text/css" href="{%static 'car_service/js/jquery/jqm/jquery.mobile.theme-1.4.5.css'%}">
-    <link rel="stylesheet" type="text/css" href="{%static 'car_service/m/css/base.css'%}">
+   <link rel="stylesheet" type="text/css" href="{%static 'car_service/m/css/base.css'%}">
     <link rel="stylesheet" type="text/css" href="{%static 'car_service/m/css/jqm-customer-icon.css'%}">
 
     <script type="text/javascript" src="{%static 'car_service/js/jquery/jquery-1.9.1.js'%}"></script>
-    <script type="text/javascript" src="{%static 'car_service/js/jquery/jquery-1.9.1.js'%}"></script>
+     <script type="text/javascript" src="{%static 'car_service/js/jquery/plugin/jquery.cookie.js'%}"></script>
     <script src="{%static 'car_service/js/jquery/jqm/jquery.mobile-1.4.5.min.js'%}"></script>
+
     {%block head%}
     {%endblock%}
+    <script>
+        $(function(){
+        //get supplier info from cookies  avoiding passing supplier instance to every template
+        {%block jq_load_script%}{%endblock%}
+        supplier_id=$.cookie('supplier_id');
+        supplier_name=$.cookie('supplier_name');
+        $('#h1_supplier_name').text(supplier_name);
+        var home_link="{%url 'car_service:front_web:supplier_detail' 1%}".replace(/1/,supplier_id);
+        //$('#a_home').attr('href',home_link);
+        });
+    </script>
 </head>
-<body>
-<div data-role="page">
+<body> {%with supplier=request|get_supplier_from_cookies%}
+<div data-role="page" data-url="{{request.get_full_path }}" >
     <div data-role="header" class="header" data-position="fixed">
         <!--主题按钮-->
         {%block top_return_btn%}{%endblock%}
-         <h1>{{supplier.name}}</h1>
+         <h1>{%block header_title%}{{supplier.name}}{%endblock%}</h1>
 
     </div>
     <div data-role="ui-content"></div>
     {%block content%}{%endblock%}
     <div data-role="footer" data-position="fixed">
         <div class="ui-grid-c footer">
-            <div class="ui-block-a">
-                <a class="ui-icon-ph ui-nodisc-icon ui-btn  {%block nav_active_home%}ui-icon-ph-home{%endblock%} ui-btn-icon-notext "></a>
 
+            <div class="ui-block-a">
+                <a id="a_home" href="{%url 'car_service:front_web:supplier_detail' supplier.id%}" class="ui-icon-ph ui-nodisc-icon ui-btn  {%block nav_active_home%}ui-icon-ph-home{%endblock%} ui-btn-icon-notext "></a>
                 <div>首页</div>
             </div>
             <div class="ui-block-b">
-                <a class="ui-icon-ph ui-nodisc-icon ui-btn  {%block nav_active_services%}ui-icon-ph-services{%endblock%} ui-btn-icon-notext "></a>
+
+                <a id='a_services' href="{%url 'car_service:front_web:supplier_services' supplier.id%}" class="ui-icon-ph ui-nodisc-icon ui-btn  {%block nav_active_services%}ui-icon-ph-services{%endblock%} ui-btn-icon-notext "></a>
 
                 <div>优惠预约</div>
             </div>
+
             <div class="ui-block-c">
-                <a class="ui-icon-ph ui-nodisc-icon ui-btn  {%block nav_active_my%}ui-icon-ph-my{%endblock%} ui-btn-icon-notext "></a>
+                <a href="{%url 'car_service:front_web:my_home'%}"  class="ui-icon-ph ui-nodisc-icon ui-btn  {%block nav_active_my%}ui-icon-ph-my{%endblock%} ui-btn-icon-notext "></a>
 
                 <div>我的</div>
             </div>
@@ -54,6 +68,6 @@
         </div>
     </div>
 </div>
-
+{%endwith%}
 </body>
 </html>
