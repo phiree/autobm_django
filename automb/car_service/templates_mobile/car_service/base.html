@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 {%load staticfiles%}
-        {%load get_area_list%}
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html;"/>
@@ -9,214 +8,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" type="text/css" href="{%static 'car_service/css/style.css'%}"/>
+    <link rel="stylesheet" type="text/css" href="{%static 'car_service/js/jquery/jqm/jquery.mobile-1.4.5.min.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%static 'car_service/js/jquery/jqm/jquery.mobile.theme-1.4.5.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%static 'car_service/m/css/base.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%static 'car_service/m/css/jqm-customer-icon.css'%}">
+
     <script type="text/javascript" src="{%static 'car_service/js/jquery/jquery-1.9.1.js'%}"></script>
-    <script type="text/javascript" src="{%static 'car_service/js/jquery/plugin/jquery.cookie.js'%}"></script>
-    <script type="text/javascript" src="{%static 'car_service/js/base.js'%}"></script>
-    <script type="text/javascript" src="{%static 'car_service/js/ScrollPic.js'%}"></script>
-    <script type="text/javascript" src="{%static 'car_service/js/lanrenzhijia.js'%}"></script>
-    <script type="text/javascript" src="{%static 'car_service/js/tjsj.js'%}"></script>
-  {%block head%}
+    <script type="text/javascript" src="{%static 'car_service/js/jquery/jquery-1.9.1.js'%}"></script>
+    <script src="{%static 'car_service/js/jquery/jqm/jquery.mobile-1.4.5.min.js'%}"></script>
+    {%block head%}
     {%endblock%}
-    <script>
-            //增加书签
-            $(function() {
-                $('#bookmarkme').click(function() {
-                    if (window.sidebar && window.sidebar.addPanel) { // Mozilla Firefox Bookmark
-                        window.sidebar.addPanel(document.title,window.location.href,'');
-                    } else if(window.external && ('AddFavorite' in window.external)) { // IE Favorite
-                        window.external.AddFavorite(location.href,document.title);
-                    } else if(window.opera && window.print) { // Opera Hotlist
-                        this.title=document.title;
-                        return true;
-                    } else { // webkit - safari/chrome
-                        alert('Press ' + (navigator.userAgent.toLowerCase().indexOf('mac') != - 1 ? 'Command/Cmd' : 'CTRL') + ' + D to bookmark this page.');
-                    }
-                });
-
-                var current_area_name=$.cookie('area_name');
-                var current_area_id=$.cookie('area_id');
-                if (current_area_name==null){current_area_name='佛山';}
-                if (current_area_id==null){current_area_id='1';}
-                function set_area_cookie(area_id,area_name)
-                {
-                    $.cookie('area_id',area_id);
-                    $.cookie('area_name',area_name);
-                    $("#current_area_name").text(area_name);
-                }
-
-                set_area_cookie(current_area_id,current_area_name);
-                 $(".area_option").click(function(e){
-                        set_area_cookie($(this).attr('area_id'),$(this).text());
-                        location.reload();
-                 });
-                 // area_display(area);
-            });
-
-    </script>
-
-
 </head>
 <body>
-<!--头部-->
-<!--top-->
-<div class="top">
-	<div class="top_1">
-    	<div class="top_1_r f-r h">
-            {%if user.is_anonymous %}
-            <a href="{%url 'car_service:front_web:login'%}" rel="nofollow">登录</a>|<a
-                href="{%url 'car_service:front_web:register'%}" rel="nofollow">注册</a>|
-            {%else%}
-            欢迎您,{{user}}|<a href="{%url 'car_service:front_web:my_home'%}">个人中心</a>|
-            <a href="{%url 'car_service:front_web:logout'%}" rel="nofollow">注销</a>|
-            {%endif%}
-            <a href="{%url 'car_service:supplier_admin_service2_list'%}"> <span>商家入口</span></a>|
-            <a href="#"><span id="bookmarkme">收藏</span></a>
+<div data-role="page">
+    <div data-role="header" class="header" data-position="fixed">
+        <!--主题按钮-->
+        {%block top_return_btn%}{%endblock%}
+         <h1>{{supplier.name}}</h1>
 
-        <div class="clear"></div>
     </div>
-</div>
-    </div>
-<!--top/-->
-<!--head-->
-<div class="h_c">
-	<div class="h_c_1 f-l"><a href="/"><img src="{%static 'car_service/images/logo.jpg'%}" width="175" height="72" alt="" /></a></div>
-     <div class="h_c_2 f-l" style="position:relative;">
-    	<div class="h_c_2_1" onmouseover="ddd('aa', 'show');" onmouseout="ddd('aa', 'hide');"><span id="current_area_name"></span>&nbsp;[更换城市]</div>
-        <div class="h_c_2_2" id="aa" onmouseover="ddd('aa', 'show');" onmouseout="ddd('aa', 'hide');">
-            {%get_area_list%}
-        </div>
-    </div>
-
-    <div class="h_c_3 f-r"><a href="#" target="_blank"><img src="{%static 'car_service/images/img_01.jpg'%}" width="600" height="72" alt="" /></a></div>
-    <div class="clear"></div>
-</div>
-<!--head/-->
-<!--menu-->
-<div class="menu">
-	<div class="menu_1 f-l">服务分类</div>
-    <div class="menu_2 f-l">
-        <a href="/" class="{%block bg_top_home%}{%endblock%}">首页</a>
-        <a  class="{%block bg_top_supplier%}{%endblock%}" href="{%url 'car_service:front_web:supplier_list'%}">商家</a>
-        <a  class="{%block bg_top_service%}{%endblock%}" href="{%url 'car_service:front_web:service_list'%}">服务</a>
-        <a  class="{%block bg_top_map%}{%endblock%}" href="#">地图找商家</a>
-    </div>
-    <div class="menu_3 f-r">
-    	<form action="{%url 'car_service:front_web:search'%}" method="get" style="padding:0; margin:0;">
-        	<div class="menu_3_s1 f-l">
-            	<input type="text" name="kw"  id="txtKey" class="menu_3_s1_i" value="{%if kw%}{{kw}}{%else%}请输入要搜索的内容{%endif%}" onblur="this.style.color='#999';this.value=this.value==''?'请输入要搜索的内容':this.value;" onfocus="this.style.color='#333';this.value=this.value=='请输入要搜索的内容'?'':this.value;" />
-            </div>
-            <div class="menu_3_s2 f-r">
-            	<input type=submit value="" name="" class="menu_3_s2_b" />
-            </div>
-            <div class="clear"></div>
-        </form>
-    </div>
-    <div class="clear"></div>
-    {%block pop_up_type_list_body%}
-        <div class="index_c_l_1_l index_c_l_1_l2" id="bb" onmouseover="aaa('bb', 'show');" onmouseout="aaa('bb', 'hide');" style="display: none;">
-        <div class="goods">
-            <div class="all-goods">
-            <!--分类-->
-            <!--1-->
-            <div class="item index_c_l_1_l_b">
-            <div class="product">
-                <div class="index_c_l_1_l_list_title">汽车美容</div>
-                <div class="index_c_l_1_l_list_a h"><a href="#">洗车</a><a href="#">打蜡</a><a href="#">封釉</a><a href="#">镀膜</a><a href="#">内饰清洗</a><a href="#">空调清洗</a><a href="#">真皮座椅保养</a></div>
-            </div>
-            <div class="product-wrap posone1" style="display: none;">
-                <div class="list_title">汽车美容</div>
-                <div class="list_a h"><a href="#">洗车</a><a href="#">打蜡</a><a href="#">封釉</a><a href="#">镀膜</a><a href="#">内饰清洗</a><a href="#">空调清洗</a><a href="#">真皮座椅保养</a><a href="#">发动机舱清洗</a><a href="#">前风挡镀膜</a></div>
-            </div>
-            </div>
-            <!--1/-->
-            <!--2-->
-            <div class="item index_c_l_1_l_b">
-            <div class="product">
-                <div class="index_c_l_1_l_list_title">汽车装饰</div>
-                <div class="index_c_l_1_l_list_a h"><a href="#">玻璃贴膜</a><a href="#">底盘装甲</a><a href="#">座椅包真皮</a><a href="#">汽车隔音</a></div>
-            </div>
-            <div class="product-wrap posone2" style="display: none;">
-                <div class="list_title">汽车装饰</div>
-                <div class="list_a h"><a href="#">玻璃贴膜</a><a href="#">底盘装甲</a><a href="#">座椅包真皮</a><a href="#">汽车隔音</a></div>
-            </div>
-            </div>
-            <!--2/-->
-            <!--3-->
-            <div class="item index_c_l_1_l_b">
-            <div class="product">
-                <div class="index_c_l_1_l_list_title">汽车维修</div>
-                <div class="index_c_l_1_l_list_a h"><a href="#">四轮定位</a><a href="#">四轮动平衡</a><a href="#">油路清洗</a><a href="#">节气门清洗</a><a href="#">补胎</a></div>
-            </div>
-            <div class="product-wrap posone3" style="display: none;">
-                <div class="list_title">汽车维修</div>
-                <div class="list_a h"><a href="#">四轮定位</a><a href="#">四轮动平衡</a><a href="#">油路清洗</a><a href="#">节气门清洗</a><a href="#">补胎</a></div>
-            </div>
-            </div>
-            <!--3/-->
-            <!--4-->
-            <div class="item">
-            <div class="product">
-                <div class="index_c_l_1_l_list_title">汽车改装</div>
-                <div class="index_c_l_1_l_list_a h"><a href="#">音响改装</a><a href="#">车身改色贴膜</a><a href="#">DVD导航一体机</a><a href="#">氙气大灯改装</a></div>
-            </div>
-            <div class="product-wrap posone4" style="display: none;">
-                <div class="list_title">汽车改装</div>
-                <div class="list_a h"><a href="#">音响改装</a><a href="#">车身改色贴膜</a><a href="#">DVD导航一体机</a><a href="#">氙气大灯改装</a></div>
-            </div>
-            </div>
-            <!--4/-->
-            <!--分类/-->
-            </div>
-        </div>
-	</div>
-    {%endblock%}
-</div>
-<!--menu/-->
-<div class="w1000">
-    <!--顶部-->
-    <!--end顶部-->
+    <div data-role="ui-content"></div>
     {%block content%}{%endblock%}
-</div>
-<div class="w1000 h-20">&nbsp;</div>
-<div class="bottom">
-	<div class="bottom_c">
-    	<div class="bottom_c_1">
-        	<strong>服务预订指南</strong><br>
-            <a href="#" target="_blank">如何预订服务</a><br>
-            <a href="#" target="_blank">帮助中心</a><br>
-            <a href="#" target="_blank">汽车养护常见问题</a><br>
+    <div data-role="footer" data-position="fixed">
+        <div class="ui-grid-c footer">
+            <div class="ui-block-a">
+                <a class="ui-icon-ph ui-nodisc-icon ui-btn  {%block nav_active_home%}ui-icon-ph-home{%endblock%} ui-btn-icon-notext "></a>
+
+                <div>首页</div>
+            </div>
+            <div class="ui-block-b">
+                <a class="ui-icon-ph ui-nodisc-icon ui-btn  {%block nav_active_services%}ui-icon-ph-services{%endblock%} ui-btn-icon-notext "></a>
+
+                <div>优惠预约</div>
+            </div>
+            <div class="ui-block-c">
+                <a class="ui-icon-ph ui-nodisc-icon ui-btn  {%block nav_active_my%}ui-icon-ph-my{%endblock%} ui-btn-icon-notext "></a>
+
+                <div>我的</div>
+            </div>
+            <div class="ui-block-d">
+                <a class="ui-icon-ph ui-nodisc-icon ui-btn  {%block nav_active_more%}ui-icon-ph-more{%endblock%} ui-btn-icon-notext "></a>
+
+                <div>更多</div>
+            </div>
         </div>
-        <div class="bottom_c_1">
-        	<strong>会员中心</strong><br>
-            <a href="#" target="_blank">会员注册</a><br>
-            <a href="#" target="_blank">注册协议</a><br>
-        </div>
-        <div class="bottom_c_1">
-        	<strong>会员中心</strong><br>
-            <a href="#" target="_blank">支付方式</a><br>
-            <a href="#" target="_blank">先服务后付款</a><br>
-        </div>
-        <div class="bottom_c_1">
-        	<strong>会员中心</strong><br>
-            <a href="#" target="_blank">消费者权益保障</a><br>
-            <a href="#" target="_blank">先行赔付政策</a><br>
-            <a href="#" target="_blank">价格保护</a><br>
-        </div>
-        <div class="bottom_c_1">
-        	<strong>平台商家</strong><br>
-            <a href="#" target="_blank">商家入口</a><br>
-            <a href="#" target="_blank">服务商介绍</a><br>
-            <a href="#" target="_blank">申请加入平台</a><br>
-        </div>
-        <div class="bottom_c_2">
-            <strong>客服咨询电话</strong><br>
-            <span>4008-108-876</span> 转 <span>0</span><br>
-            周一至周五：8:30-17:30<br>
-        </div>
-        <div class="clear"></div>
     </div>
-    <div class="copyright">©2014-2015 www.92auto.net All Rights Reserved. 爱车网 版权所有</div>
 </div>
 
 </body>

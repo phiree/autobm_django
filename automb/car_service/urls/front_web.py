@@ -53,6 +53,7 @@ urlpatterns=patterns(''
                      ,url(r'^subscribe_info/', view.subscribe_info,name='subscribe_info')
                      #预约成功
                      ,url(r'^subscribe_success/', view.subscribe_success,name='subscribe_success')
+                     ,url(r'^no_such_supplier/', view.no_such_supplier,name='no_such_supplier')
 
                      ,
                      )

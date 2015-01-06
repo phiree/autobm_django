@@ -1,146 +1,31 @@
-<!DOCTYPE html>
-    {%load staticfiles%}
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home</title>
-    <link rel="stylesheet" type="text/css" href="{%static 'car_service/js/jquery/jqm/jquery.mobile-1.4.5.min.css'%}">
-    <link rel="stylesheet" type="text/css" href="{%static 'car_service/js/jquery/jqm/jquery.mobile.theme-1.4.5.css'%}">
-    <link rel="stylesheet" type="text/css" href="{%static 'car_service/m/css/reset.css'%}" media="all">
-    <script type="text/javascript" src="{%static 'car_service/js/jquery/jquery-1.9.1.js'%}"></script>
-    <script type="text/javascript" src="{%static 'car_service/m/js/swipe.js'%}"></script>
-    <script src="{%static 'car_service/js/jquery/jqm/jquery-1.11.1.min.js'%}"></script>
-    <script src="{%static 'car_service/js/jquery/jqm/jquery.mobile-1.4.5.min.js'%}"></script>
-    <style type="text/css">
-         /*头部图标无焦点*/
-        .ui-icon-web03:after {background-image: url("{%static 'car_service/m/images/web_t003.gif'%}");background-size:  28px 28px;}
-        .ui-icon-web04:after{background-image: url("{%static 'car_service/m/images/web_t004.gif'%}"); background-size: 28px 28px; }
-        .ui-icon-web05:after{background-image: url("{%static 'car_service/m/images/web_t005.gif'%}");background-size:  28px 28px;}
-        .ui-icon-web06:after {background-image: url("{%static 'car_service/m/images/web_t006.gif'%}");background-size: 28px 28px;}
+{% extends "car_service/base.html" %}
+{%load staticfiles%}
+{%block nav_active_home%}ui-icon-ph-home-active{%endblock%}
+{%block head%}
+ <link rel="stylesheet" type="text/css" href="{%static 'car_service/m/css/home.css'%}">
 
-        div .ui-footer{ text-align:center;}
-        div .home-silder{float:left; height:20%; width:100%;text-align:center;}
-        div .home_server{ float:left; width:100%; height:60%; margin:1% 0 1% 0;}
-        div .home_server_left{float:left; width:48%; height:100%; margin:0 1% 0 1%; }
-		div .home_server_right{float:left; width:49%; height:100%; margin:0 1% 0 0;}
+    {%endblock%}
+{%block content%}
+ <img src="{%static 'car_service/m/images/web_t02.jpg'%}" alt="1" style="width:100%;" />
+<div class="ui-grid-a">
+    <div class="ui-block-a">
 
-		/*优惠预约*/
-		div .home_server_yhyy{ float:left; width:100%; height:60%; margin-bottom:1%; background-color:#FF7F00;}
-        /*保养心得*/
-		div .home_server_byxd{ float:left; width:100%; height:38%; margin-top:1%; background-color:#55DFFF;}
-        /*保养提醒*/
-		div .home_server_bytx{ float:left; width:100%; height:40%; margin-bottom:1%; background-color:#55DFFF;}
-        /*爱车商城*/
-		div .home_server_acsc{ float:left; width:100%; height:28%; margin:1% 0 1% 0; background-color:#FF3FAA;}
-        /*用户中心*/
-        div .home_server_usercenter{ float:left; width:100%; height:28; margin-top:1%; background-color:#FF5;}
-         /*底部图标无焦点*/
-         .ui-icon-webtb1:after {background-image: url("{%static 'car_service/m/images/web_tb01.gif'%}"); background-size: 18px 18px;}
-         .ui-icon-webtb2:after {background-image: url("{%static 'car_service/m/images/web_tb02.gif'%}"); background-size: 18px 18px;}
-         .ui-icon-webtb3:after {background-image: url("{%static 'car_service/m/images/web_tb03.gif'%}"); background-size: 18px 18px;}
-         .ui-icon-webtb4:after { background-image: url("{%static 'car_service/m/images/web_tb04.gif'%}"); background-size: 18px 18px; }
-         div .home-icon ul li{float:left;margin:0 1% 0 1%;text-align:center; }
-         div .home-icon ul li img{float:left; width:100%; line-height: inherit;}
-         div ul{list-style-type:none;text-align:center;}
-         a{ text-decoration:none; }
-         font {color:red;}
-         div .fonts{color:red; float:left; size:15px; width:20%;}
-         div .show_font1{font-size:8px;}
-    </style>
-    <script type="text/javascript">
-        $(function(){
-			new Swipe(document.getElementById('banner_box'), {
-				speed:500,
-				auto:3000,
-				callback: function(){
-					var lis = $(this.element).next("ol").children();
-					lis.removeClass("on").eq(this.index).addClass("on");
-				}
-			});
-		});
 
-        $(".web03").on("tap",function(){
-          $(this).style.backgroundImage="url'{%static 'car_service/js/jquery/jqm/images/web_t03.gif'%}')";
-        });
+            <a href="{%url 'car_service:front_web:service_list'%}">
+                <img class="block-img" src="{%static 'car_service/m/images/web_tp1.gif'%}"></a>
+            <a href="#"><img class="block-img" src="{%static 'car_service/m/images/web_tp4.gif'%}"></a>
 
-    </script>
-</head>
-<body>
-<div data-role="page"   >
-  <div data-role="header" class="header"  data-theme="b">
-  <!--主题按钮-->
-  <a  data-theme="b" href="#" ></a>
-    <h1>汽车美容养护网</h1>
-  <a href="#"  data-theme="b" data-role="button" data-icon="grid" data-iconpos="notext"  data-inline="true"></a>
-
-  </div>
-  <div data-role="content">
-      <div class="home-silder">
-      <!--幻灯片管理-->
-            <div style="-webkit-transform:translate3d(0,0,0);">
-                <div id="banner_box" class="box_swipe">
-                    <ul>
-                            <li>
-                                <a onclick="return false;">
-                                    <img src="{%static 'car_service/m/images/web_t02.jpg'%}" alt="1" style="width:100%;" />
-                                </a>
-                            </li>
-                            <li>
-                                <a onclick="return false;">
-                                    <img src="{%static 'car_service/m/images/web_t02.jpg'%}" alt="2" style="width:100%;" />
-                                </a>
-                            </li>
-                            <li>
-                                <a onclick="return false;">
-                                    <img src="{%static 'car_service/m/images/web_t02.jpg'%}" alt="3" style="width:100%;" />
-                                </a>
-                            </li>
-                    </ul>
-                    <ol>
-                            <li class="on"></li>
-                            <li ></li>
-                            <li ></li>
-
-                    </ol>
-                </div>
-            </div>
-
-      </div>
-
-      <!--服务展示-->
-      <div class="home_server">
-           <div class="home_server_left">
-               <div class="home_server_yhyy">
-                     <a href="{%url 'car_service:front_web:service_list'%}"><img src="{%static 'car_service/m/images/web_tp1.gif'%}" style=" width:100%; height:100%;"></a>
-               </div>
-               <div class="home_server_byxd">
-                     <a href="#"><img src="{%static 'car_service/m/images/web_tp4.gif'%}" style=" width:100%; height:100%;"></a>
-               </div>
-           </div>
-           <div class="home_server_right">
-            	  <div class="home_server_bytx">
-                      <a href="#{%url 'car_service:front_web:upkeep_time'%}"><img  src="{%static 'car_service/m/images/web_tp2.gif'%}" style=" width:100%; height:100%;"></a>
-                  </div>
-                  <div class="home_server_acsc">
-                  	   <a href="{%url 'car_service:front_web:select_cartype'%}"><img src="{%static 'car_service/m/images/web_tp3.gif'%}" style=" width:100%; height:100%;"></a>
-                  </div>
-                  <div class="home_server_usercenter">
-                       <a href="#"><img src="{%static 'car_service/m/images/web_tp5.gif'%}" style=" width:100%; height:100%;"></a>
-                  </div>
-           </div>
-      </div>
-  </div>
-  <div data-role="footer" data-theme="b" class="footer" >
-      <div data-role="navbar">
-          <ul>
-                <li><a href="#"  class="ui-btn ui-shadow  ui-btn-icon-top ui-icon-webtb1" data-theme="b" data-iconpos="notext">首页</a></li>
-                <li> <a href="{%url 'car_service:front_web:service_list'%}" class="ui-btn ui-shadow  ui-btn-icon-top ui-icon-webtb2" data-theme="b" data-iconpos="notext"><span style="color:#000000;">优惠预约</span></a></li>
-                <li><a href="{%url 'car_service:front_web:login'%}" class="ui-btn ui-shadow  ui-btn-icon-top ui-icon-webtb3" data-theme="b" data-iconpos="notext"><span style="color:#000000;">我的</span></a></li>
-                <li>  <a href="{%url 'car_service:front_web:subscribe_success'%}" class="ui-btn ui-shadow  ui-btn-icon-top ui-icon-webtb4" data-theme="b" data-iconpos="notext"><span style="color:#000000;">更多</span></a></li>
-          </ul>
-      </div>
-  </div>
+    </div>
+    <div class="ui-block-b">
+            <div style="padding-left:3px;">
+            <a href="#{%url 'car_service:front_web:upkeep_time'%}"><img class="block-img"
+                    src="{%static 'car_service/m/images/web_tp2.gif'%}"  ></a>
+            <a href="{%url 'car_service:front_web:select_cartype'%}"><img class="block-img"
+                    src="{%static 'car_service/m/images/web_tp3.gif'%}" ></a>
+            <a href="#"><img class="block-img" src="{%static 'car_service/m/images/web_tp5.gif'%}"></a>
 </div>
-</body>
-</html>
+
+
+    </div>
+</div><!-- /grid-a -->
+{%endblock%}

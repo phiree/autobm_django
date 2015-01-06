@@ -128,6 +128,7 @@ class ServiceValue(Model):
 
 
 class Supplier(Model):
+    """车店(服务提供商)"""
     name=CharField(max_length=100,verbose_name='名称')
     area=ForeignKey(AreaInfo,verbose_name='区域')
     address=CharField(max_length=100,verbose_name='地址')

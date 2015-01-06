@@ -1,7 +1,6 @@
-.footer div{
-text-align:center;
-}
 .ui-icon-ph{
+border:0;
+margin-bottom:1px;
 width:53px !important;
 height:44px !important;
 }
@@ -10,8 +9,22 @@ background-image: url("../images/web_tb1.gif");
 }
 .ui-icon-ph-home-active{
 background-image: url("../images/web_tb01.gif");
-
 }
+.ui-icon-ph-services{
+background-image: url("../images/web_tb2.gif");
 }
-.ui-nosvg .ui-icon-ph-home:after {
-	background-image: url("../images/web_tb1.gif");
+.ui-icon-ph-services-active{
+background-image: url("../images/web_tb02.gif");
+}
+.ui-icon-ph-my{
+background-image: url("../images/web_tb3.gif");
+}
+.ui-icon-ph-my-active{
+background-image: url("../images/web_tb03.gif");
+}
+.ui-icon-ph-more{
+background-image: url("../images/web_tb4.gif");
+}
+.ui-icon-ph-more-active{
+background-image: url("../images/web_tb04.gif");
+}

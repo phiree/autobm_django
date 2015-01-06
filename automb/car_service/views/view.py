@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.core import serializers
+from django.core.exceptions import ObjectDoesNotExist
 from django.http import HttpResponse,HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.shortcuts import render,redirect
@@ -16,8 +17,20 @@ __author__ = 'Administrator'
 def home(request):
     #top_service_list = Tree.objects.filter(tree_type=Tree.tree_type_choice[2][0], parent=None)
     top_service_list=ServiceType.objects.filter(parent=None)
-    return render(request, 'car_service/home.html', {'top_service_list': top_service_list})
+    supplier_id=request.GET.get('sid')
+    if not supplier_id:
+        return HttpResponseRedirect(reverse('car_service:front_web:no_such_supplier'))
+    try:
+        supplier=Supplier.objects.get(pk=supplier_id)
+    except ObjectDoesNotExist:
+        return HttpResponseRedirect(reverse('car_service:front_web:no_such_supplier'))
 
+    response= render(request, 'car_service/home.html', {'top_service_list': top_service_list,
+                                                     'supplier':supplier})
+    response.set_cookie('sid',value=supplier_id)
+    return response
+def no_such_supplier(request):
+    return render(request,'car_service/no_such_supplier.html')
 def access_denied(request):
     return render(request,'car_service/access_denied.html')
 
