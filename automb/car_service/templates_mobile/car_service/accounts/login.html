@@ -6,24 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"><!--自适应屏幕宽度-->
     <title>用户登录</title>
     <link rel="stylesheet" href="{%static 'car_service/js/jquery/jqm/jquery.mobile-1.4.5.min.css'%}">
-     <link rel="stylesheet" href="{%static 'car_service/js/jquery/jqm/jquery.mobile.theme-1.4.5.css'%}">
+    <link rel="stylesheet" href="{%static 'car_service/js/jquery/jqm/jquery.mobile.theme-1.4.5.css'%}">
     <script src="{%static 'car_service/js/jquery/jqm/jquery-1.11.1.min.js'%}"></script>
     <script src="{%static 'car_service/js/jquery/jqm/jquery.mobile-1.4.5.min.js'%}"></script>
-<style type="text/css">
- a { text-decoration:none;}
-</style>
+    <style type="text/css">
+     a { text-decoration:none;}
+    </style>
 </head>
 <body>
 <div data-role="page" id="page">
+
   <div data-role="header" data-theme="b">
+<<<<<<< Updated upstream
         <!--主题按钮-->
  	<a href="#" data-role="button" data-icon="arrow-l" data-iconpos="notext" data-theme="b" data-inline="true"></a>
     <h1>用户登录</h1>
   <a href="#"  data-role="button" data-icon="grid" data-iconpos="notext" data-theme="b" data-inline="true"></a>
+=======
+      <!--主题按钮-->
+      <a href="{%url 'car_service:front_web:site_home'%}" data-role="button" data-icon="arrow-l" data-iconpos="notext" data-theme="b" data-inline="true"></a>
+      <h1>用户登录</h1>
+      <a href="#"  data-role="button" data-icon="grid" data-iconpos="notext" data-theme="b" data-inline="true"></a>
+>>>>>>> Stashed changes
   </div>
+
   <div data-role="content">
 
      <div data-role="fieldcontain" style="text-align:center;">
+<<<<<<< Updated upstream
           <form method="post" action="#">
             <p >
             <label for="name">用户名:</label>
@@ -41,6 +51,21 @@
   </div>
 
 
+=======
+          <form >
+              <p >
+                  <label for="phone">手机号:</label>
+                  <input type="text" name="phone" id="phone" value=""  />
+              </p>
+              <p>
+                  <label for="password">密&nbsp;&nbsp;码:</label>
+                  <input type="password" name="password" id="password" value="" >
+              </p>
+          </form>
+     </div>
+         <a href="{%url 'car_service:front_web:login'%}" data-role="button"   data-theme="b">立即登录</a><br>
+         <a href="{%url 'car_service:front_web:register'%}">免费注册</a>
+>>>>>>> Stashed changes
   </div>
 
 </div>

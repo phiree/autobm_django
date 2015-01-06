@@ -18,40 +18,43 @@
     </style>
 </head>
 <body>
-<div data-role="page" id="pageone">
-  <div data-role="header">
-	<!--主题按钮-->
-    <a href="#" data-role="button" data-icon="arrow-l" data-iconpos="notext" data-theme="a" data-inline="true"></a>
-    <h1>商家详情</h1>
-    <a href="#" data-role="button" data-icon="grid" data-iconpos="notext" data-theme="a" data-inline="true"></a>
-  </div>
+    <div data-role="page" id="pageone" >
+          <div data-role="header" data-theme="b">
+                <!--主题按钮-->
+                <a href="{%url 'car_service:front_web:site_home'%}" data-role="button" data-icon="arrow-l" data-iconpos="notext" data-theme="b" data-inline="true"></a>
+                <h1>商家详情</h1>
+                <a href="#" data-role="button" data-icon="grid" data-iconpos="notext" data-theme="b" data-inline="true"></a>
+          </div>
 
-  <div data-role="content">
-       <div class="ui-grid-bb" align="center" >
-             <div class="ui-block-a" data-inline="true"	>
-                    <img style=" float:left;width:100%; height:100%;margin:0 0 0 0;" src="images2/webn_t3.gif">
-             </div>
-             <div class="ui-block-b" data-inline="true"	 >
-                  <p>
-                      <h4 style="font-size:13px;">佛山美丽天使汽车养护店</h4> <br>
-                     <font color="#808080" size="-1"> 营业时间:9:00-18:00 </font>
-                  </p>
-             </div>
-       </div>
-       <div class="ui-grid-cc" align="left">
-          <p>
-              <img style="width:25px; height:25px;" src="images2/webn_xtb1.gif">门店地址门店地址门店地址门店地址<br>
-              <img style="width:25px; height:25px;"  src="images2/webn_xtb2.gif">0757-8259123
-          </p>
-       </div>
-       <div class="ui-grid-dd"  align="left";>
-          <h3>商家概况</h3>
-          <p>
-             佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车
-          </p>
-       </div>
-  </div>
-</div>
+          <div data-role="content">
+
+               <div class="ui-grid-bb" align="center" >
+                     <div class="ui-block-a" data-inline="true"	>
+                            <img style=" float:left;width:100%; height:100%;margin:0 0 0 0;" src="{%static 'car_service/m/images/webn_t3.gif'%}">
+                     </div>
+                     <div class="ui-block-b" data-inline="true"	 >
+                          <p>
+                              <h4 style="font-size:13px;">佛山美丽天使汽车养护店</h4><br>
+                             <font color="#808080" size="-1"> 营业时间:9:00-18:00 </font>
+                          </p>
+                     </div>
+               </div>
+
+               <div class="ui-grid-cc" align="left">
+                      <p>
+                          <img style="width:15px; height:15px;" src="{%static 'car_service/m/images/webn_xtb1.gif'%}">门店地址门店地址门店地址门店地址<a href="#" style="float:right;">查看地址</a> <br>
+                          <img style="width:15px; height:15px;"  src="{%static 'car_service/m/images/webn_xtb2.gif'%}">0757-8259123<a href="#" style="float:right;">拨打电话</a>
+                      </p>
+               </div>
+
+               <div class="ui-grid-dd"  align="left";>
+                      <h3>商家概况</h3>
+                      <p>
+                         佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车佛山洗车
+                      </p>
+               </div>
+          </div>
+    </div>
 
 </body>
 </html>

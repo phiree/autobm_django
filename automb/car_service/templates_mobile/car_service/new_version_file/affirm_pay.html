@@ -11,11 +11,12 @@
     <script src="{%static 'car_service/js/jquery/jqm/jquery.mobile-1.4.5.min.js'%}"></script>
     <style type="text/css">
         div .top{float:left;width:100%; height:30%; background-color:#DDDDDF; margin-bottom:1%; padding:1%; border-bottom:1px solid  #FF3F00; }
-        div .show_money{ float:left; width:100%;height:20%;background-color:#DDDDDF; text-align:right;padding:5%; margin-right:2%;}
+        div .show_money{ float:left; width:100%;height:20%;background-color:#DDDDDF; text-align:right;padding:1%;}
         div .show_button{ float:left; width:100%; height:20%; text-align:right; padding:5% 5% 5% 0;margin-right:2%;}}
         div .aaa{ float:left; width:100%;}
         div .td_input{ border:1px solid #FF3F00;}
         div .top table{ width:100%; font-size:12px;}
+        select:first-child{padding: .2em 10px !important;}
     </style>
 </head>
 <body>
@@ -24,7 +25,7 @@
 
   <div data-role="header" data-theme="b">
         <!--主题按钮-->
-        <a href="#" data-role="button" data-icon="arrow-l" data-iconpos="notext" data-theme="b" data-inline="true"></a>
+        <a href="{%url 'car_service:front_web:site_home'%}" data-role="button" data-icon="arrow-l" data-iconpos="notext" data-theme="b" data-inline="true"></a>
         <h1>确认支付</h1>
         <a href="#" data-role="button" data-icon="grid" data-iconpos="notext" data-theme="b" data-inline="true"></a>
   </div>
@@ -33,13 +34,13 @@
       <div class="top">
           <table>
               <tr>
-                  <td colspan="3">  <h4>[洗车]佛山美丽天使汽车养护店</h4></td>
+                  <td colspan="3"><h4>[洗车]佛山美丽天使汽车养护店</h4></td>
               </tr>
               <tr>
-                  <td> 原价:￥30</td><td>优惠价:￥<font color="#FF0000">25</font></td><td></td>
+                  <td> 原价:￥30</td><td colspan="2">优惠价:￥<font color="#FF0000">25</font></td>
               </tr>
               <tr>
-                  <td>车型</td><td class="td_input">威航2010款 16.4百年纪念版8.0T <img  src="{%static 'car_service/m/images/webn_xtb3.gif'%}"></td><td></td>
+                  <td>车型:</td><td class="td_input" colspan="2">威航2010款 16.4百年纪念版8.0T <img style="float:right; height:100%;"  src="{%static 'car_service/m/images/webn_xtb3.gif'%}"></td>
               </tr>
               <tr>
                   <td>洗车方式:</td><td>人工洗车</td><td></td>
@@ -48,7 +49,7 @@
                   <td>店铺优惠:</td>
                   <td>
                       <fieldset data-role="controlgroup" data-type="horizontal" data-inline="true" >
-                            <select name="cartype" id="cartype" data-mini="true" data-inline="true"  >
+                            <select name="cartype" id="cartype" data-mini="true" data-inline="true" class="affurn_select" >
                                 <option value="5">省5元:店铺优惠卷</option>
                                 <option value="20">省20元:店铺优惠卷</option>
                                 <option value="30">省30元:店铺优惠卷</option>
@@ -57,17 +58,20 @@
                       </fieldset>
                   </td>
                   <td>
-                      <img style="float:left; width:20%; height:50%; padding:20% 0 20% 0; margin-left:10%;" src="{%static 'car_service/m/images/webn_xtb4.gif'%}"/>
-                      <font style="float:right; padding:20% 0 20% 0;" color="#FF0000">-￥5.00</font>
+                      <font style="float:right; padding:20% 0 20% 0;" color="#FF0000">
+                          <img style="float:left; width:20%; height:50%; padding:1% 0 1% 0; margin-left:2%; margin-right:5%;" src="{%static 'car_service/m/images/webn_xtb4.gif'%}"/>-￥5.00
+                      </font>
                   </td>
-            </tr>
+              </tr>
           </table>
       </div>
+
       <div class="show_money">
          <span style="color:#808080;">实付款:</span><font color="#FF0000" size="+2" style="margin-right:10%; ">￥20.00</font>
       </div>
+
       <div class="show_button">
-         <img style="width:30%; height:100%; margin-right:5%;" src="{%static 'car_service/m/images/webn_an1.gif'%}">
+         <a href="#"><img style="width:30%; height:100%; margin-right:5%;" src="{%static 'car_service/m/images/webn_an1.gif'%}"></a>
       </div>
   </div>
 </div>

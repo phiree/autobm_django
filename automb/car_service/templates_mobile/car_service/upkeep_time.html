@@ -23,117 +23,74 @@
     </style>
 </head>
 <body>
-<div data-role="page" id="pageone">
-  <div data-role="header" data-theme="b">
-        <!--主题按钮-->
-        <a href="{%url 'car_service:front_web:site_home'%}" data-role="button" data-icon="arrow-l" data-iconpos="notext" data-theme="b" data-inline="true"></a>
-        <h1>保养提醒</h1>
-        <a href="#" data-role="button" data-icon="grid" data-iconpos="notext" data-theme="b" data-inline="true"></a>
-  </div>
+    <div data-role="page" id="pageone">
 
-  <div data-role="content">
-       <div class="ui-grid-bb" align="center" >
-             <div class="ui-block-a" data-inline="true"	>
-                    <img style=" float:left;width:100%; height:100%;margin:0 0 0 0;" src="{%static 'car_service/m/images/webn_tp2.gif'%}">
-             </div>
-             <div class="ui-block-b" data-inline="true"	 >
-                  <p>
-                      <h4 style="font-size:12px;">本田 CR-V思威2.1L2012年产</h4> <br>
-                     <font color="#A0A0A4" size="-1">新车上路时间:2012-01 </font>
-                  </p>
-             </div>
-       </div>
+          <div data-role="header" data-theme="b">
+                <!--主题按钮-->
+                <a href="{%url 'car_service:front_web:site_home'%}" data-role="button" data-icon="arrow-l" data-iconpos="notext" data-theme="b" data-inline="true"></a>
+                <h1>保养提醒</h1>
+                <a href="#" data-role="button" data-icon="grid" data-iconpos="notext" data-theme="b" data-inline="true"></a>
+          </div>
 
-	    <div class="ui-grid-dd">
-           <p>
-           当前里程(km):20000    <span  style="float:right; margin-right:3%;"><a href="#">修正</a></span><br>
-           上次换机油时间:2012.01 <span  style="float:right; margin-right:3%;"><a href="#">修正</a></span>
-           </p>
-       </div>
+          <div data-role="content">
+               <div class="ui-grid-bb" align="center" >
+                     <div class="ui-block-a" data-inline="true"	>
+                            <img style=" float:left;width:100%; height:100%;margin:0 0 0 0;" src="{%static 'car_service/m/images/webn_tp2.gif'%}">
+                     </div>
+                     <div class="ui-block-b" data-inline="true"	 >
+                          <p>
+                              <h4 style="font-size:12px;">本田 CR-V思威2.1L2012年产</h4> <br>
+                             <font color="#A0A0A4" size="-1">新车上路时间:2012-01 </font>
+                          </p>
+                     </div>
+               </div>
 
-       <div class="ui-grid-ee">
-           <img style=" float:left;width:10%; height:100%;" src="{%static 'car_service/m/images/webn_tp3.gif'%}">
-           <h3 style=" float:left;color:#FFF; height:100%; margin:5% 2% 2% 2%;">提醒时间:2014.12.31</h3>
-           <a class='btn_edit' href="#" data-role="button" data-corners="false" data-mini="true" data-shadow="false"  >更改</a>
-       </div>
+                <div class="ui-grid-dd">
+                   <p>
+                   当前里程(km):20000    <span  style="float:right; margin-right:3%;"><a href="#">修正</a></span><br>
+                   上次换机油时间:2012.01 <span  style="float:right; margin-right:3%;"><a href="#">修正</a></span>
+                   </p>
+               </div>
 
-       <div class="ui-grid-ff">
-           <div style="float:left; width:100%; height:10%; border-top:1px solid #C30; border-left:1px solid #C30; border-right:1px solid #C30; text-align:center;">
-                 <h4>您在<font color="#FF0000">2015.01</font>需要更换机油及滤清器</h4>
-           </div>
-           <div style="float:left; width:100%; height:10%;text-align:center;">
-               <p>
-               空手道副科级口味打开世界东方世界科技上看风景时看到飞机上看到圣诞节逢山开道飞机上看到飞机上看手机端福克斯的佛教石窟地方就是
-               </p>
-           </div>
-           <table style="float:left; width:100%;">
-                <tr >
-                    <td style="text-align:left; width:30%;font-size:12px;"><img src="{%static 'car_service/m/images/webn_xtb5.gif'%}">防冻冷却液</td>
-                    <td style="text-align:right; width:70%;font-size:12px;">2015.01/20600KM应更换</td>
-                </tr>
-                <tr>
-                    <td style="text-align:left;width:30%; font-size:12px;"><img src="{%static 'car_service/m/images/webn_xtb5.gif'%}">防冻冷却液</td>
-                    <td style="text-align:right;width:70%;font-size:12px;">2013.01/6900KM应更换</td>
-                </tr>
-                <tr>
-                    <td style="text-align:left;width:30%;font-size:12px;"><img src="{%static 'car_service/m/images/webn_xtb5.gif'%}">防冻冷却液</td>
-                    <td style="text-align:right;width:70%;font-size:12px;">2013.01/6900KM应更换</td>
-                </tr>
-                <tr>
-                    <td style="text-align:left;width:30%;font-size:12px;"><img src="{%static 'car_service/m/images/webn_xtb5.gif'%}">防冻冷却液</td>
-                    <td style="text-align:right;width:70%;font-size:12px;">2013.01/6900KM应更换</td>
-                </tr>
-                <tr>
-                    <td style="text-align:left;width:30%;font-size:12px;"><img src="{%static 'car_service/m/images/webn_xtb5.gif'%}">防冻冷却液</td>
-                    <td style="text-align:right;width:70%;font-size:12px;">2015.01/20600KM应更换</td>
-                </tr>
-           </table>
+               <div class="ui-grid-ee">
+                   <img style=" float:left;width:10%; height:100%;" src="{%static 'car_service/m/images/webn_tp3.gif'%}">
+                   <h3 style=" float:left;color:#FFF; height:100%; margin:5% 2% 2% 2%;">提醒时间:2014.12.31</h3>
+                   <a class='btn_edit' href="#" data-role="button" data-corners="false" data-mini="true" data-shadow="false"  >更改</a>
+               </div>
 
-
-
-
-          <!-- <table style="font-size:14px; text-align:center;">
-            <tr  style=" width:100%;">
-            	<td colspan="3" style=" width:100%; border-top:1px solid #C30; border-left:1px solid #C30; border-right:1px solid #C30; text-align:center;">
-
-                </td>
-            </tr>
-            <tr style=" width:100%;">
-            	<td colspan="3">
-                   空手道副科级口味打开世界东方世界科技上看风景时看到飞机上看到圣诞节逢山开道飞机上看到飞机上看手机端福克斯的佛教石窟地方就是
-                </td>
-            </tr>
-            <tr>
-            	<td><img src="{%static 'car_service/m/images/webn_xtb5.gif'%}">防冻冷却液</td>
-                <td colspan="2" style="text-align:right;">2015.01/20600KM应更换</td>
-            </tr>
-            <tr>
-            	<td><img src="{%static 'car_service/m/images/webn_xtb5.gif'%}">防冻冷却液</td>
-                <td  colspan="2" style="text-align:right;">2013.01/6900KM应更换</td>
-            </tr>
-            <tr>
-            	<td><img src="{%static 'car_service/m/images/webn_xtb5.gif'%}">防冻冷却液</td>
-            	<td  colspan="2" style="text-align:right;">2013.01/6900KM应更换</td>
-            </tr>
-            <tr>
-            	<td><img src="{%static 'car_service/m/images/webn_xtb5.gif'%}">防冻冷却液</td>
-                <td  colspan="2" style="text-align:right;">2013.01/6900KM应更换</td>
-            </tr>
-            <tr>
-            	<td><img src="{%static 'car_service/m/images/webn_xtb5.gif'%}">防冻冷却液</td>
-                <td  colspan="2" style="text-align:right;">2015.01/20600KM应更换</td>
-            </tr>
-         </table>-->
-       </div>
-
-
-
-
-
-
-
-
-  </div>
-</div>
+               <div class="ui-grid-ff">
+                   <div style="float:left; width:100%; height:10%; border-top:1px solid #C30; border-left:1px solid #C30; border-right:1px solid #C30; text-align:center;">
+                         <h4>您在<font color="#FF0000">2015.01</font>需要更换机油及滤清器</h4>
+                   </div>
+                   <div style="float:left; width:100%; height:10%;text-align:center;">
+                       <p>
+                       空手道副科级口味打开世界东方世界科技上看风景时看到飞机上看到圣诞节逢山开道飞机上看到飞机上看手机端福克斯的佛教石窟地方就是
+                       </p>
+                   </div>
+                   <table style="float:left; width:100%;">
+                        <tr >
+                            <td style="text-align:left; width:30%;font-size:12px;"><img src="{%static 'car_service/m/images/webn_xtb5.gif'%}">防冻冷却液</td>
+                            <td style="text-align:right; width:70%;font-size:12px;">2015.01/20600KM应更换</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:left;width:30%; font-size:12px;"><img src="{%static 'car_service/m/images/webn_xtb5.gif'%}">防冻冷却液</td>
+                            <td style="text-align:right;width:70%;font-size:12px;">2013.01/6900KM应更换</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:left;width:30%;font-size:12px;"><img src="{%static 'car_service/m/images/webn_xtb5.gif'%}">防冻冷却液</td>
+                            <td style="text-align:right;width:70%;font-size:12px;">2013.01/6900KM应更换</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:left;width:30%;font-size:12px;"><img src="{%static 'car_service/m/images/webn_xtb5.gif'%}">防冻冷却液</td>
+                            <td style="text-align:right;width:70%;font-size:12px;">2013.01/6900KM应更换</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:left;width:30%;font-size:12px;"><img src="{%static 'car_service/m/images/webn_xtb5.gif'%}">防冻冷却液</td>
+                            <td style="text-align:right;width:70%;font-size:12px;">2015.01/20600KM应更换</td>
+                        </tr>
+                   </table>
+               </div>
+          </div>
+    </div>
 </body>
 </html>

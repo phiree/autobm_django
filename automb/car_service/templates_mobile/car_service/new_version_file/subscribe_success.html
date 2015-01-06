@@ -12,29 +12,29 @@
 
 </head>
 <body>
-<div data-role="page" id="pageone">
-  <div data-role="header" data-theme="b">
-     <!--主题按钮-->
- 	<a href="#" data-role="button" data-icon="arrow-l" data-iconpos="notext" data-theme="b" data-inline="true"></a>
-    <h1>预约成功</h1>
-  <a href="#" data-role="button" data-icon="grid" data-iconpos="notext" data-theme="b" data-inline="true"></a>
+    <div data-role="page" id="pageone">
 
-  </div>
-
-  <div data-role="content">
-      <div class="subscribe" style="width:100%; height:100%; float:left;"  align="center">
-          <h1><img style="width:10%; height:10%;" src="{%static 'car_service/m/images/webn_t1.gif'%}">恭喜您预约成功!</h1>
-          <p align="center">
-            <font color="#808080">感谢您的深切期待！祝您生活愉快！</font><br>
-            您的验证码是:123456
-          </p>
-          <p align="center">
-            <img style="width:30%; height:20%;" src="{%static 'car_service/m/images/webn_t2.gif'%}">
-          </p>
-
+      <div data-role="header" data-theme="b">
+            <!--主题按钮-->
+            <a href="{%url 'car_service:front_web:site_home'%}" data-role="button" data-icon="arrow-l" data-iconpos="notext" data-theme="b" data-inline="true"></a>
+            <h1>预约成功</h1>
+            <a href="#" data-role="button" data-icon="grid" data-iconpos="notext" data-theme="b" data-inline="true"></a>
       </div>
-  </div>
 
-</div>
+      <div data-role="content">
+          <div class="subscribe" style="width:100%; height:100%; float:left;"  align="center">
+              <h1><img style="width:10%; height:10%;" src="{%static 'car_service/m/images/webn_t1.gif'%}">恭喜您预约成功!</h1>
+              <p align="center">
+                <font color="#808080">感谢您的深切期待！祝您生活愉快！</font><br>
+                您的验证码是:123456
+              </p>
+              <p align="center">
+                <img style="width:30%; height:20%;" src="{%static 'car_service/m/images/webn_t2.gif'%}">
+              </p>
+
+          </div>
+      </div><!--content end-->
+
+    </div><!--page end-->
 </body>
 </html>
