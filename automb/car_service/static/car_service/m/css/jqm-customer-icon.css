@@ -1,0 +1,17 @@
+.footer div{
+text-align:center;
+}
+.ui-icon-ph{
+width:53px !important;
+height:44px !important;
+}
+.ui-icon-ph-home{
+background-image: url("../images/web_tb1.gif");
+}
+.ui-icon-ph-home-active{
+background-image: url("../images/web_tb01.gif");
+
+}
+}
+.ui-nosvg .ui-icon-ph-home:after {
+	background-image: url("../images/web_tb1.gif");
