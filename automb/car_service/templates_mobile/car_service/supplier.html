@@ -3,12 +3,13 @@
 {%block nav_active_home%}ui-icon-ph-home-active{%endblock%}
 {%block head%}
  <link rel="stylesheet" type="text/css" href="{%static 'car_service/m/css/home.css'%}">
+
     {%endblock%}
 {%block jq_load_script%}
-        //get supplier info from cookies  avoiding passing supplier instance to every template
-        $.cookie('supplier_id','{{supplier.id}}');
-        $.cookie('supplier_name','{{supplier.name}}');
+
+
    {%endblock%}
+
 {%block top_return_btn%}
 
 {%endblock%}

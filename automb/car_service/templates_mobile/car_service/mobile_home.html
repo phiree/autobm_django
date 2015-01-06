@@ -1,0 +1,24 @@
+{%load staticfiles%}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script type="text/javascript" src="{%static 'car_service/js/jquery/jquery-1.9.1.js'%}"></script>
+     <script type="text/javascript" src="{%static 'car_service/js/jquery/plugin/jquery.cookie.js'%}"></script>
+
+<script>
+$(function(){
+        $.cookie('supplier_id','{{supplier.id}}');
+        $.cookie('supplier_name','{{supplier.name}}');
+        var rdr="{%url 'car_service:front_web:supplier_detail' 1%}".replace(/1/,{{supplier.id}})
+        location.href=rdr;
+});
+</script>
+</head>
+<body>
+
+</body>
+</html>

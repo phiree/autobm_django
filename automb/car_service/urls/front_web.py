@@ -20,6 +20,8 @@ urlpatterns=patterns(''
                      ,url(r'^service/comment/success$', view.comment_success,name='comment_success')
                      #商家列表
                      ,url(r'^supplier_list/$', view.supplier_list,name='supplier_list')
+                     #跳转页面,写入cookies
+                      ,url(r'^shr/(?P<supplier_id>\d+)/$', view.supplier_home_redirect,name='supplier_home_redirect')
                      ,url(r'^supplier/(?P<supplier_id>\d+)/$', view.supplier_detail,name='supplier_detail')
                       ,url(r'^supplier/(?P<supplier_id>\d+)/services$', view.supplier_detail,name='supplier_services')
                      #商家服务列表

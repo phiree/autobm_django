@@ -65,7 +65,9 @@ def supplier_detail(request,supplier_id):
         return render(request,'car_service/supplier.html', {'supplier':supplier})
     if request.path==reverse('car_service:front_web:supplier_services',kwargs={'supplier_id':supplier_id}):
         return render(request,'car_service/supplier_services.html',{'supplier':supplier})
-
+def supplier_home_redirect(request,supplier_id):
+    supplier=Supplier.objects.get(pk=supplier_id)
+    return render(request,'car_service/mobile_home.html',{'supplier':supplier})
 
 def service_detail2_with_id(request,service_id):
     return  service_detail2(request,service_id,None,None)
@@ -129,6 +131,7 @@ def supplier_list(request):
 
     return render(request, 'car_service/suppliers.html',
                   {'supplier_list': supplier_list})
+
 #生成前台需要的数据
 def generate_service_detail(services):
     '''
