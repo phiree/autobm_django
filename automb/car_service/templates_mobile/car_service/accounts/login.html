@@ -17,25 +17,27 @@
 <div data-role="page" id="page">
   <div data-role="header" data-theme="b">
         <!--主题按钮-->
- 	<a href="{%url 'car_service:front_web:site_home'%}" data-role="button" data-icon="arrow-l" data-iconpos="notext" data-theme="b" data-inline="true"></a>
+ 	<a href="#" data-role="button" data-icon="arrow-l" data-iconpos="notext" data-theme="b" data-inline="true"></a>
     <h1>用户登录</h1>
   <a href="#"  data-role="button" data-icon="grid" data-iconpos="notext" data-theme="b" data-inline="true"></a>
   </div>
   <div data-role="content">
+
      <div data-role="fieldcontain" style="text-align:center;">
-          <form >
+          <form method="post" action="#">
             <p >
-                <label for="phone">手机号:</label>
-                <input type="text" name="phone" id="phone" value=""  />
+            <label for="name">用户名:</label>
+            <input type="text" name="name" id="name" value=""  />
+
             </p>
             <p>
-                <label for="password">密&nbsp;&nbsp;码:</label>
-                <input type="password" name="password" id="password" value="" >
+            <label for="password">密&nbsp;&nbsp;码:</label>
+            <input type="password" name="password" id="password" value="" >
             </p>
           </form>
       </div>
-       <a href="{%url 'car_service:front_web:login'%}" data-role="button"   data-theme="b">立即登录</a><br>
-       <a href="{%url 'car_service:front_web:register'%}">免费注册</a>
+       <a href="#" data-role="button"   data-theme="b">立即登录</a><br>
+       <a href="#">免费注册</a>
   </div>
 
 
