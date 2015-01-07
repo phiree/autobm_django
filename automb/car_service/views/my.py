@@ -8,7 +8,7 @@ import datetime
 
 from ..models import   Supplier,  Bill
 
-
+@login_required
 def my_home(request):
     return render(request, 'car_service/my/my_home.html')
 

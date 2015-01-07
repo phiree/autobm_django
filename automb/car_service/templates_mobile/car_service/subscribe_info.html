@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+  {%load staticfiles%}
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!--自适应屏幕宽度-->
+    <title>预约详情</title>
+    <link rel="stylesheet" href="{%static 'car_service/js/jquery/jqm/jquery.mobile-1.4.5.min.css'%}">
+    <link rel="stylesheet" href="{%static 'car_service/js/jquery/jqm/jquery.mobile.theme-1.4.5.css'%}">
+    <script src="{%static 'car_service/js/jquery/jqm/jquery-1.11.1.min.js'%}"></script>
+    <script src="{%static 'car_service/js/jquery/jqm/jquery.mobile-1.4.5.min.js'%}"></script>
+    <style type="text/css">
+         div .td_input{ border:1px solid #FF3F00;}
+          .ui-icon-addtype span:first-child{padding: .2em 5px !important;}
+    </style>
+</head>
+<body>
+    <div data-role="page" id="pageone" >
+
+        <div data-role="header" data-theme="b">
+             <!--主题按钮-->
+            <a href="{%url 'car_service:front_web:site_home'%}" data-role="button" data-icon="arrow-l" data-iconpos="notext" data-theme="b" data-inline="true"></a>
+            <h1>预约详情</h1>
+            <a href="#" data-role="button" data-icon="grid" data-iconpos="notext" data-theme="b" data-inline="true"></a>
+        </div>
+
+        <div data-role="content" style="font-size:12px;">
+            <div class="sub_info" style="float:left;width:100%; height:30%;">
+                <table style="float:left;width:100%; font-size:12px;">
+                    <tr style="width:100%;height:100%;">
+                        <td rowspan="3"  width="30%; height:100%;"><img src="{%static 'car_service/m/images/webn_tp5.gif'%}" style="width:100%; height:100%;"></td>
+                        <td colspan="3" width="70%">
+                            <h3 class="ui-li-heading">[洗车]佛山美丽天使汽车养护店</h3>
+                            <p class="ui-li-desc">原价：30￥ &nbsp;&nbsp;优惠价￥ <font color="#FF0000">25</font></p>
+                        </td>
+                    </tr>
+
+                    <tr style="width:100%;height:100%;">
+                        <td>车型:</td>
+                        <td >
+                            <fieldset data-role="controlgroup" data-type="horizontal">
+                                <select name="cartype" id="cartype" data-mini="true" data-inline="true"  >
+                                    <option>请选择车型</option>
+                                    <option value="奥迪">奥迪R8</option>
+                                    <option value="宝马">宝马Q7</option>
+                                    <option value="奔驰">奔驰S300</option>
+                                    <option value="雷克萨斯">雷克萨斯V5</option>
+                                </select>
+                            </fieldset>
+                        </td>
+                        <td>
+                            <a class='ui-btn ui-shadow  ui-btn-icon-left ui-icon-plus' href="##"  data-role="button" data-iconpos="right" data-mini="true" data-inline="true"  >添加类型</a>
+                        </td>
+                    </tr>
+                    <tr style="width:100%;height:100%;">
+                        <td colspan="3"><p class="ui-li-desc">原价：30￥ &nbsp;&nbsp;优惠价￥ <font color="#FF0000">25</font><br>
+                        <font color="#FF0000">注</font>在线支付可立减<font color="#FF0000">5</font>元</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+
+             <!--  <ul data-role="listview" data-inset="true"   style="list-style-type:none;">
+                     <li data-icon="false">
+                        <a href="#">
+                            <img src="{%static 'car_service/m/images/webn_tp5.gif'%}" class="ui-li-thumb">
+                            <h3 class="ui-li-heading">[洗车]佛山美丽天使汽车养护店</h3>
+                            <p class="ui-li-desc">原价：30￥ &nbsp;&nbsp;优惠价￥ <font color="#FF0000">25</font><br>
+                            <font color="#FF0000">注</font>在线支付可立减<font color="#FF0000">5</font>元
+                            </p>
+                        </a>
+                    </li>
+             </ul>
+
+            <div data-role="collapsible" data-iconpos="right"  data-collapsed="true"  data-icon="false">
+              <h3>车型:</h3>
+                    <fieldset data-role="controlgroup" data-type="horizontal">
+                        <select name="cartype" id="cartype" data-mini="true" data-inline="true"  style="margin-right:20%;">
+                            <option>请选择车型</option>
+                            <option value="奥迪">奥迪R8</option>
+                            <option value="宝马">宝马Q7</option>
+                            <option value="奔驰">奔驰S300</option>
+                            <option value="雷克萨斯">雷克萨斯V5</option>
+                        </select>
+                       <a href="#" data-role="button" data-iconpos="left" data-mini="true" data-inline="true" data-icon="plus">添加类型</a>
+                    </fieldset>
+              </div>
+
+
+             <div data-role="collapsible" data-iconpos="right"  data-collapsed="true"  data-icon="false">
+                <h3>洗车方式:</h3>
+                <fieldset data-role="controlgroup" data-type="horizontal">
+                    <input type="checkbox" name="rgxc" id="rgxc" class="custom" />
+                    <label for="rgxc">人工洗车</label>
+                    <input type="checkbox" name="dnxc" id="dnxc" class="custom" />
+                    <label for="dnxc"><em>电脑洗车</em></label>
+                </fieldset>
+            </div>-->
+
+            <div data-role="collapsible" data-iconpos="right"  data-collapsed="false"  data-icon="false" data-theme="a">
+                  <h3>服务商</h3>
+                  <p>
+                      <img style="width:5%; height:5%;" src="{%static 'car_service/m/images/webn_xtb6.gif'%}">佛山美丽天使汽车养护店<br>
+                      <img style="width:5%; height:5%;" src="{%static 'car_service/m/images/webn_xtb1.gif'%}">门店地址门店地址门店地址门店地址<br>
+                      <img style="width:5%; height:5%;"  src="{%static 'car_service/m/images/webn_xtb2.gif'%}">0757-8259123
+                  </p>
+            </div>
+
+            <div class="sidebar" style="width:80%; margin: 0 auto;" data-theme="c" >
+                    <div class="menu"  data-role="navbar" >
+                        <ul>
+                            <li><a href="#"  class="ui-btn-active" data-theme="c">服务介绍</a></li>
+                            <li ><a href="#pagetwo">用户评价</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="menu_content_one">
+                        <p>
+                           测试m 测试m 测试m 测试m 测试m 测试m 测试m 测试m 测试m 测试m 测试m 测试m 测试m 测试m 测试m<br>
+                        </p>
+                    </div>
+            </div>
+
+            <ul  style="list-style-type:none;">
+                     <li data-icon="false" style="text-align:center;">
+                     <img  style="width:30%; height:100%; margin:0 1 0 1;" src="{%static 'car_service/m/images/webn_tp5-20.gif'%}">
+                      <img style="width:30%; height:5%; margin:0 1 0 1;" src="{%static 'car_service/m/images/webn_an4.gif'%}">
+                     <img style="width:30%; height:5%; margin:0 1 0 1;" src="{%static 'car_service/m/images/webn_an5.gif'%}">
+                    </li>
+             </ul>
+
+        </div><!--page content-->
+
+    </div><!---page end-->
+
+
+    <div data-role="page" id="pagetwo">
+          <div data-role="header" data-theme="b" >
+             <!--主题按钮-->
+             <a href="#" data-role="button" data-icon="arrow-l" data-iconpos="notext" data-theme="b" data-inline="true"></a>
+             <h1>预约详情</h1>
+             <a href="#" data-role="button" data-icon="grid" data-iconpos="notext" data-theme="b" data-inline="true"></a>
+
+          </div>
+
+          <div data-role="content">
+              <div class="sub_info" style="float:left;width:100%; height:30%;">
+                <table style="float:left;width:100%; font-size:12px;">
+                    <tr style="width:100%;height:100%;">
+                        <td rowspan="3"  width="30%; height:100%;"><img src="{%static 'car_service/m/images/webn_tp5.gif'%}" style="width:100%; height:100%;"></td>
+                        <td colspan="3" width="70%">
+                            <h3 class="ui-li-heading">[洗车]佛山美丽天使汽车养护店</h3>
+                            <p class="ui-li-desc">原价：30￥ &nbsp;&nbsp;优惠价￥ <font color="#FF0000">25</font></p>
+                        </td>
+                    </tr>
+
+                    <tr style="width:100%;height:100%;">
+                        <td>车型:</td>
+                        <td >
+                            <fieldset data-role="controlgroup" data-type="horizontal">
+                                <select name="cartype" id="cartype" data-mini="true" data-inline="true"  >
+                                    <option>请选择车型</option>
+                                    <option value="奥迪">奥迪R8</option>
+                                    <option value="宝马">宝马Q7</option>
+                                    <option value="奔驰">奔驰S300</option>
+                                    <option value="雷克萨斯">雷克萨斯V5</option>
+                                </select>
+                            </fieldset>
+                        </td>
+                        <td>
+                            <a class='ui-btn ui-shadow  ui-btn-icon-left ui-icon-plus' href="##"  data-role="button" data-iconpos="right" data-mini="true" data-inline="true"  >添加类型</a>
+                        </td>
+                    </tr>
+                    <tr style="width:100%;height:100%;">
+                        <td colspan="3"><p class="ui-li-desc">原价：30￥ &nbsp;&nbsp;优惠价￥ <font color="#FF0000">25</font><br>
+                        <font color="#FF0000">注</font>在线支付可立减<font color="#FF0000">5</font>元</p>
+                        </td>
+                    </tr>
+                </table>
+              </div>
+
+               <!--  <ul data-role="listview" data-inset="true"   style="list-style-type:none;">
+                     <li data-icon="false">
+                        <a href="#"> <img src="{%static 'car_service/m/images/webn_tp5.gif'%}" class="ui-li-thumb">
+                            <h3 class="ui-li-heading">[洗车]佛山美丽天使汽车养护店</h3>
+                            <p class="ui-li-desc">原价：30￥ &nbsp;&nbsp;优惠价￥ <font color="#FF0000">25</font><br>
+                                <font color="#FF0000">注</font>在线支付可立减<font color="#FF0000">5</font>元
+                            </p>
+                        </a>
+                    </li>
+                 </ul>
+
+                 <div data-role="collapsible" data-iconpos="right"  data-collapsed="true"  data-icon="false">
+                     <h3>车型:</h3>
+                     <fieldset data-role="controlgroup" data-type="horizontal">
+                            <select name="cartype" id="cartype" data-mini="true" data-inline="true"  style="margin-right:20%;">
+                                <option>请选择车型</option>
+                                <option value="奥迪">奥迪R8</option>
+                                <option value="宝马">宝马Q7</option>
+                                <option value="奔驰">奔驰S300</option>
+                                <option value="雷克萨斯">雷克萨斯V5</option>
+                            </select>
+                            <a href="#" data-role="button" data-iconpos="left" data-mini="true" data-inline="true" data-icon="plus">添加类型</a>
+                     </fieldset>
+                 </div>
+
+
+                 <div data-role="collapsible" data-iconpos="right"  data-collapsed="false"  data-icon="false">
+                      <h3>洗车方式:</h3>
+                      <fieldset data-role="controlgroup" data-type="horizontal">
+                          <input type="checkbox" name="rgxc" id="rgxc" class="custom" />
+                          <label for="rgxc">人工洗车</label>
+                          <input type="checkbox" name="dnxc" id="dnxc" class="custom" />
+                          <label for="dnxc"><em>电脑洗车</em></label>
+                      </fieldset>
+                </div>-->
+
+               <div data-role="collapsible" data-iconpos="right"  data-collapsed="false"  data-icon="false">
+                     <h3>服务商</h3>
+                     <p>
+                         <img style="width:5%; height:5%;" src="{%static 'car_service/m/images/webn_xtb6.gif'%}">佛山美丽天使汽车养护店<br>
+                         <img style="width:5%; height:5%;" src="{%static 'car_service/m/images/webn_xtb1.gif'%}">门店地址门店地址门店地址门店地址<br>
+                         <img style="width:5%; height:5%;"  src="{%static 'car_service/m/images/webn_xtb2.gif'%}">0757-8259123
+                     </p>
+               </div>
+
+               <div class="sidebar">
+                     <div class="menu"  data-role="navbar">
+                         <ul>
+                             <li><a href="#pageone">服务介绍</a></li>
+                             <li ><a href="#"  class="ui-btn-active" >用户评价</a></li>
+                         </ul>
+                     </div>
+                     <div class="menu_content_one">
+                         <p>
+                              士大夫急啊士大夫拣林疏快递费金士顿房间里开市大吉法律撒旦焦夫省来得及佛<br>
+                         </p>
+                     </div>
+               </div>
+
+                <ul  style="list-style-type:none;">
+                    <li data-icon="false" style="text-align:center;">
+                        <img  style="width:30%; height:100%; margin:0 1 0 1;" src="{%static 'car_service/m/images/webn_tp5-20.gif'%}">
+                        <img style="width:30%; height:5%; margin:0 1 0 1;" src="{%static 'car_service/m/images/webn_an4.gif'%}">
+                        <img style="width:30%; height:5%; margin:0 1 0 1;" src="{%static 'car_service/m/images/webn_an5.gif'%}">
+                    </li>
+                </ul>
+
+          </div><!--page content-->
+
+    </div><!---page end-->
+
+</body>
+</html>

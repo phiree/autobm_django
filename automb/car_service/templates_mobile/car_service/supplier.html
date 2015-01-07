@@ -1,0 +1,37 @@
+{% extends "car_service/base.html" %}
+{%load staticfiles%}
+{%block nav_active_home%}ui-icon-ph-home-active{%endblock%}
+{%block head%}
+ <link rel="stylesheet" type="text/css" href="{%static 'car_service/m/css/home.css'%}">
+
+    {%endblock%}
+{%block jq_load_script%}
+
+
+   {%endblock%}
+
+{%block top_return_btn%}
+
+{%endblock%}
+{%block content%}
+ <img src="{%static 'car_service/m/images/web_t02.jpg'%}" alt="1" style="width:100%;" />
+<div class="ui-grid-a">
+    <div class="ui-block-a">
+            <a href="{%url 'car_service:front_web:supplier_services' supplier.id %}">
+                <img class="block-img" src="{%static 'car_service/m/images/web_tp1.gif'%}"></a>
+            <a href="#"><img class="block-img" src="{%static 'car_service/m/images/web_tp4.gif'%}"></a>
+
+    </div>
+    <div class="ui-block-b">
+            <div style="padding-left:3px;">
+            <a href="#{%url 'car_service:front_web:upkeep_time'%}"><img class="block-img"
+                    src="{%static 'car_service/m/images/web_tp2.gif'%}"  ></a>
+            <a href="{%url 'car_service:front_web:select_cartype'%}"><img class="block-img"
+                    src="{%static 'car_service/m/images/web_tp3.gif'%}" ></a>
+            <a href="#"><img class="block-img" src="{%static 'car_service/m/images/web_tp5.gif'%}"></a>
+</div>
+
+
+    </div>
+</div><!-- /grid-a -->
+{%endblock%}

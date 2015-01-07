@@ -1,0 +1,24 @@
+{% extends "car_service/base.html" %}
+{%load staticfiles%}
+{%load get_service_type_for_supplier%}
+{%block top_return_btn%}<a  data-rel="back"><-</a>{%endblock%}
+{%block nav_active_services%}ui-icon-ph-services-active{%endblock%}
+{%block header_title%}优惠预约{%endblock%}
+{%block content%}
+<ul data-role="listview" data-inset="true" style="list-style-type:none;">
+    {% for s in supplier.get_type_info%}
+    <li>
+        <a href="{%url 'car_service:front_web:service_detail_without_id' s.0 supplier.id%}">
+            <img src="{%static 'car_service/m/images/webn_tp7.gif'%}" class="ui-li-thumb">
+
+            <h3 class="ui-li-heading">{{s.1}}</h3>
+
+            <p class="ui-li-desc">{{s.2}}起
+                <img style="margin-left:40%; margin-right:10%; width:20%; height:5%;"
+                     src="{%static 'car_service/m/images/webn_an6.gif'%}"></p>
+        </a>
+    </li>
+    {%endfor%}
+</ul>
+
+{%endblock%}

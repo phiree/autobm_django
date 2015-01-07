@@ -1,0 +1,31 @@
+{% extends "car_service/my/base_my.html" %}
+{%block content_title%}
+我的爱车
+{%endblock%}
+{% block main_content%}
+
+
+
+
+    <table class="table">
+        <tr>
+            <th>车型</th>
+            <th>总行时</th>
+            <th>总里程</th>
+            <th>最后更新时间</th>
+            <th>备注</th>
+        </tr>
+        {%for car in cars%}
+        <tr>
+            <td> {{car.car.name}}{{car.car.transmission}}</td>
+            <td> {{car.time_onroad}}<form><button>修改</button></form></td>
+            <td> {{car.total_mileage}}<form><button>更新</button></form></td>
+            <td> {{car.last_update_time}}</td>
+            <td> {{car.memo}}</td>
+
+        </tr>
+        {%endfor%}
+    </table>
+<a class="ui-btn" href="">新增爱车</a>
+
+{%endblock%}

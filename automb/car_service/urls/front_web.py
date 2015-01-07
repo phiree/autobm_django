@@ -20,7 +20,12 @@ urlpatterns=patterns(''
                      ,url(r'^service/comment/success$', view.comment_success,name='comment_success')
                      #商家列表
                      ,url(r'^supplier_list/$', view.supplier_list,name='supplier_list')
-                     ,url(r'^supplier/(?P<supplier_id>\d+)$', view.supplier_detail,name='supplier_detail')
+                     #跳转页面,写入cookies
+                      ,url(r'^shr/(?P<supplier_id>\d+)/$', view.supplier_home_redirect,name='supplier_home_redirect')
+                     ,url(r'^supplier/(?P<supplier_id>\d+)/$', view.supplier_detail,name='supplier_detail')
+                      ,url(r'^supplier/(?P<supplier_id>\d+)/services$', view.supplier_detail,name='supplier_services')
+                     #商家服务列表
+
                      #订单
                      ,url(r'^bill/create/(?P<service_id>\d+)$', view.bill_create,name='bill_create')
                      ,url(r'^bill/success_created/$', view.bill_create_success,name='bill_create_success')
@@ -53,6 +58,7 @@ urlpatterns=patterns(''
                      ,url(r'^subscribe_info/', view.subscribe_info,name='subscribe_info')
                      #预约成功
                      ,url(r'^subscribe_success/', view.subscribe_success,name='subscribe_success')
+                     ,url(r'^no_such_supplier/', view.no_such_supplier,name='no_such_supplier')
 
                      ,
                      )

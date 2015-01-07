@@ -1,7 +1,6 @@
 from django.template import Library
 from ..models import Supplier,Service2,ServicePropertyValue
 register = Library()
-
 @register.filter
 def get_values_for_property(p,ids):
     """

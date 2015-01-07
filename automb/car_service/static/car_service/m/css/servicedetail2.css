@@ -1,0 +1,25 @@
+dt{font-weight:600;}
+.service_item
+{
+margin:15px 0;
+}
+.service_option
+{}
+.selected
+{border: solid 2px #f80;
+background: url(../images/img_64.gif) right bottom no-repeat }
+.not_selected
+{
+
+}
+.selected,.not_selected
+{
+ padding:2px 5px;
+ border-width:2px;
+
+ min-width:50px;
+ display:inline-block;
+ text-align:center;
+ margin-bottom:5px;
+ cursor:pointer;
+}
